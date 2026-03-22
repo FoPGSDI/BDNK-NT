@@ -1,0 +1,290 @@
+% Agent 14: Pages 396--399 (PDF pp.28--29)
+% Sections 4.3 Thermal Bremsstrahlung from the Accreting Gas
+%          4.4 Influence of Magnetic Fields and Synchrotron Radiation
+%          4.5 Interaction of Outflowing Radiation with the Gas (beginning)
+% =============================================================================
+
+%% ----------------------------------------------------------------
+%% 4.3  Thermal Bremsstrahlung from the Accreting Gas
+%% ----------------------------------------------------------------
+
+\subsection{Thermal Bremsstrahlung from the Accreting Gas}
+\label{sec:4.3}
+
+The above idealized case of spherical, adiabatic, hydrodynamic accretion can be
+complicated by various physical processes.  Consider, first, the effects of energy
+loss due to thermal bremsstrahlung.  To calculate the bremsstrahlung most easily,
+we shall assume that the energy loss has a negligible effect on the thermal energy
+density of the gas, and then we shall check that this assumption is valid.
+
+When the effects of bremsstrahlung losses are neglected, then the temperature,
+density, and velocity distributions retain their adiabatic forms (4.2.13).  One can
+readily check that for $T_\infty \sim 10^4$\,K and $\Gamma = 1.4$ the gas remains nonrelativistic,
+$kT \ll m_p c^2$ (but just barely so) down to $r \simeq r_s$.  Consequently, the rate at which
+one gram of gas at radius $r$ radiates thermal bremsstrahlung is [cf.\ eq.~(2.1.29)]
+%
+\begin{equation}
+\tag{4.3.1}
+\varepsilon_{ff}
+= \bigl(5 \times 10^{20}~\text{ergs/(g\,sec)}\bigr)\,
+  (\rho / g\,\text{cm}^{-3})
+  \left(\frac{T_\infty}{10^4\,\text{K}}\right)^{\!1/2}
+  \left(\frac{r_i}{r}\right)^{\!-(3/a)(\Gamma-1)}
+\end{equation}
+%
+For comparison, the rate at which adiabatic compression increases the energy of
+one gram of gas is [eq.~(2.6.41)]
+%
+\begin{equation}
+\tag{4.3.2}
+\varepsilon_{\text{ad.\ heating}}
+= \frac{p}{\rho}\,\frac{d\rho}{p\,dt}
+= -\frac{3}{2}\,\frac{u}{r}\,\frac{p_\infty}{\rho_\infty}
+  \left(\frac{r_i}{r}\right)^{-3\Gamma/2}\,.
+\end{equation}
+%
+Using expression (4.2.12) for $r_i$, and the thermodynamic relations for a hydro\-gen gas
+%
+\begin{equation}
+\tag{4.3.3}
+a_s^2 = (\Gamma p_\infty / \rho_\infty) = \Gamma kT_\infty / m_p\,,
+\end{equation}
+%
+we can bring this heating rate into the form
+%
+\begin{equation}
+\tag{4.3.4}
+\varepsilon_{\text{ad.\ heating}}
+= \bigl(3 \times 10^4~\text{ergs}/(\text{g\,sec})\bigr)
+  \left(\frac{T_\infty}{10^4\,\text{K}}\right)^{\!5/2}
+  \left(\frac{M}{M_\odot}\right)^{\!-1}
+  \left(\frac{r_i}{r}\right)^{-3\Gamma/2}\,.
+\end{equation}
+
+This heating rate greatly exceeds the free-free loss rate (4.3.1) at all radii.  Hence,
+we are justified in our use of the adiabatic forms of $T(r)$, $\rho(r)$, and $u(r)$.  The total
+power radiated as thermal bremsstrahlung is
+%
+\begin{equation}
+\tag{4.3.5}
+L_{ff}
+= \int_{r_g}^{\infty} \varepsilon_{ff}\,\rho\, 4\pi r^2\, dr
+\sim \left(5 \times 10^{31}~\frac{\text{ergs}}{\text{sec}}\right)
+  \left(\frac{M}{M_\odot}\right)^{\!3}
+  \left(\frac{T_\infty}{10^4\,\text{K}}\right)^{\!-3.3}
+  \left(\frac{\rho_\infty}{10^{-24}~\text{g\,cm}^{-3}}\right)^{\!2}\,,
+  \quad\text{for }\Gamma = 1.4.
+\end{equation}
+
+Perhaps a more realistic value for $\Gamma$ would be a little less than $5/3$ down to
+$r \sim 10^3 r_g$ at which point $kT \sim m_e c^2$, and then $\Gamma = 4/3$ below that radius.  In
+this case $L_{ff}$ would be increased by several orders of magnitude [cf.\ the rela%
+tivistic corrections in eq.~(2.1.31)].  Even with such an increase, and even for
+$M = 100\,M_\odot$, $L_{ff}$ is so small that it is of little or no observational interest.  For
+this reason, we shall not attempt a more rigorous calculation of it.
+
+%% ----------------------------------------------------------------
+%% 4.4  Influence of Magnetic Fields and Synchrotron Radiation
+%% ----------------------------------------------------------------
+
+\subsection{Influence of Magnetic Fields and Synchrotron Radiation}
+\label{sec:4.4}
+
+Up to now we have ignored the fact that the interstellar gas possesses a magnetic
+field.  For interstellar temperatures of interest, $T_\infty \sim 10^4$\,K, the magnetic field
+will be frozen into the gas (cf.\ \S\ref{sec:2.5}).  The strength of the typical intergalactic
+field, $B_\infty \sim 10^{-6}$\,G, is such that its energy density and pressure are not far below
+those of the gas
+%
+\begin{equation}
+\tag{4.4.1}
+\frac{B_\infty^2}{8\pi}
+\sim 4 \times 10^{-14}~\frac{\text{ergs}}{\text{cm}^3}\,.
+\end{equation}
+
+At large radii the field may be small enough that one can ignore its influence on
+the accretion.  In this case the standard hydrodynamical inflow will stretch each
+fluid element out radially (cross-sectional area of fluid element $\propto r^2$, hence
+diameter $\propto r$; volume $\propto \rho^{-1} \propto r^{3/2}$, hence radial diameter $\propto r^{-1/2}$).
+This radial stretch and tangential compression must quickly convert the initial
+field in the fluid element into a nearly radial field with strength
+%
+\begin{equation}
+\tag{4.4.2}
+B \propto \text{(cross sectional area)}^{-1} \propto r^{-2}
+\end{equation}
+%
+(conservation of flux).  Hence, the magnetic energy in a given fluid element will
+rise as
+%
+\begin{equation}
+\tag{4.4.3}
+E_{\mathrm{mag}}
+= \frac{B^2}{8\pi}~\text{(volume of element)}
+\propto r^{-4}\,\rho^{-1}
+\propto r^{-4}\,r^{3/2}
+= r^{-5/2}\,.
+\end{equation}
+
+Not long after the gas crosses the sonic point, this magnetic energy will become
+so large as to exceed the thermal energy in the fluid element
+%
+\begin{equation}
+\tag{4.4.2a}
+E_{\mathrm{therm}}
+= 2^{-1}\,\frac{3\,kT}{2\,m_p}~\text{(mass of element)}
+\propto r^{-(3/2)(\Gamma-1)}\,.
+\end{equation}
+
+At this point magnetic pressures must come into play, and the flow will cease
+to obey the standard adiabatic hydrodynamic laws of \S\ref{sec:4.2}.
+
+The form of the modified magnetohydrodynamic flow is not understood at
+all well today.  The best guesses and calculations to date are those of Schwartzman
+(1971)~\cite{Schwartzman1971}.  They suggest a turbulent flow, with reconnection of field lines between
+adjacent ``cells'' (cf.\ \S\ref{sec:2.9}), and with a rough equipartition of the gravitational
+potential energy between magnetic fields, kinetic infall of gas, turbulent energy,
+and thermal kinetic energy of gas particles:
+%
+\begin{equation}
+\tag{4.4.2b}
+\bigl\{\text{gravitational energy}\bigr\}
+= \frac{GM}{r}
+\sim 4u^2
+\sim 4\rho v_{\mathrm{turb}}^2
+\sim 4\,\frac{3kT}{m_p}
+\sim \frac{B^2}{8\pi\rho}
+\end{equation}
+%
+per unit mass.
+
+The mass density corresponding to this equipartition condition,
+$4\pi r^2 \rho u = \dot{M}_0$, because $\dot{M}_0$ is determined by conditions
+outside and at the sonic point, where the magnetic field is not yet large enough
+to strongly influence the flow, we can use equation~(4.2.15b) for $\dot{M}_0$ and write
+%
+\begin{equation}
+\tag{4.4.3a}
+\rho
+\sim \left(6 \times 10^{-12}~\frac{\text{g}}{\text{cm}^3}\right)
+  \left(\frac{\rho_\infty}{10^{-24}~\text{g\,cm}^{-3}}\right)
+  \left(\frac{T_\infty}{10^4\,\text{K}}\right)^{\!-3/2}
+  \left(\frac{r_i}{r}\right)^{\!-3/2}\,.
+\end{equation}
+
+Accepting this educated guess as to the nature of the flow, we can ask what
+types of radiation might be emitted.  As before~(\S\ref{sec:4.3}) bremsstrahlung is too weak
+to be interesting.  However, synchrotron radiation can be rather strong.  Most of
+the synchrotron radiation will come from the high-temperature, strong-field
+region near the Schwarzschild radius.  There $kT \gg m_e c^2$, so the relativistic
+formula~(2.3.13) for synchrotron radiation is applicable,
+%
+\begin{equation}
+\tag{4.4.4}
+\varepsilon_{\mathrm{synch}}
+\simeq \bigl(2.2 \times 10^{-10}~\text{ergs}/(\text{g\,sec})\bigr)\,
+  \bar{r}_e^2\, B_\perp^2\,;
+\end{equation}
+%
+and, because the gas turns out to be optically thin, the total luminosity is
+%
+\begin{equation}
+\tag{4.4.5}
+L_{\mathrm{synch}}
+\simeq \int_{r_g}^{\infty}\varepsilon_{\mathrm{synch}}\,\rho\, 4\pi r^2\, dr
+\sim \bigl(1 \times 10^{32}~\text{ergs}/\text{sec}\bigr)
+  \left(\frac{M}{M_\odot}\right)^{\!2}
+  \left(\frac{\rho_\infty}{10^{-24}~\text{g\,cm}^{-3}}\right)^{\!2}
+  \left(\frac{T_\infty}{10^4\,\text{K}}\right)^{\!-3/2}\,.
+\end{equation}
+
+For comparison, the rest mass-energy being accreted is
+%
+\begin{equation}
+\tag{4.4.6}
+\dot{M}_0 c^2
+\sim \bigl(1 \times 10^{32}~\text{ergs}/\text{sec}\bigr)
+  \left(\frac{M}{M_\odot}\right)^{\!2}
+  \left(\frac{\rho_\infty}{10^{-24}~\text{g\,cm}^{-3}}\right)
+  \left(\frac{T_\infty}{10^4\,\text{K}}\right)^{\!-3/2}\,.
+\end{equation}
+
+Since most of the radiation comes from $r \sim 2r_g$ where the thermal energy is
+${\sim}\,3$ to 10 per cent of the rest mass-energy, the synchrotron losses account for
+${\sim}\,3$ to 10 per cent of the thermal energy available.  However,
+for $M \gtrsim 10\,M_\odot$ the effects of the energy losses on the temperature and thence
+on the luminosity will not exceed a factor of ${\sim}\,1$.
+
+Equations~(4.4.5) and (4.4.6) predict that a hole of $M \sim 10\,M_\odot$ will convert
+${\sim}\,1$ per cent of the rest mass of the infalling gas into synchrotron radiation,
+producing a luminosity of ${\sim}\,10^{32}$\,ergs/sec, which is about 3 per cent of the
+luminosity of the sun.  The radiation, located at [cf.\ eq.~(2.3.18)] $r \simeq 2r_g$, will have a spectrum
+with a broad maximum located at
+%
+\begin{equation}
+\tag{4.4.7}
+\nu_{\mathrm{peak}}
+\sim (7 \times 10^{14}~\text{Hz})
+  \left(\frac{\rho_\infty}{10^{-24}~\text{g\,cm}^{-3}}\right)^{\!1/2}
+  \left(\frac{T_\infty}{10^4\,\text{K}}\right)^{\!-3/4}
+\end{equation}
+%
+($\nu \sim 7 \times 10^{14}$\,Hz ($\lambda \sim 4000$\,\AA); and it will die out exponentially for
+$\nu \gtrsim 7 \times 10^{14}$\,Hz; cf.\ \S\ref{sec:2.3}).  As Schwartzman (1971)~\cite{Schwartzman1971} remarks, such a spectrum
+and luminosity resemble those of ``DC white-dwarf stars'' (white dwarfs with
+continuous, line-free spectra).  This has led Schwartzman to speculate that
+``perhaps some of the objects heretofore regarded as type~DC white dwarfs are
+actually black holes.''
+
+Instabilities and inhomogeneities in the flow (due, e.g., to reconnection of
+field lines) might lead to marked fluctuations in the luminosity of the hole.  The
+timescales for such fluctuations might be of the order of the gas travel time from
+${\sim}\,10\,r_g$ to ${\sim}\,2r_g$; i.e.
+%
+\begin{equation}
+\tag{4.4.8}
+\Delta t_{\mathrm{fluctuations}}
+\sim (10^{-3}~\text{to}~10^{-4}~\text{sec})(M/M_\odot)\,.
+\end{equation}
+
+Such rapid fluctuations in an object so faint should be very difficult to detect,
+even with the 200-inch telescope.  For further details on the fluctuations, see
+the end of \S\ref{sec:4.7}.
+
+%% ----------------------------------------------------------------
+%% 4.5  Interaction of Outflowing Radiation with the Gas (beginning)
+%% ----------------------------------------------------------------
+
+\subsection{Interaction of Outflowing Radiation with the Gas}
+\label{sec:4.5}
+
+As the luminosity $L$ pours out from the region $r \sim 2r_g$, it interacts with the
+inflowing gas.  For the luminosities $L \sim 10^{32}$\,ergs/sec and frequencies $\nu \sim 10^{14}$\,Hz
+derived in the last section, one can readily verify that the infalling gas is optically
+thin to free-free absorption and to synchrotron reabsorption.  (See \S\ref{sec:2.6} for
+basic concepts and equations used in such a calculation.)
+
+What of electron scattering?  Electron scattering can exert 3 types of influence:
+(i)~If the electron concentration is sufficiently high, it can act as a ``blanket'' to
+impede the outflow of the radiation.  To test for such blanketing one can examine
+the optical depth of the gas to electron scattering.
+%
+\begin{equation}
+\tag{4.5.1}
+\tau_{es}(r = 2r_g)
+= \int_{2r_g}^{\infty}\kappa_{es}\,\rho\, dr
+\simeq (1 \times 10^{-9})(M/M_\odot)
+  (\rho_\infty / 10^{-24}~\text{g\,cm}^{-3})
+  (T_\infty / 10^4\,\text{K})^{-3/2}\,.
+\end{equation}
+
+(A more careful calculation would replace the nonrelativistic absorption
+coefficient $\kappa_{es} = 0.4$\,cm$^2$/g by the coefficient appropriate to relativistic
+electrons, since $T \sim 10^{12}$\,K at $r \sim r_g$; such a calculation would also reveal
+extreme optical thinness.)  (ii)~Since the outgoing photons have energies
+$h\nu \sim 10$\,eV far less than the electron kinetic energies, Compton scattering can
+modify the spectrum, producing high-energy photons [see eq.~(2.4.9)].  However,
+the extreme optical thinness guarantees that only about one photon in a million
+scatters; so this effect can be ignored.  (iii)~The outpouring photons exert a
+pressure on the infalling gas when they scatter, and this effect can retard the
+inflow.  Notice that the magnitude of the first two effects is governed by the
