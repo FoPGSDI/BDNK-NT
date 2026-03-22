@@ -3,12 +3,12 @@
 
 **central task**
 * central target: read through the '/Users/hyw/Desktop/Agent/BDNK/mathematical-derivations.md', '/Users/hyw/Desktop/Agent/BDNK/numerical-implementations.md'; generate mathematica codes and reproduce numerical results in the paper
-* re
-* first call (plan mode): deploying one agents, converge on the convension for mathematical expression; one agent for mathematical non-step skipping derivations; one agent for numerical implementations; one agent for tests results and test suits/designs
-* based on the plan proceed as follows:
-* second call (editting mode): deploying one agents, converge on the convension for mathematical expression; one agent for mathematical non-step skipping derivations; one agent for numerical implementations; one agent for tests results and test suits/designs; simultaneously deploy 7 agents for each pdf plots, add the descriptions and implementation/numerical should-be-awared issues in md files
-* in editting mode, deploying 11 agents to repeat the task and double check
-* final agent check and finalize the reulsts
+* 1. first call (plan mode): one agent for mathematical non-step skipping derivations; one agent for numerical implementations; one agent for tests results and test suits/designs
+* 2. based on the plan proceed as follows: second call (editting mode): deploying one agents,  one agent for mathematical non-step skipping derivations implementation in mathematica; one agent for numerical implementation
+* 3. reproduce the tests
+* 4. check for validation, if not the same as the paper figures, document this cycle with a md file including cycle number, commit and push, go back to 1. and this is failed; if same this is succeed
+
+* do not end the loop till 4 suceed
 
 **FilesAndLinks**
 * @NT-Disk.pdf is the original paper
