@@ -1,0 +1,358 @@
+% Agent 15: Pages 399–402 (PDF pp.28–31)
+% Sections 4.5 Interaction of Outflowing Radiation with Gas
+%          4.6 Validity of Hydrodynamical Approximation
+%          4.7 Gas Flow Near the Horizon
+% Equations (4.5.1) through (4.7.7)
+
+\documentclass[aps,prd,twocolumn,superscriptaddress,nofootinbib]{revtex4-2}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{graphicx}
+\usepackage{bm}
+\usepackage{mathrsfs}
+\usepackage{hyperref}
+\usepackage{physics}
+
+% Custom commands
+\newcommand{\fvec}[1]{\mathbf{#1}}
+
+\begin{document}
+
+%% ============================================================
+%% Page 399 — continuation from S4.4 and start of S4.5
+%% ============================================================
+
+$\nu \sim 7 \times 10^{14}\;\text{Hz}$
+($\lambda \sim 4000\;\text{\AA}$); and it will die out exponentially for
+$\nu > 7 \times 10^{14}\;\text{Hz}$; cf.\ \S2.3.
+As \cite{Schwarzman1971} remarks, such a spectrum
+and luminosity resemble those of ``DC white-dwarf stars'' (white dwarfs with
+continuous, line-free spectra).  This has led Schwarzman to speculate that
+``perhaps some of the objects heretofore regarded as type DC white dwarfs are
+actually black holes.''
+
+Instabilities and inhomogeneities in the flow (due, e.g., to reconnection of
+field lines) might lead to marked fluctuations in the luminosity of the hole.  The
+timescales for such fluctuations might be of the order of the gas travel time from
+${\sim}10\,r_g$ to ${\sim}2r_g$; i.e.
+
+\begin{equation}
+\Delta t_{\text{fluctuations}} \sim (10^{-3}~\text{to}~10^{-4}~\text{sec})(M/M_\odot)\,.
+\tag{4.4.8}
+\end{equation}
+
+Such rapid fluctuations in an object so faint should be very difficult to detect,
+even with the 200-inch telescope.  For further details on the fluctuations, see
+the end of \S4.7.
+
+%% ============================================================
+%% S4.5 — Interaction of Outflowing Radiation with the Gas
+%% ============================================================
+
+\subsection{Interaction of Outflowing Radiation with the Gas}
+\label{sec:4.5}
+
+As the luminosity $L$ pours out from the region $r \sim 2r_g$, it interacts with the
+inflowing gas.  For the luminosities $L \sim 10^{32}$~ergs/sec and frequencies $\nu \sim 10^{14}$~Hz
+derived in the last section, one can readily verify that the infalling gas is optically
+thin to free-free absorption and to synchrotron reabsorption.  (See \S2.6 for
+basic concepts and equations used in such a calculation.)
+
+What of the electron concentration is sufficiently high, it can act as a ``blanket'' to
+impede the outflow of the radiation.  To test for such blanketing one can examine
+the optical depth of the gas to electron scattering.
+
+\begin{equation}
+\tau_{es}(r = 2r_g) = \int_{2r_g}^{\infty} \kappa_{es} \rho\, dr
+\simeq (1 \times 10^{-9})(M/M_\odot)(\rho_\infty/10^{-24}~\text{g\,cm}^{-3})(T_\infty/10^4\,\text{K})^{-3/2}\,.
+\tag{4.5.1}
+\end{equation}
+
+(A more careful calculation would replace the nonrelativistic absorption
+coefficient $\kappa_{es} = 0.4$~cm$^2$/g by the coefficient appropriate to relativistic
+electrons, since $T \sim 10^{12}$~K at $r \sim r_g$; such a calculation would also reveal
+extreme optical thinness.)  (ii) Since the outgoing photons have energies
+$h\nu \sim 10$~eV far less than the electron kinetic energies, Compton scattering can
+modify the spectrum, producing high-energy photons [see eq.\ (2.4.9)].  However,
+the extreme optical thinness guarantees that only about one photon in a million
+scatters; so this effect can be ignored.  (iii) The outpouring photons exert a
+pressure on the infalling gas when they scatter, and this effect can retard the
+inflow.  Notice that the magnitude of the first two effects is governed by the
+
+\bigskip
+%% ============================================================
+%% Page 400
+%% ============================================================
+
+density of the inflowing gas.  By contrast, the magnitude of the pressure effect
+is governed by the luminosity of the outpouring radiation.  Let us calculate this
+effect explicitly, at radii sufficiently large that the electrons are nonrelativistic.
+
+Because the electron scattering cross-section $d\sigma/d\Omega = \tfrac{1}{2}r_0^2(1+\cos^2\theta)$ is
+symmetric between forward and backward angles, $h\nu/c$, to the electron.  Hence, the time-averaged
+photon force acting on an electron at radius $r$ is
+
+\begin{equation}
+\langle\text{Force}\rangle = \left\langle\frac{d(\text{momentum})}{dt}\right\rangle
+= \int \frac{d(\text{number of photons})}{d(\text{area})\,dt\,d\nu}\, h\nu\,\sigma_e\, d\nu
+\tag{4.5.2}
+\end{equation}
+%
+\[
+= \sigma_{eF} F = \sigma_e (L/4\pi r^2)\,,
+\]
+%
+where $\sigma_e = (8\pi/3)r_0^2 = 0.657 \times 10^{-24}$~cm$^2$ is the total scattering cross section,
+$F$ is the radiation flux (ergs~cm$^{-2}$~sec$^{-1}$) and $L$ is the total luminosity of the hole.
+Notice that this time-averaged force is completely independent of the spectrum
+of the radiation (so long as most of the photons have $h\nu \ll m_e c^2$ as seen in the
+electron rest frame, so that nonrelativistic cross sections are applicable).  It is
+also independent of the optical thickness---being equally valid for $\tau \gg 1$, in
+which case
+
+$F \ll J$ (see \S2.6 for notation).
+
+The pull of gravity must work against this $\sigma_e^{} (L/4\pi r^2)$ force.  The photon force
+acts almost entirely on the electrons ($\sigma_e \sim 1$~(mass)$^{-2}$, so each proton feels a
+force $3 \times 10^6$ times weaker than that felt by an electron).  By contrast, the
+acceleration of gravity acts equally on electrons and photons.  Hence, the electrons
+move outward and slightly relative to the photons, creating an electric field that
+transmits the photon force $\sigma_e L/4\pi r^2$ from electrons to protons.  The net force
+that then acts on proton (assuming a completely ionized hydrogen gas) is
+
+\begin{equation}
+\langle\text{Force}\rangle_{\text{total}} = \frac{\sigma_e L}{4\pi r^2} - \frac{GMm_p}{r^2}\,.
+\tag{4.5.3}
+\end{equation}
+
+Thus, there is a critical luminosity [``Eddington'' (1926) limit]
+
+\begin{equation}
+L_{\text{crit}} \equiv \frac{4\pi G M m_p}{\sigma_e}
+= (1.3 \times 10^{38}~\text{ergs/sec})\,(M/M_\odot)
+\tag{4.5.4}
+\end{equation}
+
+such that for $L \ll L_{\text{crit}}$ gravity dominates at all radii, but for $L \gg L_{\text{crit}}$ photon
+pressure dominates at all radii.  \cite{Zeldovich1964} derived this limit for the case of
+stellar equilibrium.  \cite{Zeldovich1964} derived this limit for the case of
+theory for the cases of quasars and accretion.
+
+For the case of current interest---a black hole of $M\sim 1$ to $100\,M_\odot$ swallowing
+interstellar gas---the luminosity is far below the critical value, so the photon
+pressure can be ignored.
+
+%% ============================================================
+%% Page 401
+%% ============================================================
+
+However, in other contexts the accretion rate $\dot{M}_0$ may be so great, and the
+efficiency $\xi$ for converting the inflowing mass-energy into outgrowing luminosity
+$L$ may be sufficiently high that
+
+\begin{equation}
+\frac{L}{L_{\text{crit}}} = \frac{\xi \dot{M}_0 c^2}{L_{\text{crit}}}
+\lesssim \frac{\xi}{0.1} \left(\frac{\dot{M}_0}{10^{18}~\text{g/sec}}\right)
+\tag{4.5.5}
+\end{equation}
+
+may temporarily exceed unity.  When this happens, the photon pressure will
+impede further mass inflow, thereby reducing the luminosity to $L \lesssim L_{\text{crit}}$.  Such
+accretion is said to be ``\emph{self-regulated}''.  Self-regulated accretion, with modifications due to lack of spherical symmetry, may be important for black holes in
+close binary systems; see \S5.13.  However, it is unimportant for the case at
+hand.
+
+The outflowing radiation from a black hole in interstellar space ($L \sim 10^{32}$
+ergs/sec, $\nu \sim 10^{14}$--$10^{15}$~Hz) can also interact with the surrounding interstellar
+gas.  One can verify that the radiation is sufficiently intense to keep the gas at a
+temperature $T_\infty \sim 10^4$~K in the neighborhood of $r = r_t$, and to keep it partially
+ionized.
+
+%% ============================================================
+%% S4.6 — Validity of the Hydrodynamical Approximation
+%% ============================================================
+
+\subsection{Validity of the Hydrodynamical Approximation}
+\label{sec:4.6}
+
+The above model for accretion onto an interstellar black hole relies crucially on
+the validity of the hydrodynamical approximation at and outside the sonic point,
+and on equipartition assumptions inside the sonic point.  If the gas were to behave
+like independent particles rather than like a fluid, then the accretion rate would
+be greatly reduced (see \S4.1).  Thus, it is crucial to check the validity of the
+hydrodynamical approximation.
+
+In an ionized hydrogen plasma \emph{without} magnetic fields, the deflection of
+protons away from straight-line paths is caused primarily by the cumulative
+effects of many small-angle Coulomb scatterings.  The total distance a proton
+must travel before the ``random-walk'' deflections add up to an angle of ${\sim}90^\circ$
+is [see, e.g., \cite{Shkarofsky1966} or \cite{Pikelner1961}]
+
+\begin{equation}
+\lambda_p = \frac{9}{4\pi}\,\frac{(kT)^2}{n_p e^4 L_c}
+\simeq (7 \times 10^{12}~\text{cm})\left(\frac{\rho_\infty}{10^{-24}~\text{g\,cm}^{-3}}\right)^{-1}
+\left(\frac{T}{10^4\,\text{K}}\right)^{2}\,.
+\tag{4.6.1}
+\end{equation}
+
+Here $L_c$ is a ``Coulomb-logarithm'' (analogue of Gaunt factor in theory of
+Bremsstrahlung) given by
+
+\begin{equation}
+L_c \simeq 23 + \tfrac{3}{2}\ln (n_e/n_{\text{cm}^{-3}});
+\tag{4.6.2}
+\end{equation}
+
+$n_e$ and $n_p$ are the number densities of electrons and (ionized) protons; and we
+have evaluated $\lambda_p$ for the case of a fully ionized hydrogen plasma.  The plasma
+will behave like a fluid on scales $l \gg \lambda_p$, but like independent particles on scales
+$l \ll \lambda_p$.
+
+The scale of interest for determining the accretion rate is the sonic radius
+
+\begin{equation}
+r_s = \frac{5 - 3\Gamma}{4}\,\frac{GM}{a_\infty^2}
+\simeq (10^{13}~\text{cm})\left(\frac{M}{M_\odot}\right)
+\left(\frac{T_\infty}{10^4\,\text{K}}\right)^{-1}
+\tag{4.6.3}
+\end{equation}
+
+$(\ll \lambda_p)$.  The scale of interest for $\left(\frac{M}{M_\odot}\right)\left(\frac{T_\infty}{10^4\,\text{K}}\right)^{-1}$
+
+at which point $T \sim T_\infty$, $\rho \sim \rho_\infty$, so
+
+\begin{equation}
+\lambda_p(r_s) \sim 0.7 \left(\frac{M}{M_\odot}\right)^{-1}
+\left(\frac{T_\infty}{10^4\,\text{K}}\right)^{-1}\,.
+\tag{4.6.4}
+\end{equation}
+
+%% ============================================================
+%% Page 402
+%% ============================================================
+
+Thus, if one ignores the magnetic field, then the gas will not quite behave like a
+fluid near the sonic point---and it may fail even more to be fluid-like at small
+radii; cf.\ \S\,13.4 of ZN.
+
+The interstellar magnetic field, of strength $B_\infty \sim 10^{-6}$~G, can ``save'' the
+hydrodynamic approximation.  It deflects protons away from straight-line
+motion in a distance of the order of the Larmour radius
+
+\begin{equation}
+\lambda_L = \frac{m_p c\,v}{eB}
+\simeq (1 \times 10^{8}~\text{cm})
+\left(\frac{B}{10^{-6}~\text{G}}\right)^{-1}
+\left(\frac{T}{10^4\,\text{K}}\right)^{1/2}
+\tag{4.6.5}
+\end{equation}
+
+and this is true even when the thermal pressure of the plasma exceeds the
+magnetic pressure so that the field gets dragged about by the gas.  The Larmour
+radius is small compared to all macroscopic scales of interest (e.g.\ small compared
+to $r_S$ when one uses the values $B \sim B_\infty$ and $T \sim T_\infty$ appropriate to $r_S$).  Hence,
+the hydrodynamical approximation is fairly well justified.
+
+%% ============================================================
+%% S4.7 — Gas Flow Near the Horizon
+%% ============================================================
+
+\subsection{Gas Flow Near the Horizon}
+\label{sec:4.7}
+
+Near the horizon, $r \sim r_g$, relativistic effects will modify the Newtonian picture
+of accretion.  It is in fact difficult to solve for the relativistic flow using the
+relativistic Bernoulli equation (2.5.33) and the law of mass conservation (2.5.23').
+Such a solution is analogous to the Newtonian hydrodynamical solution studied
+in \S4.2.  However, such a solution is partially irrelevant because it ignores the
+role of the magnetic field, and such a solution is not needed because the intensity
+of the gravitational pull, as viewed in stationary frames near the horizon, is so
+great as to guarantee supersonic flow with qualitatively the same form as free-particle
+fall.  Thus, from a knowledge of geodesic orbits one can infer the main
+features of the flow.
+
+Consider, first, spherical accretion onto a nonrotating hole (Schwarzschild
+gravitational field).  A fluid element in the accreting gas, like a freely falling
+particle, reaches the horizon in finite proper time.  The moment of crossing the
+horizon is in no way peculiar, as seen by proper time.  The density does not
+reach infinity there; and the temperature does not reach infinity.  In fact,
+because the equation for radial geodesics in the Schwarzschild geometry
+
+\begin{equation}
+ds^2 = (1 - r_g/r)\,c^2\,dt^2 + (1 - r_g/r)^{-1}\,dr^2 + r^2\,d\Omega^2\,.
+\tag{4.7.1}
+\end{equation}
+
+has the first integral
+
+\begin{equation}
+(dr/d\tau)^2 = 2GM/r \quad\text{(for fall from rest at } r \gg r_g\text{)},
+\tag{4.7.2}
+\end{equation}
+
+and because the law of rest-mass conservation $\boldsymbol{\nabla}\cdot(\rho \fvec{u}) = 0$ has the first integral
+
+\begin{equation}
+4\pi r^2 \sqrt{-g}\, \rho\,(dr/d\tau) = \dot{M}_0\,,
+\tag{4.7.3}
+\end{equation}
+
+the density of rest mass must vary as
+
+\begin{equation}
+\rho \simeq \left(6 \times 10^{-12}~\text{g\,cm}^{-3}\right)
+\left(\frac{M}{M_\odot}\right)^{-1}
+\left(\frac{T_\infty}{10^4\,\text{K}}\right)^{-3/2}
+\,(r/r_g)^{-3/2}\,.
+\tag{4.7.4}
+\end{equation}
+
+This must be as true near and inside the horizon, $r \lesssim r_g$, as it is in the Newtonian
+realm $r \gg r_g$.  Similarly, the temperature will retain its Newtonian form (4.4.2):
+
+\begin{equation}
+T \simeq (10^{12}~\text{K})(r_g/r)\,;
+\tag{4.7.5}
+\end{equation}
+
+and the synchrotron emissivity will retain its Newtonian value (4.4.4).  However,
+the radiation which reaches infinity will be sharply cut off as the gas element
+passes through the horizon.
+
+\begin{equation}
+\left(\text{fraction of emitted radiation that}\atop
+\text{reaches } r = \infty \text{ from infalling gas at radius } r_f\right)
+\simeq \frac{27}{64}\left(1 - \frac{r_g}{r_f}\right)\,.
+\tag{4.7.6}
+\end{equation}
+
+In previous sections we have taken rough account of this cutoff and of the
+accompanying redshift by retaining the Newtonian luminosity down to $r = 2r_g$.
+
+In the case of a rotating (Kerr) hole, near and inside the ergosphere the
+dragging of inertial frames will swing the infalling gas into orbital rotation
+about the hole.  As the gas approaches the horizon, its angular velocity as seen
+from infinity must approach the angular velocity of the horizon,
+
+\begin{equation}
+\Omega \to \Omega_{\text{horizon}} = \frac{a}{r_+^2 + a^2}
+= \frac{c^3}{2GM}\,\frac{1}{(\text{sec})}\left(\frac{10^5}{M_*}\right)
+\quad\text{(geometrized units, } c = G = 1\text{)}
+\tag{4.7.7}
+\end{equation}
+
+for ``maximally rotating hole'', $a = M$.
+
+Here $a$ is the hole's angular momentum per unit mass.  Any extra-luminous hot
+spot in the gas (e.g.\ a region where magnetic field lines are reconnecting; cf.\
+\S2.9) must orbit the hole with this angular velocity as it falls inward.  The
+brightness of the hole as seen at Earth will be modulated with a period
+$P \simeq 4\pi r_g/\Omega \gtrsim (10^{-4}~\text{sec})(M/M_\odot)$ as a result of the Doppler shift of the spot's
+light and the bending of its rays.  (A factor of $2\pi/\Omega$ is the orbital period; the
+other factor of $2\pi/\Omega$ is the light travel time between the radius at which the
+spot is located at the beginning of one period and the radius to which it has
+fallen at the end of the period.)  Thus, one might expect quasiperiodic
+fluctuations in the light from a black hole living alone in the interstellar medium.
+
+\bibliography{agent_15}
+
+\end{document}
