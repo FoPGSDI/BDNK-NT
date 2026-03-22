@@ -1,0 +1,402 @@
+% Agent 21: Pages 423--426 (PDF pp.\,40--43)
+% Sections 5.4 (cont.) and 5.5
+% Equations (5.4.1a)--(5.5.9)
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%  Section 5.4  Properties of the Kerr Metric Relevant
+%%               to Accreting Disks  (continued)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Before examining the details of the structure of an accreting disk (\S5.9),
+we shall extend our equations of structure from Newtonian theory to general
+relativity.  In this extension, we shall assume that the spacetime geometry
+outside the hole is that of Kerr, and we shall assume that the disk lies in the
+equatorial plane of the Kerr metric.
+
+To treat the structure of such a disk, we shall need a number of properties
+of ``direct'' circular orbits in the equatorial plane of the Kerr metric (orbits that
+rotate in the same direction as the black hole).  Most of our formulas are taken
+from Bardeen, Press and Teukolsky (1972)\cite{Bardeen1972}, or Bardeen (1973)\cite{Bardeen1973} and are readily
+derivable from results quoted there.
+
+For simplicity, we shall be splitting formulas into Newtonian limits plus relativistic
+corrections, and we shall use the following functions with value unity far
+from the hole:
+%
+\begin{align}
+\mathscr{A} &\equiv 1 + a_*^2/r_*^2 + 2a_*^2/r_*^3 , \tag{5.4.1a}\\[4pt]
+\mathscr{B} &\equiv 1 + a_*/r_*^{3/2} , \tag{5.4.1b}\\[4pt]
+\mathscr{C} &\equiv 1 - 3/r_* + 2a_*/r_*^{3/2} , \tag{5.4.1c}\\[4pt]
+\mathscr{D} &\equiv 1 - 2/r_* + a_*^2/r_*^2 , \tag{5.4.1d}\\[4pt]
+\mathscr{E} &\equiv 1 + 4a_*^2/r_*^2 - 4a_*^2/r_*^3 + 3a_*^4/r_*^4 , \tag{5.4.1e}\\[4pt]
+\mathscr{F} &\equiv 1 - 2a_*/r_*^{3/2} + a_*^2/r_*^2 , \tag{5.4.1f}\\[4pt]
+\mathscr{G} &\equiv 1 - 2/r_* + a_*/r_*^{3/2} . \tag{5.4.1g}
+\end{align}
+
+Here
+\begin{equation}
+\mathscr{J} \equiv 1 - 2/r_* + a_* /r_*^{3/2} . \tag{5.4.1h}
+\end{equation}
+%
+\begin{equation}
+\varrho \equiv \exp\!\Bigl[-\tfrac{3}{2}\int_{r_{ms}}^{r}\frac{\mathscr{G}\,\mathscr{F}}
+{\mathscr{B}\mathscr{C}\,\mathscr{F}^{3/2}}\;\frac{dr_*}{r_{ms}}\Bigr]
+= \frac{\mathscr{F}}{\mathscr{G}^{1/2}}\cdot\frac{L_{ms}}{(Mr)^{1/2}}.
+\tag{5.4.1i}
+\end{equation}
+%
+\begin{equation}
+\varrho = \frac{g^{-3}}{2r_*^{1/2}}\int_{r_{ms}}^{r}
+\frac{\mathscr{G}\,\mathscr{F}}
+{\mathscr{B}\mathscr{C}\,\mathscr{F}^{3/2}}
+\;\frac{dr_*}{r_{ms}}.
+\tag{5.4.1j}
+\end{equation}
+
+Here $M$ and $a$ are the mass and specific angular momentum of the black hole, $r$ is
+radius; $r_*$ and $a_*$ are dimensionless measures of $r$ and $a$
+\begin{equation}
+r_* = r/M;\qquad a_* = a/M;
+\end{equation}
+
+$\tilde{L}_{ms}$ is a constant defined below, and $\tilde{L}$ is a function of $r$ defined below.
+
+The properties of direct circular orbits that we shall need are the following.
+
+\medskip
+\noindent
+\textbf{(i) Form of Kerr metric in and near equatorial plane}
+$\bigl(|\theta - \pi/2| \ll 1\bigr)$:
+%
+\begin{equation}
+ds^2 = -\frac{r^2\Delta}{\mathscr{A}}\,dt^2 + \frac{\mathscr{A}}{r^2}
+\bigl(d\phi - \omega\,dt\bigr)^2 + r^2\,d\theta^2 + 2Mra^2\,dz^2 ,
+\tag{5.4.2a}
+\end{equation}
+%
+\begin{equation}
+\Delta \equiv r^2 - 2Mr + a^2 = r^2\mathscr{D},\qquad
+\mathscr{A} = r^4 + r^2a^2 + 2Mra^2 = r^4\,\mathscr{A},
+\tag{5.4.2b}
+\end{equation}
+%
+\begin{equation}
+\omega = 2Mar/\mathscr{A} = (2Ma/r^3)\,\mathscr{A}^{-1}.
+\tag{5.4.2b}
+\end{equation}
+
+[We have replaced the usual angular coordinate $\theta$ by
+$z = r\cos\theta \simeq r(\theta - \pi/2)$.]
+Note that the square root of the determinant of $g_{\alpha\beta}$ is
+$(-g)^{1/2} = r$.
+
+\medskip
+\noindent
+\textbf{(ii) Angular velocity of orbit:}
+%
+\begin{equation}
+\Omega \equiv \frac{d\phi}{dt} = \frac{M^{1/2}}{r^{3/2} + aM^{1/2}}
+= \frac{M^{1/2}}{r^{3/2}\,\mathscr{B}}.
+\tag{5.4.3}
+\end{equation}
+
+\medskip
+\noindent
+\textbf{(iii) Linear velocity of orbit relative to ``locally nonrotating observer'':}
+%
+\begin{equation}
+V^{(\phi)} = r^{-1}\mathscr{A}^{1/2}\,(\Omega - \omega)
+= \frac{M^{1/2}}{r^{1/2}}\;\frac{\mathscr{F}}
+{\mathscr{G}^{1/2}\,\mathscr{B}}.
+\tag{5.4.4}
+\end{equation}
+
+\medskip
+\noindent
+\textbf{(iv) ``$\gamma$-factor'' corresponding to this linear velocity:}
+%
+\begin{equation}
+\gamma = \bigl(1 - V^{(\phi)2}\bigr)^{-1/2}
+= -\frac{\mathscr{B}}{r^{1/2}\mathscr{C}^{1/2}\mathscr{G}}.
+\tag{5.4.4b}
+\end{equation}
+
+\medskip
+\noindent
+\textbf{(v) Orthonormal frame attached to an orbiting particle with 4-velocity $u$
+(``orbiting frame''):}
+%
+\begin{align}
+\mathbf{e}_{\hat{0}} &= -\frac{\mathscr{B}}{\mathscr{C}^{1/2}}\left(
+\frac{r^2}{\mathscr{A}}\right)^{1/2}
+\left(\frac{\partial}{\partial t}
++ \Omega\,\frac{\partial}{\partial\phi}\right),
+\tag{5.4.5a}\\[6pt]
+\mathbf{e}_6 &= r(4/r^2\Delta)^{1/2}
+\left(\frac{r^2}{\Delta}\right)^{1/2}
+\frac{\partial}{\partial\phi}
++ \gamma V^{(\phi)}\,\mathscr{G}^{1/2}
+\frac{\partial}{\partial\phi},\notag\\[3pt]
+&= \frac{\mathscr{B}\mathscr{G}^{1/2}}{r^{3/2}\,\mathscr{C}^{1/2}}
+\left(\frac{\partial}{\partial t}
++ \omega\,\frac{\partial}{\partial\phi}\right)
++ \frac{\mathscr{G}^{1/2}\,\mathscr{B}}{\mathscr{C}^{1/2}}
+\left(\frac{\mathscr{A}}{r}\right)^{1/2}
+\frac{\partial}{\partial\phi},
+\tag{5.4.5a}\\[6pt]
+\mathbf{e}_{\hat{r}} &= \frac{\Delta^{1/2}}{r}\,\frac{\partial}{\partial r}
+= \mathscr{D}^{1/2}\,\frac{\partial}{\partial r},
+\tag{5.4.5b}\\[6pt]
+\mathbf{e}_z &= \frac{\partial}{\partial z}.
+\end{align}
+
+\medskip
+\noindent
+\textbf{(vi) Corresponding orthonormal basis of one-forms:}
+%
+\begin{align}
+\boldsymbol{\omega}^{\hat{0}} &= \frac{\mathscr{G}}{\mathscr{C}^{1/2}}\,dt
+- \frac{\mathscr{F}}{\mathscr{C}^{1/2}}\left(\frac{M}{r}\right)^{1/2}
+r\,d\phi ,
+\tag{5.4.5b}\\[4pt]
+\boldsymbol{\omega}^{\hat{3}} &= \frac{\mathscr{B}\mathscr{G}^{1/2}}
+{\mathscr{C}^{1/2}}\left(\frac{M}{r}\right)^{1/2}
+\frac{1}{r}\,d\phi
+- \frac{\mathscr{G}}{\mathscr{C}^{1/2}}\;dt ,
+\notag\\[4pt]
+\boldsymbol{\omega}^{\hat{3}} &= \mathscr{G}^{-1/2}\,dr_* ,
+\tag{5.4.5b}\\[4pt]
+\boldsymbol{\omega}^{\hat{3}} &= dz .
+\end{align}
+
+\medskip
+\noindent
+\textbf{(vii) Shear of the congruence of circular, equatorial geodesics} (congruence with
+4-velocity $\mathbf{u} = \mathbf{e}_{\hat{0}}$):
+%
+\begin{equation}
+\sigma_{\hat{0}\hat{3}}^{(\text{EG})}
+= \sigma_{\hat{3}\hat{0}}^{(\text{EG})} = \frac{3\,M^{1/2}\,\mathscr{G}}
+{4\,r^{3/2}\,\mathscr{C}\,\mathscr{B}}\;,
+\tag{5.4.6}
+\end{equation}
+%
+all other $\sigma_{\hat{\alpha}\hat{\beta}}^{(\text{EG})}$ vanish.
+
+\medskip
+\noindent
+\textbf{(viii) Angular momentum per unit mass for circular orbit:}
+%
+\begin{equation}
+\tilde{L} = u_\phi = M^{1/2}\,r^{1/2}\,\mathscr{F}/\mathscr{C}^{1/2}.
+\tag{5.4.7a}
+\end{equation}
+
+\medskip
+\noindent
+\textbf{(ix) Energy per unit mass for circular orbit:}
+%
+\begin{equation}
+\tilde{E} = |u_0| = \mathscr{G}/\mathscr{C}^{1/2}.
+\tag{5.4.7b}
+\end{equation}
+
+\medskip
+\noindent
+\textbf{(x) Minimum radius for stable circular orbits (``marginally stable'' orbits) $r_{ms}$:}
+%
+\begin{align}
+r_{ms} &- 6Mr_{ms} + 8aM^{1/2}\,r_{ms}^{1/2} - 3a^2 = 0,\notag\\[4pt]
+r_{ms} &= M\bigl\{3 + Z_2 - \bigl[(3 - Z_1)(3 + Z_1 + 2Z_2)\bigr]^{1/2}\bigr\},
+\tag{5.4.8a}\\[4pt]
+Z_1 &= 1 + (1 - a^2/M^2)^{1/3}\bigl[(1 + a/M)^{1/3} + (1 - a/M)^{1/3}\bigr],
+\tag{5.4.8b}\\[4pt]
+Z_2 &= (3a^2/M^2 + Z_1^2)^{1/2}.
+\end{align}
+
+\medskip
+\noindent
+\textbf{(xi) Angular momentum per unit mass for last stable circular orbit:}
+%
+\begin{equation}
+\tilde{L}_{ms} = M^{1/2}\,r_{ms}^{1/2},\qquad
+x = M^{1/2}\,r_{ms}^{1/2}.
+\tag{5.4.9}
+\end{equation}
+%
+\begin{equation}
+\tilde{L}_{ms} = \frac{2M}{3^{1/2}\,x}\,(3x - 2a).
+\end{equation}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%  Section 5.5  Relativistic Model for Disk:
+%%               Underlying Assumptions
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Relativistic Model for Disk: Underlying Assumptions}
+\label{sec:5.5}
+
+In order to avoid confusion, we shall lay more careful foundations for our
+relativistic analysis of disk structure than we did for the Newtonian analysis
+of \S5.2.
+
+We shall split the calculation of disk structure into three parts: the radial
+structure (\S5.6), the vertical structure (\S\S5.7, 5.8) and the propagation of
+radiation from the disk's surface to the observer.
+
+In calculating the disk structure, we shall make the following assumptions
+and idealizations:
+
+\begin{enumerate}
+\item[(i)] The central plane of the disk coincides with the equatorial plane of the
+black hole.
+
+\item[(ii)] The companion star in the binary system has negligible gravitational
+influence on the disk structure (assumption valid in inner part of disk;
+not at outer edges).
+
+\item[(iii)] The disk is thin; i.e., its proper thickness $2h$, as measured in the orbiting
+frame of the disk's matter (same as proper thickness measured by any
+other observer who moves in the equatorial plane), satisfies
+%
+\begin{equation}
+h(r) \ll r.
+\tag{5.5.1}
+\end{equation}
+
+\item[(iv)] The disk is in a quasisteady state.  This assumption can be made precise
+in terms of an averaging process.  Pick a particular height $z$ ($|z| \leq h \ll r$)
+above the central plane of the disk, and pick a particular quantity $\Psi$
+(e.g., $\Psi$ = density or temperature of 4-velocity of gas) to be measured at
+height~$z$.  Average $\Psi$ over all $\phi$ (Lie dragging it along $\partial/\partial\phi$ while averaging,
+if it is a vector or tensor), average over a proper radial distance of order
+$2h$, and average over the time interval required for gas to move inward
+a distance $2h$:
+%
+\begin{equation}
+\langle\Psi\rangle = \frac{1}{2\pi\Delta r\,\Delta t}
+\int_{r-\epsilon r/2}^{r+\epsilon r/2}
+\int_{-\epsilon t/2}^{+\epsilon t/2}
+\left(\mathscr{G}^{1/3}\mathscr{B}\right)^{-\epsilon r/2}
+\;\Psi\,d\phi\,dt\,dr;
+\tag{5.5.2}
+\end{equation}
+%
+$\Delta r = 2h$, $\Delta t = 2h$.  The assumption of a quasisteady state means
+that $\langle\Psi\rangle$ is time-independent---i.e.,
+%
+\begin{equation}
+\frac{\partial\langle\Psi\rangle}{\partial t} = 0
+\quad\text{if}~\langle\Psi\rangle~\text{is a scalar or tensor},
+\tag{5.5.3}
+\end{equation}
+%
+\begin{equation}
+\mathscr{L}_{\partial/\partial t}\langle\Psi\rangle = 0
+\quad\text{if}~\langle\Psi\rangle~\text{is a vector or tensor},
+\end{equation}
+%
+where $\mathscr{L}_{\partial/\partial t}$ is the Lie derivative along the Killing vector
+$\partial/\partial t$.  The
+disk structure may be very far from steady state on scales $\lesssim h$; for
+example, it may have turbulence, flux reconnection, and flares on such
+scales.  Such local violence will not invalidate the analysis that follows.
+
+\item[(v)] When viewed ``macroscopically'' (turbulence removed by the above
+averaging process), the gas of the disk moves (very nearly) in direct,
+circular, geodesic orbits---i.e., with 4-velocity $\langle\mathbf{u}\rangle \approx \mathbf{e}_{\hat{0}}$.
+Superimposed
+on this orbital motion is a very small radial flow, produced by viscous
+stresses, and an even smaller flow in the vertical direction, as required
+by the variation of disk thickness with radius:
+%
+\begin{equation}
+\langle u\rangle = \frac{1}{\bigl[1-(v^{\hat{r}})^2 - (v^{\hat{z}})^2\bigr]^{1/2}}
+\bigl[
+  \mathbf{e}_{\hat{0}}
++ v^{\hat{r}}\,\mathbf{e}_{\hat{r}}
++ v^{\hat{z}}\,\mathbf{e}_z
+\bigr],
+\tag{5.5.4}
+\end{equation}
+%
+\begin{equation}
+|v^{\hat{r}}(r,z)| \ll V^{(\phi)} \simeq (M/r)^{1/2},
+\tag{5.5.5}
+\end{equation}
+\end{enumerate}
+
+By assuming that the orbital motion of the gas is very nearly geodesic,
+we are automatically requiring that the gravitational pull of the hole
+dominates over radial pressure gradients and over stresses.  In
+order of magnitude the gravitational pull of the hole (``gravitational
+acceleration'') is the gradient of the gravitational binding energy,
+$(1 - \tilde{E})$; and the acceleration due to pressure gradients and shears is
+$\sim (T^{\hat{r}\hat{k}}/\rho_0)_r$.  Thus, we are automatically demanding that the
+stress tensor in the fluid's rest frame ($=$ orbiting orthonormal frame)
+satisfy
+%
+\begin{equation}
+\frac{T^{\hat{r}\hat{k}}(r,z)}{\rho_0(r,z)} \ll 1 - \tilde{E}(r)
+\approx \frac{N}{2}\;\frac{1}{r}\;\frac{M}{r}.
+\tag{5.5.6}
+\end{equation}
+
+(Here $\approx$ means ``equals in the Newtonian limit''.)
+
+Because the specific internal energy $\Pi$ is approximately equal to
+$T^{\hat{k}\hat{k}}/\rho_0$, the assumption of nearly geodesic orbits implies the condition
+of ``negligible specific heat'':
+%
+\begin{equation}
+\Pi(r,z) \ll 1 - \tilde{E}(r)
+\approx \frac{N}{2}\;\frac{1}{r}\;\frac{M}{r}.
+\tag{5.5.7}
+\end{equation}
+
+In words---the density of internal energy, $\rho_0\Pi$ (including thermal
+energy of gas, energy of turbulent motions, and magnetic-field energy)
+is much smaller than the density of gravitational binding energy
+$\rho_0(1 - \tilde{E})$.  The mass-averaged radial velocity of the gas
+
+Notice that conditions (5.5.6) and (5.5.7) imply
+%
+\begin{equation}
+\Pi \ll 1, \qquad T_{\hat{r}\hat{k}}/\rho_0 \ll 1.
+\tag{5.5.8}
+\end{equation}
+
+at all $r$ and $z$---even near the black hole.  This means that, although
+general relativistic effects (spacetime curvature; deviations from
+Newtonian gravity) are very important near the hole, one can everywhere
+ignore special relativistic corrections to the local thermodynamic,
+hydrodynamic, and radiative properties of the gas.  Contrast this
+situation with the interior of a neutron star and the early stages of the
+Universe, where not only is gravity relativistic but so is the matter
+$(\Pi \geq 1,\; p/\rho_0 \geq 1,\; T_{\hat{r}\hat{k}}/\rho_0 \geq 1)$.
+
+The mean local rest frame
+$[\mathbf{e}_{\hat{0}},\,\mathbf{e}_{\hat{r}},\,\mathbf{e}_z]$;
+eqs.\ (5.4.5)].  (iii)  The mean local rest-
+frame of the gas
+%
+\begin{equation}
+\bar{\mathbf{e}}_{\hat{0}} = \langle\mathbf{u}\rangle\quad
+\text{as given by eq.\ (5.5.4)},
+\end{equation}
+%
+\begin{equation}
+\bar{\mathbf{e}}_{\hat{r}} = (\mathbf{e}_{\hat{r}} + v^{\hat{r}}\,\mathbf{e}_{\hat{0}})
+/|\mathbf{e}_{\hat{r}} + v^{\hat{r}}\,\mathbf{e}_{\hat{0}}|,
+\end{equation}
+%
+\begin{equation}
+\bar{\mathbf{e}}_z = (\mathbf{e}_z + v^{\hat{z}}\,\mathbf{e}_{\hat{0}}
+- \hat{v}^{\hat{z}}\,\bar{\mathbf{e}}_{\hat{0}})/
+|\mathbf{e}_z + v^{\hat{z}}\,\mathbf{e}_{\hat{0}}
+- \hat{v}^{\hat{z}}\,\bar{\mathbf{e}}_{\hat{0}}|.
+\tag{5.5.9}
+\end{equation}
+
+The mean local rest frame is nearly identical to the orbiting orthonormal frame.
