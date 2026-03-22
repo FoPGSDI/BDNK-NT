@@ -1,0 +1,342 @@
+% Agent 02: Book pages 349--352, Section 2.1 (continued)
+% Covers equations (2.1.6b) second part through (2.1.22) and Figure 2.1.1
+%
+% Page 349: eq (2.1.6b) conclusion, "Radiation from a nonrelativistic beam
+%           of electrons," eqs (2.1.7)--(2.1.8), Forbidden region (2.1.9a),
+%           Photon-discreteness region (2.1.9b)
+% Page 350: Large-angle region eqs (2.1.10)--(2.1.13),
+%           Small-angle classical region eq (2.1.14)
+% Page 351: eqs (2.1.15)--(2.1.19), start of uncertainty-principle region
+% Page 352: eqs (2.1.20)--(2.1.22), Figure 2.1.1
+
+%=============================================================================
+% [Continuation from Agent 01: large-angle scattering, eq (2.1.6b)]
+%=============================================================================
+
+\noindent it swings into a sharp turn around the nucleus; and it emerges
+at $t = +\tau/2$ with its initial velocity precisely reversed.
+Consequently, $|\Delta v_\omega|$ is equal to~$2v_f$, and $I(\omega)$~is
+\begin{equation}
+  I(\omega)
+  = \frac{32}{3}\,\frac{e^{2}}{c^{3}}
+    \left(\frac{Zr_0\,\omega\,c^{2}}{3}\right)^{\!2/3}
+  \quad\text{for}\quad
+  \frac{v}{b_{s-1}} < \omega < \frac{v_p}{r_p}
+  = \frac{c(2Zr_0\,b_{s-1}^{3})^{1/2}}{b^{3}}\,.
+  \tag{2.1.6b}
+\end{equation}
+
+%=============================================================================
+% Radiation from a nonrelativistic beam of electrons
+%=============================================================================
+
+\bigskip
+\noindent\textit{Radiation from a nonrelativistic beam of electrons}
+
+\medskip
+
+Consider a single ion of charge~$Z$, at rest in the laboratory frame.
+Bombard the ion with a monochromatic beam of electrons with speed
+$v \ll 1$ and flux (number per unit time per unit area)~$S$.  Examine the
+radiation of frequency~$\nu$ (circular frequency $\omega = 2\pi\nu$)
+emitted by the electrons as they scatter off the nucleus.
+Let $\mathscr{P}_\nu$ be the total power emitted per unit frequency
+(ergs~sec$^{-1}$~Hz$^{-1}$); and define the emission cross section per
+unit frequency, $d\sigma/d\nu$, by
+\begin{equation}
+  \mathscr{P}_\nu = (d\sigma/d\nu)\,S\,h\nu.
+  \tag{2.1.7}
+\end{equation}
+The dependence of the emission cross section on photon frequency~$\nu$
+and on electron speed~$v$ is most conveniently expressed in terms of
+the two dimensionless parameters
+\begin{equation}
+  \frac{h\nu}{\tfrac{1}{2}m_e v^{2}}\,,
+  \qquad
+  \frac{\tfrac{1}{2}m_e v^{2}}{2R_y}
+  = \left(\frac{v/c}{\alpha Z}\right)^{\!2}.
+  \tag{2.1.8}
+\end{equation}
+
+On a sheet of paper (Figure~\ref{fig:2.1.1}) plot
+$(h\nu)/(\tfrac{1}{2}m_e v^{2})$ vertically, and plot
+$(\tfrac{1}{2}m_e v^{2})/(2R_y)$ horizontally.  This 2-dimensional plot
+can be split into several different regions, in each of which the details
+of the emission process are different.
+
+%--- Forbidden region ---------------------------------------------------
+\bigskip
+\noindent\textit{Forbidden region}\quad
+The individual photons emitted while scattering cannot have energies
+greater than the electron kinetic energy---unless the electron gets
+captured into a bound state around the ion.  But capture produces
+``free-bound'' rather than bremsstrahlung radiation (\S\,2.2).
+Consequently, the region
+\begin{equation}
+  (h\nu)/(\tfrac{1}{2}m_e v^{2}) > 1
+  \tag{2.1.9a}
+\end{equation}
+of Figure~\ref{fig:2.1.1} is a ``forbidden region''; no bremsstrahlung
+is emitted in this region; $d\sigma/d\nu$ vanishes in this region.
+
+%--- Photon-discreteness region -----------------------------------------
+\bigskip
+\noindent\textit{Photon-discreteness region}\quad In the region
+\begin{equation}
+  \tfrac{1}{3} < (h\nu)/(\tfrac{1}{2}m_e v^{2}) \le 1
+  \tag{2.1.9b}
+\end{equation}
+no more than 3~photons can be emitted by each scattering.  This ``photon
+discreteness'' has a significant effect on the emission cross section,
+cutting it down toward zero as one approaches the edge of the forbidden
+region, $(h\nu)/(\tfrac{1}{2}m_e v^{2}) = 1$.  No classical calculation
+can reveal such an effect; the photon-discreteness region must be
+analyzed in a quantum mechanical manner; see, e.g., Heitler
+\cite{Heitler1954}, and see below.
+
+%=============================================================================
+% Large-angle region (page 350)
+%=============================================================================
+
+\bigskip
+\noindent\textit{Large-angle region}\quad
+All small-angle scatterings last too long
+($\Delta\tau \sim b/v > b_{s-1}/v$; cf.\ eq.~(2.1.4)) to produce any
+radiation of $\tau = 1/\omega < b_{s-1}/v$; cf.\ eq.~(2.1.4).
+Consequently, in the region
+\begin{equation}
+  \frac{h\nu}{\tfrac{1}{2}m_e v^{2}}
+  > \frac{h\omega}{\tfrac{1}{2}m_e v^{2}}
+  = \left(\frac{\tfrac{1}{2}m_e v^{2}}{Z^{2}R_y}\right)^{\!1/2}
+  \tag{2.1.10}
+\end{equation}
+only large-angle scatterings produce radiation.  This region is shown in
+Figure~\ref{fig:2.1.1}.  The power per unit frequency emitted at a fixed
+frequency~$\nu$ in this region is
+\begin{equation}
+  \mathscr{P}_\nu
+  = 2\pi \int_0^{b_{\max}} I(\omega)\,S\,2\pi\,b\,db\,,
+  \tag{2.1.11a}
+\end{equation}
+where $I(\omega)$ is given by the large-angle formula~(2.1.6), and
+$b_{\max}$ is the ``cutoff''
+\begin{equation}
+  b_{\max} = (2c^{2}\,Zr_0\,b_{s-1}^{3})^{1/6}
+  \tag{2.1.11b}
+\end{equation}
+in that formula.
+
+Performing the integration, dividing by $S\,h\nu$ to obtain
+$d\sigma/d\nu$, and reexpressing the result in terms of fundamental
+atomic constants, one obtains
+\begin{equation}
+  \frac{d\sigma}{d\nu}
+  = \frac{2^{1/3}\,16\,\alpha\,c^{2}\,Z^{2}\,r_0^{2}}
+         {3^{5/3}\;v^{2}}\,.
+\end{equation}
+
+A more exact classical calculation gives a slightly different numerical
+coefficient:
+\begin{equation}
+  \left(\frac{d\sigma}{d\nu}\right)_{\!\text{LA}}
+  = \frac{16\pi}{3\sqrt{3}}\;
+    \frac{\alpha\,c^{2}\,Z^{2}\,r_0^{2}}{v^{2}}\,.
+  \tag{2.1.12}
+\end{equation}
+
+\noindent(Here ``LA'' stands for ``large-angle region''.)
+
+In other regions of Figure~\ref{fig:2.1.1}, one gets other formulas for
+$d\sigma/d\nu$ (see below).  It is conventional in all regions to lump
+the deviations from this large-angle cross section into a correction
+$G(\nu,v)$ which is called the ``Gaunt factor'':
+\begin{equation}
+  G(\nu,v)
+  \equiv \frac{(d\sigma/d\nu)}{(d\sigma/d\nu)_{\text{LA}}}\,.
+  \tag{2.1.13}
+\end{equation}
+
+Thus, in the large-angle region $G = 1$; and in the forbidden region
+$G = 0$.  Throughout the large-angle and photon-discreteness portion of
+the large-angle region, $G$~remains approximately~1; see
+Figure~\ref{fig:2.1.1}.
+
+%=============================================================================
+% Small-angle, classical region (pages 350--351)
+%=============================================================================
+
+\bigskip
+\noindent\textit{Small-angle, classical region}\quad
+In the region $\tau = 1/\omega \gg b_{s-1}/v$---i.e.
+\begin{equation}
+  \frac{h\nu}{\tfrac{1}{2}m_e v^{2}}
+  \ll \left(\frac{\tfrac{1}{2}m_e v^{2}}{2R_y}\right)^{\!1/2},
+  \tag{2.1.14}
+\end{equation}
+radiation is produced by small-angle scatterings as well as by
+large-angle scatterings.  As a function of impact parameter~$b$, the
+energy radiated by a single electron is constant in the large-angle
+region, $b < b_{s-1}$ [eq.~(2.1.6b)], and decreases as~$1/b^{2}$ in
+the small-angle region, $b > b_{s-1}$ [eq.~(2.1.4)].  Hence, when one
+integrates over $2\pi\,b\,db$ to get the power radiated,
+$\mathscr{P}_\nu$, one obtains
+
+\smallskip
+\noindent(contribution from small angles)
+$\displaystyle{}= \ln\!\left(\frac{b_{\max}}{b_{s-1}}\right)$,
+
+\smallskip
+\noindent(contribution from large angles) ${}= \text{const}$,
+
+\smallskip
+\noindent where $b_{\max}$ is the cutoff in the small-angle region
+(eq.~2.1.4):
+\begin{equation}
+  b_{\max} = v/\omega.
+  \tag{2.1.15}
+\end{equation}
+
+Since the small-angle contribution is logarithmically dominant, one can
+ignore the contribution from large-angle scatterings and calculate
+\begin{equation}
+  \frac{d\sigma}{d\nu}
+  = \frac{\mathscr{P}_\nu}{S\,h\nu}
+  = \frac{16\,\alpha\,c^{2}\,Z^{2}\,r_0^{2}}{3\,v^{2}}\,
+    \ln\!\left(\frac{b_{\max}}{b_{s-1}}\right).
+  \tag{2.1.16}
+\end{equation}
+
+\noindent A more exact classical calculation gives a slightly different
+argument in the logarithm:
+\begin{equation}
+  \frac{d\sigma}{d\nu}
+  = \frac{16\,\alpha\,c^{2}\,Z^{2}\,r_0^{2}}{3\,v^{2}}\,
+    \ln\!\left(\frac{2\,b_{\max}}{\xi\;b_{s-1}}\right),
+  \tag{2.1.18}
+\end{equation}
+where $\xi = 1.781\ldots$ is the ``Euler constant''.  Consequently, the
+Gaunt factor for the small-angle, classical region is
+\begin{equation}
+  G(\nu,v)
+  = \frac{\sqrt{3}}{\pi}\,
+    \ln\!\left[
+      \frac{2}{\xi}
+      \left(\frac{\tfrac{1}{2}m_e v^{2}}{h\nu}\right)
+      \left(\frac{\tfrac{1}{2}m_e v^{2}}{2R_y}\right)^{\!1/2}
+    \right].
+  \tag{2.1.19}
+\end{equation}
+
+Actually, this small-angle classical result is not valid throughout the
+region~(2.1.14).  The uncertainty principle requires a modification at
+electron energies $\tfrac{1}{2}m_e v^{2}$ larger than~$Z^{2}R_y$.
+
+%=============================================================================
+% Small-angle, uncertainty-principle region (pages 351--352)
+%=============================================================================
+
+\bigskip
+\noindent\textit{Small-angle, uncertainty-principle region}\quad
+Consider an electron with impact parameter~$b$ and speed~$v$.  The
+electron is actually not a classical object; rather, it is a
+quantum-mechanical wave packet.  To scatter with impact parameter~$b$,
+the wave packet (i)~must have transverse dimensions, $\Delta x$, less
+than~$b$
+\begin{equation}
+  \Delta x < b,
+\end{equation}
+and (ii)~must not spread transversely by more than~$b$ during the
+classical scattering time $\Delta t = b/v$
+\begin{equation}
+  b > \left(\frac{\text{spreading}}{\text{during }\Delta t}\right)
+  = \left(\frac{\Delta p_x}{m_e}\right)\Delta t
+  > \left(\frac{\hbar}{m_e\,\Delta x}\right)\Delta t
+  > \frac{\hbar}{m_e\,v}
+  = \frac{b}{m_e\,v}\,\frac{\hbar}{b}\,.
+\end{equation}
+
+\noindent Thus, the uncertainty principle (``$\ge$'' in the above
+equation) prevents the existence of scatterings with~$b$ less than the
+electron de~Broglie wavelength
+\begin{equation}
+  b_{dB} = \hbar / m_e v.
+  \tag{2.1.20}
+\end{equation}
+
+If $b_{dB} < b_{s-1}$, this limitation has no effect on small-angle
+scatterings; and the small-angle, classical Gaunt factor~(2.1.19) is
+valid.  If $b_{dB} > b_{s-1}$, the uncertainty principle comes into
+play, and one must use~$b_{dB}$ rather than~$b_{s-1}$ as the lower
+limit on the small-angle integral~(2.1.17) for $d\sigma/d\nu$.  The
+result is
+\begin{equation}
+  \frac{d\sigma}{d\nu}
+  = \frac{16\,\alpha\,c^{2}\,Z^{2}\,r_0^{2}}{3\,v^{2}}\,
+    \ln\!\left(\frac{2\,b_{\max}}{\xi\;b_{dB}}\right),
+  \tag{2.1.21}
+\end{equation}
+corresponding to the Gaunt factor
+\begin{equation}
+  G(\nu,v)
+  = \frac{\sqrt{3}}{\pi}\,
+    \ln\!\left(\frac{2\,b_{\max}}{\xi\;b_{dB}}\right)
+  = \frac{\sqrt{3}}{\pi}\,
+    \ln\!\left[
+      \frac{2}{\xi}
+      \left(\frac{\tfrac{1}{2}m_e v^{2}}{h\nu}\right)
+    \right].
+  \tag{2.1.22}
+\end{equation}
+
+The ``small-angle, uncertainty-principle region,'' in which this
+expression holds, is separated from the ``small-angle, classical
+region'' by the line
+\begin{equation}
+  b_{dB}/b_{s-1}
+  = (\tfrac{1}{2}m_e v^{2})/(Z^{2}R_y) = 1.
+\end{equation}
+
+\noindent See Figure~\ref{fig:2.1.1}.
+
+From Figure~\ref{fig:2.1.1} it is clear that the uncertainty principle
+cannot have any effect on the large-angle region.
+
+%=============================================================================
+% Figure 2.1.1
+%=============================================================================
+
+\begin{figure}[htbp]
+\centering
+% \includegraphics[width=\columnwidth]{fig_2_1_1}
+\fbox{\parbox{0.9\columnwidth}{\centering
+[Figure 2.1.1 placeholder]\\[6pt]
+Horizontal axis:
+$\bigl(\tfrac{1}{2}m_e v^{2}\bigr)\big/\bigl(Z^{2}R_y\bigr)$.\quad
+Vertical axis:
+$h\nu\big/\bigl(\tfrac{1}{2}m_e v^{2}\bigr)$.\\[4pt]
+Five regions shown:\\[2pt]
+(1) Forbidden region ($G = 0$, $d\sigma/d\nu = 0$)
+    --- above the line $h\nu/(\tfrac{1}{2}m_ev^2) = 1$.\\
+(2) Photon-discreteness region ($G \lesssim 1$)
+    --- between $\tfrac{1}{3}$ and~$1$.\\
+(3) Large-angle region ($G = 1$)
+    --- below discreteness, above
+    $h\nu/(\tfrac{1}{2}m_ev^2) =
+     [(\tfrac{1}{2}m_ev^2)/(2R_y)]^{1/2}$.\\
+(4) Small-angle, classical region:
+    $G = \dfrac{\sqrt{3}}{\pi}
+    \ln\!\Bigl[\dfrac{4}{\xi}
+    \bigl(\dfrac{\frac{1}{2}m_ev^{2}}{h\nu}\bigr)
+    \bigl(\dfrac{\frac{1}{2}m_ev^{2}}{2R_y}\bigr)^{\!1/2}\Bigr]$
+    --- lower-left.\\[4pt]
+(5) Small-angle, U.P.\ (uncertainty-principle) region:
+    $G = \dfrac{\sqrt{3}}{\pi}
+    \ln\!\Bigl[\dfrac{4}{\xi}
+    \bigl(\dfrac{\frac{1}{2}m_ev^{2}}{h\nu}\bigr)\Bigr]$
+    --- lower-right.
+}}
+\caption{Regions and Gaunt factors for bremsstrahlung of frequency~$\nu$
+emitted by an electron of kinetic energy~$\tfrac{1}{2}m_e v^{2}$
+when it impinges on an ion of charge~$Ze$.}
+\label{fig:2.1.1}
+\end{figure}
