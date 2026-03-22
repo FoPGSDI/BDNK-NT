@@ -1,0 +1,156 @@
+% Agent 04: Pages 357--360 (PDF pp.~7--8 + top of p.~9)
+% Coverage: Section 2.2 Free-Bound Radiation (end, from Eq.~2.2.6),
+%           Section 2.3 Thermal Cyclotron and Synchrotron Radiation (through Eq.~2.3.10)
+% Equations (2.2.6)--(2.2.9), (2.3.1)--(2.3.10)
+
+%%% ====================================================================
+%%% SECTION 2.2  Free-Bound Radiation (continued from agent\_03)
+%%% ====================================================================
+
+The total emissivity, $\varepsilon = \int \varepsilon_\nu \, d\nu$, due to a given free-bound transition is
+\begin{align}
+\varepsilon &= 8\sqrt{3}\,c^2
+\left(\frac{C_A f_i Z^2}{A n_0^2}\right)
+\left(\frac{\alpha^2 m_e c^2}{m_p^2}\right)
+\left(\frac{2\pi m_e c^2}{3kT}\right)^{1/2}
+\rho_0
+\left(\frac{C_A f_i Z^2}{A n_0^2}\right)
+\left(\frac{\rho_0}{A}\right)
+\;\frac{\text{ergs}}{\text{g\,sec}}\;
+T_{\rm K}^{-1/2}\;\bar{G}_{bf}
+\notag \\
+&= \left(4.2 \times 10^{26}
+\left|\frac{C_A f_i Z^2}{A n_0^2}\right|
+\;\frac{\text{ergs}}{\text{g\,sec}}\right)
+\left(\frac{\rho_0}{A}\right)\,
+T_{\rm K}^{-1/2}\;\bar{G}_{bf}\,,
+\tag{2.2.6}
+\end{align}
+where $\bar{G}_{bf}$, the mean Gaunt factor, depends only on temperature and on the
+bound state, and is approximately equal to one
+\begin{equation}
+\bar{G}_{bf} = \int_0^\infty G_{bf}(h\nu - E_i = xkT;\; n_i, q_i, \ldots)\; e^{-x}\,dx \simeq 1.
+\tag{2.2.7}
+\end{equation}
+
+The total emissivity~(2.2.6) due to a given free-bound transition, compared
+to the total emissivity~(2.1.29) of free-free radiation from the same type of ion,
+is
+\begin{equation}
+\frac{\varepsilon_{fb}}{\varepsilon_{ff}}
+\simeq \frac{Z^2}{n_i^4}\left(\frac{8 \times 10^5}{T}\right).
+\tag{2.2.8}
+\end{equation}
+
+Ginzburg~\cite{Ginzburg1967} states that for astrophysical plasmas the ratio of total free-bound
+radiation to total free-free radiation (summed over all states and all ions)
+generally is less than
+\begin{equation}
+\frac{\varepsilon_{fb\;\text{total}}}{\varepsilon_{ff\;\text{total}}}
+< \left(\frac{8 \times 10^5\;\text{K}}{T}\right).
+\tag{2.2.9}
+\end{equation}
+
+%%% ====================================================================
+%%% SECTION 2.3  Thermal Cyclotron and Synchrotron Radiation
+%%% ====================================================================
+
+\subsection{Thermal Cyclotron and Synchrotron Radiation}
+\label{sec:2.3}
+
+\textit{Basic references}\quad Jackson~\cite{Jackson1962};\
+Ginzburg~\cite{Ginzburg1967}.
+
+\bigskip
+\noindent\textit{Power radiated by a single electron}
+
+\medskip
+Consider an electron of speed~$v$ and total mass-energy~$\gamma m_e c^2$,
+\begin{equation}
+\gamma \equiv (1 - v^2)^{-1/2},
+\tag{2.3.1}
+\end{equation}
+spiralling in a magnetic field of strength~$B$. The Lorentz 4-acceleration of the
+electron is
+\begin{equation}
+a^0 = 0, \qquad
+\mathbf{a} = (e / m_e c)\,\gamma\,\mathbf{v} \times \mathbf{B}.
+\tag{2.3.2}
+\end{equation}
+Consequently, the total power radiated---as obtained from the standard
+Lorentz-invariant equation,
+\begin{equation}
+\frac{dE}{dt} = \frac{2e^2}{3c^3}\,a^2
+\tag{2.3.3}
+\end{equation}
+
+\noindent---is
+\begin{equation}
+\frac{dE}{dt} = \frac{2\,r_0^2}{3\,c}\,(\gamma v_\perp)^2\,B^2.
+\tag{2.3.4}
+\end{equation}
+Here $v_\perp$ is the component of the electron velocity perpendicular to the magnetic
+field. If the electron is nonrelativistic, $v \ll c$, this radiation is called ``cyclotron
+radiation''. If the electron is ultrarelativistic, $\gamma \gg 1$, it is called ``synchrotron
+radiation''.
+
+\bigskip
+\noindent\textit{Cyclotron radiation from a nonrelativistic plasma}
+
+\medskip
+Consider a plasma with temperature
+\begin{equation}
+kT \ll m_e c^2, \quad \text{i.e.}\ T \lesssim 6 \times 10^9\;\text{K},
+\tag{2.3.5}
+\end{equation}
+and with a magnetic field of strength~$B$. As in the nonrelativistic case, radiation
+from protons spiralling
+in the magnetic field is smaller by a factor $(m_e/m_p)^3 \simeq 10^{-10}$ than that from
+electrons, since
+\begin{equation}
+\frac{dE}{dt} \propto \frac{v^2}{m^2} \propto \frac{1}{m^3}\,.
+\tag{2.3.6}
+\end{equation}
+(Recall: in thermal equilibrium the mean kinetic energies of protons and electrons
+are the same.) Hence, we can ignore protons and other ions when calculating
+cyclotron radiation. Let $f_e$ be the number of unbound electrons per baryon in
+the plasma. Then the total emissivity (ergs per second per gram of plasma) is
+\begin{equation}
+\varepsilon = f_e \left\langle \frac{dE}{dt} \right\rangle
+\bigg/\!\left(\frac{1}{m_p}\right),
+\tag{2.3.7}
+\end{equation}
+where $\langle\;\rangle$ denotes an average over the Maxwell-Boltzmann velocity distribution
+of the electrons. Since $\gamma = 1$, since 2 of the 3 spatial directions are orthogonal
+to~$B$, and since the mean kinetic energy per electron is $\tfrac{3}{2}kT$, we have
+\begin{equation}
+\langle \gamma v_\perp^2 \rangle
+= \frac{2}{3}\,\frac{2\,\bar{E}}{m_e}
+= \frac{2}{3}\,\frac{3kT}{m_e}
+= \frac{2kT}{m_e}\,.
+\tag{2.3.8}
+\end{equation}
+Combining this with equations~(2.3.4) and~(2.3.7), we obtain for the total
+emissivity of the plasma
+\begin{align}
+\varepsilon &= \frac{4}{3}\left(\frac{f_e\,r_0^2}{m_p}\right)
+\left(\frac{kT}{m_e c^2}\right) B^2
+\tag{2.3.9}\\
+&= (0.32\;\text{ergs/g\,sec})\;f_e\;T_{\rm K}\;B_G^2\,,
+\notag
+\end{align}
+where $T_{\rm K}$ is temperature in~${}^\circ$K and $B_G$ is magnetic field in Gauss.
+
+Each electron emits its radiation monochromatically, with the cyclotron
+frequency (orbital frequency of electron's spiral motion)
+\begin{equation}
+\nu_{\text{cyc}} = \frac{eB}{2\pi m_e c}
+= (2.79\;\text{MHz})\;B_G\,.
+\tag{2.3.10}
+\end{equation}
+
+Thus, if the magnetic field is uniform, the radiation will be monochromatic
+with this frequency. But in Nature the magnetic field will always be inhomo\-geneous,
+and the spectrum will show a spread proportional to the spread in~$B^2$.
+(Of course, there are always other sources of spread in the spectrum---e.g., doppler
+shifts and relativistic generation of harmonics.)
