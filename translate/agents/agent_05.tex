@@ -1,0 +1,423 @@
+% Agent 05: Pages 361–364 (PDF pp. 9–11)
+% Sections 2.3 (end), 2.4, and 2.5 (beginning)
+% Equations (2.3.4)–(2.3.18), (2.4.1)–(2.4.9), (2.5.1)–(2.5.6)
+
+%%% ====================================================================
+%%% SECTION 2.3 (continued) — Cyclotron and Synchrotron Radiation
+%%% ====================================================================
+
+% [Continuation of Section 2.3]
+
+\noindent
+is
+\begin{equation}
+\frac{dE}{dt} = \frac{2\,r_0^2}{3\,c}\,(\gamma v_\perp)^2 B^2.
+\tag{2.3.4}
+\end{equation}
+Here $v_\perp$ is the component of the electron velocity perpendicular to the magnetic
+field.  If the electron is nonrelativistic, $v \ll c$, this radiation is called ``cyclotron
+radiation''.  If the electron is ultrarelativistic, $\gamma \gg 1$, it is called ``synchrotron
+radiation''.
+
+\medskip
+\noindent
+\textit{Cyclotron radiation from a nonrelativistic plasma.}
+
+\medskip
+\noindent
+Consider a plasma with temperature
+\begin{equation}
+kT \ll m_e c^2, \quad \text{i.e.}\ T \ll 6 \times 10^9\,\text{K},
+\tag{2.3.5}
+\end{equation}
+and with a magnetic field of strength $B$. The radiation from protons spiralling
+in the magnetic field is smaller by a factor $(m_e/m_p)^3 \simeq 10^{-10}$ than that from
+electrons, since
+\begin{equation}
+\frac{dE}{dt} \propto \frac{v^2}{m^3} \propto \frac{1}{m}.
+\tag{2.3.6}
+\end{equation}
+(Recall: in thermal equilibrium the mean kinetic energies of protons and electrons
+are the same.)  Hence, we can ignore protons and other ions when calculating
+cyclotron radiation.  Let $f_e$ be the number of unbound electrons per baryon in
+the plasma.  Then the total emissivity (ergs per second per gram of plasma) is
+\begin{equation}
+\varepsilon = f_e \left\langle \frac{dE}{dt} \right\rangle \bigg/ m_p,
+\tag{2.3.7}
+\end{equation}
+where $\langle\;\rangle$ denotes an average over the Maxwell--Boltzmann velocity distribution
+of the electrons.  Since $\gamma = 1$, since 2 of the 3 spatial directions are orthogonal
+to $B$, and since the mean kinetic energy per electron is $\frac{3}{2}kT$, we have
+\begin{equation}
+\langle (\gamma v_\perp)^2 \rangle = \frac{2}{3}\langle v^2 \rangle = \frac{2}{3}\cdot\frac{2kT}{m_e}.
+\tag{2.3.8}
+\end{equation}
+Combining this with equations~(2.3.4) and~(2.3.7), we obtain
+\begin{align}
+\varepsilon &= \frac{4}{3}\left(\frac{r_0^2 c}{m_p}\right)
+\left(\frac{kT}{m_e c^2}\right)B^2 \notag \\
+&= (0.32~\text{ergs/g\,sec})\,f_e\,T_K\,B_G^2,
+\tag{2.3.9}
+\end{align}
+where $T_K$ is temperature in ${}^\circ$K and $B_G$ is magnetic field in Gauss.
+
+Each electron emits its radiation monochromatically, with the cyclotron
+frequency (orbital frequency of electron's spiral motion)
+\begin{equation}
+\nu_{\text{cyc}} = \frac{eB}{2\pi m_e c} = (2.79~\text{MHz})\,T_K\,B_G.
+\tag{2.3.10}
+\end{equation}
+
+Thus, if the magnetic field is uniform, the radiation will be monochromatic
+with this frequency.  But in Nature the magnetic field will always be inhomo\-
+geneous, and the spectrum will show a spread proportional to the spread in $B^2$.
+(Of course, there are always other sources of spread in the spectrum---e.g., doppler
+shifts and relativistic generation of harmonics.)
+
+\medskip
+\noindent
+\textit{Synchrotron radiation from a relativistic plasma.}
+
+\medskip
+\noindent
+Consider a plasma with temperature
+\begin{equation}
+kT \gg m_e c^2, \quad \text{i.e.}\ T \gg 6 \times 10^9\,\text{K},
+\tag{2.3.11}
+\end{equation}
+and with a magnetic field of strength $B$.
+As in the nonrelativistic case, radiation
+from protons and ions is totally negligible.
+The total emissivity due to electrons
+and positrons (recall: at $kT \gg m_e c^2$, there will be many electron-positron pairs!)
+is given, as before, by equation~(2.3.7); but now the factor $f_e$ must be the number
+of electrons and positrons per baryon,\footnote{The case of an optically thin plasma
+is of particular interest in astrophysics. The kinetic theory of the creation and
+annihilation of positrons in this case is somewhat complex; see, e.g.,
+\citet{BisnovatyiKogan1971}.}
+and the relevant, ultrarelativistic Maxwell--Boltzmann average is
+
+\begin{equation}
+\langle (\gamma v_\perp)^2 \rangle = \tfrac{2}{3}\langle\gamma^2\rangle
+= 8\left(\frac{kT}{m_e c^2}\right)^{\!2}.
+\tag{2.3.12}
+\end{equation}
+[One evaluates $\langle\gamma^2\rangle$ using the distribution function in phase space
+\begin{equation}
+\mathscr{N} = \frac{dN}{d^3 x\,d^3 p} \propto e^{-E/kT} = e^{-\gamma m_e c^2/kT},
+\tag*{}
+\end{equation}
+with
+\begin{equation}
+d^3 p = 4\pi c^{-3}E^2\,dE
+\tag*{}
+\end{equation}
+in ultrarelativistic limit;
+in particular
+\begin{equation}
+\langle\gamma^2\rangle = \frac{1}{(m_e c^2)^2}\,
+\frac{\displaystyle\int_0^\infty E^2\,e^{-E/kT}\,E^2\,dE}
+{\displaystyle\int_0^\infty e^{-E/kT}\,E^2\,dE}
+= 12\left(\frac{kT}{m_e c^2}\right)^{\!2}.\,]
+\tag*{}
+\end{equation}
+
+Combining equations~(2.3.12), (2.3.7), and~(2.3.4), we obtain for the total
+emissivity of the plasma
+\begin{align}
+\varepsilon &= \frac{16}{3}\left(\frac{r_0^2 c}{m_p}\right)
+\left(\frac{kT}{m_e c^2}\right)^{\!2} B^2 \notag \\
+&= (2.2 \times 10^{-10}~\text{ergs/g\,sec})\,f_e\,T_K^2\,B_G^2.
+\tag{2.3.13}
+\end{align}
+
+In the ultrarelativistic case the electrons do not emit monochromatically.
+An electron of energy $\gamma m_e c^2$ beams most of its radiation into a forward cone of
+half-angle $\alpha = 1/\gamma$ (special-relativistic ``headlight effect'').
+Since the electron is
+headed toward the observer with speed $v$ when its cone is directed toward him,
+the cone sweeps past the observer in time
+\begin{equation}
+\Delta t = (1-v^2)\left(\frac{2\alpha}{\omega_{\text{cyc}}}\right) = (1-v^2)\,\frac{1}{\gamma^3\,\omega_{\text{cyc}}}
+= \frac{1}{\gamma^3\,\omega_{\text{cyc}}}.
+\tag{2.3.14}
+\end{equation}
+Here $\omega_{\text{cyc}}$ is the angular velocity of the electron in its spiralling orbit
+\begin{equation}
+\omega_{\text{cyc}} = \frac{eB}{\gamma m_e c}.
+\tag{2.3.15}
+\end{equation}
+
+Thus, the radiation comes in short bursts, of duration $\sim\!\Delta t = 1/(\gamma^3\omega_{\text{cyc}})$,
+separated by long intervals of time $2\pi/\omega_{\text{cyc}}$.
+When Fourier analyzed, such
+radiation must be concentrated near the ``critical frequency''
+\begin{equation}
+\nu_{\text{crit}} = \tfrac{3}{2}\,\nu_{\text{cyc}} = \gamma^2\,eB/m_e c.
+\tag{2.3.16}
+\end{equation}
+
+A detailed calculation [chapter~14 of \citet{Jackson1962}] reveals a fairly broad
+spectrum which rises as $\nu^{1/3}$ at low frequencies, which peaks at
+\begin{equation}
+\nu_{\text{peak}} = 0.29\,\nu_{\text{crit}},
+\tag{2.3.17}
+\end{equation}
+and which decays exponentially $\sim\nu^{1/2}\,e^{-2\nu/\nu_{\text{crit}}}$, at $\nu \gg \nu_{\text{crit}}$.
+When averaged over the relativistic plasma, such a spectrum will have a broad
+peak, with maximum located at
+\begin{equation}
+\nu_{\text{peak, plasma}} = \frac{\gamma_{\text{peak}}^2\,eB}{4\,m_e c}
+\simeq 12(kT/m_e c^2)^2
+\quad\left[\text{value of $\gamma_{\text{peak}}^2$ for electrons of}\right]
+\tag{2.3.18}
+\end{equation}
+\begin{equation}
+\nu_{\text{peak, plasma}} \simeq (100~\text{MHz})\,T_{10}^2 B_G.
+\tag*{}
+\end{equation}
+Here $T_{10}$ is temperature in units of $10^{10}$\,K.
+At $\nu \ll \nu_{\text{peak, plasma}}$
+the spectrum will rise as a power law.
+
+%%% ====================================================================
+%%% SECTION 2.4 — Electron Scattering of Radiation
+%%% ====================================================================
+
+\subsection{Electron Scattering of Radiation}
+\label{sec:2.4}
+
+\textit{Basic references}
+
+\citet{Jackson1962}, \S\,14.7 of \citet{Jackson1962b};
+\S\,12.3 of \citet{Leighton1959};
+\citet{Kompaneets1957}; \citet{Weyman1965};
+\citet{Sunyaev1973}.
+
+\medskip
+\noindent
+\textit{Basic physics and formulas}
+
+\medskip
+\noindent
+In discussing electron scattering, we shall confine attention to the nonrelativistic
+case---i.e.\ we shall demand that the temperature of the gas and the photon
+frequencies satisfy
+\begin{equation}
+kT \ll m_e c^2 \quad (T \ll 6 \times 10^9\,\text{K}); \quad
+h\nu \ll m_e c^2 = 500~\text{keV}.
+\tag{2.4.1}
+\end{equation}
+
+The differential cross section for a free electron to scatter a photon has the
+form
+\begin{equation}
+\frac{d\sigma_e}{d\Omega} = \tfrac{1}{2}\,r_0^2\,(1 + \cos^2\theta),
+\tag{2.4.2}
+\end{equation}
+where $\theta$ is the angle between incoming and outgoing photon.  The total
+cross section (``Thomson cross section''), obtained by integrating over all
+directions, is
+\begin{equation}
+\sigma_T = (8\pi/3)\,r_0^2 = 0.665 \times 10^{-24}~\text{cm}^2.
+\tag{2.4.3}
+\end{equation}
+It is important for astrophysical applications that the scattering cross section
+is ``color blind'' (no dependence on frequency).  See, e.g., \S\,4.
+
+It is also important that the differential cross section is symmetric between
+forward and backward directions.  This guarantees, for example, that on the
+average a scattered photon transmits \textit{all} of its momentum to the electron
+(Here $\mathbf{n}_s$ is a unit vector in the direction of the initial photon motion).  By
+contrast, only a tiny fraction of the photon energy is transmitted to the electron.
+In a frame where the electron is initially at rest, it receives a kinetic energy
+\begin{subequations}
+\begin{equation}
+\Delta E_\gamma = (h\nu/m_e c^2)\,h\nu\,(1-\cos\theta).
+\tag{2.4.4a}
+\end{equation}
+\begin{equation}
+(\Delta\mathbf{p}_e) = \mathbf{p}_\gamma = (h\nu/c)\,\mathbf{n}_s.
+\tag{2.4.4b}
+\end{equation}
+\end{subequations}
+(Recall: we have assumed $h\nu/m_e c^2 \ll 1$.)
+
+Consider a monochromatic beam of photons, with frequency $\nu$, moving
+through a thermalized plasma of temperature $T$.  Scattering by protons and ions
+will be negligible compared to scattering by electrons, since
+\begin{equation}
+\sigma_e \propto r_0^2 = (e^2/m_e c^2)^2 \propto 1/(\text{mass of scatterer})^2.
+\tag{2.4.5}
+\end{equation}
+
+On the average, how much energy $\langle\Delta E_\gamma\rangle$ is transmitted to the electron in a
+single scattering?  The answer for electrons nearly at rest ($kT \ll h\nu$) is obtained
+by averaging expression~(2.4.4b) over all angles.  Because of the forward-backward
+symmetry of the differential cross section, $\cos\theta$ averages to zero and one obtains
+\begin{equation}
+\langle\Delta E_\gamma\rangle = (h\nu/m_e c^2)\,h\nu, \quad \text{if } kT \ll h\nu.
+\tag{2.4.6}
+\end{equation}
+
+One can calculate $\langle\Delta E_\gamma\rangle$ for higher temperatures by invoking conservation
+of 4-momentum, and averaging over all angles and electron speeds.  However,
+such a calculation is rather long and messy.  To obtain the answer more easily,
+one can use the following trick: An examination of the law of 4-momentum
+conservation convinces one that $\langle\Delta E_\gamma\rangle$ must have the temperature dependence
+\begin{equation}
+\langle\Delta E_\gamma\rangle \propto (h\nu - \alpha kT),
+\tag{2.4.7}
+\end{equation}
+where $\alpha$ is a constant to be calculated.  (Thus, if $h\nu > \alpha kT$, the electrons get
+heated by the photons; if $h\nu < \alpha kT$, they get cooled.)
+This law will reduce to
+expression~(2.4.6) for $kT \ll h\nu$ if and only if the proportionality constant is
+$h\nu/m_e c^2$:
+\begin{equation}
+\langle\Delta E_\gamma\rangle = (h\nu/m_e c^2)(h\nu - \alpha kT).
+\tag*{}
+\end{equation}
+
+To calculate the constant $\alpha$, imagine the following experiment.  Place a large
+number of photons and electrons into a box with perfectly reflective walls.
+Require that the photons and electrons interact only by electron scattering.  Then
+photons cannot be created or destroyed; only scattered.  Hence, when thermal
+equilibrium is reached, the photons acquire a Boltzmann energy distribution,
+rather than a Planck distribution.  (Recall that stimulated emissions are responsible
+for Planckian deviations from the Boltzmann law; \S\,2.5.)  Since photons have
+zero rest mass, their Boltzmann distribution
+\begin{equation}
+\mathscr{N} = \frac{dN}{d^3 x\,d^3 p} \propto e^{-h\nu/kT},
+\tag*{}
+\end{equation}
+corresponds to a number of photons per unit frequency given by
+\begin{equation}
+\frac{dN}{d\nu} \propto \nu^2\,e^{-h\nu/kT},
+\tag{2.4.8}
+\end{equation}
+and corresponds to
+\begin{equation}
+\langle h\nu\rangle = 3kT, \qquad
+\langle (h\nu)^2\rangle = 12(kT)^2.
+\tag*{}
+\end{equation}
+Thus, for our thought experiment the energy transfer in each collision, expression
+(2.4.7) averaged over the equilibrium photon distribution, is
+\begin{equation}
+\langle\langle\Delta E_\gamma\rangle\rangle = (3kT/m_e c^2)(4-\alpha)\,kT.
+\tag*{}
+\end{equation}
+
+But in equilibrium there must be no average energy transfer between photons
+and electrons; $\langle\langle\Delta E_\gamma\rangle\rangle$ must be zero.
+This condition tells us that $\alpha = 4$.
+Thus, turning back to the general situation, we conclude that monochromatic
+photons passing through a plasma of temperature $T$ transfer an average energy
+per collision
+\begin{equation}
+\langle\Delta E_\gamma\rangle = (h\nu/m_e c^2)(h\nu - 4kT)
+\tag{2.4.9}
+\end{equation}
+to the electrons.  When $4kT \gg h\nu$, the photon energies get boosted by the
+collisions, and one says that the radiation is being ``Comptonized''; see \S\,5.10;
+see, e.g., \citet{Illarionov1972}.
+
+This concludes, for the moment, our discussion of the interaction between
+radiation and plasmas.  We must point out that we have ignored a number of
+plasma effects and instabilities which can be important in astrophysical
+situations.  See, e.g., \citet{Bekefi1966} and \citet{KaplanTsytovich1972}.
+
+%%% ====================================================================
+%%% SECTION 2.5 — Hydrodynamics and Thermodynamics
+%%% ====================================================================
+
+\subsection{Hydrodynamics and Thermodynamics}
+\label{sec:2.5}
+
+\textit{Basic references}\quad
+\S\S\,22.2 and 22.3 of \citet{MTW1973};
+\citet{Lichnerowicz1967} and references cited therein.
+We adopt the notational conventions of \citet{MTW1973},
+including signature ``$-+++$''; geometrized units ($c = G = 1$); Greek
+indices ranging from 0 to 3 and Latin from 1 to 3; ``hats'' on indices that refer
+to local orthonormal frames, e.g.\ $\mu^{\hat{\alpha}}$ and $T^{\hat{\alpha}\hat{\beta}}$; extra-bold, sans-serif type for
+4-vectors and 4-tensors, e.g.\ $\fvec{u}$ and $\mathbf{T}$; normal bold-face type for 3-vectors and
+3-tensors (local Euclidean geometry).
+
+\medskip
+\noindent
+\textit{Parameters describing the ``fluid.''}
+
+\medskip
+\noindent
+``LRF'' $=$ local rest frame of the baryons; i.e.\ local orthonormal frame in which
+there is no net baryon flux in any direction.
+
+\begin{itemize}
+\item[$\fvec{u}$] 4-velocity of LRF; i.e.\ 4-velocity of the ``fluid''.
+\item[$n$] number density of baryons (number of baryons per unit volume) as
+measured in LRF.
+\item[$m_B$] mean rest mass of a baryon in the fluid; i.e.
+\end{itemize}
+\begin{equation}
+m_B = \left(\!\!
+\begin{array}{c}
+\text{rest mass of}\\
+\text{hydrogen atom}
+\end{array}\!\!\right)
+\times
+\left(\!\!
+\begin{array}{c}
+\text{fraction of all baryons that are}\\
+\text{in the form of hydrogen nuclei}
+\end{array}\!\!\right)
++
+\frac{1}{4}
+\left(\!\!
+\begin{array}{c}
+\text{rest mass of}\\
+\text{helium atom}
+\end{array}\!\!\right)
+\times
+\left(\!\!
+\begin{array}{c}
+\text{fraction of all baryons that}\\
+\text{are in helium nuclei}
+\end{array}\!\!\right)
++ \cdots
+\tag{2.5.1}
+\end{equation}
+
+\textit{Note}: in this section we restrict ourselves to fluids that are chemically
+homogeneous and in which no nuclear reactions occur (``standard
+fluid'').  Thus, $m_B$ is constant.
+
+\begin{align}
+\rho_0 &\equiv m_B\,n, && \text{rest-mass density, defined by}
+\tag{2.5.2} \\[4pt]
+\mathcal{V} &\equiv 1/n, && \text{specific volume, i.e.\ volume per baryon, defined by}
+\tag{2.5.3} \\[4pt]
+\mathcal{V}_0 &= 1/\rho_0, && \text{specific volume, i.e.\ volume per unit rest mass, defined by}
+\tag{2.5.4}
+\end{align}
+
+\begin{align}
+\rho &= \rho_0(1 + \Pi), && \text{total density of mass-energy, as measured in LRF.}
+\tag{2.5.5}\\[4pt]
+\Pi &\quad && \text{specific internal energy, defined by}
+\tag*{}
+\end{align}
+
+\textit{Note}: here and throughout this section we set the speed of light equal to
+one.
+\begin{align}
+p  &\quad && \text{isotropic pressure, as measured in LRF.}
+\tag*{} \\
+T  &\quad && \text{temperature, as measured in LRF.}
+\tag*{} \\
+s  &\quad && \text{entropy per baryon, as measured in LRF; of course,}
+\tag*{} \\
+s_0 &= m_B^{-1}\,s. && \text{entropy per unit mass, as measured in LRF.}
+\tag{2.5.6}
+\end{align}
