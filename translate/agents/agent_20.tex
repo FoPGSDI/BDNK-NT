@@ -1,0 +1,253 @@
+% Agent 20: Pages 416--419 (PDF pages 38--39)
+% Sections: 5.2 (end) -- vertical pressure balance, sources of viscosity,
+%           radiative transport, opacity
+% Note: These pages continue and largely complete Section 5.2.
+
+%% ============================================================
+%% Page 416, left column (continuation of S5.2)
+%% ============================================================
+
+(see \S2.5). Thus, the heat generated per unit area is
+\begin{equation}
+2h\epsilon = (2h\bar{t}_\phi^{\;r})(-2\varpi\dot{\phi})
+= \frac{3\dot{M}_0 M}{4\pi r^2}\left[1-\beta\!\left(\frac{r_1}{r}\right)^{\!1/2}\right];
+\tag{5.2.19}
+\end{equation}
+and the heat generated between radii $r_1$ and $r_2$ is
+\begin{align}
+\int_{r_1}^{r_2}\! 2h\epsilon\;2\pi r\,dr
+&= \frac{3}{2}\,\dot{M}_0\!\left(\frac{M}{r_1}-\frac{M}{r_2}\right)
+   \!\left[1-\frac{2}{3}\beta\!\left(\frac{r_1}{r_2}\right)^{\!1/2}\right] \notag\\[4pt]
+&\simeq \frac{3}{2}\,\dot{M}_0\!\left(\frac{M}{r_1}-\frac{M}{r_2}\right)
+   \quad\text{for}\;r_2 \gg r_1 \gg r_1.
+\tag{5.2.20}
+\end{align}
+
+It is instructive to examine the origin of this heat energy by asking at what
+net rate energy is being deposited in the region $r_1 < r < r_2$. Gravitational
+potential energy is released at a rate $\dot{M}_0(M/r_1 - M/r_2)$, but only half of this
+energy can go into orbital kinetic energy
+(virial theorem). Thus, the rate at which gravitational energy gets converted
+into heat is
+\[
+\tfrac{1}{2}\dot{M}_0(M/r_1 - M/r_2).
+\]
+
+The viscous stresses transport outward not only angular momentum, but also
+energy. The rate at which energy is transported across radius $r$ is
+\[
+\dot{E} = \dot{\varOmega}J
+= \dot{\varOmega}(2\pi r\cdot 2h\cdot t_\phi^{\;r})\bigl[1-\Omega(r/r')^{1/2}\bigr].
+\]
+Thus, energy is deposited by viscosity between radii $r_1$ and $r_2$ at a rate
+\[
+\dot{M}_0\!\left[\frac{M}{r_1}\left(1-\beta\!\left(\frac{r_1}{r_2}\right)^{\!1/2}\right)
+-\frac{M}{r_2}\left(1-\beta\!\left(\frac{r_1}{r_2}\right)^{\!1/2}\right)\right].
+\]
+
+This energy deposition rate plus the deposition rate for gravitational energy is
+equal to the total heating rate. Notice that at radii $r \gg r_1$, gravity accounts
+directly for only one-third of the heat. The remaining two-thirds is transported
+into the heating region by viscous stresses. Much of the early literature on disk
+accretion, e.g., Lynden-Bell (1969)\cite{LyndenBell1969}, failed to take account of energy transport
+by viscous stresses, and therefore underestimated by a factor 3 the heating at
+$r \gg r_1$.
+
+If none of the heat were radiated away, the thermal energy of the disk
+would be 3/2 times its gravitational potential energy; and its temperature
+would thus be
+\[
+T \sim (M/r) m_p \sim (10^{13}\,\text{K})(r/10^5\,\text{cm})^{-1}(M/M_\odot).
+\]
+
+Such temperatures are absurdly high. Thermal bremsstrahlung and other
+radiative processes will never permit such temperatures to arise. Instead, they
+will quickly remove almost all of the heat that is generated. This means that
+
+%% ============================================================
+%% Page 417, right column
+%% ============================================================
+
+the total flux $2F$ from the top and bottom faces of the disk must equal the
+heating rate per unit area, as calculated above (the heat flows out of the disk
+vertically rather than radially because the disk is so thin):
+\begin{equation}
+F = \frac{3\dot{M}_0 M}{8\pi r^2\,r_1}
+    \left[1-\beta\!\left(\frac{r_1}{r}\right)^{\!1/2}\right].
+\tag{5.2.19}
+\end{equation}
+
+The total power radiated is thus
+\begin{equation}
+L = \int_{r_1}^{\infty} 2F\cdot 2\pi r\,dr
+  = \bigl(\tfrac{3}{2}-\beta\bigr)\dot{M}_0\,M/r_1\,.
+\tag{5.2.20}
+\end{equation}
+Of this total power radiated, $\frac{1}{2}\dot{M}_0 M/r_1$ comes from gravity, while
+$(1-\beta)\dot{M}_0 M/r_1$ comes from the rotational energy of the star.
+
+\paragraph*{Spectrum}
+
+A detailed treatment of the spectrum radiated will be given in \S5.10. Here we
+only note that, if the radiation is blackbody, then the surface temperature of
+the disk at radius $r$ must be
+\begin{equation}
+T_s = \left(\frac{4F}{b}\right)^{\!1/4}
+\simeq (3\times 10^7\,\text{K})
+\left(\frac{\dot{M}_0}{10^{-9}\,M_\odot/\text{yr}}\right)^{\!1/4}
+\!\left(\frac{M}{M_\odot}\right)^{\!-1/2}
+\!\left(\frac{M}{r}\right)^{\!3/4}
+\left[1-\beta\!\left(\frac{r_1}{r}\right)^{\!1/2}\right]^{1/4}.
+\tag{5.2.21}
+\end{equation}
+
+Because most of the radiation is emitted from $r/M \sim 10$ for a black hole or
+neutron star, and from $r/M \sim 10^5$ for a dwarf, and because the black-body
+spectrum peaks at a photon energy of
+\begin{equation}
+h\nu_{\max} \simeq (2.44\times 10^{-4}\;\text{eV})(T_s/{}^\circ\!\text{K}),
+\tag{5.2.22}
+\end{equation}
+the spectrum of the total radiation from the disk should peak at
+\begin{alignat}{2}
+h\nu_{\max} &\simeq (1\;\text{keV})
+\left(\frac{\dot{M}_0}{10^{-9}\,M_\odot/\text{yr}}\right)^{\!1/4}
+\!\left(\frac{M}{M_\odot}\right)^{\!-1/2}
+&\quad&\text{for neutron star or hole} \notag\\[4pt]
+h\nu_{\max} &\simeq (0.01\;\text{keV})
+\left(\frac{\dot{M}_0}{10^{-9}\,M_\odot/\text{yr}}\right)^{\!1/4}
+&\quad&\text{for white dwarf.}
+\tag{5.2.23}
+\end{alignat}
+
+Thus, for reasonable accretion rates the disk can emit strongly in the X-ray
+region (${\sim}\,1$ to 10~keV); but the X-ray spectrum should fall fairly rapidly with
+increasing energy. It actually turns out that electron-scattering opacity impedes
+the emission of blackbody radiation, and causes the spectrum to peak at energies
+higher than that (5.2.23). (See \S5.10.) However, the above estimates are still
+accurate to within a factor ${\sim}\,10$.
+
+%% ============================================================
+%% Page 418, left column: Vertical pressure balance
+%% ============================================================
+
+\paragraph*{Vertical pressure balance}
+
+The thickness of the disk is governed by a balance between vertical pressure force
+and the tidal gravitational force of the compact star (``vertical momentum
+conservation''):
+\begin{equation}
+\frac{dp}{dz} = \rho_0 \times
+\bigl(\text{``acceleration of gravity''}\bigr) = \rho_0\,\frac{Mz}{r^3}\,.
+\tag{5.2.24}
+\end{equation}
+The approximate solution to this equation is
+\begin{equation}
+h \simeq (p/\rho_0)^{1/2}(r^3/M)^{1/2} = c_s/\Omega.
+\tag{5.2.25}
+\end{equation}
+Here $h$ is the half-thickness of the disk, $c_s$ is the speed of sound in the gas, and
+$\Omega = (M/r^3)^{1/2}$ is the angular velocity of the gas.
+
+\paragraph*{Sources of viscosity}
+
+All of the above conclusions are based on conservation laws alone. To proceed
+further, one must make some assumption about the magnitude of the viscosity.
+The dominant sources of viscosity are probably chaotic magnetic fields, and
+turbulence in the gas flow.
+
+For cases of interest the normal star (typically a B0 supergiant) could
+have a surface magnetic field of $B_s \sim 100$~gauss. Field lines will be dragged
+by the flowing matter off of the normal star and into the disk. The deposited field
+should be rather chaotic because there is no preferred direction for the field
+in the gas that flows off the normal star. Turbulence, if present in the disk,
+will also make the field chaotic. Once the chaotic field has been deposited in
+the disk, the shear of the flow will magnify it at a rate (eq.~(2.5.20))
+\begin{equation}
+dB_\phi/dr = \alpha_\phi B_r,\qquad dB_\phi/dt = 0
+\tag{5.2.26}
+\end{equation}
+corresponding to an increase of $B_\phi$ by the amount $B_r$ with every circuit around
+the compact star. This growth of field will be counterbalanced, at least in part,
+by reconnection of field lines at the interfaces between chaotic cells (see \S2.9),
+and perhaps also by a bulging of field lines out of the disk, pinch-off of field
+lines, and escape of ``magnetic bubbles.'' From a macroscopic viewpoint (scale
+large compared to chaotic cells) the effects of the chaotic field can be described by
+pressure and viscosity. The magnetic pressure of the field will be of order $B^2/8\pi$, where $B$
+is the mean field strength. Because the shearing of the chaotic field will tend to
+string it out along the $\phi$-direction, its shear stress $t_{\phi r}$ will be somewhat (perhaps
+a factor~$10^2$) smaller than its pressure
+\begin{equation}
+t_{\phi r}^{(\text{mag})} \simeq \nu_0\,\rho_0\,r\,\frac{d\Omega}{dr}
+= B^2/8\pi.
+\tag{5.2.27}
+\end{equation}
+The magnetic pressure cannot exceed the thermal pressure
+\begin{equation}
+p^{(\text{mag})} \simeq p^{(\text{therm})} \simeq \rho_0 c_s^2;
+\tag{5.2.28}
+\end{equation}
+
+%% ============================================================
+%% Page 419, left column
+%% ============================================================
+
+otherwise the field lines would bulge out of the disk, reconnect, and escape
+(``bubbles''). Thus, the magnetic viscous stresses will satisfy
+\begin{equation}
+t_{\phi r}^{(\text{mag})} \lesssim p = \rho_0 c_s^2.
+\tag{5.2.29}
+\end{equation}
+(Here $c_s$ is the speed of sound, and $p$ is the total pressure.)
+
+The gas flow in the disk may well be turbulent. The coefficient of dynamic
+viscosity associated with turbulence is
+\begin{equation}
+\eta \sim \rho_0\, v_{\text{turb}}\, l_{\text{turb}},
+\tag{5.2.30}
+\end{equation}
+where $v_{\text{turb}}$ is the speed of the turbulent motions relative to the mean rest
+frame of the gas, and $l_{\text{turb}}$ is the characteristic size of the largest turbulent cells
+[see, e.g., \S31 of Landau and Lifshitz~(1959)\cite{LandauLifshitz1959}].
+If the turbulent speed ever exceeds
+the sound speed, then shocks develop and quickly convert the turbulent energy
+into heat. Thus, $v_{\text{turb}} \lesssim c_s$. The turbulent scale is limited by the disk thickness,
+$l_{\text{turb}} \lesssim h$. Consequently, the shear stress due to turbulence is bounded by
+\begin{equation}
+t_{\phi r}^{(\text{turb})} \sim \eta\,\rho_0\,r\,\frac{d\Omega}{dr}
+\lesssim (\nu_0\,\rho_0\,c_s\,h)\,\Omega
+\simeq \rho_0 c_s^2 \simeq p.
+\tag{5.2.31}
+\end{equation}
+Inequalities (5.2.29) and (5.2.31) on the magnetic and turbulent stresses are
+identical. They suggest that one dump one's lack of knowledge about the true
+magnitude of the viscosity into a single parameter $\alpha$ defined by
+\begin{equation}
+t_{\phi r} = \alpha p.
+\tag{5.2.32}
+\end{equation}
+Someday, perhaps ten years hence, when one understands the magnetic and
+turbulent viscosities better, one can insert into the formalism a reliable value of
+$\alpha$. In the meantime one only knows that
+\begin{equation}
+\alpha \lesssim 1.
+\tag{5.2.33}
+\end{equation}
+If $\alpha \sim 1$, the disk will have a rather mottled structure on scales of order~$h$; if
+$\alpha \ll 1$ it will be rather smooth on such scales.
+
+\paragraph*{Radiative transport}
+
+The heat generated by viscosity must be transported vertically to the surface of
+the disk before it can be radiated. The disk turns out to be optically thick
+($\tau_{ff}+\tau_{es}\gg 1$ at $z=0$). Hence, one calculates the energy transport using the
+diffusion approximation [eq.~(2.6.43) reduced to Newtonian form]:
+\begin{equation}
+\frac{d}{dz}\!\left(b\,T^4\right) = \bar{\kappa}\,\rho_0\,\frac{d^2}{dz^2}\,F.
+\tag{5.2.34}
+\end{equation}
+The approximate solution to this equation of transport is
+\begin{equation}
+bT^4 \simeq \bar{\kappa}\;\Sigma\; F.
+\tag{5.2.35}
+\end{equation}
