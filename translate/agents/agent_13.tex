@@ -1,0 +1,308 @@
+% Agent 13: Section 4.2 Adiabatic Hydrodynamic Accretion (continued)
+% Book pages 390--395 (PDF pages 24--27)
+% Covers: Bernoulli equation (4.2.3), solution plane analysis, sonic point,
+%         bisectrix, Figures 4.2.1 and 4.2.2, sonic radius, accretion rate
+% Equations (4.2.3) through (4.2.15b)
+
+% ---------------------------------------------------------------
+%  This file is meant to be \input into the master document.
+%  It continues Section 4.2 beginning at the Bernoulli equation.
+%  The continuity equation (4.2.1) and Euler equation (4.2.2)
+%  have already been introduced on the preceding pages.
+% ---------------------------------------------------------------
+
+[Cf.\ eqs.\ (2.5.23) and (2.5.59).]
+
+Here $M_0$ is the total rate of accretion of rest mass, $u$ is the radial
+velocity, and $M$ is the mass of the hole.  We assume the gas has constant
+adiabatic index~$\Gamma$, so that during the accretion the pressure and
+density are related by the adiabatic law $p = K\rho^\Gamma$, and the speed of
+sound is given by $a = (\Gamma p)^{1/2}$.  Let the constants $K$ and $\Gamma$
+be given.  Our task is to determine the accretion rate~$\dot{M}_0$ and to
+compute as well the distributions of density $\rho(r)$ and velocity $u(r)$
+in the flow.
+
+In place of the Euler equation~(4.2.2) we shall use the Bernoulli
+equation\footnote{Notice that our notation differs from that in \S\,2.
+Throughout \S\,4 we denote (for ease of eyesight)
+$a$ = (speed of sound) = $a$, not $c_s$;
+$\rho$ = (density of rest mass) = $\rho$, not $\rho_0$.
+No confusion is likely, since nowhere in \S\,4 shall we deal with
+4-accelerations or with total mass-energy $\rho = \rho_0(1+\pi)$, and
+because $\Gamma \ll 1$ in all regions of the accreting gas.
+We shall also retain factors of $G$, $c$, and $k$ (i.e.\ use ``cgs'' units)
+throughout \S\,4.}
+(2.5.38) rewritten in the form
+\begin{equation}
+\tfrac{1}{2}\,u^2 + \frac{1}{\Gamma - 1}\,a^2 - \frac{GM}{r}
+= \text{constant}
+= \frac{1}{\Gamma - 1}\,a_\infty^2\,.
+\tag{4.2.3}
+\end{equation}
+
+[Here the enthalpy has been written in the form
+$w = \int \rho^{-1}\,dp = a^2/(\Gamma-1)$;
+cf.\ eq.\ (2.5.42).]  The constant has been determined by conditions at
+infinity, where the gas is at rest.
+
+Rewrite the law of mass conservation~(4.2.1) with density expressed in terms
+of sound speed
+\begin{equation}
+u = \frac{\dot{M}_0}{4\pi\rho_\infty\,r^2}
+    \left(\frac{a_\infty}{a}\right)^{2/(\Gamma-1)}\!.
+\tag{4.2.4}
+\end{equation}
+
+The only unknown parameter in the coupled equations~(4.2.3) and~(4.2.4) is
+the accretion rate~$\dot{M}_0$.  Once $\dot{M}_0$ is known, one can readily
+solve for the radial distributions of velocity, sound speed, and density.
+
+The mass flux is determined in the following way.  Consider the system of
+equations~(4.2.3) and~(4.2.4).  In the $u$--$a$ plane, the Bernoulli
+equation~(4.2.3) for fixed radius~$r$ defines an ellipse; each value of $r$
+corresponds to a different ellipse.  Similarly, the equation of mass
+conservation~(4.2.4) for each value of $r$ defines a hyperbola of fractional
+power, $u\,a^{2/(\Gamma-1)} = \text{const}$.  Now, let the accretion
+rate~$\dot{M}_0$ be chosen arbitrarily.  For every value of $r$,
+equations~(4.2.3) and~(4.2.4) are 2 equations with 2 unknowns, $u$ and $a$.
+Solving these equations---i.e.\ finding the intersection point of the ellipse
+with the hyperbola---gives $u$ and $a$ for that particular radius.  In other
+words, in the $u$, $a$ plane the curve~$u(a)$ is determined parametrically by
+the intersections of corresponding ellipses and hyperbolae.  It is clear (see
+Figure~\ref{fig:4.2.1}) that for every ellipse-hyperbola pair, there are
+either two intersection points, or one point of tangency, or no intersection
+at all.  If, for a particular chosen~$\dot{M}_0$, there exists any $r$ at
+which the two equations are incompatible for the~$\dot{M}_0$, such flow
+cannot occur.  Rejecting this case, we have 2 remaining possibilities, for a
+given~$\dot{M}_0$ (see Figure~\ref{fig:4.2.2}):
+
+\begin{enumerate}
+\item The ellipse and hyperbola intersect twice for every value of~$r$
+  (Figure~\ref{fig:4.2.2}a).\\
+  In this case we have 2 separate curves, corresponding to 2 families of
+  intersection points.
+
+\item The ellipse and hyperbola meet tangentially
+  (Figure~\ref{fig:4.2.2}b) at one section point (call it~$r_s$), at which
+  they cross each other; the two families of intersection points $u(a)$
+  cross each other at $r = r_s$.  We shall call the two families of
+  intersection points on the ``bisectrix'' of the graph, below that this
+  crossing point necessarily lies on the line $u = a$.
+\end{enumerate}
+
+In both the cases, 1 and 2, the curves $u(a)$ describe possible flows of gas
+in the gravitational field.  The curves begin on the innermost ellipse,
+$r = \infty$.  On the upper curve~$u(a)$, at this ellipse we have $a = 0$,
+but $u \neq 0$.  These boundary conditions are not of interest for the
+accretion problem,\footnote{This curve describes the ``stellar wind'' by
+which some stars eject matter into interstellar space; see Chapter~13 of
+ZN.} because accretion requires $u_\infty = 0$,
+$a_\infty \neq 0$.  The lower curve~$u(a)$ begins at the point
+$u_\infty = 0$, $a_\infty \neq 0$---
+
+\begin{figure}[htbp]
+\centering
+% \includegraphics[width=\columnwidth]{fig_4_2_1}
+\fbox{\parbox{0.9\columnwidth}{\centering [Figure 4.2.1 placeholder]\\[6pt]
+The $u$, $a$ ``solution plane'' for solving the coupled Bernoulli
+equation~(4.2.3) and law of mass conservation~(4.2.4).
+Solid curves: ellipses from the Bernoulli equation at several fixed values
+of~$r$ ($r = \infty$ is the innermost ellipse).
+Dashed curves: hyperbolae from the continuity equation.
+Heavy dots mark intersection points; the locus of these intersections
+traces the flow solution $u(a)$.
+The diagonal $u = a$ is the ``bisectrix'' $D = n$.
+Regions above the bisectrix are supersonic; regions below are subsonic.}}
+\caption{The $u$, $a$ ``solution plane'' for solving the coupled Bernoulli
+equation~(4.2.3) and law of mass conservation~(4.2.4).}
+\label{fig:4.2.1}
+\end{figure}
+
+to our desired boundary condition.  Hence we shall restrict attention to the
+lower curve.
+
+We must still decide which type of lower curve is reasonable---one that
+remains always below the bisectrix (case~1), or one that crosses the
+bisectrix (case~2).  In case~1 the flow is subsonic at all radii, $u < a$.
+But this requires a large back-pressure at all radii to retard the
+inflow---back pressure that can never be provided near the gravitational
+radius of a black hole.  The gas must cross the gravitational
+
+\begin{figure}[htbp]
+\centering
+% \includegraphics[width=\columnwidth]{fig_4_2_2}
+\fbox{\parbox{0.9\columnwidth}{\centering [Figure 4.2.2 placeholder]\\[6pt]
+Possible forms of adiabatic gas flow in a spherical, Newtonian gravitational
+field.  Curves~(a) [case~1 in text] correspond to flow that remains subsonic
+or supersonic everywhere.  Curves~(b) [case~2 in text] correspond to flow
+for which there is a sonic point, $u = a$.}}
+\caption{Possible forms of adiabatic gas flow in a spherical, Newtonian
+gravitational field.  Curves~(a) [case~1 in text] correspond to flow that
+remains subsonic or supersonic everywhere.  Curves~(b) [case~2 in text]
+correspond to flow for which there is a sonic point, $u = a$.}
+\label{fig:4.2.2}
+\end{figure}
+
+\noindent
+radius with the speed of light, as measured in the \emph{proper} reference
+frame of an observer there; hence, the flow is surely supersonic near the
+gravitational radius.
+
+Thus, the only acceptable solution $u(a)$ is the lower curve of case~2
+(Figure~\ref{fig:4.2.2}b).  This curve begins at $u = u_\infty = 0$,
+$a = a_\infty \neq 0$, and it crosses from the subsonic region into the
+supersonic region at $r = r_s$.  This transition to supersonic flow is
+crucial to the accretion process.  It governs the accretion rate~$\dot{M}_0$,
+in the same manner as the transition to supersonic flow in the throat of a
+rocket nozzle.  In both cases one and only one mass flow rate is compatible
+with the required transition to supersonic flow.
+
+Let us calculate the required accretion rate~$\dot{M}_0$.  We begin by
+calculating the flow velocity at the transition radius (``sonic
+radius'')~$r_s$.  To do this, we rewrite the Euler equation~(4.2.2) in the
+form
+\begin{equation}
+\frac{du}{dr} = -\,\frac{a^2\,dp}{p\,dr} - \frac{GM}{r^2}\,.
+\tag{4.2.5}
+\end{equation}
+
+We differentiate the law of mass conservation~(4.2.1) with respect to $r$
+and put $du/dr$ from it into~(4.2.5).  As a result we obtain
+\begin{equation}
+\frac{dp}{dr}\;\frac{(u^2 - a^2)}{p}
+  = -\frac{GM}{r^2} + \frac{2u^2}{r}\,,
+\tag{4.2.6}
+\end{equation}
+%
+which shows that at the sonic point, where $a = u$,
+\begin{equation}
+2u_s^2 = \frac{GM}{r_s}\,,\qquad \text{or} \quad
+u_s^2 = a_s^2 = \tfrac{1}{2}\,\frac{GM}{r_s}\,.
+\tag{4.2.7}
+\end{equation}
+
+By combining this result with the Bernoulli equation~(4.2.3) we obtain the
+speed of sound at the sonic point in terms of the speed of sound at infinity
+\begin{equation}
+a_s = u_s = a_\infty \left(\frac{2}{5-3\Gamma}\right)^{1/2}\!;
+\tag{4.2.8}
+\end{equation}
+%
+and using equation~(4.2.7) we obtain the radius at the sonic point
+\begin{equation}
+r_s = \left(\frac{5-3\Gamma}{4}\right)\frac{GM}{a_\infty^2}\,.
+\tag{4.2.9}
+\end{equation}
+%
+(Notice that the gravitational potential $GM/r_s$ at the sonic point is of
+order~$a_\infty^2$.)
+
+Now it is straightforward to calculate the accretion rate from
+equation~(4.2.4):
+\begin{equation}
+\dot{M}_0 = 4\pi\,\alpha\,G^2 M^2\,\rho_\infty\,a_\infty^{-3}
+= 4\Gamma^{3/2}\,\alpha\,G^2\,M^2\,\rho_\infty\,
+  (m_p / k T_\infty)^{3/2}\,.
+\tag{4.2.10}
+\end{equation}
+
+Here $\alpha$ is a constant of order unity which depends on~$\Gamma$:
+\begin{equation}
+\alpha \equiv \frac{\pi}{4\Gamma^{3/2}}
+  \left(\frac{2}{5-3\Gamma}\right)^{(5-3\Gamma)/[2(\Gamma-1)]}\!.
+\tag{4.2.11}
+\end{equation}
+%
+\begin{align}
+\alpha &\simeq 1.5  \quad \text{for} \quad \Gamma = 1,    \notag \\
+\alpha &\simeq 1.2  \quad \text{for} \quad \Gamma = 1.4,  \notag \\
+\alpha &\simeq 0.3  \quad \text{for} \quad \Gamma = 5/3;
+\end{align}
+%
+and we have used the equation of state
+$p_\infty = (\rho_\infty / m_p)\,k\,T_\infty$.
+
+This expression for the accretion rate is the main result of our calculation.
+
+Notice that $\dot{M}_0$ depends on~$\Gamma$.  At a typical temperature of
+$T_\infty \sim 10^4$\,K the interstellar gas will be partially ionized, so
+when it is compressed some energy will go into further ionization.  This means
+that the value of $\Gamma$ outside and near the sonic point will be somewhat
+below $5/3$.  A value of $\Gamma = 1.4$ might be reasonable for use in
+equations~(4.2.10) and~(4.2.11).
+
+It is now straightforward to derive from equations~(4.2.3) and~(4.2.4) the
+radial distributions of all quantities.  The general picture is as follows.
+Outside the ``radius of influence''
+\begin{equation}
+r_i = 2\,GM/a_\infty^2 = r_g\,(c/a_\infty)^2
+\tag{4.2.12}
+\end{equation}
+%
+\[
+\simeq 10\,r_g \quad \text{for} \quad \Gamma = 1.4,
+\]
+%
+the pull of the hole hardly makes itself felt, so $\rho$ and $a$ are nearly
+equal to their values at ``infinity''; $\rho \simeq \rho_\infty$,
+$a \simeq a_\infty$; and the density and sound velocity begin to rise.
+After the gas passes through the sonic point~$r_s$, it is in near free-fall
+
+\begin{equation}
+u = (2GM/r)^{1/2} = a_\infty\,(r_i/r)^{1/2}
+\qquad \text{at} \quad r < r_s\,;
+\tag{4.2.13a}
+\end{equation}
+%
+so the law of mass conservation requires the density to increase as
+\begin{equation}
+\rho = \frac{\dot{M}_0}{4\pi r^2\,u}
+\simeq 0.2\,\rho_\infty\,(r_i/r)^{3/2}
+\qquad \text{at} \quad r < r_s\,.
+\tag{4.2.13b}
+\end{equation}
+
+For adiabatic compression, temperature rises as
+$T \propto \rho^{\,\Gamma-1}$; consequently, at $r < r_s$
+\begin{equation}
+T = \left(\frac{a\Gamma^{3/2}}{4\pi}\right)^{(\Gamma-1)}
+\simeq 0.5\,T_\infty\left(\frac{r_i}{r}\right)^{\frac{1}{2}(\Gamma-1)}
+\qquad \text{if} \quad \Gamma = 1.4\;\text{near sonic point.}
+\tag{4.2.13c}
+\end{equation}
+
+The above solution, (4.2.10)--(4.2.13), for adiabatic hydrodynamic accretion
+is due originally to \citet{Bondi1952}.
+
+Rewrite the accretion rate~(4.2.10) for hydrodynamic flow in a form similar
+to that (eq.~4.1.3) for noninteracting particles
+\begin{equation}
+\dot{M}_0 = \pi\,r_g^2\,\rho_\infty\,c\,(c/a_\infty)^3.
+\tag{4.2.14}
+\end{equation}
+
+Direct comparison, and use of the approximate equality between speed of sound
+$a_\infty$ and proton speeds~$v_\infty$, shows that the hydrodynamic
+accretion rate is larger by a factor $(c/a_\infty)^2 \simeq 10^{10}$ than
+the accretion rate for independent particles.  The physical reason for this
+is clear: gas is distinguished from independent particles by the frequent
+collisions of its atoms; these collisions limit the tangential velocities
+during infall, but permit radial velocities to grow.
+
+Other, useful forms for the hydrodynamic accretion rate are
+\begin{equation}
+\dot{M}_0 \simeq 10^{5}
+\left(\frac{M}{M_\odot}\right)^{\!2}
+\left(\frac{\rho_\infty}{10^{-24}\;\text{g\,cm}^{-3}}\right)
+\left(\frac{a_\infty}{10\;\text{km\,sec}^{-1}}\right)^{\!-3}
+\;\text{,}
+\tag{4.2.15a}
+\end{equation}
+%
+\begin{equation}
+\dot{M}_0 \simeq \left(1\times 10^{11}\;\frac{\text{g}}{\text{sec}}\right)
+\left(\frac{M}{M_\odot}\right)^{\!2}
+\left(\frac{\rho_\infty}{10^{-24}\;\text{g\,cm}^{-3}}\right)
+\left(\frac{T_\infty}{10^4\;\text{K}}\right)^{\!-3/2}\!.
+\tag{4.2.15b}
+\end{equation}
