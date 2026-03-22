@@ -1,0 +1,361 @@
+% Agent 19: Pages 415--418 (PDF pp.~36--37)
+% Coverage: Section 5.2 (continued) -- angular momentum conservation,
+%           mass conservation, energy conservation, heat generation,
+%           surface temperature, spectrum
+% Equations (5.2.12)--(5.2.23)
+
+%%% ====================================================================
+%%% SECTION 5.2  Accretion in Binary Systems: The General Picture (cont.)
+%%% ====================================================================
+
+%% --- continuation from previous agent (page 413, right column) ---
+
+Viscous stresses in the orbiting disk gradually remove angular momentum
+from each gas element, permitting it to gradually spiral inward toward the
+compact star. The angular momentum removed is transported by the viscous
+stresses from the inner parts of the disk to the outer parts, and is then picked
+up and carried away by passing gas (see above). At the same time, the shearing
+orbital motion of the gas in the inner parts of the disk, acting against the
+viscous stresses, produces heat (``frictional heating''). Much more heat is
+generated than the gas can store, so most of the heat gets radiated away from
+the top and bottom faces of the disk.
+
+The total energy radiated by a unit mass of gas during its passage inward
+through the disk must equal, approximately,\footnote{``Approximately'' because the compact star itself can feed energy into the disk by means
+of viscous stresses, and that energy can subsequently be converted to heat and radiated
+away; see below.} the gravitational binding energy
+of the unit mass when it reaches the inner edge of the disk, $\tilde{E}_{\text{bind}}$. For a white
+dwarf or neutron star the inner edge of the disk is near the star's surface, so
+\begin{equation}
+\tilde{E}_{\text{bind}} \simeq \tfrac{1}{4}(M_c/R_c)
+\tag{5.2.9a}
+\end{equation}
+\begin{equation}
+\simeq 10^{-4} \quad \text{for white dwarf}.
+\notag
+\end{equation}
+\begin{equation}
+\simeq 0.05 \quad \text{for neutron star}.
+\notag
+\end{equation}
+
+For a black hole the inner edge of the disk is at the last stable circular orbit,
+which has
+\begin{equation}
+\tilde{E}_{\text{bind}} \simeq 0.057 \quad \text{for nonrotating hole}.
+\tag{5.2.9b}
+\end{equation}
+\begin{equation}
+\tilde{E}_{\text{bind}} \simeq 0.42 \quad \text{for maximally rotating hole}.
+\notag
+\end{equation}
+
+Thus, in order of magnitude the total luminosity of the disk must be
+\begin{equation}
+L \sim 10^{-4}\,\dot{M}_0 \sim (10^{34} \text{ ergs/sec})
+\left(\frac{\dot{M}_0}{10^{-9} M_\odot/\text{yr}}\right)
+\quad \text{for white dwarf},
+\tag{5.2.10}
+\end{equation}
+\begin{equation}
+L \sim 0.1\,\dot{M}_0 \sim (10^{37} \text{ ergs/sec})
+\left(\frac{\dot{M}_0}{10^{-9} M_\odot/\text{yr}}\right)
+\quad \text{for neutron star or hole}.
+\notag
+\end{equation}
+
+Here $\dot{M}_0$ is the accretion rate. In the case of a neutron star or white dwarf, the
+gas hits the star (or its magnetic field) with a kinetic energy roughly equal to the
+binding energy $\tilde{E}_{\text{bind}}$. In a steady state the energy liberated by this collision
+must all get radiated away, so the star itself will emit a luminosity of the same
+order as that emitted by the disk. In the case of a black hole, by contrast, the
+disk is the only source of radiation.
+
+If the total luminosity approaches the ``Eddington limit''
+\begin{equation}
+L_{\text{crit}} \simeq (1 \times 10^{38} \text{ ergs/sec})\,(M/M_\odot)
+\tag{5.2.11a}
+\end{equation}
+(eq.~4.5.4), then radiation pressure will destroy the disk, and the general nature
+of the accretion will be quite different from that depicted above. For details
+see \S5.13, on the ``subcritical case.''
+
+$L \leq L_{\text{crit}}$, with a well-defined, thin disk. Note that this subcritical case
+corresponds to an accretion rate of
+\begin{equation}
+\dot{M}_0 \ll \dot{M}_{\text{crit}} \sim (10^{-5} M_\odot/\text{yr})(M/M_\odot)
+\quad \text{for neutron star or black hole}.
+\tag{5.2.11b}
+\end{equation}
+\begin{equation}
+\sim (10^{-5} M_\odot/\text{yr})(M/M_\odot)
+\quad \text{for white dwarf}
+\notag
+\end{equation}
+
+For a semiquantitative, Newtonian analysis of the subcritical disk structure,
+introduce an inertial frame centered on the compact star and ignore the tidal
+gravitational forces of the normal star. Let the rate at which gas is deposited
+into the disk, $\dot{M}_0$ (``accretion rate''), be given.
+
+The specific angular momentum of the gas at radius $r$ is
+\begin{equation}
+\tilde{L} = (M/r^3)^{1/2}\,r^2 = (Mr)^{1/2},
+\tag{5.2.12}
+\end{equation}
+where $M$---previously denoted $M_c$---is the mass of the compact star. Since the
+radius of the compact star is far less than that of the outer edge of the disk, a gas
+element must lose nearly all of its initial angular momentum by the time it reaches
+the star. Thus, the rate at which angular momentum is removed from the disk by
+passing gas must be
+\begin{equation}
+\dot{j} = \dot{M}_0 \times (\tilde{L} \text{ evaluated at outer edge of disk}, r_0)
+= \dot{M}_0 (Mr_0)^{1/2}.
+\tag{5.2.13}
+\end{equation}
+
+In a steady state the accretion rate and the outer edge of the disk will adjust
+themselves until this relation is satisfied, with angular momentum continually
+being removed from the outer edge by passing gas.
+
+Return to the inner regions of the disk. Let $2h$
+be the disk thickness, and let $\Sigma = 2h\rho_0$ be the surface density (g/cm$^2$),
+$\rho_0$ be the mass density (g/cm$^3$) at radius
+$r$. Let $v^{\hat{r}}$ be the radial velocity of the gas. (Note: $v^{\hat{r}} < 0$.) The orbital velocity
+and angular velocity $\Omega$ are
+\begin{equation}
+v^{\hat{\phi}} = \Omega r = (M/r)^{1/2}\,.
+\tag{5.2.14}
+\end{equation}
+
+The viscosity will never get strong enough to allow large radial velocities; i.e.,
+$|v^{\hat{r}}|$ will always be far smaller than $v^{\hat{\phi}}$. Let $t_{\hat{r}\hat{\phi}}$ be the viscous stress (components
+relative to an orthonormal frame at radius $r$). This stress is related to the shear
+of the circular Keplerian orbits by
+\begin{equation}
+t_{\hat{r}\hat{\phi}} = -2\eta\,\sigma_{\hat{r}\hat{\phi}}
+= -\tfrac{3}{2}\eta\,(M/r^3)^{1/2},
+\tag{5.2.16}
+\end{equation}
+where $\eta$ is the coefficient of dynamic viscosity (see \S2.5). The sources of
+viscosity will be discussed below. Let $F$ be the flux of radiation (ergs/cm$^2$ sec)
+
+off the upper face of the disk. An equal flux $F$ will come off the lower face.
+
+The steady-state structure of the disk is governed by four conservation laws
+(conservation of mass, angular momentum, energy, and vertical momentum);
+by the nature of the viscosity---i.e., value of $\eta$---and by the law of radiative transfer
+from the inside of the disk to its surface.
+
+\textit{Rest-mass conservation}
+
+Mass must flow across a cylinder of radius $r$ at a rate equal to the accretion rate
+\begin{equation}
+-2\pi r \cdot 2h \cdot \rho_0\, v^{\hat{r}} = \dot{M}_0\,.
+\tag{5.2.15}
+\end{equation}
+
+%%% --- Angular-momentum conservation ---
+
+\textit{Angular-momentum conservation}
+
+The rate at which angular momentum is carried inward across radius $r$ by
+inflowing gas must equal the rate at which viscous stresses carry angular
+momentum out of radius $r$, plus the rate $\dot{j}_c$ at which angular momentum is
+deposited in the compact star
+\begin{equation}
+\dot{M}_0 (Mr)^{1/2} = 2\pi r \cdot 2h \cdot t_{\hat{r}\hat{\phi}} \cdot r + \dot{j}_c\,.
+\tag{5.2.17}
+\end{equation}
+
+The specific angular momentum $\tilde{L}_c$ deposited into the compact star cannot
+exceed the Keplerian angular momentum at the inner edge of the disk $r_I$;
+hence
+\begin{equation}
+\dot{j}_c = \beta \dot{M}_0 (Mr_I)^{1/2} \quad \text{for some} \quad |\beta| \leq 1.
+\notag
+\end{equation}
+
+Solving for the product of stress and disk thickness, we obtain
+\begin{equation}
+2h t_{\hat{r}\hat{\phi}} = \frac{\dot{M}_0}{2\pi r^2}\left[(Mr)^{1/2}
+- \beta(Mr_I)^{1/2}\right].
+\tag{5.2.18}
+\end{equation}
+\begin{equation}
+\simeq \frac{\dot{M}_0(Mr)^{1/2}}{2\pi r^2}
+\quad \text{for} \quad r \gg r_I.
+\notag
+\end{equation}
+
+Notice that in a steady state the product $2h t_{\hat{r}\hat{\phi}}$ is determined uniquely by the
+accretion rate and the mass of the hole. If, at some radius, $2h t_{\hat{r}\hat{\phi}}$ is (temporarily)
+smaller than the steady-state value, then the viscous stresses there will not be sufficient to
+handle the mass flow $\dot{M}_0$. As a result, mass will accumulate in the deviant region,
+increasing thereby the disk thickness $h$ and/or the stresses $t_{\hat{r}\hat{\phi}}$ there, and returning
+the deviant region to a steady-state structure. For a quantitative analysis of this
+``approach to steady state'' see Thorne~(1973b)\cite{Thorne1973b}.
+
+%%% --- Energy conservation ---
+
+\textit{Energy conservation}
+
+Heat is generated in the disk by viscosity at a rate, per unit volume, given by
+\begin{equation}
+\varepsilon = (2h t_{\hat{r}\hat{\phi}})(-2\sigma_{\hat{r}\hat{\phi}})
+\notag
+\end{equation}
+(see \S2.5). Thus, the heat generated per unit area is
+\begin{equation}
+2h\varepsilon = (2h t_{\hat{r}\hat{\phi}})(-2\sigma_{\hat{r}\hat{\phi}})
+= \frac{3\dot{M}_0}{4\pi r^2}\,\frac{M}{r}
+\left[1 - \beta\!\left(\frac{r_I}{r}\right)^{1/2}\right];
+\tag{5.2.19}
+\end{equation}
+and the heat generated between radii $r_1$ and $r_2$ is
+\begin{equation}
+\int_{r_1}^{r_2} 2h\varepsilon\cdot 2\pi r\,dr
+= \tfrac{3}{2}\dot{M}_0
+\left[\frac{M}{r_1}
+- \frac{2\beta}{3}\left(\frac{r_I}{r_1}\right)^{1/2}\!\frac{M}{r_1}
+- \frac{M}{r_2}
++ \frac{2\beta}{3}\left(\frac{r_I}{r_2}\right)^{1/2}\!\frac{M}{r_2}
+\right]
+\notag
+\end{equation}
+\begin{equation}
+\simeq \tfrac{3}{2}\dot{M}_0
+\left(\frac{M}{r_1} - \frac{M}{r_2}\right)
+\quad \text{for} \quad r_2 > r_1 \gg r_I.
+\tag{5.2.20}
+\end{equation}
+
+It is instructive to examine the origin of this heat energy by asking at what
+net rate energy is being deposited in the region $r_1 < r < r_2$. Gravitational
+potential energy is released at a rate $\dot{M}_0(M/r_1 - M/r_2)$, but only half of this
+energy can go into orbital kinetic energy
+(virial theorem). Thus, the rate at which gravitational energy gets converted
+into heat is
+\begin{equation}
+\tfrac{1}{2}\dot{M}_0(M/r_1 - M/r_2).
+\notag
+\end{equation}
+
+The viscous stresses transport outward not only angular momentum, but also
+energy. The rate at which energy is transported across radius $r$ is
+\begin{equation}
+\dot{E} = \Omega J = \dot{M}_0(M/r)\left[1 - \beta(r_I/r)^{1/2}\right].
+\notag
+\end{equation}
+
+Thus, energy is deposited by viscosity between radii $r_1$ and $r_2$ at a rate
+\begin{equation}
+\dot{M}_0
+\left[\frac{M}{r_1}\left(1 - \beta\!\left(\frac{r_I}{r_1}\right)^{1/2}\right)
+- \frac{M}{r_2}\left(1 - \beta\!\left(\frac{r_I}{r_2}\right)^{1/2}\right)
+\right].
+\notag
+\end{equation}
+
+This energy deposition rate plus the deposition rate for gravitational energy is
+equal to the total heating rate. Notice that at radii $r \gg r_I$, gravity accounts
+directly for only one-third of the heat. The remaining two-thirds is transported
+into the heating region by viscous stresses. Much of the early literature on disk
+accretion, e.g., Lynden-Bell~(1969)\cite{LyndenBell1969}, failed to take account of energy transport
+by viscous stresses, and therefore underestimated by a factor of 3 the heating at
+$r \gg r_I$.
+
+If none of the heat were radiated away, the thermal energy of the disk
+would be 3/2 times its gravitational potential energy; and its temperature
+would thus be
+\begin{equation}
+T \sim (M/r) m_p \sim (10^{13}\,\text{K})(r/10^5\,\text{cm})^{-1}(M/M_\odot).
+\notag
+\end{equation}
+
+Such temperatures are absurdly high. Thermal bremsstrahlung and other
+radiative processes will never permit such temperatures to arise. Instead, they
+will quickly remove almost all of the heat that is generated. This means that
+
+the total flux $2F$ from the top and bottom faces of the disk must equal the
+heating rate per unit area, as calculated above (the heat flows out of the disk
+vertically rather than radially because the disk is so thin):
+\begin{equation}
+F = \frac{3\dot{M}_0}{8\pi r^2}\,\frac{M}{r}
+\left[1 - \beta\!\left(\frac{r_I}{r}\right)^{1/2}\right].
+\tag{5.2.21}
+\end{equation}
+
+The total power radiated is thus
+\begin{equation}
+L = \int_{r_I}^{\infty} 2F \cdot 2\pi r\,dr
+= (\tfrac{3}{2} - \beta)\dot{M}_0\,\frac{M}{r_I}\,.
+\tag{5.2.22}
+\end{equation}
+
+Of this total power radiated, $\tfrac{1}{2}\dot{M}_0 M/r_I$ comes from gravity, while $(1 - \beta)\dot{M}_0 M/r_I$
+comes from the rotational energy of the star.
+
+\textit{Spectrum}
+
+A detailed treatment of the spectrum radiated will be given in \S5.10. Here we
+only note that, if the radiation is blackbody, then the surface temperature of
+the disk at radius $r$ must be
+\begin{equation}
+T_s = \left(\frac{4F}{\sigma}\right)^{1/4}
+\simeq (3 \times 10^7\,\text{K})
+\left(\frac{\dot{M}_0}{10^{-9}\,M_\odot/\text{yr}}\right)^{1/4}
+\!\left(\frac{M}{M_\odot}\right)^{-1/2}
+\!\left(\frac{r}{r_I}\right)^{-3/4}
+\left[1 - \beta\!\left(\frac{r_I}{r}\right)^{1/2}\right]^{1/4}\!.
+\tag{5.2.23}
+\end{equation}
+
+Because most of the radiation is emitted from $r/M \sim 10$ for a black hole or
+neutron star, and from $r/M \sim 10^4$ for a dwarf, and because the black-body
+spectrum peaks at a photon energy of
+\begin{equation}
+h\nu_{\max} \simeq (2.44 \times 10^{-4}\;\text{eV})(T_s/{}^{\circ}\text{K}),
+\notag
+\end{equation}
+the spectrum of the total radiation from the disk should peak at
+\begin{equation}
+h\nu_{\max} \simeq (1\;\text{keV})
+\left(\frac{\dot{M}_0}{10^{-9} M_\odot/\text{yr}}\right)^{1/4}
+\left(\frac{M}{M_\odot}\right)^{-1/2}
+\quad \text{for neutron star or hole}
+\notag
+\end{equation}
+\begin{equation}
+h\nu_{\max} \simeq (0.01\;\text{keV})
+\quad \text{for white dwarf.}
+\notag
+\end{equation}
+
+Thus, for reasonable accretion rates the disk can emit strongly in the X-ray
+region ($\sim$1 to 10~keV); but the X-ray spectrum should fall fairly rapidly with
+increasing energy. It actually turns out that electron-scattering opacity impedes
+the emission of blackbody radiation, and causes the spectrum to peak at energies
+higher than that (5.2.23). (See \S5.10.) However, the above estimates are still
+accurate to within a factor $\sim$10.
+
+%%% --- Vertical pressure balance ---
+
+\textit{Vertical pressure balance}
+
+The thickness of the disk is governed by a balance between vertical pressure force
+and the tidal gravitational force of the compact star (``vertical momentum
+conservation''):
+\begin{equation}
+\frac{dp}{dz} = \rho_0 \times \left(\text{``acceleration of gravity''}\right) = \rho_0\,\frac{Mz}{r^3}\,.
+\tag{5.2.24}
+\end{equation}
+
+The approximate solution to this equation is
+\begin{equation}
+h \simeq (p/\rho_0)^{1/2}(r^3/M)^{1/2} = c_s/\Omega.
+\tag{5.2.25}
+\end{equation}
+
+Here $h$ is the half-thickness of the disk, $c_s$ is the speed of sound in the gas, and
+$\Omega = (M/r^3)^{1/2}$ is the angular velocity of the gas.
