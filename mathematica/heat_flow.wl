@@ -450,9 +450,12 @@ Print["\n========================================"];
 Print["  Fig. 6: Telegrapher's Equation"];
 Print["========================================"];
 
-sigmaHatVals = {0.15, 1.5, 7.5};
-tauHatVals   = {1.5, 15., 75.};
+(* Run sigma_hat=7.5 FIRST (fastest dynamics, most interesting) *)
+sigmaHatVals = {7.5, 1.5, 0.15};
+tauHatVals   = {75., 15., 1.5};
 tSnapshots   = {16., 39., 312.};
+(* Max evolution time per case to avoid hours-long runs *)
+tMaxPerCase  = {312., 312., 50.};  (* sigma=0.15 barely changes, cap at t=50 *)
 
 NxF6 = 256;
 dxF6 = (xMaxH - xMinH)/NxF6;
@@ -504,6 +507,15 @@ Do[
 
   Do[
     tTarget = tSnapshots[[j]];
+    (* Skip snapshots beyond the max time for this case *)
+    If[tTarget > tMaxPerCase[[k]],
+      Print["  Skipping t = ", tTarget, " (beyond tMax=", tMaxPerCase[[k]], ")"];
+      (* Use the last available snapshot *)
+      If[j > 1 && Length[allSnaps[[k, j-1]]] > 0,
+        allSnaps[[k, j]] = allSnaps[[k, j-1]];
+      ];
+      Continue[];
+    ];
     Print["  Evolving to t = ", tTarget, " ..."];
     While[t6 < tTarget - 1.0*^-10,
       dtStep = Min[dt6, tTarget - t6];
@@ -539,7 +551,8 @@ Do[
 (* --- Generate Fig. 6 --- *)
 Print["\n--- Generating Fig. 6 ---"];
 
-grayLevels6 = {GrayLevel[0.6], GrayLevel[0.3], GrayLevel[0.0]};
+(* k=1: sigma=7.5 (darkest), k=2: sigma=1.5 (medium), k=3: sigma=0.15 (lightest) *)
+grayLevels6 = {GrayLevel[0.0], GrayLevel[0.3], GrayLevel[0.6]};
 panelLabels = {"t = 16", "t = 39", "t = 312"};
 
 panels = Table[
@@ -557,9 +570,9 @@ panels = Table[
       ImageSize -> 280, AspectRatio -> 0.7,
       PlotLegends -> If[j == 1,
         Placed[LineLegend[{
-          "\!\(\*OverscriptBox[\(\[Sigma]\), \(^\)]\)=0.15",
+          "\!\(\*OverscriptBox[\(\[Sigma]\), \(^\)]\)=7.5",
           "\!\(\*OverscriptBox[\(\[Sigma]\), \(^\)]\)=1.5",
-          "\!\(\*OverscriptBox[\(\[Sigma]\), \(^\)]\)=7.5"}, LegendMarkerSize -> 15], {Right,Top}],
+          "\!\(\*OverscriptBox[\(\[Sigma]\), \(^\)]\)=0.15"}, LegendMarkerSize -> 15], {Right,Top}],
         None]
     ]
   ],
