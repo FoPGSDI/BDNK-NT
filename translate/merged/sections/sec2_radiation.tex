@@ -837,7 +837,7 @@ from protons spiralling
 in the magnetic field is smaller by a factor $(m_e/m_p)^3 \simeq 10^{-10}$ than that from
 electrons, since
 \begin{equation}
-\frac{dE}{dt} \propto \frac{v^2}{m^2} \propto \frac{1}{m^3}\,.
+\frac{dE}{dt} \propto \frac{v^2}{m^3} \propto \frac{1}{m}\,.
 \tag{2.3.6}
 \end{equation}
 (Recall: in thermal equilibrium the mean kinetic energies of protons and electrons
@@ -853,7 +853,7 @@ where $\langle\;\rangle$ denotes an average over the Maxwell-Boltzmann velocity 
 of the electrons. Since $\gamma = 1$, since 2 of the 3 spatial directions are orthogonal
 to~$B$, and since the mean kinetic energy per electron is $\tfrac{3}{2}kT$, we have
 \begin{equation}
-\langle \gamma v_\perp^2 \rangle
+\langle (\gamma v_\perp)^2 \rangle
 = \frac{2}{3}\,\frac{2\,\bar{E}}{m_e}
 = \frac{2}{3}\,\frac{3kT}{m_e}
 = \frac{2kT}{m_e}\,.
@@ -862,7 +862,7 @@ to~$B$, and since the mean kinetic energy per electron is $\tfrac{3}{2}kT$, we h
 Combining this with equations~(2.3.4) and~(2.3.7), we obtain for the total
 emissivity of the plasma
 \begin{align}
-\varepsilon &= \frac{4}{3}\left(\frac{f_e\,r_0^2}{m_p}\right)
+\varepsilon &= \frac{4}{3}\left(\frac{f_e\,r_0^2\,c}{m_p}\right)
 \left(\frac{kT}{m_e c^2}\right) B^2
 \tag{2.3.9}\\
 &= (0.32\;\text{ergs/g\,sec})\;f_e\;T_{\rm K}\;B_G^2\,,
@@ -933,7 +933,7 @@ in particular
 Combining equations~(2.3.12), (2.3.7), and~(2.3.4), we obtain for the total
 emissivity of the plasma
 \begin{align}
-\varepsilon &= \frac{16}{3}\left(\frac{r_0^2 c}{m_p}\right)
+\varepsilon &= \frac{16}{3}\left(\frac{f_e\,r_0^2 c}{m_p}\right)
 \left(\frac{kT}{m_e c^2}\right)^{\!2} B^2 \notag \\
 &= (2.2 \times 10^{-10}~\text{ergs/g\,sec})\,f_e\,T_K^2\,B_G^2.
 \tag{2.3.13}

@@ -49,12 +49,12 @@ where $\langle\;\rangle$ denotes an average over the Maxwell--Boltzmann velocity
 of the electrons.  Since $\gamma = 1$, since 2 of the 3 spatial directions are orthogonal
 to $B$, and since the mean kinetic energy per electron is $\frac{3}{2}kT$, we have
 \begin{equation}
-\langle (\gamma v_\perp)^2 \rangle = \frac{2}{3}\langle v^2 \rangle = \frac{2}{3}\cdot\frac{2kT}{m_e}.
+\langle (\gamma v_\perp)^2 \rangle = \frac{2}{3}\langle v^2 \rangle = \frac{2}{3}\cdot\frac{3kT}{m_e} = \frac{2kT}{m_e}.
 \tag{2.3.8}
 \end{equation}
 Combining this with equations~(2.3.4) and~(2.3.7), we obtain
 \begin{align}
-\varepsilon &= \frac{4}{3}\left(\frac{r_0^2 c}{m_p}\right)
+\varepsilon &= \frac{4}{3}\left(\frac{f_e\,r_0^2 c}{m_p}\right)
 \left(\frac{kT}{m_e c^2}\right)B^2 \notag \\
 &= (0.32~\text{ergs/g\,sec})\,f_e\,T_K\,B_G^2,
 \tag{2.3.9}
@@ -64,7 +64,7 @@ where $T_K$ is temperature in ${}^\circ$K and $B_G$ is magnetic field in Gauss.
 Each electron emits its radiation monochromatically, with the cyclotron
 frequency (orbital frequency of electron's spiral motion)
 \begin{equation}
-\nu_{\text{cyc}} = \frac{eB}{2\pi m_e c} = (2.79~\text{MHz})\,T_K\,B_G.
+\nu_{\text{cyc}} = \frac{eB}{2\pi m_e c} = (2.79~\text{MHz})\,B_G.
 \tag{2.3.10}
 \end{equation}
 
@@ -125,7 +125,7 @@ in particular
 Combining equations~(2.3.12), (2.3.7), and~(2.3.4), we obtain for the total
 emissivity of the plasma
 \begin{align}
-\varepsilon &= \frac{16}{3}\left(\frac{r_0^2 c}{m_p}\right)
+\varepsilon &= \frac{16}{3}\left(\frac{f_e\,r_0^2 c}{m_p}\right)
 \left(\frac{kT}{m_e c^2}\right)^{\!2} B^2 \notag \\
 &= (2.2 \times 10^{-10}~\text{ergs/g\,sec})\,f_e\,T_K^2\,B_G^2.
 \tag{2.3.13}
