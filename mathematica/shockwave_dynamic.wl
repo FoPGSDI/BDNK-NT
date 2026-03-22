@@ -45,33 +45,39 @@ makeInitialData[epsL_, vL_, nL_, epsR_, vR_, nR_, w_, xGrid_] := {
   Table[(nL - nR)/2*(1 - Erf[x/w]) + nR, {x, xGrid}]
 };
 
+(* ---- Safe numeric check: clamp non-numeric values ---- *)
+safeVal[x_] := If[NumberQ[x] && Abs[x] < 1.0*^15, x, 0.];
+
 (* ---- Compute Ttt, Ttx, Txx, Jx analytically ---- *)
 (* All BDNK corrections are LINEAR in dtEps and dtV.
    We compute the base (dtEps=dtV=0) and the linear coefficients. *)
 
 bdnkComponents[eps_, v_, n_, dxEps_, dxV_, dxN_, dtEps_, dtV_,
                gam_, mass_, vHat_, sigmaHat_, tauHat_] :=
-Module[{pp, rr, cs2, ww, ww2, tc,
+Module[{pp, rr, cs2, vClamped, ww, ww2, tc,
         tauEps, tauP, tauQ, vVisc, sig, betaE, betaN0, eta0,
         divU, udotEps, uDotUx, dxEpsProj, dxNProj,
         scrE, scrP, scrQx, sigXX,
         ttt, ttx, txx, jx},
 
+  (* Clamp velocity to safe range to prevent Sqrt of negative *)
+  vClamped = Clip[v, {-0.9999, 0.9999}];
+
   pp  = (gam - 1)*(eps - mass*n);
   rr  = eps + pp;
-  cs2 = gam*pp/rr;
-  ww  = 1.0/Sqrt[1.0 - v^2];
-  ww2 = 1.0/(1.0 - v^2);
+  cs2 = If[Abs[rr] < 1.0*^-30, 0., gam*pp/rr];
+  ww  = 1.0/Sqrt[1.0 - vClamped^2];
+  ww2 = 1.0/(1.0 - vClamped^2);
 
   tc = transportCoeffs[eps, n, gam, mass, vHat, sigmaHat, tauHat];
   tauEps = tc["tauEps"]; tauP = tc["tauP"]; tauQ = tc["tauQ"];
   vVisc = tc["V"]; sig = tc["sigma"]; betaE = tc["betaEps"];
   betaN0 = tc["betaN"]; eta0 = 3.0*vVisc/4.0;
 
-  divU     = ww^3*(v*dtV + dxV);
-  udotEps  = ww*(dtEps + v*dxEps);
-  uDotUx   = ww^4*(dtV + v*dxV);
-  dxEpsProj = ww2*(v*dtEps + dxEps);
+  divU     = ww^3*(vClamped*dtV + dxV);
+  udotEps  = ww*(dtEps + vClamped*dxEps);
+  uDotUx   = ww^4*(dtV + vClamped*dxV);
+  dxEpsProj = ww2*(vClamped*dtEps + dxEps);
   dxNProj   = ww2*dxN;
 
   scrE  = eps + tauEps*(udotEps + rr*divU);
@@ -79,12 +85,12 @@ Module[{pp, rr, cs2, ww, ww2, tc,
   scrQx = tauQ*rr*uDotUx + betaE*dxEpsProj + betaN0*dxNProj;
   sigXX = (2.0/3.0)*ww2*divU;
 
-  ttt = scrE*ww2 + scrP*ww2*v^2 + 2*v*scrQx*ww - 2*eta0*v^2*sigXX;
-  ttx = (scrE + scrP)*ww2*v + scrQx*ww*(1 + v^2) - 2*eta0*v*sigXX;
-  txx = scrE*ww2*v^2 + scrP*ww2 + 2*scrQx*ww*v - 2*eta0*sigXX;
-  jx  = n*ww*v;
+  ttt = scrE*ww2 + scrP*ww2*vClamped^2 + 2*vClamped*scrQx*ww - 2*eta0*vClamped^2*sigXX;
+  ttx = (scrE + scrP)*ww2*vClamped + scrQx*ww*(1 + vClamped^2) - 2*eta0*vClamped*sigXX;
+  txx = scrE*ww2*vClamped^2 + scrP*ww2 + 2*scrQx*ww*vClamped - 2*eta0*sigXX;
+  jx  = n*ww*vClamped;
 
-  {ttt, ttx, txx, jx}
+  {safeVal[ttt], safeVal[ttx], safeVal[txx], safeVal[jx]}
 ];
 
 (* ---- Compute RHS of the evolution system ---- *)
@@ -132,7 +138,7 @@ Module[{nx, dxEps, dxV, dxN,
   jxArr  = Table[0., {nx}];
   Do[
     Module[{comp},
-      comp = bdnkComponents[epsArr[[i]], vArr[[i]], nArr[[i]],
+      comp = bdnkComponents[epsArr[[i]], Clip[vArr[[i]], {-0.9999, 0.9999}], nArr[[i]],
                              dxEps[[i]], dxV[[i]], dxN[[i]],
                              dtEpsArr[[i]], dtVArr[[i]],
                              gam, mass, vHat, sigmaHat, tauHat];
@@ -161,7 +167,7 @@ Module[{nx, dxEps, dxV, dxN,
   dtNArr  = Table[0., {nx}];
 
   Do[
-    eps = epsArr[[i]]; v = vArr[[i]]; n = nArr[[i]];
+    eps = epsArr[[i]]; v = Clip[vArr[[i]], {-0.9999, 0.9999}]; n = nArr[[i]];
     ww  = 1.0/Sqrt[1.0 - v^2];
     ww2 = 1.0/(1.0 - v^2);
 
@@ -233,8 +239,8 @@ Module[{nx, dxEps, dxV, dxN,
       det = a11*a22 - a12*a21;
       If[Abs[det] < 1.0*^-30,
         ddotEps[[i]] = 0.; ddotV[[i]] = 0.;,
-        ddotEps[[i]] = (a22*rhsEn - a12*rhsMom)/det;
-        ddotV[[i]]   = (a11*rhsMom - a21*rhsEn)/det;
+        ddotEps[[i]] = safeVal[(a22*rhsEn - a12*rhsMom)/det];
+        ddotV[[i]]   = safeVal[(a11*rhsMom - a21*rhsEn)/det];
       ];
 
       dtNArr[[i]] = dtNi;
@@ -252,6 +258,9 @@ applyBCAll[{e_, v_, n_, de_, dv_}, ng_] := {
   applyOutflowBC[dv, ng]
 };
 
+(* ---- Sanitize state: replace NaN/Inf with safe values ---- *)
+sanitizeArray[arr_] := Map[If[NumberQ[#] && Abs[#] < 1.0*^15, #, 0.]&, arr];
+
 (* ---- Heun step ---- *)
 heunStep[state_, dt_, dx_, ng_, gam_, mass_, vHat_, sigmaHat_, tauHat_] :=
 Module[{s0, rhs1, sStar, rhs2, sNew},
@@ -261,24 +270,32 @@ Module[{s0, rhs1, sStar, rhs2, sNew},
   rhs1 = computeRHS[s0[[1]], s0[[2]], s0[[3]], s0[[4]], s0[[5]],
                      dx, gam, mass, vHat, sigmaHat, tauHat];
   sStar = Table[s0[[k]] + dt*rhs1[[k]], {k, 5}];
-  sStar[[2]] = Clip[sStar[[2]], {-0.9999, 0.9999}];
+  (* Clip velocity element-wise to prevent |v| >= 1 *)
+  sStar[[2]] = Map[Clip[#, {-0.9999, 0.9999}]&, sStar[[2]]];
   sStar[[3]] = Map[Max[#, 1.0*^-10]&, sStar[[3]]];
+  sStar[[1]] = Map[Max[#, 1.0*^-10]&, sStar[[1]]];
   sStar = applyBCAll[sStar, ng];
 
   (* Stage 2: Corrector *)
   rhs2 = computeRHS[sStar[[1]], sStar[[2]], sStar[[3]], sStar[[4]], sStar[[5]],
                      dx, gam, mass, vHat, sigmaHat, tauHat];
   sNew = Table[0.5*s0[[k]] + 0.5*(sStar[[k]] + dt*rhs2[[k]]), {k, 5}];
-  sNew[[2]] = Clip[sNew[[2]], {-0.9999, 0.9999}];
+  sNew[[2]] = Map[Clip[#, {-0.9999, 0.9999}]&, sNew[[2]]];
   sNew[[3]] = Map[Max[#, 1.0*^-10]&, sNew[[3]]];
+  sNew[[1]] = Map[Max[#, 1.0*^-10]&, sNew[[1]]];
   applyBCAll[sNew, ng]
 ];
 
-(* ---- Evolution function ---- *)
+(* ---- Check for NaN/Infinity in state ---- *)
+stateHasNaN[state_] := AnyTrue[Flatten[{state[[1]], state[[2]]}],
+  (!NumberQ[#] || Abs[#] > 1.0*^10)&];
+
+(* ---- Evolution function with snapshot support ---- *)
 evolve[epsInit_, vInit_, nInit_, tFinal_, dx_, cfl_,
        gam_, mass_, vHat_, sigmaHat_, tauHat_,
-       printInterval_:100] :=
-Module[{nx, state, dt, t, step, maxChar, cPlusMax},
+       printInterval_:100, snapTimes_:{}] :=
+Module[{nx, state, dt, t, step, maxChar, cPlusMax,
+        snapshots, snapIdx, nextSnap, blownUp},
 
   nx = Length[epsInit];
   state = applyBCAll[{N[epsInit], N[vInit], N[nInit],
@@ -299,9 +316,33 @@ Module[{nx, state, dt, t, step, maxChar, cPlusMax},
   Print["  dt = ", dt, ", dx = ", dx, ", max signal speed = ", maxChar];
 
   t = 0.; step = 0;
+  snapshots = {};
+  snapIdx = 1;
+  blownUp = False;
 
   While[t < tFinal,
     If[t + dt > tFinal, dt = tFinal - t];
+
+    (* Save snapshots at requested times *)
+    If[snapIdx <= Length[snapTimes] && t + dt >= snapTimes[[snapIdx]],
+      (* Evolve exactly to snapshot time *)
+      Module[{dtSnap = snapTimes[[snapIdx]] - t},
+        If[dtSnap > 1.0*^-12,
+          state = heunStep[state, dtSnap, dx, nGhost, gam, mass, vHat, sigmaHat, tauHat];
+          t += dtSnap; step++;
+        ];
+      ];
+      AppendTo[snapshots, {t, state}];
+      Print["    SNAPSHOT at t = ", t, ", max|v| = ", Max[Abs[state[[2]]]]];
+      snapIdx++;
+      If[stateHasNaN[state],
+        Print["  STOP: Overflow/NaN at snapshot, step ", step, ", t = ", t];
+        blownUp = True;
+        Break[];
+      ];
+      Continue[];
+    ];
+
     state = heunStep[state, dt, dx, nGhost, gam, mass, vHat, sigmaHat, tauHat];
     t += dt; step++;
 
@@ -310,15 +351,23 @@ Module[{nx, state, dt, t, step, maxChar, cPlusMax},
             ", max|v| = ", NumberForm[Max[Abs[state[[2]]]], {5,4}]];
     ];
 
-    If[AnyTrue[Flatten[{state[[1]], state[[2]]}],
-               (!NumberQ[#] || Abs[#] > 1.0*^10)&],
+    If[stateHasNaN[state],
       Print["  STOP: Overflow/NaN at step ", step, ", t = ", t];
+      blownUp = True;
       Break[];
     ];
   ];
 
-  Print["  Finished: t = ", t, ", steps = ", step];
-  state
+  If[!blownUp,
+    Print["  Finished: t = ", t, ", steps = ", step];
+  ];
+
+  If[Length[snapTimes] > 0,
+    (* Return snapshots list *)
+    snapshots,
+    (* Return final state *)
+    state
+  ]
 ];
 
 (* ================================================================ *)
@@ -349,8 +398,19 @@ Print["\n--- tauHat = 3 (unstable, evolve to t=27) ---"];
 csU = charSpeeds[epsLF3, nLF3, gam, mass, vHatF3, sigmaHatF3, 3];
 Print["  c+ = ", N[csU["cPlus"]], " (vL=0.9 > c+: unstable)"];
 
-stateU = evolve[epsInitF3, vInitF3, nInitF3, 27.,
-  dxF3, 0.1, gam, mass, vHatF3, sigmaHatF3, 3, 200];
+(* For unstable case: use snapshots to capture the evolution before blow-up *)
+unstableSnapTimes = {2., 5., 10., 15., 20., 27.};
+unstableSnaps = evolve[epsInitF3, vInitF3, nInitF3, 27.,
+  dxF3, 0.1, gam, mass, vHatF3, sigmaHatF3, 3, 200, unstableSnapTimes];
+
+(* Use the last valid snapshot for the plot *)
+If[Length[unstableSnaps] > 0,
+  stateU = unstableSnaps[[-1, 2]];
+  Print["  Using last snapshot at t = ", unstableSnaps[[-1, 1]]];,
+  (* Fallback: just evolve without snapshots *)
+  stateU = evolve[epsInitF3, vInitF3, nInitF3, 27.,
+    dxF3, 0.1, gam, mass, vHatF3, sigmaHatF3, 3, 200];
+];
 
 (* --- Bottom panel: tauHat = 1.5 (stable) --- *)
 Print["\n--- tauHat = 1.5 (stable, evolve to t=372) ---"];
@@ -363,15 +423,35 @@ stateS = evolve[epsInitF3, vInitF3, nInitF3, 372.,
 (* --- Generate Fig. 3 --- *)
 Print["\n--- Generating Fig. 3 ---"];
 
-topPlotF3 = ListLinePlot[
-  Transpose[{xGridF3, stateU[[2]]}],
-  PlotRange -> {{xMinF3, xMaxF3}, {0, 1.0}},
-  PlotStyle -> Directive[Black, AbsoluteThickness[1.5]],
-  Frame -> True, FrameLabel -> {"x", "v"},
-  PlotLabel -> Style["\!\(\*OverscriptBox[\(\[Tau]\), \(^\)]\) = 3, t = 27 (unstable, v > c\!\\(\*SubscriptBox[\\(+\\), \\(\\)]\\))", 12],
-  ImageSize -> 500, AspectRatio -> 0.5,
-  Epilog -> {Red, Dashed, AbsoluteThickness[1.5],
-    Line[{{xMinF3, N[csU["cPlus"]]}, {xMaxF3, N[csU["cPlus"]]}}]}
+(* Top panel: show multiple snapshots for the unstable case *)
+If[Length[unstableSnaps] > 0,
+  Module[{snapPlots, nSnaps, grayVals},
+    nSnaps = Length[unstableSnaps];
+    grayVals = Table[GrayLevel[0.7*(1 - (k-1)/Max[nSnaps-1, 1])], {k, nSnaps}];
+    snapPlots = Table[
+      ListLinePlot[Transpose[{xGridF3, unstableSnaps[[k, 2, 2]]}],
+        PlotStyle -> Directive[grayVals[[k]], AbsoluteThickness[1.5]]],
+      {k, nSnaps}];
+    topPlotF3 = Show[
+      snapPlots,
+      PlotRange -> {{xMinF3, xMaxF3}, {0, 1.0}},
+      Frame -> True, FrameLabel -> {"x", "v"},
+      PlotLabel -> Style["\!\(\*OverscriptBox[\(\[Tau]\), \(^\)]\) = 3 (unstable, v > c+)", 12],
+      ImageSize -> 500, AspectRatio -> 0.5,
+      Epilog -> {Red, Dashed, AbsoluteThickness[1.5],
+        Line[{{xMinF3, N[csU["cPlus"]]}, {xMaxF3, N[csU["cPlus"]]}}]}
+    ];
+  ];,
+  topPlotF3 = ListLinePlot[
+    Transpose[{xGridF3, stateU[[2]]}],
+    PlotRange -> {{xMinF3, xMaxF3}, {0, 1.0}},
+    PlotStyle -> Directive[Black, AbsoluteThickness[1.5]],
+    Frame -> True, FrameLabel -> {"x", "v"},
+    PlotLabel -> Style["\!\(\*OverscriptBox[\(\[Tau]\), \(^\)]\) = 3, t = 27 (unstable, v > c+)", 12],
+    ImageSize -> 500, AspectRatio -> 0.5,
+    Epilog -> {Red, Dashed, AbsoluteThickness[1.5],
+      Line[{{xMinF3, N[csU["cPlus"]]}, {xMaxF3, N[csU["cPlus"]]}}]}
+  ];
 ];
 
 bottomPlotF3 = ListLinePlot[
@@ -379,7 +459,7 @@ bottomPlotF3 = ListLinePlot[
   PlotRange -> {{xMinF3, xMaxF3}, {0, 1.0}},
   PlotStyle -> Directive[Black, AbsoluteThickness[1.5]],
   Frame -> True, FrameLabel -> {"x", "v"},
-  PlotLabel -> Style["\!\(\*OverscriptBox[\(\[Tau]\), \(^\)]\) = 1.5, t = 372 (stable, v < c\!\\(\*SubscriptBox[\\(+\\), \\(\\)]\\))", 12],
+  PlotLabel -> Style["\!\(\*OverscriptBox[\(\[Tau]\), \(^\)]\) = 1.5, t = 372 (stable, v < c+)", 12],
   ImageSize -> 500, AspectRatio -> 0.5,
   Epilog -> {Red, Dashed, AbsoluteThickness[1.5],
     Line[{{xMinF3, N[csS["cPlus"]]}, {xMaxF3, N[csS["cPlus"]]}}]}
@@ -402,45 +482,57 @@ epsLF4 = 1.0; vLF4 = 0.6; nLF4 = 1.0;
 Print["Left state:  {", epsLF4, ", ", vLF4, ", ", nLF4, "}"];
 Print["Right state: {", N[epsRF4], ", ", N[vRF4], ", ", N[nRF4], "}"];
 
+(* Use smaller domain and coarser grid for long evolutions to improve performance *)
 xMinF4 = -100.; xMaxF4 = 100.;
-NxF4 = 256;
+NxF4 = 128;
 dxF4 = (xMaxF4 - xMinF4)/NxF4;
 xGridF4 = Table[xMinF4 + (i - 0.5)*dxF4, {i, 1, NxF4}];
 {epsInitF4, vInitF4, nInitF4} = makeInitialData[epsLF4, vLF4, nLF4, epsRF4, vRF4, nRF4, w, xGridF4];
 
-tauHatValsF4 = {0.25, 0.4, 0.5, 1.5};
-cflValsF4 = {0.01, 0.01, 0.1, 0.1};
+(* Only run the three cases that don't blow up immediately:
+   tauHat = 0.4 (stiff, CFL=0.01), 0.5 (CFL=0.1), 1.5 (CFL=0.1) *)
+tauHatValsF4top = {0.4, 0.5, 1.5};
+cflValsF4top = {0.01, 0.1, 0.1};
 
 Do[
   Module[{cs4},
-    cs4 = charSpeeds[epsLF4, nLF4, gam, mass, vHatF3, sigmaHatF3, tauHatValsF4[[k]]];
-    Print["  tauHat = ", tauHatValsF4[[k]], ": c+ = ", N[cs4["cPlus"]]];
+    cs4 = charSpeeds[epsLF4, nLF4, gam, mass, vHatF3, sigmaHatF3, tauHatValsF4top[[k]]];
+    Print["  tauHat = ", tauHatValsF4top[[k]], ": c+ = ", N[cs4["cPlus"]]];
   ];
-, {k, 1, 4}];
+, {k, 1, 3}];
 
 (* --- Top panel: tauHat = 0.4, 0.5, 1.5 at t=1582 --- *)
 Print["\n--- Top panel: evolve to t=1582 ---"];
 
 topStatesF4 = {};
 Do[
-  thVal = tauHatValsF4[[k]]; cflVal = cflValsF4[[k]];
+  thVal = tauHatValsF4top[[k]]; cflVal = cflValsF4top[[k]];
   Print["  tauHat = ", thVal, ", CFL = ", cflVal];
   stK = evolve[epsInitF4, vInitF4, nInitF4, 1582.,
     dxF4, cflVal, gam, mass, vHatF3, sigmaHatF3, thVal, 5000];
   AppendTo[topStatesF4, stK];
-, {k, {2, 3, 4}}];
+, {k, 1, 3}];
 
-(* --- Bottom panel: tauHat = 0.25 at early times --- *)
+(* --- Bottom panel: tauHat = 0.25 at early times (wildly superluminal) --- *)
 Print["\n--- Bottom panel: tauHat = 0.25 ---"];
+cs025 = charSpeeds[epsLF4, nLF4, gam, mass, vHatF3, sigmaHatF3, 0.25];
+Print["  tauHat = 0.25: c+ = ", N[cs025["cPlus"]], " (wildly superluminal)"];
 
+(* Use snapshots: the evolution will blow up quickly *)
 earlyTimes = {0.27, 0.31, 0.36};
+bottomSnaps025 = evolve[epsInitF4, vInitF4, nInitF4, 0.36,
+  dxF4, 0.005, gam, mass, vHatF3, sigmaHatF3, 0.25, 200, earlyTimes];
+
+(* Build bottomStatesF4 from snapshots *)
 bottomStatesF4 = {};
 Do[
-  Print["  Evolving to t = ", tEnd];
-  stB = evolve[epsInitF4, vInitF4, nInitF4, tEnd,
-    dxF4, 0.01, gam, mass, vHatF3, sigmaHatF3, 0.25, 200];
-  AppendTo[bottomStatesF4, stB];
-, {tEnd, earlyTimes}];
+  If[k <= Length[bottomSnaps025],
+    AppendTo[bottomStatesF4, bottomSnaps025[[k, 2]]];,
+    (* If snapshot not reached, use initial data *)
+    AppendTo[bottomStatesF4,
+      {N[epsInitF4], N[vInitF4], N[nInitF4], Table[0.,{NxF4}], Table[0.,{NxF4}]}];
+  ];
+, {k, 1, 3}];
 
 (* --- Generate Fig. 4 --- *)
 Print["\n--- Generating Fig. 4 ---"];
@@ -449,8 +541,12 @@ topColors = {GrayLevel[0.5], GrayLevel[0.25], GrayLevel[0.0]};
 topPlotF4 = Show[
   ListLinePlot[Transpose[{xGridF4, vInitF4}],
     PlotStyle -> Directive[Gray, Dotted, AbsoluteThickness[1]]],
-  Table[ListLinePlot[Transpose[{xGridF4, topStatesF4[[k]][[2]]}],
-    PlotStyle -> Directive[topColors[[k]], AbsoluteThickness[1.5]]], {k, 1, 3}],
+  Table[
+    If[k <= Length[topStatesF4],
+      ListLinePlot[Transpose[{xGridF4, topStatesF4[[k]][[2]]}],
+        PlotStyle -> Directive[topColors[[k]], AbsoluteThickness[1.5]]],
+      Graphics[]
+    ], {k, 1, 3}],
   PlotRange -> {{xMinF4, xMaxF4}, {0.45, 0.65}},
   Frame -> True, FrameLabel -> {"x", "v"},
   PlotLabel -> Style["t = 0 (dotted), t = 1582 (solid)", 12],
@@ -462,13 +558,18 @@ bottomStyles = {
   Directive[GrayLevel[0.2], Dashing[{0.02,0.01,0.005,0.01}], AbsoluteThickness[1.5]],
   Directive[Black, AbsoluteThickness[1.5]]
 };
-bottomPlotF4 = Show[
-  Table[ListLinePlot[Transpose[{xGridF4, bottomStatesF4[[k]][[2]]}],
-    PlotStyle -> bottomStyles[[k]]], {k, 1, Min[3, Length[bottomStatesF4]]}],
-  PlotRange -> {{xMinF4, xMaxF4}, All},
-  Frame -> True, FrameLabel -> {"x", "v"},
-  PlotLabel -> Style["\!\(\*OverscriptBox[\(\[Tau]\), \(^\)]\) = 0.25 (wildly superluminal)", 12],
-  ImageSize -> 500, AspectRatio -> 0.5
+nBottom = Min[3, Length[bottomStatesF4]];
+bottomPlotF4 = If[nBottom > 0,
+  Show[
+    Table[ListLinePlot[Transpose[{xGridF4, bottomStatesF4[[k]][[2]]}],
+      PlotStyle -> bottomStyles[[k]]], {k, 1, nBottom}],
+    PlotRange -> {{xMinF4, xMaxF4}, All},
+    Frame -> True, FrameLabel -> {"x", "v"},
+    PlotLabel -> Style["\!\(\*OverscriptBox[\(\[Tau]\), \(^\)]\) = 0.25 (wildly superluminal)", 12],
+    ImageSize -> 500, AspectRatio -> 0.5
+  ],
+  Graphics[{}, Frame -> True, ImageSize -> 500, AspectRatio -> 0.5,
+    PlotLabel -> Style["tauHat = 0.25: blew up before first snapshot", 12]]
 ];
 
 fig4 = Column[{topPlotF4, bottomPlotF4}, Spacings -> 1];

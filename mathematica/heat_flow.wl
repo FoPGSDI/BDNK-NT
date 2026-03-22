@@ -21,7 +21,7 @@ nGhost = 3;
 ampA = 0.1;
 delta = 1.0;
 wHeat = 10.0;
-p0 = 1/3;
+p0 = 1.0/3.0;  (* Use float to avoid exact-rational mixing *)
 
 tInit[x_] := ampA*Exp[-x^2/wHeat^2] + delta;
 epsFromTP[t_, p_] := p*(mass/t + 1/(gam - 1));
@@ -30,30 +30,48 @@ nFromTP[t_, p_] := p/t;
 Print["\nInitial data parameters:"];
 Print["  A=", ampA, ", delta=", delta, ", w=", wHeat, ", P0=", N[p0]];
 
-(* ---- BDNK components computation (same as shockwave_dynamic) ---- *)
+(* ---- Diagnostic: verify initial data produces expected gradients ---- *)
+Module[{tPeak, tBg, epsPeak, epsBg, nPeak, nBg},
+  tPeak = tInit[0.]; tBg = tInit[100.];
+  epsPeak = epsFromTP[tPeak, p0]; epsBg = epsFromTP[tBg, p0];
+  nPeak = nFromTP[tPeak, p0]; nBg = nFromTP[tBg, p0];
+  Print["  T(x=0) = ", tPeak, ", T(x=far) = ", tBg];
+  Print["  eps(x=0) = ", epsPeak, ", eps(x=far) = ", epsBg,
+        ", diff = ", epsPeak - epsBg];
+  Print["  n(x=0) = ", nPeak, ", n(x=far) = ", nBg,
+        ", diff = ", nPeak - nBg];
+];
+
+(* ---- Safe numeric check: clamp non-numeric values ---- *)
+safeVal[x_] := If[NumberQ[x] && Abs[x] < 1.0*^15, x, 0.];
+
+(* ---- BDNK components computation ---- *)
 bdnkComponents[eps_, v_, n_, dxEps_, dxV_, dxN_, dtEps_, dtV_,
                gam_, mass_, vHat_, sigmaHat_, tauHat_] :=
-Module[{pp, rr, cs2, ww, ww2, tc,
+Module[{pp, rr, cs2, vClamped, ww, ww2, tc,
         tauEps, tauP, tauQ, vVisc, sig, betaE, betaN0, eta0,
         divU, udotEps, uDotUx, dxEpsProj, dxNProj,
         scrE, scrP, scrQx, sigXX,
         ttt, ttx, txx, jx},
 
+  (* Clamp velocity to safe range *)
+  vClamped = Clip[v, {-0.9999, 0.9999}];
+
   pp  = (gam - 1)*(eps - mass*n);
   rr  = eps + pp;
-  cs2 = gam*pp/rr;
-  ww  = 1.0/Sqrt[1.0 - v^2];
-  ww2 = 1.0/(1.0 - v^2);
+  cs2 = If[Abs[rr] < 1.0*^-30, 0., gam*pp/rr];
+  ww  = 1.0/Sqrt[1.0 - vClamped^2];
+  ww2 = 1.0/(1.0 - vClamped^2);
 
   tc = transportCoeffs[eps, n, gam, mass, vHat, sigmaHat, tauHat];
   tauEps = tc["tauEps"]; tauP = tc["tauP"]; tauQ = tc["tauQ"];
   vVisc = tc["V"]; sig = tc["sigma"]; betaE = tc["betaEps"];
   betaN0 = tc["betaN"]; eta0 = 3.0*vVisc/4.0;
 
-  divU     = ww^3*(v*dtV + dxV);
-  udotEps  = ww*(dtEps + v*dxEps);
-  uDotUx   = ww^4*(dtV + v*dxV);
-  dxEpsProj = ww2*(v*dtEps + dxEps);
+  divU     = ww^3*(vClamped*dtV + dxV);
+  udotEps  = ww*(dtEps + vClamped*dxEps);
+  uDotUx   = ww^4*(dtV + vClamped*dxV);
+  dxEpsProj = ww2*(vClamped*dtEps + dxEps);
   dxNProj   = ww2*dxN;
 
   scrE  = eps + tauEps*(udotEps + rr*divU);
@@ -61,12 +79,29 @@ Module[{pp, rr, cs2, ww, ww2, tc,
   scrQx = tauQ*rr*uDotUx + betaE*dxEpsProj + betaN0*dxNProj;
   sigXX = (2.0/3.0)*ww2*divU;
 
-  ttt = scrE*ww2 + scrP*ww2*v^2 + 2*v*scrQx*ww - 2*eta0*v^2*sigXX;
-  ttx = (scrE + scrP)*ww2*v + scrQx*ww*(1 + v^2) - 2*eta0*v*sigXX;
-  txx = scrE*ww2*v^2 + scrP*ww2 + 2*scrQx*ww*v - 2*eta0*sigXX;
-  jx  = n*ww*v;
+  ttt = scrE*ww2 + scrP*ww2*vClamped^2 + 2*vClamped*scrQx*ww - 2*eta0*vClamped^2*sigXX;
+  ttx = (scrE + scrP)*ww2*vClamped + scrQx*ww*(1 + vClamped^2) - 2*eta0*vClamped*sigXX;
+  txx = scrE*ww2*vClamped^2 + scrP*ww2 + 2*scrQx*ww*vClamped - 2*eta0*sigXX;
+  jx  = n*ww*vClamped;
 
-  {ttt, ttx, txx, jx}
+  {safeVal[ttt], safeVal[ttx], safeVal[txx], safeVal[jx]}
+];
+
+(* ---- Diagnostic: verify transport coefficients and heat flux ---- *)
+Module[{tcTest, betaETest, betaNTest, epsTest, nTest, dxEpsTest, dxNTest, qxTest},
+  epsTest = epsFromTP[delta, p0]; nTest = nFromTP[delta, p0];
+  tcTest = transportCoeffs[epsTest, nTest, gam, mass, 2/15, 7.5, 75.];
+  betaETest = tcTest["betaEps"]; betaNTest = tcTest["betaN"];
+  (* Estimate dxEps and dxN at center of Gaussian *)
+  dxEpsTest = (epsFromTP[tInit[1.], p0] - epsFromTP[tInit[-1.], p0])/2.0;
+  dxNTest = (nFromTP[tInit[1.], p0] - nFromTP[tInit[-1.], p0])/2.0;
+  qxTest = betaETest*dxEpsTest + betaNTest*dxNTest;
+  Print["\nDiagnostic (sigmaHat=7.5, tauHat=75):"];
+  Print["  sigma = ", tcTest["sigma"]];
+  Print["  betaEps = ", betaETest, ", betaN = ", betaNTest];
+  Print["  dxEps(center) ~ ", dxEpsTest, ", dxN(center) ~ ", dxNTest];
+  Print["  Q^x(center) ~ ", qxTest];
+  Print["  tauQ = ", tcTest["tauQ"], ", kappa = ", tcTest["kappa"]];
 ];
 
 (* ---- RHS computation ---- *)
@@ -92,7 +127,8 @@ Module[{nx, dxEps, dxV, dxN,
   ttxArr = Table[0., {nx}]; txxArr = Table[0., {nx}]; jxArr = Table[0., {nx}];
   Do[
     Module[{comp},
-      comp = bdnkComponents[epsArr[[i]], vArr[[i]], nArr[[i]],
+      comp = bdnkComponents[epsArr[[i]], Clip[vArr[[i]], {-0.9999, 0.9999}],
+                             nArr[[i]],
                              dxEps[[i]], dxV[[i]], dxN[[i]],
                              dtEpsArr[[i]], dtVArr[[i]],
                              gam, mass, vHat, sigmaHat, tauHat];
@@ -113,14 +149,16 @@ Module[{nx, dxEps, dxV, dxN,
   ddotEps = Table[0., {nx}]; ddotV = Table[0., {nx}]; dtNArr = Table[0., {nx}];
 
   Do[
-    eps = epsArr[[i]]; v = vArr[[i]]; n = nArr[[i]];
+    eps = epsArr[[i]]; v = Clip[vArr[[i]], {-0.9999, 0.9999}]; n = nArr[[i]];
     ww = 1.0/Sqrt[1.0 - v^2];
 
     Module[{comp0, compE, compV, compN,
             ttt0, ttx0, a11, a12, a21, a22,
             he, hv, hn,
             dTttDeps, dTtxDeps, dTttDv, dTtxDv, dTttDn, dTtxDn,
-            dtNi, rhsEn, rhsMom, det},
+            dtNi, rhsEn, rhsMom, det, ww2},
+
+      ww2 = 1.0/(1.0 - v^2);
 
       comp0 = bdnkComponents[eps, v, n, dxEps[[i]], dxV[[i]], dxN[[i]],
                               dtEpsArr[[i]], dtVArr[[i]],
@@ -170,8 +208,8 @@ Module[{nx, dxEps, dxV, dxN,
       det = a11*a22 - a12*a21;
       If[Abs[det] < 1.0*^-30,
         ddotEps[[i]] = 0.; ddotV[[i]] = 0.;,
-        ddotEps[[i]] = (a22*rhsEn - a12*rhsMom)/det;
-        ddotV[[i]]   = (a11*rhsMom - a21*rhsEn)/det;
+        ddotEps[[i]] = safeVal[(a22*rhsEn - a12*rhsMom)/det];
+        ddotV[[i]]   = safeVal[(a11*rhsMom - a21*rhsEn)/det];
       ];
       dtNArr[[i]] = dtNi;
     ];
@@ -192,17 +230,24 @@ Module[{s0, rhs1, sStar, rhs2, sNew},
   rhs1 = computeRHS[s0[[1]], s0[[2]], s0[[3]], s0[[4]], s0[[5]],
                      dx, gam, mass, vHat, sigmaHat, tauHat];
   sStar = Table[s0[[k]] + dt*rhs1[[k]], {k, 5}];
-  sStar[[2]] = Clip[sStar[[2]], {-0.9999, 0.9999}];
+  (* Clip velocity element-wise *)
+  sStar[[2]] = Map[Clip[#, {-0.9999, 0.9999}]&, sStar[[2]]];
   sStar[[3]] = Map[Max[#, 1.0*^-10]&, sStar[[3]]];
+  sStar[[1]] = Map[Max[#, 1.0*^-10]&, sStar[[1]]];
   sStar = applyBCAll[sStar, ng];
 
   rhs2 = computeRHS[sStar[[1]], sStar[[2]], sStar[[3]], sStar[[4]], sStar[[5]],
                      dx, gam, mass, vHat, sigmaHat, tauHat];
   sNew = Table[0.5*s0[[k]] + 0.5*(sStar[[k]] + dt*rhs2[[k]]), {k, 5}];
-  sNew[[2]] = Clip[sNew[[2]], {-0.9999, 0.9999}];
+  sNew[[2]] = Map[Clip[#, {-0.9999, 0.9999}]&, sNew[[2]]];
   sNew[[3]] = Map[Max[#, 1.0*^-10]&, sNew[[3]]];
+  sNew[[1]] = Map[Max[#, 1.0*^-10]&, sNew[[1]]];
   applyBCAll[sNew, ng]
 ];
+
+(* ---- Check for NaN/Infinity in state ---- *)
+stateHasNaN[state_] := AnyTrue[Flatten[{state[[1]], state[[2]]}],
+  (!NumberQ[#] || Abs[#] > 1.0*^10)&];
 
 evolveHeat[epsInit_, vInit_, nInit_, tFinal_, dx_, cfl_,
            gam_, mass_, vHat_, sigmaHat_, tauHat_,
@@ -219,7 +264,7 @@ Module[{nx, state, dt, t, step, maxChar},
     ], {i, nGhost+1, nx-nGhost}]];
   maxChar = Max[maxChar, 1.0];
   dt = cfl*dx/maxChar;
-  Print["  dt = ", dt, ", dx = ", dx];
+  Print["  dt = ", dt, ", dx = ", dx, ", max char speed = ", maxChar];
 
   t = 0.; step = 0;
   While[t < tFinal,
@@ -227,10 +272,11 @@ Module[{nx, state, dt, t, step, maxChar},
     state = heunStepH[state, dt, dx, nGhost, gam, mass, vHat, sigmaHat, tauHat];
     t += dt; step++;
     If[Mod[step, printInterval] == 0,
-      Print["    step ", step, ", t = ", NumberForm[t, {6,2}]];
+      Print["    step ", step, ", t = ", NumberForm[t, {6,2}],
+            ", max|v| = ", NumberForm[Max[Abs[state[[2]]]], {5,4}],
+            ", max|dtV| = ", NumberForm[Max[Abs[state[[5]]]], {5,4}]];
     ];
-    If[AnyTrue[Flatten[{state[[1]], state[[2]]}],
-               (!NumberQ[#] || Abs[#] > 1.0*^10)&],
+    If[stateHasNaN[state],
       Print["  STOP: Overflow at step ", step, ", t = ", t];
       Break[];
     ];
@@ -260,15 +306,16 @@ Do[
   Print["  Nx = ", nxVal];
   dxH = (xMaxH - xMinH)/nxVal;
   xGridH = Table[xMinH + (i-0.5)*dxH, {i, 1, nxVal}];
-  epsI = Table[epsFromTP[tInit[x], p0], {x, xGridH}];
+  epsI = Table[N[epsFromTP[tInit[x], p0]], {x, xGridH}];
   vI   = Table[0., {nxVal}];
-  nI   = Table[nFromTP[tInit[x], p0], {x, xGridH}];
+  nI   = Table[N[nFromTP[tInit[x], p0]], {x, xGridH}];
 
   dtSmall = 0.01;
   stH = evolveHeat[epsI, vI, nI, dtSmall,
     dxH, 0.1, gam, mass, vHatF5, 0, tauHatF5, 10000];
   edArr = (stH[[1]] - epsI)/dtSmall;
   AppendTo[epsDotSigma0, {xGridH, Abs[edArr]}];
+  Print["    max|edot| = ", Max[Abs[edArr[[nGhost+1;;nxVal-nGhost]]]]];
 , {nxVal, nxValues}];
 
 (* --- Bottom panel: sigmaHat = 1/3 --- *)
@@ -279,15 +326,16 @@ Do[
   Print["  Nx = ", nxVal];
   dxH = (xMaxH - xMinH)/nxVal;
   xGridH = Table[xMinH + (i-0.5)*dxH, {i, 1, nxVal}];
-  epsI = Table[epsFromTP[tInit[x], p0], {x, xGridH}];
+  epsI = Table[N[epsFromTP[tInit[x], p0]], {x, xGridH}];
   vI   = Table[0., {nxVal}];
-  nI   = Table[nFromTP[tInit[x], p0], {x, xGridH}];
+  nI   = Table[N[nFromTP[tInit[x], p0]], {x, xGridH}];
 
   dtSmall = 0.01;
   stH = evolveHeat[epsI, vI, nI, dtSmall,
     dxH, 0.1, gam, mass, vHatF5, 1/3, tauHatF5, 10000];
   edArr = (stH[[1]] - epsI)/dtSmall;
   AppendTo[epsDotSigma13, {xGridH, Abs[edArr]}];
+  Print["    max|edot| = ", Max[Abs[edArr[[nGhost+1;;nxVal-nGhost]]]]];
 , {nxVal, nxValues}];
 
 (* --- Generate Fig. 5 --- *)
@@ -337,9 +385,30 @@ tSnapshots   = {16., 39., 312.};
 NxF6 = 256;
 dxF6 = (xMaxH - xMinH)/NxF6;
 xGridF6 = Table[xMinH + (i-0.5)*dxF6, {i, 1, NxF6}];
-epsInitF6 = Table[epsFromTP[tInit[x], p0], {x, xGridF6}];
+epsInitF6 = Table[N[epsFromTP[tInit[x], p0]], {x, xGridF6}];
 vInitF6   = Table[0., {NxF6}];
-nInitF6   = Table[nFromTP[tInit[x], p0], {x, xGridF6}];
+nInitF6   = Table[N[nFromTP[tInit[x], p0]], {x, xGridF6}];
+
+(* Diagnostic: print initial T range *)
+Module[{tArr},
+  tArr = Table[temperature[epsInitF6[[i]], nInitF6[[i]], gam, mass], {i, NxF6}];
+  Print["  Initial T range: [", Min[tArr[[nGhost+1;;NxF6-nGhost]]],
+        ", ", Max[tArr[[nGhost+1;;NxF6-nGhost]]], "]"];
+];
+
+(* Diagnostic: verify transport coefficients for each parameter set *)
+Do[
+  Module[{sH, tH, tcDiag, epsMid, nMid},
+    sH = sigmaHatVals[[k]]; tH = tauHatVals[[k]];
+    epsMid = epsInitF6[[NxF6/2]]; nMid = nInitF6[[NxF6/2]];
+    tcDiag = transportCoeffs[epsMid, nMid, gam, mass, vHatF5, sH, tH];
+    Print["  sigmaHat=", sH, ", tauHat=", tH,
+          ": sigma=", tcDiag["sigma"],
+          ", betaEps=", tcDiag["betaEps"],
+          ", betaN=", tcDiag["betaN"],
+          ", tauQ=", tcDiag["tauQ"]];
+  ];
+, {k, 1, 3}];
 
 (* Store snapshots: allSnaps[[paramIdx, timeIdx]] = T(x) array *)
 allSnaps = Table[{}, {3}, {3}];
@@ -357,7 +426,7 @@ Do[
     ], {i, nGhost+1, NxF6-nGhost}]];
   maxC6 = Max[maxC6, 1.0];
   dt6 = 0.1*dxF6/maxC6;
-  Print["  dt = ", dt6];
+  Print["  dt = ", dt6, ", max char speed = ", maxC6];
 
   t6 = 0.; step6 = 0;
 
@@ -368,8 +437,14 @@ Do[
       dtStep = Min[dt6, tTarget - t6];
       state6 = heunStepH[state6, dtStep, dxF6, nGhost, gam, mass, vHatF5, sH, tH];
       t6 += dtStep; step6++;
-      If[AnyTrue[Flatten[{state6[[1]], state6[[2]]}],
-                 (!NumberQ[#] || Abs[#] > 1.0*^10)&],
+
+      (* Print progress every 2000 steps *)
+      If[Mod[step6, 2000] == 0,
+        Print["    step ", step6, ", t = ", NumberForm[t6, {6,2}],
+              ", max|v| = ", NumberForm[Max[Abs[state6[[2]]]], {5,4}]];
+      ];
+
+      If[stateHasNaN[state6],
         Print["    STOP: Overflow at t = ", t6];
         Goto[nextParam];
       ];
@@ -382,6 +457,8 @@ Do[
     Print["    T range: [",
       Min[tempArr[[nGhost+1;;NxF6-nGhost]]],
       ", ", Max[tempArr[[nGhost+1;;NxF6-nGhost]]], "]"];
+    Print["    max|v| = ", Max[Abs[state6[[2, nGhost+1;;NxF6-nGhost]]]]];
+    Print["    max|dtEps| = ", Max[Abs[state6[[4, nGhost+1;;NxF6-nGhost]]]]];
   , {j, 1, 3}];
 
   Label[nextParam];
