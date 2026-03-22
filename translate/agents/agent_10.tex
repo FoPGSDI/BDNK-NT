@@ -1,0 +1,402 @@
+% Agent 10: Book pages 381--384
+% Section 2.7 Shock Waves (continued), Section 2.8 Turbulence,
+% Section 2.9 Reconnection of Magnetic Field Lines (beginning)
+% Equations (2.7.1a)--(2.7.10), (2.9.1)--(2.9.5)
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% SECTION 2.7  SHOCK WAVES  (continued from previous agent)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% --- The relativistic Rankine--Hugoniot equations ---
+% (Section heading and basic references on previous agent's pages)
+
+\subsubsection*{The relativistic Rankine--Hugoniot equations}
+
+Pick a particular event~$\mathscr{P}$ on a shock front.  In the neighborhood
+of~$\mathscr{P}$ introduce a local Lorentz frame (``rest frame of the
+shock'') in which (i)~the shock is the surface $y = z = 0$; and (ii)~on both
+sides of the shock the fluid is moving in the $x$~direction, i.e.,
+perpendicular to the shock front (``normal shock''; see Figure~2.7.1).
+That such a local Lorentz frame exists in general one can prove quite easily
+[see, e.g., \citet{Taub1948}].
+
+Denote the ``front'' side of the shock (side \emph{from} which the fluid
+moves) by a ``1'', and denote the ``back'' side (side \emph{toward} which the
+fluid moves) by a ``2''; see Figure~2.7.1.  Denote the velocity of the fluid,
+as measured in the rest frame of the shock, by
+%
+\begin{align}
+  v_1 &= (dx/dt)_1 = \text{ordinary velocity on front side,}
+  \tag{2.7.1a} \\
+  v_2 &= (dx/dt)_2 = \text{ordinary velocity on back side,}
+  \tag{2.7.1b}
+\end{align}
+%
+\begin{align}
+  u_1 &= v_1\gamma_1 = v_1/(1 - v_1^{2})^{1/2}\,,
+  \tag{2.7.1c} \\
+  u_2 &= v_2\gamma_2 = v_2/(1 - v_2^{2})^{1/2}\,.
+  \tag{2.7.1d}
+\end{align}
+%
+(Note that these ``4-velocities'' are scalars, not vectors.)
+
+In the rest frame of the shock the law of baryon conservation is equivalent
+to continuity of the \emph{baryon flux}:
+%
+\begin{equation}
+  j = n_1 u_1 = n_2 u_2\,.
+  \tag{2.7.2a}
+\end{equation}
+
+\begin{figure}[htbp]
+\centering
+\fbox{\parbox{0.9\columnwidth}{\centering [Figure 2.7.1 placeholder]\\
+A shock wave viewed in the local-Lorentz rest frame of the shock front at an
+event~$\mathscr{P}$.}}
+\caption{A shock wave viewed in the local-Lorentz rest frame of the shock
+  front at an event~$\mathscr{P}$.}
+\label{fig:2.7.1}
+\end{figure}
+
+\noindent
+Similarly, energy and momentum conservation are equivalent to continuity of
+energy flux and momentum flux:
+%
+\begin{align}
+  \bigl[(\varrho + p)\,v\,u\bigr]_1
+    &= \bigl[(\varrho + p)\,v\,u\bigr]_2\,,
+  \tag{2.7.2b} \\
+  \bigl\{(\varrho + p)\,u^2 + p\bigr\}_1
+    &= \bigl\{(\varrho + p)\,u^2 + p\bigr\}_2\,.
+  \tag{2.7.2c}
+\end{align}
+
+These junction conditions are more easily understood by writing them in a
+form analogous to the Rankine-Hugoniot equations of Newtonian theory: First
+take the law of baryon conservation~(2.7.2a) and turn it into equations for
+the fluid 4-velocities
+%
+\begin{equation}
+  u_1 = jV_1\,, \qquad u_2 = jV_2\,.
+  \tag{2.7.3a}
+\end{equation}
+%
+(See \S2.5 for notation.) Then take the law of momentum conservation~(2.7.2c),
+rewrite it in terms of $\mu$, $V$, $j$, and~$p$ using the law of baryon
+conservation~(2.7.2a) and the relations $n = 1/V$,
+$\mu = (\varrho + p)\,V$; and solve for the baryon flux to obtain
+%
+\begin{equation}
+  j^2 = -\frac{p_2 - p_1}{\mu_2 V_2 - \mu_1 V_1}\,.
+  \tag{2.7.3b}
+\end{equation}
+
+Finally, use the law of baryon conservation~(2.7.2a) to rewrite the energy
+equation~(2.7.2b) in the form
+%
+\begin{equation}
+  \mu_1\gamma_1 = \mu_2\gamma_2\,;
+\end{equation}
+%
+divide equation~(2.7.3b) by $(\mu_1 V_1 + \mu_2 V_2)$, and combine with
+$j = u_1/V_1 = u_2/V_2$; then subtract this from the square of the energy
+equation $(\mu_2\gamma_2)^2 - (\mu_1\gamma_1)^2 = 0$, to obtain
+%
+\begin{equation}
+  \mu_2^2 - \mu_1^2 = (p_2 - p_1)(\mu_1 V_1 + \mu_2 V_2)\,.
+  \tag{2.7.3c}
+\end{equation}
+
+\emph{Equations~\textnormal{(2.7.3)} are Taub's~\textnormal{(1948)} junction
+conditions for shock waves.}
+Their Newtonian limits are the standard Rankine-Hugoniot equations:
+%
+\begin{align}
+  v_1 &= j_0\,V_{01}\,, \qquad v_2 = j_0\,V_{02}\,,
+  \tag{2.7.4a} \\[4pt]
+  \hat{\jmath}_0^{\,2} &\equiv \frac{p_2 - p_1}{V_{02} - V_{01}}
+  = \text{``mass flux'' of Newtonian theory}\,;
+  \tag{2.7.4b} \\[4pt]
+  w_2 - w_1 &= \tfrac{1}{2}(p_2 - p_1)(V_{01} + V_{02})\,.
+  \tag{2.7.4c}
+\end{align}
+
+The form of the Newtonian junction conditions~(2.7.4) motivates one to use~$p$
+and~$V_0$ as one's independent thermodynamic variables when analyzing
+Newtonian shocks; similarly, the form of the relativistic junction
+conditions~(2.7.3) motivates one to use~$p$ and~$\mu V$ as one's independent
+variables for relativistic shocks.
+
+%%% The Rankine-Hugoniot curve %%%
+
+\subsubsection*{The Rankine-Hugoniot curve}
+
+Consider a family of shocks, each with the same thermodynamic state on the
+front face (same $\mu_1$, $V_1$, $p_1$, etc.), but with different states on the
+back face (different $\mu_2$, $V_2$, $p_2$, etc.).  This family of shocks is
+a one-parameter family.  Thus, if one plots all back-face states
+$(\mu_2 V_2,\,p_2)$ in the $\mu V$--$p$ plane, they lie on a single
+curve---the ``Rankine-Hugoniot curve''---passing through the point
+$(\mu_1 V_1,\,p_1)$.  (In the relativistic case this curve is also called the
+``Taub adiabat'' or ``Poisson adiabat''.)
+
+One can also plot, in the $\mu V$--$p$ plane, the Poisson adiabat (curve of
+constant entropy) passing through $(\mu_1 V_1,\,p_1)$.  These two curves
+typically have the relative shapes and locations shown in Figure~2.7.2.  In
+particular, from the Rankine-Hugoniot equations one can derive the following
+general properties of the Rankine-Hugoniot
+curve:\footnote{See \citet{Thorne1973a} for derivation.  (i)~The
+  Rankine-Hugoniot curve is tangent to the Poisson adiabat, and has the same
+  second derivative at point~``1''.  The derivation requires the assumption
+  $[\partial^2(\mu V)/\partial p^2]_{s} > 0$; a condition which is satisfied
+  by all materials of astrophysical or laboratory interest; see
+  \citet{LandauLifshitz1959}.  Some, but not all, of the listed properties
+  remain true without this condition; see \citet{ZeldovichRaizer1966} for
+  nonrelativistic details, and \citet{Thorne1973a} for relativistic details.}
+
+\begin{enumerate}
+\item[(i)] The Rankine-Hugoniot curve is tangent to the Poisson adiabat, and
+  has the same second derivative at point~``1''; i.e., for weak shocks the
+  increase in entropy is third-order in the pressure jump:
+  %
+  \begin{equation}
+    s_2 - s_1 = \left[\frac{1}{12\mu T}\,
+      \frac{\partial^2(\mu V)}{\partial p^2}\bigg|_{s,\,1}\right]
+      (p_2 - p_1)^3 + O\!\left[(p_2-p_1)^4\right].
+    \tag{2.7.5}
+  \end{equation}
+
+\item[(ii)] As the gas passes from the front of the shock to the back, its
+  entropy, pressure, and chemical potential increase
+  %
+  \begin{equation}
+    s_2 > s_1\,,\qquad p_2 > p_1\,,\qquad \mu_2 > \mu_1\,;
+    \tag{2.7.6a}
+  \end{equation}
+  %
+  while its specific volume and the product $\mu V$ decrease
+  %
+  \begin{equation}
+    V_2 < V_1\,,\qquad \mu_2 V_2 < \mu_1 V_1\,.
+    \tag{2.7.6b}
+  \end{equation}
+  %
+  (Hence, only the ``upper branch'' of the Rankine-Hugoniot curve,
+  Figure~2.7.2, is physically relevant.)
+
+\item[(iii)] The flow on the front side is always supersonic; on the back side
+  is always subsonic
+  %
+  \begin{equation}
+    u_1/u_{S1} > 1\,,\qquad u_2/u_{S2} < 1\,;
+    \tag{2.7.7}
+  \end{equation}
+  %
+  \[
+    u_S = c_S/(1 - c_S^2)^{1/2}\,.
+  \]
+
+\item[(iv)] As one moves up the Rankine-Hugoniot curve, away from point
+  ``1''---i.e., as one studies a sequence of ever ``stronger''
+  shocks---the following quantities increase monotonically:
+  %
+  \begin{equation}
+  \begin{gathered}
+    \text{the baryon flux across the shock, } j\,; \\
+    \text{the jump in entropy across the shock, } s_2 - s_1\,; \\
+    \text{the ``relativistic'' Mach number on the front side of the shock, }
+      M_1 = u_1/u_{S1}\,.
+  \end{gathered}
+    \tag{2.7.8}
+  \end{equation}
+\end{enumerate}
+
+Notice that, once the thermodynamic state on the front face of the shock
+has been specified, the shock has only one free parameter.  If one fixes the
+baryon flux across the shock~$j$, or the speed on the front face~$u_1$, or
+the pressure on the back face~$p_2$, or any other single parameter, then all
+other properties of the shock are uniquely determined.  To calculate them, one
+need merely invoke the Rankine-Hugoniot equations~(2.7.4), the laws of
+thermodynamics, and the equation of state of the gas.
+
+%%% Shocks in an ideal gas %%%
+
+\subsubsection*{Shocks in an ideal gas}
+
+Consider, as a special but important case, a nonrelativistic ideal gas with
+constant adiabatic index $\Gamma = -(\partial\ln p/\partial\ln V_0)_s$, so
+that
+%
+\begin{equation}
+  pV_0 = kT/\bar{m}\,.
+  \tag{2.7.9}
+\end{equation}
+
+By a straightforward calculation (\S85 of \citealt{LandauLifshitz1959}), one
+can derive the following relationships between various quantities along the
+Rankine-Hugoniot curve:
+%
+\begin{equation}
+\begin{aligned}
+  \frac{V_{02}}{V_{01}} &= \frac{(\Gamma+1)\,p_1 + (\Gamma-1)\,p_2}
+                               {(\Gamma-1)\,p_1 + (\Gamma+1)\,p_2}
+  \;\to\; \frac{\Gamma-1}{\Gamma+1}
+  &&\text{for strong shock,} \\[6pt]
+  %
+  \frac{T_2}{T_1} &= \frac{p_2}{p_1}\,
+    \frac{(\Gamma-1)\,p_2 + (\Gamma+1)\,p_1}
+         {(\Gamma+1)\,p_2 + (\Gamma-1)\,p_1}
+  \;\to\; \frac{\Gamma-1}{\Gamma+1}\,\frac{p_2}{p_1}
+  &&\text{for strong shock,} \\[6pt]
+  %
+  \hat{\jmath}_0^{\,2} &=
+    \frac{(\Gamma-1)\,p_1 + (\Gamma+1)\,p_2}{2V_{01}}
+  \;\to\; \frac{\Gamma+1}{2}\,\frac{p_2}{V_{01}}
+  &&\text{for strong shock,} \\[6pt]
+  %
+  f^2 &= \tfrac{1}{2}\,V_{01}
+    \bigl[(\Gamma+1)\,p_1 + (\Gamma-1)\,p_2\bigr]
+  \;\to\; \tfrac{1}{2}\,(\Gamma-1)\,V_{01}\,p_2
+  &&\text{for strong shock,} \\[6pt]
+  %
+  \hat{\jmath}_0^{\,2} &=
+    \frac{V_{01}\bigl[(\Gamma+1)\,p_1 + (\Gamma-1)\,p_2\bigr]^2}
+         {2(\Gamma+1)}
+  \;\to\; \frac{(\Gamma-1)^2}{2(\Gamma+1)}\,V_{01}\,p_2^{\,2}
+  &&\text{for strong shock.}
+\end{aligned}
+  \tag{2.7.10}
+\end{equation}
+%
+Here ``strong shock'' means ``in the limit $p_2/p_1 \gg 1$''.
+
+\begin{figure}[htbp]
+\centering
+\fbox{\parbox{0.9\columnwidth}{\centering [Figure 2.7.2 placeholder]\\
+The Poisson adiabat $\mathscr{P}\,\mathscr{P}'$ and the Rankine-Hugoniot
+curve $\mathscr{R}\,\mathscr{R}'$ plotted in the $\mu V$--$p$ plane.}}
+\caption{The Poisson adiabat $\mathscr{P}\,\mathscr{P}'$ and the
+  Rankine-Hugoniot curve $\mathscr{R}\,\mathscr{R}'$ plotted in the
+  $\mu V$--$p$ plane.}
+\label{fig:2.7.2}
+\end{figure}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% SECTION 2.8  TURBULENCE
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Turbulence}
+\label{sec:2.8}
+
+In the accretion of gas onto a black hole, turbulence probably plays an
+important role.  (See \S\S4 and~5.)  Unfortunately, the theory of turbulence
+is in a very uncertain state.  Little is known with confidence about the
+astrophysical circumstances under which turbulence should develop, or about
+the strength of the turbulence; see, e.g., Chapter~3 of
+\citet{LandauLifshitz1959}; also \citet{Pikelner1961}.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% SECTION 2.9  RECONNECTION OF MAGNETIC FIELD LINES
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Reconnection of Magnetic Field Lines}
+\label{sec:2.9}
+
+\emph{Basic references}\quad \S5.3 of \citet{Cowling1965};
+\citet{Sonnerup1970}; \citet{Yeh1970};
+\citet{VainshteinZeldovich1972}.
+
+\subsubsection*{Basic ideas}
+
+In flat spacetime consider a plasma that is macroscopically neutral, that has a
+high electrical conductivity~$\sigma$, that is sufficiently dilute for one to
+ignore its dielectric properties: $\varepsilon = \mu = 1$.  Let the plasma be
+endowed with a large-scale magnetic field, and examine the evolution of that
+field in a Lorentz frame where the plasma has low velocity
+$|\mathbf{v}| \ll c$.  Maxwell's equations for the electromagnetic field then
+read
+%
+\begin{align}
+  \nabla \times \mathbf{E} + (1/c)(\partial\mathbf{B}/\partial t) &= 0\,,
+  \tag{2.9.1} \\[4pt]
+  \nabla \times \mathbf{B} - (1/c)(\partial\mathbf{E}/\partial t)
+    &= 4\pi\mathbf{J}/c\,.
+  \tag{2.9.2}
+\end{align}
+
+In the local rest frame of the plasma the current is proportional to the
+electric field, $\mathbf{J} = \sigma\mathbf{E}$.  When transformed to the
+Lorentz frame where the plasma moves with velocity~$\mathbf{v}$, this
+equation says
+%
+\begin{equation}
+  \mathbf{J} = \sigma\bigl[\mathbf{E}
+    + (\mathbf{v}/c) \times \mathbf{B}\bigr].
+  \tag{2.9.3}
+\end{equation}
+
+A straightforward calculation from the above equations leads to the following
+law for the rate of change of magnetic field along the world lines of the
+plasma:
+%
+\begin{equation}
+  \frac{d\mathbf{B}}{d\tau}
+  = (\omega + \sigma - \tfrac{2}{3}\theta\,\mathbf{1}) \cdot \mathbf{B}
+    - \frac{1}{4\pi\sigma}\left(
+      \frac{\partial^2\mathbf{B}}{\partial t^2}
+      - c^2\,\nabla^2\mathbf{B}\right).
+  \tag{2.9.4}
+\end{equation}
+%
+Here $\mathbf{1}$ is the unit 3-tensor; $\omega$, $\sigma$, and~$\theta$ are
+the rotation, shear, and expansion of the plasma
+[cf.\ eqs.~(2.5.17) and~(2.5.18)]; and
+%
+\[
+  d/d\tau = \partial/\partial t + \mathbf{v}\cdot\nabla\,.
+\]
+
+Because of the very high electrical conductivity, one can ignore the
+``wave-equation'' part of eq.~(2.9.4) almost everywhere in the plasma;
+and the magnetic field evolves in a ``frozen-in'' manner:
+%
+\begin{equation}
+  d\mathbf{B}/d\tau
+  = (\omega + \sigma - \tfrac{2}{3}\theta\,\mathbf{1}) \cdot \mathbf{B}\,.
+  \tag{2.9.5}
+\end{equation}
+
+[Cf.\ Eq.~(2.5.20) and associated discussion.]  However, in regions of plasma
+where the field has strong gradients, the ``wave-equation'' part must come
+into play.
+
+Consider, as the case of greatest importance, a magnetic field that is chaotic
+with an ordered structure on some scale~$l_c$ (subscript $c$ for ``cell
+size'').  At the interface between adjacent cells, the magnetic field must
+reverse sign (``neutral point'' or ``neutral sheet''), and its gradients will
+be very large.  Hence, at the interface, ``wave-equation'' behavior can come
+into play destroying the frozen-in behavior of the field.  The result is a
+reconnection of magnetic field lines, as
+
+\begin{figure}[htbp]
+\centering
+\fbox{\parbox{0.9\columnwidth}{\centering [Figure 2.9.1 placeholder]\\
+(a)~Top view and (b)~perspective view of reconnecting magnetic field lines
+in a plasma.  The reconnection region is stippled; the magnetic field lines
+are drawn solidly and the flow lines of the plasma are dotted.  The innermost
+field line is in the process of reconnecting into the dashed form.
+The perspective view~(b) shows the closed curve~$\mathscr{E}$ around which
+one integrates to derive eq.~(2.9.6) for the EMF in the connecting region.}}
+\caption{The region in a plasma where magnetic field lines are
+  reconnecting (schematic picture).  In the top view, (a), the
+  reconnection region is stippled; the magnetic field lines are drawn
+  solidly; and the flow lines of the plasma are dotted.  The innermost
+  field line is in the process of reconnecting into the dashed form.
+  The perspective view, (b), shows the closed curve~$\mathscr{E}$
+  around which one integrates to derive eq.~(2.9.6) for the EMF in the
+  connecting region.}
+\label{fig:2.9.1}
+\end{figure}
