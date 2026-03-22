@@ -1,0 +1,165 @@
+% Agent 18: PDF pages 34–35 (book pages 408–411)
+% Section 5.2 Accretion in Binary Systems: The General Picture
+% Covers: Roche lobe, Lagrange points, Figs 5.2.1–5.2.2, viscous stresses
+
+\subsection{Accretion in Binary Systems: The General Picture}
+\label{sec:5.2}
+
+Consider a close binary system with one component a ``normal'' star and the
+other a ``compact star'' (black hole or neutron star or white dwarf).  ``Close''
+means that the separation between the centers of mass is within a factor~2 or
+so of the radius $R_N$ of the normal star
+\begin{equation}
+a \lesssim 2\,R_N. \tag{5.2.1}
+\end{equation}
+
+For such a system, the interaction between the stars, acting over astronomical
+time scales, may have brought the normal star into co-rotation with its
+companion (``same face'' always turned toward companion).  For this reason,
+and to simplify the discussion, we assume a circular orbit and co-rotation
+of the normal star.  By Kepler's laws, the angular velocity of the stars
+about each other is
+\begin{equation}
+\boldsymbol{\Omega} = \left[(M_N + M_c)/a^3\right]^{1/2}\,\mathbf{e}_z,
+\tag{5.2.2}
+\end{equation}
+where $\mathbf{e}_z$ is a unit vector perpendicular to the orbital plane, and
+where $M_N$ and $M_c$ are the mass of the normal star and the compact star,
+respectively.  For cases of interest (e.g., the binary systems associated
+with Cyg~X-1 and Cen~X-3),
+\begin{gather}
+M_N \sim M_c \sim 1 \text{ to } 20\,M_\odot, \notag\\
+a \sim 2R_N \sim 10^{11} \text{ to } 10^{12}\;\text{cm} \tag{5.2.3}\\
+\text{orbital period} = 2\pi/\Omega \sim 1 \text{ to } 5\;\text{days.}
+\notag
+\end{gather}
+
+Analyze the flow of gas from the normal star to its compact companion using
+a coordinate system that co-rotates with the binary system (noninertial
+frame!).  In the Newtonian realm (i.e., everywhere except near the surface
+of the compact star), the Euler equation~(2.5.30) for the flowing gas
+reduces to
+\begin{equation}
+\frac{d\mathbf{v}}{dt}
+  = -\boldsymbol{\nabla}\Phi_{gc}
+    - \boldsymbol{\Omega}\times\mathbf{v}
+    - \frac{1}{\rho_0}\,\boldsymbol{\nabla}p
+    + \frac{2}{\rho_0}\,\boldsymbol{\nabla}\cdot(\eta\,\sigma).
+\tag{5.2.4}
+\end{equation}
+Here $d/dt$ is the time derivative relative to the rotating frame:
+$d/dt = \partial/\partial t + \mathbf{v}\cdot\boldsymbol{\nabla}$;
+$\mathbf{v}$ is the gas velocity relative to the rotating frame; $p$ and
+$\rho_0$ are pressure and rest-mass density; $\Phi_{gc}$ is the
+``gravitational-plus-centrifugal'' potential
+\begin{equation}
+\Phi_{gc} = -\frac{M_N}{|\mathbf{r}-\mathbf{r}_N|}
+            -\frac{M_c}{|\mathbf{r}-\mathbf{r}_c|}
+            -\tfrac{1}{2}(\Omega\times\mathbf{r})^2;
+\tag{5.2.5}
+\end{equation}
+and we have included a viscous shear stress, with $\eta$ the coefficient of
+dynamic viscosity and $\sigma$ the shear.  In the Euler equation the term
+$-\boldsymbol{\nabla}\Phi_{gc}$ gives rise to gravitational and centrifugal
+accelerations; and the term $-\boldsymbol{\Omega}\times\mathbf{v}$ gives
+rise to Coriolis accelerations.
+
+Notice that when pressure and viscous accelerations are \emph{not} important
+(test-particle motion), the equation of motion~(5.2.4) is identical to that
+for a particle with electric charge~$q$ moving in an electric field with
+potential $\Phi_{gc}/q$ and a uniform magnetic field with strength
+$B = \Omega/q = (\Omega/q)\,\mathbf{e}_z$.  Conservation of energy in this
+case requires $\Phi_{gc} + \tfrac{1}{2}v^2 = \text{const}$.  When pressure
+forces are taken into account, energy conservation [Bernoulli
+equation~(2.5.38)] is modified to read
+\begin{equation}
+\Phi_{gc} + \tfrac{1}{2}v^2 + w
+  = \text{constant along a streamline},
+\tag{5.2.6}
+\end{equation}
+where $w$ is the specific enthalpy (enthalpy per unit mass).
+
+When viscous stresses are taken into account, one cannot write such a simple
+conservation law.
+
+To deduce the qualitative nature of the gas flow from the ``normal'' star to
+its companion, one must have a clear picture of the potential $\Phi_{gc}$.
+Figure~\ref{fig:5.2.1} gives such a picture, for the
+Newtonian-plus-centrifugal potential in the orbital plane of a binary star
+system with a circular orbit.
+
+Of particular interest is the equipotential curve marked ``Roche lobe.''
+If the surface of the normal star is inside its Roche lobe, then the only
+way it can dump gas onto its companion is by means of a ``stellar wind,''
+which blows gas off the star being captured.  But if the surface of the
+normal star fills its Roche lobe, it can dump gas continuously through the
+``Lagrange point''~$L_1$ onto its companion.  In this case the steady-state
+flow, as governed by the Euler equation~(5.2.5) and by the law of mass
+conservation,
+\begin{equation}
+\boldsymbol{\nabla}\cdot(\rho_0\,\mathbf{v})
+  = -\partial\rho_0/\partial t = 0,
+\tag{5.2.7}
+\end{equation}
+will have the qualitative form shown in Fig.~\ref{fig:5.2.2}.
+
+\begin{figure}[htbp]
+\centering
+% \includegraphics[width=\columnwidth]{fig_5_2_1}
+\fbox{\parbox{0.9\columnwidth}{\centering [Figure 5.2.1 placeholder]\\
+Equipotentials of the Newtonian-plus-centrifugal potential $\Phi_{gc}$ in
+the orbital plane for a binary system with mass ratio
+$M_N\!:\!M_c = 10\!:\!1$.
+Contour values are labelled in units of $(M_N+M_c)/a$.
+Lagrange points $L_1$--$L_5$ are marked; the ``Roche lobe'' is the
+figure-eight-shaped equipotential through $L_1$.  The centre of mass
+(CM) is indicated.}}
+\caption{The equipotentials $\Phi_{gc}=\text{const}$ for the
+Newtonian-plus-centrifugal potential in the orbital plane of a binary star
+system with a circular orbit.  For the case shown here the stars have a
+mass ratio $M_N\!:\!M_c=10\!:\!1$.  The equipotentials are labelled by
+their values of $\Phi_{gc}$ measured in units of $(M_N+M_c)/a$, where $a$
+is the separation of the centres of mass of the two stars.  The innermost
+equipotentials are nearly spheres.  The potential $\Phi_{gc}$ has local
+stationary points ($\boldsymbol{\nabla}\Phi_{gc}=0$), called ``Lagrange
+points,'' at the locations marked~$L_j$.  Of particular interest is the
+equipotential curve marked ``Roche lobe.''  If the surface of the normal
+star is inside its Roche lobe, then the only way it can dump gas onto its
+companion is by means of a ``stellar wind,'' which blows gas off the star
+being captured.  But if the surface of the normal star fills its Roche
+lobe, it can dump gas continuously through the ``Lagrange point''~$L_1$
+onto its companion.  In this case the steady-state flow, as governed by
+the Euler equation~(5.2.5) and by the law of mass conservation,
+will have the qualitative form shown in Fig.~\ref{fig:5.2.2}.}
+\label{fig:5.2.1}
+\end{figure}
+
+The gas falls from the surface of the normal star, over the ``lip'' of the
+potential (Lagrange point~$L_1$), toward the compact companion.  As the gas
+picks up speed, Coriolis forces swing it to the right in
+Figure~\ref{fig:5.2.2}, and then gravitational forces swing it back leftward
+into roughly circular motion about the compact companion.  Gas previously
+dumped onto the companion is now in an orbiting disk.  The incoming gas
+interacts viscously with the gas of the disk.  Some of the incoming gas
+
+\begin{figure}[htbp]
+\centering
+% \includegraphics[width=\columnwidth]{fig_5_2_2}
+\fbox{\parbox{0.9\columnwidth}{\centering [Figure 5.2.2 placeholder]\\
+Qualitative picture of the gas flow from a normal star through the inner
+Lagrange point $L_1$ onto a compact companion in a close binary system.
+The gas stream is deflected by Coriolis forces and forms an accretion disk
+around the compact object.}}
+\caption{Qualitative picture of the flow of gas from a normal star,
+through the inner Lagrange point~$L_1$, onto a compact companion.
+Coriolis forces deflect the incoming stream, and the gas settles into an
+accretion disk orbiting the compact object.}
+\label{fig:5.2.2}
+\end{figure}
+
+It is instructive to figure out why, even though $L_4$ and $L_5$ are maxima
+of the potential, they are stable points for test-particle orbits.
+[Particles placed at $L_4$ or $L_5$, when perturbed slightly, go into
+stable orbits about $L_4$ or $L_5$.  The key to this stability is the role
+of Coriolis forces; see eq.~(5.2.4).]  The ``trojan asteroids'' orbit the
+Lagrange points $L_4$ and $L_5$ of the Sun--Jupiter system.
