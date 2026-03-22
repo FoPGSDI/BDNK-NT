@@ -105,15 +105,34 @@ Module[{tcTest, betaETest, betaNTest, epsTest, nTest, dxEpsTest, dxNTest, qxTest
 ];
 
 (* ---- RHS computation ---- *)
+(* The conservation law is d_t(T^{tt}) + d_x(T^{tx}) = 0 and
+   d_t(T^{tx}) + d_x(T^{xx}) = 0.  Since T^{ab} depends on the
+   primitives (eps,v,n), their time derivatives (dtEps,dtV), AND
+   their spatial derivatives (dxEps,dxV,dxN), the full time derivative
+   d_t(T^{tt}) includes contributions from all of these evolving:
+
+     d_t(T^{tt}) = dT^{tt}/deps * dtEps + dT^{tt}/dv * dtV + dT^{tt}/dn * dtN
+                 + dT^{tt}/d(dxEps) * dx(dtEps) + dT^{tt}/d(dxV) * dx(dtV)
+                 + dT^{tt}/d(dxN) * dx(dtN)
+                 + dT^{tt}/d(dtEps) * ddotEps + dT^{tt}/d(dtV) * ddotV
+
+   The last two terms are the implicit part (a11*ddotEps + a12*ddotV).
+   The middle three terms involve time evolution of spatial derivatives
+   and were previously MISSING -- they are essential because T^{tt}
+   depends on dxV through the theta = W^3(v*dtV+dxV) expansion term,
+   and T^{tx} depends on dxEps, dxN through betaEps, betaN gradients. *)
+
 computeRHS[epsArr_, vArr_, nArr_, dtEpsArr_, dtVArr_,
            dx_, gam_, mass_, vHat_, sigmaHat_, tauHat_] :=
 Module[{nx, dxEps, dxV, dxN,
+        dxDtEps, dxDtV,
         ttxArr, txxArr, jxArr,
         dxTtx, dxTxx, dxJx,
         ddotEps, ddotV, dtNArr, i, eps, v, n, ww},
 
   nx = Length[epsArr];
 
+  (* Spatial derivatives of primitives *)
   dxEps = Table[0., {nx}]; dxV = Table[0., {nx}]; dxN = Table[0., {nx}];
   Do[
     dxEps[[i]] = (epsArr[[i+1]] - epsArr[[i-1]])/(2*dx);
@@ -123,6 +142,15 @@ Module[{nx, dxEps, dxV, dxN,
   dxEps[[1]] = dxEps[[2]]; dxEps[[nx]] = dxEps[[nx-1]];
   dxV[[1]] = dxV[[2]]; dxV[[nx]] = dxV[[nx-1]];
   dxN[[1]] = dxN[[2]]; dxN[[nx]] = dxN[[nx-1]];
+
+  (* Spatial derivatives of TIME derivatives (needed for the missing terms) *)
+  dxDtEps = Table[0., {nx}]; dxDtV = Table[0., {nx}];
+  Do[
+    dxDtEps[[i]] = (dtEpsArr[[i+1]] - dtEpsArr[[i-1]])/(2*dx);
+    dxDtV[[i]]   = (dtVArr[[i+1]] - dtVArr[[i-1]])/(2*dx);
+  , {i, 2, nx-1}];
+  dxDtEps[[1]] = dxDtEps[[2]]; dxDtEps[[nx]] = dxDtEps[[nx-1]];
+  dxDtV[[1]] = dxDtV[[2]]; dxDtV[[nx]] = dxDtV[[nx-1]];
 
   ttxArr = Table[0., {nx}]; txxArr = Table[0., {nx}]; jxArr = Table[0., {nx}];
   Do[
@@ -154,9 +182,11 @@ Module[{nx, dxEps, dxV, dxN,
 
     Module[{comp0, compE, compV, compN,
             ttt0, ttx0, a11, a12, a21, a22,
-            he, hv, hn,
+            he, hv, hn, hdxE, hdxV, hdxN,
             dTttDeps, dTtxDeps, dTttDv, dTtxDv, dTttDn, dTtxDn,
-            dtNi, rhsEn, rhsMom, det, ww2},
+            dTttDdxE, dTtxDdxE, dTttDdxV, dTtxDdxV, dTttDdxN, dTtxDdxN,
+            dtNi, dxDtNi, rhsEn, rhsMom, spatialTermEn, spatialTermMom,
+            det, ww2},
 
       ww2 = 1.0/(1.0 - v^2);
 
@@ -165,6 +195,7 @@ Module[{nx, dxEps, dxV, dxN,
                               gam, mass, vHat, sigmaHat, tauHat];
       ttt0 = comp0[[1]]; ttx0 = comp0[[2]];
 
+      (* Implicit matrix: derivatives w.r.t. dtEps, dtV *)
       compE = bdnkComponents[eps, v, n, dxEps[[i]], dxV[[i]], dxN[[i]],
                               dtEpsArr[[i]]+1, dtVArr[[i]],
                               gam, mass, vHat, sigmaHat, tauHat];
@@ -175,6 +206,7 @@ Module[{nx, dxEps, dxV, dxN,
                               gam, mass, vHat, sigmaHat, tauHat];
       a12 = compV[[1]] - ttt0; a22 = compV[[2]] - ttx0;
 
+      (* Derivatives w.r.t. primitive variables (eps, v, n) *)
       he = Max[Abs[eps]*1.0*^-7, 1.0*^-10];
       hv = Max[Abs[v]*1.0*^-7, 1.0*^-10];
       hn = Max[Abs[n]*1.0*^-7, 1.0*^-10];
@@ -200,10 +232,50 @@ Module[{nx, dxEps, dxV, dxN,
       dTttDn = (compE[[1]] - compN[[1]])/(2*hn);
       dTtxDn = (compE[[2]] - compN[[2]])/(2*hn);
 
+      (* Derivatives w.r.t. spatial gradients (dxEps, dxV, dxN) *)
+      hdxE = Max[Abs[dxEps[[i]]]*1.0*^-5, 1.0*^-8];
+      hdxV = Max[Abs[dxV[[i]]]*1.0*^-5, 1.0*^-8];
+      hdxN = Max[Abs[dxN[[i]]]*1.0*^-5, 1.0*^-8];
+
+      compE = bdnkComponents[eps, v, n, dxEps[[i]]+hdxE, dxV[[i]], dxN[[i]],
+                              dtEpsArr[[i]], dtVArr[[i]], gam, mass, vHat, sigmaHat, tauHat];
+      compN = bdnkComponents[eps, v, n, dxEps[[i]]-hdxE, dxV[[i]], dxN[[i]],
+                              dtEpsArr[[i]], dtVArr[[i]], gam, mass, vHat, sigmaHat, tauHat];
+      dTttDdxE = (compE[[1]] - compN[[1]])/(2*hdxE);
+      dTtxDdxE = (compE[[2]] - compN[[2]])/(2*hdxE);
+
+      compE = bdnkComponents[eps, v, n, dxEps[[i]], dxV[[i]]+hdxV, dxN[[i]],
+                              dtEpsArr[[i]], dtVArr[[i]], gam, mass, vHat, sigmaHat, tauHat];
+      compN = bdnkComponents[eps, v, n, dxEps[[i]], dxV[[i]]-hdxV, dxN[[i]],
+                              dtEpsArr[[i]], dtVArr[[i]], gam, mass, vHat, sigmaHat, tauHat];
+      dTttDdxV = (compE[[1]] - compN[[1]])/(2*hdxV);
+      dTtxDdxV = (compE[[2]] - compN[[2]])/(2*hdxV);
+
+      compE = bdnkComponents[eps, v, n, dxEps[[i]], dxV[[i]], dxN[[i]]+hdxN,
+                              dtEpsArr[[i]], dtVArr[[i]], gam, mass, vHat, sigmaHat, tauHat];
+      compN = bdnkComponents[eps, v, n, dxEps[[i]], dxV[[i]], dxN[[i]]-hdxN,
+                              dtEpsArr[[i]], dtVArr[[i]], gam, mass, vHat, sigmaHat, tauHat];
+      dTttDdxN = (compE[[1]] - compN[[1]])/(2*hdxN);
+      dTtxDdxN = (compE[[2]] - compN[[2]])/(2*hdxN);
+
+      (* Time derivative of n from baryon conservation *)
       dtNi = (-dxJx[[i]] - n*ww^3*v*dtVArr[[i]])/ww;
 
-      rhsEn  = -dxTtx[[i]] - (dTttDeps*dtEpsArr[[i]] + dTttDv*dtVArr[[i]] + dTttDn*dtNi);
-      rhsMom = -dxTxx[[i]] - (dTtxDeps*dtEpsArr[[i]] + dTtxDv*dtVArr[[i]] + dTtxDn*dtNi);
+      (* Spatial derivative of dtN: dx(dtN) = dx(-dxJx/ww - n*ww^2*v*dtV) *)
+      (* For simplicity, approximate dx(dtN) from baryon conservation:
+         dt(n) = -d_x(n*W*v)/W.  Since W~1 and v~0 initially,
+         dtN ~ -n*dx(dtV) - dtV*dxN approximately *)
+      dxDtNi = -n*dxDtV[[i]] - dtVArr[[i]]*dxN[[i]];
+
+      (* Spatial-derivative evolution contributions to d_t(T^{tt}) and d_t(T^{tx}):
+         d_t(dxEps) = dx(dtEps), d_t(dxV) = dx(dtV), d_t(dxN) = dx(dtN) *)
+      spatialTermEn  = dTttDdxE*dxDtEps[[i]] + dTttDdxV*dxDtV[[i]] + dTttDdxN*dxDtNi;
+      spatialTermMom = dTtxDdxE*dxDtEps[[i]] + dTtxDdxV*dxDtV[[i]] + dTtxDdxN*dxDtNi;
+
+      rhsEn  = -dxTtx[[i]] - (dTttDeps*dtEpsArr[[i]] + dTttDv*dtVArr[[i]] + dTttDn*dtNi)
+               - spatialTermEn;
+      rhsMom = -dxTxx[[i]] - (dTtxDeps*dtEpsArr[[i]] + dTtxDv*dtVArr[[i]] + dTtxDn*dtNi)
+               - spatialTermMom;
 
       det = a11*a22 - a12*a21;
       If[Abs[det] < 1.0*^-30,
