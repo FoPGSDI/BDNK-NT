@@ -1,6 +1,2313 @@
 % Section 5: Black Holes in Binary Star Systems and in the Nuclei of Galaxies
-% Placeholder - to be populated by translation agents 17-26
+% Merged from agent_18.tex through agent_26.tex
+% Subsections 5.1--5.14
+
 \section{Black Holes in Binary Star Systems and in the Nuclei of Galaxies}
 \label{sec:5}
 
-% Content will be merged from agent_17.tex through agent_26.tex
+\subsection{Introduction}
+\label{sec:5.1}
+
+% [Section 5.1 Introduction content not available in agent translations]
+% The original text discusses the general context of black holes in binary
+% star systems and galactic nuclei, providing motivation for the detailed
+% analysis that follows.
+
+\subsection{Accretion in Binary Systems: The General Picture}
+\label{sec:5.2}
+
+Consider a close binary system with one component a ``normal'' star and the
+other a ``compact star'' (black hole or neutron star or white dwarf).  ``Close''
+means that the separation between the centers of mass is within a factor~2 or
+so of the radius $R_N$ of the normal star
+\begin{equation}
+a \lesssim 2\,R_N. \tag{5.2.1}
+\end{equation}
+
+For such a system, the interaction between the stars, acting over astronomical
+time scales, may have brought the normal star into co-rotation with its
+companion (``same face'' always turned toward companion).  For this reason,
+and to simplify the discussion, we assume a circular orbit and co-rotation
+of the normal star.  By Kepler's laws, the angular velocity of the stars
+about each other is
+\begin{equation}
+\boldsymbol{\Omega} = \left[(M_N + M_c)/a^3\right]^{1/2}\,\mathbf{e}_z,
+\tag{5.2.2}
+\end{equation}
+where $\mathbf{e}_z$ is a unit vector perpendicular to the orbital plane, and
+where $M_N$ and $M_c$ are the mass of the normal star and the compact star,
+respectively.  For cases of interest (e.g., the binary systems associated
+with Cyg~X-1 and Cen~X-3),
+\begin{gather}
+M_N \sim M_c \sim 1 \text{ to } 20\,M_\odot, \notag\\
+a \sim 2R_N \sim 10^{11} \text{ to } 10^{12}\;\text{cm} \tag{5.2.3}\\
+\text{orbital period} = 2\pi/\Omega \sim 1 \text{ to } 5\;\text{days.}
+\notag
+\end{gather}
+
+Analyze the flow of gas from the normal star to its compact companion using
+a coordinate system that co-rotates with the binary system (noninertial
+frame!).  In the Newtonian realm (i.e., everywhere except near the surface
+of the compact star), the Euler equation~(2.5.30) for the flowing gas
+reduces to
+\begin{equation}
+\frac{d\mathbf{v}}{dt}
+  = -\boldsymbol{\nabla}\Phi_{gc}
+    - \boldsymbol{\Omega}\times\mathbf{v}
+    - \frac{1}{\rho_0}\,\boldsymbol{\nabla}p
+    + \frac{2}{\rho_0}\,\boldsymbol{\nabla}\cdot(\eta\,\sigma).
+\tag{5.2.4}
+\end{equation}
+Here $d/dt$ is the time derivative relative to the rotating frame:
+$d/dt = \partial/\partial t + \mathbf{v}\cdot\boldsymbol{\nabla}$;
+$\mathbf{v}$ is the gas velocity relative to the rotating frame; $p$ and
+$\rho_0$ are pressure and rest-mass density; $\Phi_{gc}$ is the
+``gravitational-plus-centrifugal'' potential
+\begin{equation}
+\Phi_{gc} = -\frac{M_N}{|\mathbf{r}-\mathbf{r}_N|}
+            -\frac{M_c}{|\mathbf{r}-\mathbf{r}_c|}
+            -\tfrac{1}{2}(\Omega\times\mathbf{r})^2;
+\tag{5.2.5}
+\end{equation}
+and we have included a viscous shear stress, with $\eta$ the coefficient of
+dynamic viscosity and $\sigma$ the shear.  In the Euler equation the term
+$-\boldsymbol{\nabla}\Phi_{gc}$ gives rise to gravitational and centrifugal
+accelerations; and the term $-\boldsymbol{\Omega}\times\mathbf{v}$ gives
+rise to Coriolis accelerations.
+
+Notice that when pressure and viscous accelerations are \emph{not} important
+(test-particle motion), the equation of motion~(5.2.4) is identical to that
+for a particle with electric charge~$q$ moving in an electric field with
+potential $\Phi_{gc}/q$ and a uniform magnetic field with strength
+$B = \Omega/q = (\Omega/q)\,\mathbf{e}_z$.  Conservation of energy in this
+case requires $\Phi_{gc} + \tfrac{1}{2}v^2 = \text{const}$.  When pressure
+forces are taken into account, energy conservation [Bernoulli
+equation~(2.5.38)] is modified to read
+\begin{equation}
+\Phi_{gc} + \tfrac{1}{2}v^2 + w
+  = \text{constant along a streamline},
+\tag{5.2.6}
+\end{equation}
+where $w$ is the specific enthalpy (enthalpy per unit mass).
+
+When viscous stresses are taken into account, one cannot write such a simple
+conservation law.
+
+To deduce the qualitative nature of the gas flow from the ``normal'' star to
+its companion, one must have a clear picture of the potential $\Phi_{gc}$.
+Figure~\ref{fig:5.2.1} gives such a picture, for the
+Newtonian-plus-centrifugal potential in the orbital plane of a binary star
+system with a circular orbit.
+
+Of particular interest is the equipotential curve marked ``Roche lobe.''
+If the surface of the normal star is inside its Roche lobe, then the only
+way it can dump gas onto its companion is by means of a ``stellar wind,''
+which blows gas off the star being captured.  But if the surface of the
+normal star fills its Roche lobe, it can dump gas continuously through the
+``Lagrange point''~$L_1$ onto its companion.  In this case the steady-state
+flow, as governed by the Euler equation~(5.2.5) and by the law of mass
+conservation,
+\begin{equation}
+\boldsymbol{\nabla}\cdot(\rho_0\,\mathbf{v})
+  = -\partial\rho_0/\partial t = 0,
+\tag{5.2.7}
+\end{equation}
+will have the qualitative form shown in Fig.~\ref{fig:5.2.2}.
+
+\begin{figure}[htbp]
+\centering
+% \includegraphics[width=\columnwidth]{fig_5_2_1}
+\fbox{\parbox{0.9\columnwidth}{\centering [Figure 5.2.1 placeholder]\\
+Equipotentials of the Newtonian-plus-centrifugal potential $\Phi_{gc}$ in
+the orbital plane for a binary system with mass ratio
+$M_N\!:\!M_c = 10\!:\!1$.
+Contour values are labelled in units of $(M_N+M_c)/a$.
+Lagrange points $L_1$--$L_5$ are marked; the ``Roche lobe'' is the
+figure-eight-shaped equipotential through $L_1$.  The centre of mass
+(CM) is indicated.}}
+\caption{The equipotentials $\Phi_{gc}=\text{const}$ for the
+Newtonian-plus-centrifugal potential in the orbital plane of a binary star
+system with a circular orbit.  For the case shown here the stars have a
+mass ratio $M_N\!:\!M_c=10\!:\!1$.  The equipotentials are labelled by
+their values of $\Phi_{gc}$ measured in units of $(M_N+M_c)/a$, where $a$
+is the separation of the centres of mass of the two stars.  The innermost
+equipotentials are nearly spheres.  The potential $\Phi_{gc}$ has local
+stationary points ($\boldsymbol{\nabla}\Phi_{gc}=0$), called ``Lagrange
+points,'' at the locations marked~$L_j$.  Of particular interest is the
+equipotential curve marked ``Roche lobe.''  If the surface of the normal
+star is inside its Roche lobe, then the only way it can dump gas onto its
+companion is by means of a ``stellar wind,'' which blows gas off the star
+being captured.  But if the surface of the normal star fills its Roche
+lobe, it can dump gas continuously through the ``Lagrange point''~$L_1$
+onto its companion.  In this case the steady-state flow, as governed by
+the Euler equation~(5.2.5) and by the law of mass conservation,
+will have the qualitative form shown in Fig.~\ref{fig:5.2.2}.}
+\label{fig:5.2.1}
+\end{figure}
+
+The gas falls from the surface of the normal star, over the ``lip'' of the
+potential (Lagrange point~$L_1$), toward the compact companion.  As the gas
+picks up speed, Coriolis forces swing it to the right in
+Figure~\ref{fig:5.2.2}, and then gravitational forces swing it back leftward
+into roughly circular motion about the compact companion.  Gas previously
+dumped onto the companion is now in an orbiting disk.  The incoming gas
+interacts viscously with the gas of the disk.  Some of the incoming gas
+
+\begin{figure}[htbp]
+\centering
+% \includegraphics[width=\columnwidth]{fig_5_2_2}
+\fbox{\parbox{0.9\columnwidth}{\centering [Figure 5.2.2 placeholder]\\
+Qualitative picture of the gas flow from a normal star through the inner
+Lagrange point $L_1$ onto a compact companion in a close binary system.
+The gas stream is deflected by Coriolis forces and forms an accretion disk
+around the compact object.}}
+\caption{Qualitative picture of the flow of gas from a normal star,
+through the inner Lagrange point~$L_1$, onto a compact companion.
+Coriolis forces deflect the incoming stream, and the gas settles into an
+accretion disk orbiting the compact object.}
+\label{fig:5.2.2}
+\end{figure}
+
+It is instructive to figure out why, even though $L_4$ and $L_5$ are maxima
+of the potential, they are stable points for test-particle orbits.
+[Particles placed at $L_4$ or $L_5$, when perturbed slightly, go into
+stable orbits about $L_4$ or $L_5$.  The key to this stability is the role
+of Coriolis forces; see eq.~(5.2.4).]  The ``trojan asteroids'' orbit the
+Lagrange points $L_4$ and $L_5$ of the Sun--Jupiter system.
+
+Viscous stresses in the orbiting disk gradually remove angular momentum
+from each gas element, permitting it to gradually spiral inward toward the
+compact star. The angular momentum removed is transported by the viscous
+stresses from the inner parts of the disk to the outer parts, and is then picked
+up and carried away by passing gas (see above). At the same time, the shearing
+orbital motion of the gas in the inner parts of the disk, acting against the
+viscous stresses, produces heat (``frictional heating''). Much more heat is
+generated than the gas can store, so most of the heat gets radiated away from
+the top and bottom faces of the disk.
+
+The total energy radiated by a unit mass of gas during its passage inward
+through the disk must equal, approximately,\footnote{``Approximately'' because the compact star itself can feed energy into the disk by means
+of viscous stresses, and that energy can subsequently be converted to heat and radiated
+away; see below.} the gravitational binding energy
+of the unit mass when it reaches the inner edge of the disk, $\tilde{E}_{\text{bind}}$. For a white
+dwarf or neutron star the inner edge of the disk is near the star's surface, so
+\begin{equation}
+\tilde{E}_{\text{bind}} \simeq \tfrac{1}{4}(M_c/R_c)
+\tag{5.2.9a}
+\end{equation}
+\begin{equation}
+\simeq 10^{-4} \quad \text{for white dwarf}.
+\notag
+\end{equation}
+\begin{equation}
+\simeq 0.05 \quad \text{for neutron star}.
+\notag
+\end{equation}
+
+For a black hole the inner edge of the disk is at the last stable circular orbit,
+which has
+\begin{equation}
+\tilde{E}_{\text{bind}} \simeq 0.057 \quad \text{for nonrotating hole}.
+\tag{5.2.9b}
+\end{equation}
+\begin{equation}
+\tilde{E}_{\text{bind}} \simeq 0.42 \quad \text{for maximally rotating hole}.
+\notag
+\end{equation}
+
+Thus, in order of magnitude the total luminosity of the disk must be
+\begin{equation}
+L \sim 10^{-4}\,\dot{M}_0 \sim (10^{34} \text{ ergs/sec})
+\left(\frac{\dot{M}_0}{10^{-9} M_\odot/\text{yr}}\right)
+\quad \text{for white dwarf},
+\tag{5.2.10}
+\end{equation}
+\begin{equation}
+L \sim 0.1\,\dot{M}_0 \sim (10^{37} \text{ ergs/sec})
+\left(\frac{\dot{M}_0}{10^{-9} M_\odot/\text{yr}}\right)
+\quad \text{for neutron star or hole}.
+\notag
+\end{equation}
+
+Here $\dot{M}_0$ is the accretion rate. In the case of a neutron star or white dwarf, the
+gas hits the star (or its magnetic field) with a kinetic energy roughly equal to the
+binding energy $\tilde{E}_{\text{bind}}$. In a steady state the energy liberated by this collision
+must all get radiated away, so the star itself will emit a luminosity of the same
+order as that emitted by the disk. In the case of a black hole, by contrast, the
+disk is the only source of radiation.
+
+If the total luminosity approaches the ``Eddington limit''
+\begin{equation}
+L_{\text{crit}} \simeq (1 \times 10^{38} \text{ ergs/sec})\,(M/M_\odot)
+\tag{5.2.11a}
+\end{equation}
+(eq.~4.5.4), then radiation pressure will destroy the disk, and the general nature
+of the accretion will be quite different from that depicted above. For details
+see \S5.13, on the ``subcritical case.''
+
+$L \leq L_{\text{crit}}$, with a well-defined, thin disk. Note that this subcritical case
+corresponds to an accretion rate of
+\begin{equation}
+\dot{M}_0 \ll \dot{M}_{\text{crit}} \sim (10^{-5} M_\odot/\text{yr})(M/M_\odot)
+\quad \text{for neutron star or black hole}.
+\tag{5.2.11b}
+\end{equation}
+\begin{equation}
+\sim (10^{-5} M_\odot/\text{yr})(M/M_\odot)
+\quad \text{for white dwarf}
+\notag
+\end{equation}
+
+For a semiquantitative, Newtonian analysis of the subcritical disk structure,
+introduce an inertial frame centered on the compact star and ignore the tidal
+gravitational forces of the normal star. Let the rate at which gas is deposited
+into the disk, $\dot{M}_0$ (``accretion rate''), be given.
+
+The specific angular momentum of the gas at radius $r$ is
+\begin{equation}
+\tilde{L} = (M/r^3)^{1/2}\,r^2 = (Mr)^{1/2},
+\tag{5.2.12}
+\end{equation}
+where $M$---previously denoted $M_c$---is the mass of the compact star. Since the
+radius of the compact star is far less than that of the outer edge of the disk, a gas
+element must lose nearly all of its initial angular momentum by the time it reaches
+the star. Thus, the rate at which angular momentum is removed from the disk by
+passing gas must be
+\begin{equation}
+\dot{j} = \dot{M}_0 \times (\tilde{L} \text{ evaluated at outer edge of disk}, r_0)
+= \dot{M}_0 (Mr_0)^{1/2}.
+\tag{5.2.13}
+\end{equation}
+
+In a steady state the accretion rate and the outer edge of the disk will adjust
+themselves until this relation is satisfied, with angular momentum continually
+being removed from the outer edge by passing gas.
+
+Return to the inner regions of the disk. Let $2h$
+be the disk thickness, and let $\Sigma = 2h\rho_0$ be the surface density (g/cm$^2$),
+$\rho_0$ be the mass density (g/cm$^3$) at radius
+$r$. Let $v^{\hat{r}}$ be the radial velocity of the gas. (Note: $v^{\hat{r}} < 0$.) The orbital velocity
+and angular velocity $\Omega$ are
+\begin{equation}
+v^{\hat{\phi}} = \Omega r = (M/r)^{1/2}\,.
+\tag{5.2.14}
+\end{equation}
+
+The viscosity will never get strong enough to allow large radial velocities; i.e.,
+$|v^{\hat{r}}|$ will always be far smaller than $v^{\hat{\phi}}$. Let $t_{\hat{r}\hat{\phi}}$ be the viscous stress (components
+relative to an orthonormal frame at radius $r$). This stress is related to the shear
+of the circular Keplerian orbits by
+\begin{equation}
+t_{\hat{r}\hat{\phi}} = -2\eta\,\sigma_{\hat{r}\hat{\phi}}
+= -\tfrac{3}{2}\eta\,(M/r^3)^{1/2},
+\tag{5.2.16}
+\end{equation}
+where $\eta$ is the coefficient of dynamic viscosity (see \S2.5). The sources of
+viscosity will be discussed below. Let $F$ be the flux of radiation (ergs/cm$^2$ sec)
+
+off the upper face of the disk. An equal flux $F$ will come off the lower face.
+
+The steady-state structure of the disk is governed by four conservation laws
+(conservation of mass, angular momentum, energy, and vertical momentum);
+by the nature of the viscosity---i.e., value of $\eta$---and by the law of radiative transfer
+from the inside of the disk to its surface.
+
+\textit{Rest-mass conservation}
+
+Mass must flow across a cylinder of radius $r$ at a rate equal to the accretion rate
+\begin{equation}
+-2\pi r \cdot 2h \cdot \rho_0\, v^{\hat{r}} = \dot{M}_0\,.
+\tag{5.2.15}
+\end{equation}
+
+%%% --- Angular-momentum conservation ---
+
+\textit{Angular-momentum conservation}
+
+The rate at which angular momentum is carried inward across radius $r$ by
+inflowing gas must equal the rate at which viscous stresses carry angular
+momentum out of radius $r$, plus the rate $\dot{j}_c$ at which angular momentum is
+deposited in the compact star
+\begin{equation}
+\dot{M}_0 (Mr)^{1/2} = 2\pi r \cdot 2h \cdot t_{\hat{r}\hat{\phi}} \cdot r + \dot{j}_c\,.
+\tag{5.2.17}
+\end{equation}
+
+The specific angular momentum $\tilde{L}_c$ deposited into the compact star cannot
+exceed the Keplerian angular momentum at the inner edge of the disk $r_I$;
+hence
+\begin{equation}
+\dot{j}_c = \beta \dot{M}_0 (Mr_I)^{1/2} \quad \text{for some} \quad |\beta| \leq 1.
+\notag
+\end{equation}
+
+Solving for the product of stress and disk thickness, we obtain
+\begin{equation}
+2h t_{\hat{r}\hat{\phi}} = \frac{\dot{M}_0}{2\pi r^2}\left[(Mr)^{1/2}
+- \beta(Mr_I)^{1/2}\right].
+\tag{5.2.18}
+\end{equation}
+\begin{equation}
+\simeq \frac{\dot{M}_0(Mr)^{1/2}}{2\pi r^2}
+\quad \text{for} \quad r \gg r_I.
+\notag
+\end{equation}
+
+Notice that in a steady state the product $2h t_{\hat{r}\hat{\phi}}$ is determined uniquely by the
+accretion rate and the mass of the hole. If, at some radius, $2h t_{\hat{r}\hat{\phi}}$ is (temporarily)
+smaller than the steady-state value, then the viscous stresses there will not be sufficient to
+handle the mass flow $\dot{M}_0$. As a result, mass will accumulate in the deviant region,
+increasing thereby the disk thickness $h$ and/or the stresses $t_{\hat{r}\hat{\phi}}$ there, and returning
+the deviant region to a steady-state structure. For a quantitative analysis of this
+``approach to steady state'' see Thorne~(1973b)\cite{Thorne1973b}.
+
+%%% --- Energy conservation ---
+
+\textit{Energy conservation}
+
+Heat is generated in the disk by viscosity at a rate, per unit volume, given by
+\begin{equation}
+\varepsilon = (2h t_{\hat{r}\hat{\phi}})(-2\sigma_{\hat{r}\hat{\phi}})
+\notag
+\end{equation}
+(see \S2.5). Thus, the heat generated per unit area is
+\begin{equation}
+2h\varepsilon = (2h t_{\hat{r}\hat{\phi}})(-2\sigma_{\hat{r}\hat{\phi}})
+= \frac{3\dot{M}_0}{4\pi r^2}\,\frac{M}{r}
+\left[1 - \beta\!\left(\frac{r_I}{r}\right)^{1/2}\right];
+\tag{5.2.19}
+\end{equation}
+and the heat generated between radii $r_1$ and $r_2$ is
+\begin{equation}
+\int_{r_1}^{r_2} 2h\varepsilon\cdot 2\pi r\,dr
+= \tfrac{3}{2}\dot{M}_0
+\left[\frac{M}{r_1}
+- \frac{2\beta}{3}\left(\frac{r_I}{r_1}\right)^{1/2}\!\frac{M}{r_1}
+- \frac{M}{r_2}
++ \frac{2\beta}{3}\left(\frac{r_I}{r_2}\right)^{1/2}\!\frac{M}{r_2}
+\right]
+\notag
+\end{equation}
+\begin{equation}
+\simeq \tfrac{3}{2}\dot{M}_0
+\left(\frac{M}{r_1} - \frac{M}{r_2}\right)
+\quad \text{for} \quad r_2 > r_1 \gg r_I.
+\tag{5.2.20}
+\end{equation}
+
+It is instructive to examine the origin of this heat energy by asking at what
+net rate energy is being deposited in the region $r_1 < r < r_2$. Gravitational
+potential energy is released at a rate $\dot{M}_0(M/r_1 - M/r_2)$, but only half of this
+energy can go into orbital kinetic energy
+(virial theorem). Thus, the rate at which gravitational energy gets converted
+into heat is
+\begin{equation}
+\tfrac{1}{2}\dot{M}_0(M/r_1 - M/r_2).
+\notag
+\end{equation}
+
+The viscous stresses transport outward not only angular momentum, but also
+energy. The rate at which energy is transported across radius $r$ is
+\begin{equation}
+\dot{E} = \Omega J = \dot{M}_0(M/r)\left[1 - \beta(r_I/r)^{1/2}\right].
+\notag
+\end{equation}
+
+Thus, energy is deposited by viscosity between radii $r_1$ and $r_2$ at a rate
+\begin{equation}
+\dot{M}_0
+\left[\frac{M}{r_1}\left(1 - \beta\!\left(\frac{r_I}{r_1}\right)^{1/2}\right)
+- \frac{M}{r_2}\left(1 - \beta\!\left(\frac{r_I}{r_2}\right)^{1/2}\right)
+\right].
+\notag
+\end{equation}
+
+This energy deposition rate plus the deposition rate for gravitational energy is
+equal to the total heating rate. Notice that at radii $r \gg r_I$, gravity accounts
+directly for only one-third of the heat. The remaining two-thirds is transported
+into the heating region by viscous stresses. Much of the early literature on disk
+accretion, e.g., Lynden-Bell~(1969)\cite{LyndenBell1969}, failed to take account of energy transport
+by viscous stresses, and therefore underestimated by a factor of 3 the heating at
+$r \gg r_I$.
+
+If none of the heat were radiated away, the thermal energy of the disk
+would be 3/2 times its gravitational potential energy; and its temperature
+would thus be
+\begin{equation}
+T \sim (M/r) m_p \sim (10^{13}\,\text{K})(r/10^5\,\text{cm})^{-1}(M/M_\odot).
+\notag
+\end{equation}
+
+Such temperatures are absurdly high. Thermal bremsstrahlung and other
+radiative processes will never permit such temperatures to arise. Instead, they
+will quickly remove almost all of the heat that is generated. This means that
+
+the total flux $2F$ from the top and bottom faces of the disk must equal the
+heating rate per unit area, as calculated above (the heat flows out of the disk
+vertically rather than radially because the disk is so thin):
+\begin{equation}
+F = \frac{3\dot{M}_0}{8\pi r^2}\,\frac{M}{r}
+\left[1 - \beta\!\left(\frac{r_I}{r}\right)^{1/2}\right].
+\tag{5.2.21}
+\end{equation}
+
+The total power radiated is thus
+\begin{equation}
+L = \int_{r_I}^{\infty} 2F \cdot 2\pi r\,dr
+= (\tfrac{3}{2} - \beta)\dot{M}_0\,\frac{M}{r_I}\,.
+\tag{5.2.22}
+\end{equation}
+
+Of this total power radiated, $\tfrac{1}{2}\dot{M}_0 M/r_I$ comes from gravity, while $(1 - \beta)\dot{M}_0 M/r_I$
+comes from the rotational energy of the star.
+
+\textit{Spectrum}
+
+A detailed treatment of the spectrum radiated will be given in \S5.10. Here we
+only note that, if the radiation is blackbody, then the surface temperature of
+the disk at radius $r$ must be
+\begin{equation}
+T_s = \left(\frac{4F}{\sigma}\right)^{1/4}
+\simeq (3 \times 10^7\,\text{K})
+\left(\frac{\dot{M}_0}{10^{-9}\,M_\odot/\text{yr}}\right)^{1/4}
+\!\left(\frac{M}{M_\odot}\right)^{-1/2}
+\!\left(\frac{r}{r_I}\right)^{-3/4}
+\left[1 - \beta\!\left(\frac{r_I}{r}\right)^{1/2}\right]^{1/4}\!.
+\tag{5.2.23}
+\end{equation}
+
+Because most of the radiation is emitted from $r/M \sim 10$ for a black hole or
+neutron star, and from $r/M \sim 10^4$ for a dwarf, and because the black-body
+spectrum peaks at a photon energy of
+\begin{equation}
+h\nu_{\max} \simeq (2.44 \times 10^{-4}\;\text{eV})(T_s/{}^{\circ}\text{K}),
+\notag
+\end{equation}
+the spectrum of the total radiation from the disk should peak at
+\begin{equation}
+h\nu_{\max} \simeq (1\;\text{keV})
+\left(\frac{\dot{M}_0}{10^{-9} M_\odot/\text{yr}}\right)^{1/4}
+\left(\frac{M}{M_\odot}\right)^{-1/2}
+\quad \text{for neutron star or hole}
+\notag
+\end{equation}
+\begin{equation}
+h\nu_{\max} \simeq (0.01\;\text{keV})
+\quad \text{for white dwarf.}
+\notag
+\end{equation}
+
+Thus, for reasonable accretion rates the disk can emit strongly in the X-ray
+region ($\sim$1 to 10~keV); but the X-ray spectrum should fall fairly rapidly with
+increasing energy. It actually turns out that electron-scattering opacity impedes
+the emission of blackbody radiation, and causes the spectrum to peak at energies
+higher than that (5.2.23). (See \S5.10.) However, the above estimates are still
+accurate to within a factor $\sim$10.
+
+%%% --- Vertical pressure balance ---
+
+\textit{Vertical pressure balance}
+
+The thickness of the disk is governed by a balance between vertical pressure force
+and the tidal gravitational force of the compact star (``vertical momentum
+conservation''):
+\begin{equation}
+\frac{dp}{dz} = \rho_0 \times \left(\text{``acceleration of gravity''}\right) = \rho_0\,\frac{Mz}{r^3}\,.
+\tag{5.2.24}
+\end{equation}
+
+The approximate solution to this equation is
+\begin{equation}
+h \simeq (p/\rho_0)^{1/2}(r^3/M)^{1/2} = c_s/\Omega.
+\tag{5.2.25}
+\end{equation}
+
+Here $h$ is the half-thickness of the disk, $c_s$ is the speed of sound in the gas, and
+$\Omega = (M/r^3)^{1/2}$ is the angular velocity of the gas.
+
+\paragraph*{Sources of viscosity}
+
+All of the above conclusions are based on conservation laws alone. To proceed
+further, one must make some assumption about the magnitude of the viscosity.
+The dominant sources of viscosity are probably chaotic magnetic fields, and
+turbulence in the gas flow.
+
+For cases of interest the normal star (typically a B0 supergiant) could
+have a surface magnetic field of $B_s \sim 100$~gauss. Field lines will be dragged
+by the flowing matter off of the normal star and into the disk. The deposited field
+should be rather chaotic because there is no preferred direction for the field
+in the gas that flows off the normal star. Turbulence, if present in the disk,
+will also make the field chaotic. Once the chaotic field has been deposited in
+the disk, the shear of the flow will magnify it at a rate (eq.~(2.5.20))
+\begin{equation}
+dB_\phi/dr = \alpha_\phi B_r,\qquad dB_\phi/dt = 0
+\tag{5.2.26}
+\end{equation}
+corresponding to an increase of $B_\phi$ by the amount $B_r$ with every circuit around
+the compact star. This growth of field will be counterbalanced, at least in part,
+by reconnection of field lines at the interfaces between chaotic cells (see \S2.9),
+and perhaps also by a bulging of field lines out of the disk, pinch-off of field
+lines, and escape of ``magnetic bubbles.'' From a macroscopic viewpoint (scale
+large compared to chaotic cells) the effects of the chaotic field can be described by
+pressure and viscosity. The magnetic pressure of the field will be of order $B^2/8\pi$, where $B$
+is the mean field strength. Because the shearing of the chaotic field will tend to
+string it out along the $\phi$-direction, its shear stress $t_{\phi r}$ will be somewhat (perhaps
+a factor~$10^2$) smaller than its pressure
+\begin{equation}
+t_{\phi r}^{(\text{mag})} \simeq \nu_0\,\rho_0\,r\,\frac{d\Omega}{dr}
+= B^2/8\pi.
+\tag{5.2.27}
+\end{equation}
+The magnetic pressure cannot exceed the thermal pressure
+\begin{equation}
+p^{(\text{mag})} \simeq p^{(\text{therm})} \simeq \rho_0 c_s^2;
+\tag{5.2.28}
+\end{equation}
+
+%% ============================================================
+%% Page 419, left column
+%% ============================================================
+
+otherwise the field lines would bulge out of the disk, reconnect, and escape
+(``bubbles''). Thus, the magnetic viscous stresses will satisfy
+\begin{equation}
+t_{\phi r}^{(\text{mag})} \lesssim p = \rho_0 c_s^2.
+\tag{5.2.29}
+\end{equation}
+(Here $c_s$ is the speed of sound, and $p$ is the total pressure.)
+
+The gas flow in the disk may well be turbulent. The coefficient of dynamic
+viscosity associated with turbulence is
+\begin{equation}
+\eta \sim \rho_0\, v_{\text{turb}}\, l_{\text{turb}},
+\tag{5.2.30}
+\end{equation}
+where $v_{\text{turb}}$ is the speed of the turbulent motions relative to the mean rest
+frame of the gas, and $l_{\text{turb}}$ is the characteristic size of the largest turbulent cells
+[see, e.g., \S31 of Landau and Lifshitz~(1959)\cite{LandauLifshitz1959}].
+If the turbulent speed ever exceeds
+the sound speed, then shocks develop and quickly convert the turbulent energy
+into heat. Thus, $v_{\text{turb}} \lesssim c_s$. The turbulent scale is limited by the disk thickness,
+$l_{\text{turb}} \lesssim h$. Consequently, the shear stress due to turbulence is bounded by
+\begin{equation}
+t_{\phi r}^{(\text{turb})} \sim \eta\,\rho_0\,r\,\frac{d\Omega}{dr}
+\lesssim (\nu_0\,\rho_0\,c_s\,h)\,\Omega
+\simeq \rho_0 c_s^2 \simeq p.
+\tag{5.2.31}
+\end{equation}
+Inequalities (5.2.29) and (5.2.31) on the magnetic and turbulent stresses are
+identical. They suggest that one dump one's lack of knowledge about the true
+magnitude of the viscosity into a single parameter $\alpha$ defined by
+\begin{equation}
+t_{\phi r} = \alpha p.
+\tag{5.2.32}
+\end{equation}
+Someday, perhaps ten years hence, when one understands the magnetic and
+turbulent viscosities better, one can insert into the formalism a reliable value of
+$\alpha$. In the meantime one only knows that
+\begin{equation}
+\alpha \lesssim 1.
+\tag{5.2.33}
+\end{equation}
+If $\alpha \sim 1$, the disk will have a rather mottled structure on scales of order~$h$; if
+$\alpha \ll 1$ it will be rather smooth on such scales.
+
+\paragraph*{Radiative transport}
+
+The heat generated by viscosity must be transported vertically to the surface of
+the disk before it can be radiated. The disk turns out to be optically thick
+($\tau_{ff}+\tau_{es}\gg 1$ at $z=0$). Hence, one calculates the energy transport using the
+diffusion approximation [eq.~(2.6.43) reduced to Newtonian form]:
+\begin{equation}
+\frac{d}{dz}\!\left(b\,T^4\right) = \bar{\kappa}\,\rho_0\,\frac{d^2}{dz^2}\,F.
+\tag{5.2.34}
+\end{equation}
+The approximate solution to this equation of transport is
+\begin{equation}
+bT^4 \simeq \bar{\kappa}\;\Sigma\; F.
+\tag{5.2.35}
+\end{equation}
+
+\subsection{Accretion in Galactic Nuclei: The General Picture}
+\label{sec:5.3}
+
+% [Section 5.3 content not available in agent translations]
+% The original text discusses accretion onto supermassive black holes
+% at the centers of galaxies.
+
+\subsection{Properties of the Kerr Metric Relevant to Accreting Disks}
+\label{sec:5.4}
+
+Before examining the details of the structure of an accreting disk (\S5.9),
+we shall extend our equations of structure from Newtonian theory to general
+relativity.  In this extension, we shall assume that the spacetime geometry
+outside the hole is that of Kerr, and we shall assume that the disk lies in the
+equatorial plane of the Kerr metric.
+
+To treat the structure of such a disk, we shall need a number of properties
+of ``direct'' circular orbits in the equatorial plane of the Kerr metric (orbits that
+rotate in the same direction as the black hole).  Most of our formulas are taken
+from Bardeen, Press and Teukolsky (1972)\cite{Bardeen1972}, or Bardeen (1973)\cite{Bardeen1973} and are readily
+derivable from results quoted there.
+
+For simplicity, we shall be splitting formulas into Newtonian limits plus relativistic
+corrections, and we shall use the following functions with value unity far
+from the hole:
+%
+\begin{align}
+\mathscr{A} &\equiv 1 + a_*^2/r_*^2 + 2a_*^2/r_*^3 , \tag{5.4.1a}\\[4pt]
+\mathscr{B} &\equiv 1 + a_*/r_*^{3/2} , \tag{5.4.1b}\\[4pt]
+\mathscr{C} &\equiv 1 - 3/r_* + 2a_*/r_*^{3/2} , \tag{5.4.1c}\\[4pt]
+\mathscr{D} &\equiv 1 - 2/r_* + a_*^2/r_*^2 , \tag{5.4.1d}\\[4pt]
+\mathscr{E} &\equiv 1 + 4a_*^2/r_*^2 - 4a_*^2/r_*^3 + 3a_*^4/r_*^4 , \tag{5.4.1e}\\[4pt]
+\mathscr{F} &\equiv 1 - 2a_*/r_*^{3/2} + a_*^2/r_*^2 , \tag{5.4.1f}\\[4pt]
+\mathscr{G} &\equiv 1 - 2/r_* + a_*/r_*^{3/2} . \tag{5.4.1g}
+\end{align}
+
+Here
+\begin{equation}
+\mathscr{J} \equiv 1 - 2/r_* + a_* /r_*^{3/2} . \tag{5.4.1h}
+\end{equation}
+%
+\begin{equation}
+\varrho \equiv \exp\!\Bigl[-\tfrac{3}{2}\int_{r_{ms}}^{r}\frac{\mathscr{G}\,\mathscr{F}}
+{\mathscr{B}\mathscr{C}\,\mathscr{F}^{3/2}}\;\frac{dr_*}{r_{ms}}\Bigr]
+= \frac{\mathscr{F}}{\mathscr{G}^{1/2}}\cdot\frac{L_{ms}}{(Mr)^{1/2}}.
+\tag{5.4.1i}
+\end{equation}
+%
+\begin{equation}
+\varrho = \frac{g^{-3}}{2r_*^{1/2}}\int_{r_{ms}}^{r}
+\frac{\mathscr{G}\,\mathscr{F}}
+{\mathscr{B}\mathscr{C}\,\mathscr{F}^{3/2}}
+\;\frac{dr_*}{r_{ms}}.
+\tag{5.4.1j}
+\end{equation}
+
+Here $M$ and $a$ are the mass and specific angular momentum of the black hole, $r$ is
+radius; $r_*$ and $a_*$ are dimensionless measures of $r$ and $a$
+\begin{equation}
+r_* = r/M;\qquad a_* = a/M;
+\end{equation}
+
+$\tilde{L}_{ms}$ is a constant defined below, and $\tilde{L}$ is a function of $r$ defined below.
+
+The properties of direct circular orbits that we shall need are the following.
+
+\medskip
+\noindent
+\textbf{(i) Form of Kerr metric in and near equatorial plane}
+$\bigl(|\theta - \pi/2| \ll 1\bigr)$:
+%
+\begin{equation}
+ds^2 = -\frac{r^2\Delta}{\mathscr{A}}\,dt^2 + \frac{\mathscr{A}}{r^2}
+\bigl(d\phi - \omega\,dt\bigr)^2 + r^2\,d\theta^2 + 2Mra^2\,dz^2 ,
+\tag{5.4.2a}
+\end{equation}
+%
+\begin{equation}
+\Delta \equiv r^2 - 2Mr + a^2 = r^2\mathscr{D},\qquad
+\mathscr{A} = r^4 + r^2a^2 + 2Mra^2 = r^4\,\mathscr{A},
+\tag{5.4.2b}
+\end{equation}
+%
+\begin{equation}
+\omega = 2Mar/\mathscr{A} = (2Ma/r^3)\,\mathscr{A}^{-1}.
+\tag{5.4.2b}
+\end{equation}
+
+[We have replaced the usual angular coordinate $\theta$ by
+$z = r\cos\theta \simeq r(\theta - \pi/2)$.]
+Note that the square root of the determinant of $g_{\alpha\beta}$ is
+$(-g)^{1/2} = r$.
+
+\medskip
+\noindent
+\textbf{(ii) Angular velocity of orbit:}
+%
+\begin{equation}
+\Omega \equiv \frac{d\phi}{dt} = \frac{M^{1/2}}{r^{3/2} + aM^{1/2}}
+= \frac{M^{1/2}}{r^{3/2}\,\mathscr{B}}.
+\tag{5.4.3}
+\end{equation}
+
+\medskip
+\noindent
+\textbf{(iii) Linear velocity of orbit relative to ``locally nonrotating observer'':}
+%
+\begin{equation}
+V^{(\phi)} = r^{-1}\mathscr{A}^{1/2}\,(\Omega - \omega)
+= \frac{M^{1/2}}{r^{1/2}}\;\frac{\mathscr{F}}
+{\mathscr{G}^{1/2}\,\mathscr{B}}.
+\tag{5.4.4}
+\end{equation}
+
+\medskip
+\noindent
+\textbf{(iv) ``$\gamma$-factor'' corresponding to this linear velocity:}
+%
+\begin{equation}
+\gamma = \bigl(1 - V^{(\phi)2}\bigr)^{-1/2}
+= -\frac{\mathscr{B}}{r^{1/2}\mathscr{C}^{1/2}\mathscr{G}}.
+\tag{5.4.4b}
+\end{equation}
+
+\medskip
+\noindent
+\textbf{(v) Orthonormal frame attached to an orbiting particle with 4-velocity $u$
+(``orbiting frame''):}
+%
+\begin{align}
+\mathbf{e}_{\hat{0}} &= -\frac{\mathscr{B}}{\mathscr{C}^{1/2}}\left(
+\frac{r^2}{\mathscr{A}}\right)^{1/2}
+\left(\frac{\partial}{\partial t}
++ \Omega\,\frac{\partial}{\partial\phi}\right),
+\tag{5.4.5a}\\[6pt]
+\mathbf{e}_6 &= r(4/r^2\Delta)^{1/2}
+\left(\frac{r^2}{\Delta}\right)^{1/2}
+\frac{\partial}{\partial\phi}
++ \gamma V^{(\phi)}\,\mathscr{G}^{1/2}
+\frac{\partial}{\partial\phi},\notag\\[3pt]
+&= \frac{\mathscr{B}\mathscr{G}^{1/2}}{r^{3/2}\,\mathscr{C}^{1/2}}
+\left(\frac{\partial}{\partial t}
++ \omega\,\frac{\partial}{\partial\phi}\right)
++ \frac{\mathscr{G}^{1/2}\,\mathscr{B}}{\mathscr{C}^{1/2}}
+\left(\frac{\mathscr{A}}{r}\right)^{1/2}
+\frac{\partial}{\partial\phi},
+\tag{5.4.5a}\\[6pt]
+\mathbf{e}_{\hat{r}} &= \frac{\Delta^{1/2}}{r}\,\frac{\partial}{\partial r}
+= \mathscr{D}^{1/2}\,\frac{\partial}{\partial r},
+\tag{5.4.5b}\\[6pt]
+\mathbf{e}_z &= \frac{\partial}{\partial z}.
+\end{align}
+
+\medskip
+\noindent
+\textbf{(vi) Corresponding orthonormal basis of one-forms:}
+%
+\begin{align}
+\boldsymbol{\omega}^{\hat{0}} &= \frac{\mathscr{G}}{\mathscr{C}^{1/2}}\,dt
+- \frac{\mathscr{F}}{\mathscr{C}^{1/2}}\left(\frac{M}{r}\right)^{1/2}
+r\,d\phi ,
+\tag{5.4.5b}\\[4pt]
+\boldsymbol{\omega}^{\hat{3}} &= \frac{\mathscr{B}\mathscr{G}^{1/2}}
+{\mathscr{C}^{1/2}}\left(\frac{M}{r}\right)^{1/2}
+\frac{1}{r}\,d\phi
+- \frac{\mathscr{G}}{\mathscr{C}^{1/2}}\;dt ,
+\notag\\[4pt]
+\boldsymbol{\omega}^{\hat{3}} &= \mathscr{G}^{-1/2}\,dr_* ,
+\tag{5.4.5b}\\[4pt]
+\boldsymbol{\omega}^{\hat{3}} &= dz .
+\end{align}
+
+\medskip
+\noindent
+\textbf{(vii) Shear of the congruence of circular, equatorial geodesics} (congruence with
+4-velocity $\mathbf{u} = \mathbf{e}_{\hat{0}}$):
+%
+\begin{equation}
+\sigma_{\hat{0}\hat{3}}^{(\text{EG})}
+= \sigma_{\hat{3}\hat{0}}^{(\text{EG})} = \frac{3\,M^{1/2}\,\mathscr{G}}
+{4\,r^{3/2}\,\mathscr{C}\,\mathscr{B}}\;,
+\tag{5.4.6}
+\end{equation}
+%
+all other $\sigma_{\hat{\alpha}\hat{\beta}}^{(\text{EG})}$ vanish.
+
+\medskip
+\noindent
+\textbf{(viii) Angular momentum per unit mass for circular orbit:}
+%
+\begin{equation}
+\tilde{L} = u_\phi = M^{1/2}\,r^{1/2}\,\mathscr{F}/\mathscr{C}^{1/2}.
+\tag{5.4.7a}
+\end{equation}
+
+\medskip
+\noindent
+\textbf{(ix) Energy per unit mass for circular orbit:}
+%
+\begin{equation}
+\tilde{E} = |u_0| = \mathscr{G}/\mathscr{C}^{1/2}.
+\tag{5.4.7b}
+\end{equation}
+
+\medskip
+\noindent
+\textbf{(x) Minimum radius for stable circular orbits (``marginally stable'' orbits) $r_{ms}$:}
+%
+\begin{align}
+r_{ms} &- 6Mr_{ms} + 8aM^{1/2}\,r_{ms}^{1/2} - 3a^2 = 0,\notag\\[4pt]
+r_{ms} &= M\bigl\{3 + Z_2 - \bigl[(3 - Z_1)(3 + Z_1 + 2Z_2)\bigr]^{1/2}\bigr\},
+\tag{5.4.8a}\\[4pt]
+Z_1 &= 1 + (1 - a^2/M^2)^{1/3}\bigl[(1 + a/M)^{1/3} + (1 - a/M)^{1/3}\bigr],
+\tag{5.4.8b}\\[4pt]
+Z_2 &= (3a^2/M^2 + Z_1^2)^{1/2}.
+\end{align}
+
+\medskip
+\noindent
+\textbf{(xi) Angular momentum per unit mass for last stable circular orbit:}
+%
+\begin{equation}
+\tilde{L}_{ms} = M^{1/2}\,r_{ms}^{1/2},\qquad
+x = M^{1/2}\,r_{ms}^{1/2}.
+\tag{5.4.9}
+\end{equation}
+%
+\begin{equation}
+\tilde{L}_{ms} = \frac{2M}{3^{1/2}\,x}\,(3x - 2a).
+\end{equation}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%  Section 5.5  Relativistic Model for Disk:
+%%               Underlying Assumptions
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Relativistic Model for Disk: Underlying Assumptions}
+\label{sec:5.5}
+
+In order to avoid confusion, we shall lay more careful foundations for our
+relativistic analysis of disk structure than we did for the Newtonian analysis
+of \S5.2.
+
+We shall split the calculation of disk structure into three parts: the radial
+structure (\S5.6), the vertical structure (\S\S5.7, 5.8) and the propagation of
+radiation from the disk's surface to the observer.
+
+In calculating the disk structure, we shall make the following assumptions
+and idealizations:
+
+\begin{enumerate}
+\item[(i)] The central plane of the disk coincides with the equatorial plane of the
+black hole.
+
+\item[(ii)] The companion star in the binary system has negligible gravitational
+influence on the disk structure (assumption valid in inner part of disk;
+not at outer edges).
+
+\item[(iii)] The disk is thin; i.e., its proper thickness $2h$, as measured in the orbiting
+frame of the disk's matter (same as proper thickness measured by any
+other observer who moves in the equatorial plane), satisfies
+%
+\begin{equation}
+h(r) \ll r.
+\tag{5.5.1}
+\end{equation}
+
+\item[(iv)] The disk is in a quasisteady state.  This assumption can be made precise
+in terms of an averaging process.  Pick a particular height $z$ ($|z| \leq h \ll r$)
+above the central plane of the disk, and pick a particular quantity $\Psi$
+(e.g., $\Psi$ = density or temperature of 4-velocity of gas) to be measured at
+height~$z$.  Average $\Psi$ over all $\phi$ (Lie dragging it along $\partial/\partial\phi$ while averaging,
+if it is a vector or tensor), average over a proper radial distance of order
+$2h$, and average over the time interval required for gas to move inward
+a distance $2h$:
+%
+\begin{equation}
+\langle\Psi\rangle = \frac{1}{2\pi\Delta r\,\Delta t}
+\int_{r-\epsilon r/2}^{r+\epsilon r/2}
+\int_{-\epsilon t/2}^{+\epsilon t/2}
+\left(\mathscr{G}^{1/3}\mathscr{B}\right)^{-\epsilon r/2}
+\;\Psi\,d\phi\,dt\,dr;
+\tag{5.5.2}
+\end{equation}
+%
+$\Delta r = 2h$, $\Delta t = 2h$.  The assumption of a quasisteady state means
+that $\langle\Psi\rangle$ is time-independent---i.e.,
+%
+\begin{equation}
+\frac{\partial\langle\Psi\rangle}{\partial t} = 0
+\quad\text{if}~\langle\Psi\rangle~\text{is a scalar or tensor},
+\tag{5.5.3}
+\end{equation}
+%
+\begin{equation}
+\mathscr{L}_{\partial/\partial t}\langle\Psi\rangle = 0
+\quad\text{if}~\langle\Psi\rangle~\text{is a vector or tensor},
+\end{equation}
+%
+where $\mathscr{L}_{\partial/\partial t}$ is the Lie derivative along the Killing vector
+$\partial/\partial t$.  The
+disk structure may be very far from steady state on scales $\lesssim h$; for
+example, it may have turbulence, flux reconnection, and flares on such
+scales.  Such local violence will not invalidate the analysis that follows.
+
+\item[(v)] When viewed ``macroscopically'' (turbulence removed by the above
+averaging process), the gas of the disk moves (very nearly) in direct,
+circular, geodesic orbits---i.e., with 4-velocity $\langle\mathbf{u}\rangle \approx \mathbf{e}_{\hat{0}}$.
+Superimposed
+on this orbital motion is a very small radial flow, produced by viscous
+stresses, and an even smaller flow in the vertical direction, as required
+by the variation of disk thickness with radius:
+%
+\begin{equation}
+\langle u\rangle = \frac{1}{\bigl[1-(v^{\hat{r}})^2 - (v^{\hat{z}})^2\bigr]^{1/2}}
+\bigl[
+  \mathbf{e}_{\hat{0}}
++ v^{\hat{r}}\,\mathbf{e}_{\hat{r}}
++ v^{\hat{z}}\,\mathbf{e}_z
+\bigr],
+\tag{5.5.4}
+\end{equation}
+%
+\begin{equation}
+|v^{\hat{r}}(r,z)| \ll V^{(\phi)} \simeq (M/r)^{1/2},
+\tag{5.5.5}
+\end{equation}
+\end{enumerate}
+
+By assuming that the orbital motion of the gas is very nearly geodesic,
+we are automatically requiring that the gravitational pull of the hole
+dominates over radial pressure gradients and over stresses.  In
+order of magnitude the gravitational pull of the hole (``gravitational
+acceleration'') is the gradient of the gravitational binding energy,
+$(1 - \tilde{E})$; and the acceleration due to pressure gradients and shears is
+$\sim (T^{\hat{r}\hat{k}}/\rho_0)_r$.  Thus, we are automatically demanding that the
+stress tensor in the fluid's rest frame ($=$ orbiting orthonormal frame)
+satisfy
+%
+\begin{equation}
+\frac{T^{\hat{r}\hat{k}}(r,z)}{\rho_0(r,z)} \ll 1 - \tilde{E}(r)
+\approx \frac{N}{2}\;\frac{1}{r}\;\frac{M}{r}.
+\tag{5.5.6}
+\end{equation}
+
+(Here $\approx$ means ``equals in the Newtonian limit''.)
+
+Because the specific internal energy $\Pi$ is approximately equal to
+$T^{\hat{k}\hat{k}}/\rho_0$, the assumption of nearly geodesic orbits implies the condition
+of ``negligible specific heat'':
+%
+\begin{equation}
+\Pi(r,z) \ll 1 - \tilde{E}(r)
+\approx \frac{N}{2}\;\frac{1}{r}\;\frac{M}{r}.
+\tag{5.5.7}
+\end{equation}
+
+In words---the density of internal energy, $\rho_0\Pi$ (including thermal
+energy of gas, energy of turbulent motions, and magnetic-field energy)
+is much smaller than the density of gravitational binding energy
+$\rho_0(1 - \tilde{E})$.  The mass-averaged radial velocity of the gas
+
+Notice that conditions (5.5.6) and (5.5.7) imply
+%
+\begin{equation}
+\Pi \ll 1, \qquad T_{\hat{r}\hat{k}}/\rho_0 \ll 1.
+\tag{5.5.8}
+\end{equation}
+
+at all $r$ and $z$---even near the black hole.  This means that, although
+general relativistic effects (spacetime curvature; deviations from
+Newtonian gravity) are very important near the hole, one can everywhere
+ignore special relativistic corrections to the local thermodynamic,
+hydrodynamic, and radiative properties of the gas.  Contrast this
+situation with the interior of a neutron star and the early stages of the
+Universe, where not only is gravity relativistic but so is the matter
+$(\Pi \geq 1,\; p/\rho_0 \geq 1,\; T_{\hat{r}\hat{k}}/\rho_0 \geq 1)$.
+
+The mean local rest frame
+$[\mathbf{e}_{\hat{0}},\,\mathbf{e}_{\hat{r}},\,\mathbf{e}_z]$;
+eqs.\ (5.4.5)].  (iii)  The mean local rest-
+frame of the gas
+%
+\begin{equation}
+\bar{\mathbf{e}}_{\hat{0}} = \langle\mathbf{u}\rangle\quad
+\text{as given by eq.\ (5.5.4)},
+\end{equation}
+%
+\begin{equation}
+\bar{\mathbf{e}}_{\hat{r}} = (\mathbf{e}_{\hat{r}} + v^{\hat{r}}\,\mathbf{e}_{\hat{0}})
+/|\mathbf{e}_{\hat{r}} + v^{\hat{r}}\,\mathbf{e}_{\hat{0}}|,
+\end{equation}
+%
+\begin{equation}
+\bar{\mathbf{e}}_z = (\mathbf{e}_z + v^{\hat{z}}\,\mathbf{e}_{\hat{0}}
+- \hat{v}^{\hat{z}}\,\bar{\mathbf{e}}_{\hat{0}})/
+|\mathbf{e}_z + v^{\hat{z}}\,\mathbf{e}_{\hat{0}}
+- \hat{v}^{\hat{z}}\,\bar{\mathbf{e}}_{\hat{0}}|.
+\tag{5.5.9}
+\end{equation}
+
+The mean local rest frame is nearly identical to the orbiting orthonormal frame.
+
+\subsection{Equations of Radial Structure}
+\label{sec:5.6}
+
+The relativistic equations of radial structure for our disk will be expressed in
+terms of the following parameters: (i)~The steady-state accretion rate $\dot{M}_0$;
+(ii)~The surface density of the disk
+\begin{equation}
+\Sigma \equiv \int_{-h}^{+h} \langle \rho_0 \rangle\, dz,
+\tag{5.6.1a}
+\end{equation}
+where $\rho_0$ is the density of rest mass as measured in the rest frame of the gas.
+(iii)~The integrated shear stress
+\begin{equation}
+W \equiv \int_{-h}^{+h} \langle r\hat{\phi}\hat{z} \rangle\, dz,
+\tag{5.6.1b}
+\end{equation}
+where $T_{\hat{\phi}\hat{z}}$ is the component of the stress-energy tensor on the orbiting ortho\-normal basis vectors $\mathbf{e}_{\hat{z}}$ and $\mathbf{e}_{\hat{\phi}}$.  (iv)~The mass-averaged radial velocity of the gas
+\begin{equation}
+\bar{v}^{\hat{r}} \equiv (1/\Sigma) \int_{-h}^{+h} \langle v^{\hat{r}} \rho_0 \rangle\, dz.
+\tag{5.6.1c}
+\end{equation}
+(v)~The flux of radiant energy off the upper face of the disk (equal also to flux
+off lower face)
+\begin{equation}
+F = \langle r^{\hat{0}\hat{z}}(z = h) \rangle
+= \langle -r^{\hat{0}\hat{z}}(z = -h) \rangle.
+\tag{5.6.1d}
+\end{equation}
+
+\noindent (vi)~The mass $M$ and specific angular momentum $a$ of the hole.  (vii)~The radial
+coordinate~$r$.
+
+The laws governing the radial structure are conservation of rest mass,
+conservation of angular momentum, and conservation of energy.
+
+\bigskip
+\noindent\textit{Conservation of rest mass}
+
+\medskip
+The amount of rest mass that flows inward across of cylinder a radius $r$ during
+coordinate time $\Delta t$, when averaged by the method of equation (5.5.2), must
+equal $\dot{M}_0 \Delta t$ (conservation of rest mass).  The mass transferred can be written
+as the flux integral
+\begin{equation}
+\dot{M}_0 \Delta t = \int_{\mathscr{S}} \langle \rho_0 \mathbf{u} \rangle \cdot d^3\Sigma
+= (-2\pi r \mathscr{g}^{1/2} \Delta t)
+\int_{-h}^{+h} \langle \rho_0 \tilde{v}^{\hat{r}} \rangle\, dz,
+\tag{5.6.2}
+\end{equation}
+where $\mathscr{S}$ is the 3-surface $\{0 \leq \phi \leq 2\pi,\; -h \leq z \leq h,\; 0 \leq t \leq \Delta t\}$.
+Rewritten in terms of the mass-averaged radial velocity [eq.\ (5.6.1c)], this equation becomes
+\begin{equation}
+\dot{M}_0 = -2\pi r\, \mathscr{g}^{1/2}\, \Sigma\, \bar{v}^{\hat{r}}
+\quad \text{(constant, independent of $r$ and $t$)}.
+\tag{5.6.2}
+\end{equation}
+
+\bigskip
+\noindent\textit{Conservation of angular momentum}
+
+\medskip
+The law of conservation of angular momentum can be written in the form
+\begin{equation}
+\mathbf{J} = \mathbf{T} \cdot (\partial/\partial\phi),
+\qquad \nabla \cdot \mathbf{J} = 0,
+\tag{5.6.3}
+\end{equation}
+where $\partial/\partial\phi$ is the Killing vector associated with rotation about the symmetry
+axis.  Without any loss of generality, we can write the stress-energy tensor $\mathbf{T}$ in
+the form
+\begin{equation}
+\mathbf{T} = \rho_0 (1+\Pi)\,\mathbf{u} \otimes \mathbf{u}
++ \mathbf{t} \cdot \mathbf{u} \otimes \mathbf{q}
++ \mathbf{q} \otimes \mathbf{u} + \mathbf{t},
+\tag{5.6.4a}
+\end{equation}
+where $\Pi$ is specific internal energy, $\mathbf{t}$ is the stress tensor as measured in the local
+rest frame of the baryons, $\mathbf{q}$ is the energy flux relative to the local rest frame
+(see \S2.5), and
+\begin{equation}
+\mathbf{u} \cdot \mathbf{t} = \mathbf{u} \cdot \mathbf{q} = 0.
+\tag{5.6.4b}
+\end{equation}
+
+The corresponding density of angular momentum is
+\begin{equation}
+p^\phi = \rho_0 u_\phi + q^\alpha u_{a\phi} + q_\alpha u^\alpha u_\phi
+\tag{5.6.5}
+\end{equation}
+where we have dropped the momentum $\rho_0\Pi u_\phi + u^\alpha \mathbf{q} \cdot \nabla u_\phi + \mathbf{q} \cdot (q_\alpha u^\alpha)$
+internal energy because $\Pi \ll 1$.  The law of angular-momentum conservation thus
+reads
+\begin{equation}
+\nabla \cdot \mathbf{J} = 0 = \rho_0 (du_\phi/d\tau)_{;r} + r^{-1}(r^2 \mathscr{g}^{-1/2} \tilde{\Sigma} \tilde{v}^{\hat{r}} \tilde{L}_{,r})
++ r^{-1}(r^2 \mathscr{g}^{-1/2} 2\tilde{W})_{,r} + 2\tilde{L}F = 0.
+\end{equation}
+
+Inserting this and the relation
+\begin{equation}
+\langle du_\phi/d\tau \rangle = (u_\phi)_{,r}\, \mathscr{g}^{1/2} \bar{v}^{\hat{r}}
+\tag{5.6.5}
+\end{equation}
+into the conservation law, obtain
+\begin{equation}
+\mathscr{g}^{1/2}\,\Sigma\,\bar{v}^{\hat{r}}\,\tilde{L}_{,r}
++ r^{-1}(r^2\mathscr{g}^{-1/2}2\mathscr{g}W)_{,r} + 2\tilde{L}F = 0.
+\tag{5.6.5}
+\end{equation}
+
+The first term is the rate of increase of angular momentum in the gas; the second
+is the rate at which shear stresses carry off angular momentum; the third is the
+rate at which photons carry off angular momentum.  When combined with the
+law of mass conservation (5.6.2), this law of angular momentum conservation
+takes on the simpler form
+\begin{equation}
+-\dot{M}_0 \tilde{L}/2\pi + r^2 \mathscr{g}^{-1/2} 2\mathscr{g} W)_{,r}
++ 2\tilde{L}F = 0.
+\tag{5.6.6}
+\end{equation}
+
+\bigskip
+\noindent\textit{Conservation of energy}
+
+\medskip
+Turn now to the law of energy conservation
+\begin{equation}
+\mathbf{u} \cdot (\nabla \cdot \mathbf{T}) = 0.
+\tag{5.6.7}
+\end{equation}
+
+Rewrite this law in the form
+\begin{equation}
+\nabla \cdot (\mathbf{u} \cdot \mathbf{T}) - u_{\alpha;\beta}\, r^{\alpha\beta} = 0.
+\tag{5.6.8}
+\end{equation}
+
+Use the general stress-energy tensor (5.6.4) to write
+\begin{equation}
+\mathbf{u} \cdot \mathbf{T} = -\rho_0(1+\Pi)\,\mathbf{u} - \mathbf{q}.
+\tag{5.6.9}
+\end{equation}
+
+and combine this with the law of rest-mass conservation $\nabla \cdot (\rho_0 \mathbf{u}) = 0$ to obtain
+\begin{equation}
+\nabla \cdot (\mathbf{u} \cdot \mathbf{T}) = -\rho_0\, d\Pi/d\tau
+- \nabla \cdot \mathbf{q}.
+\end{equation}
+
+Decompose $u_{\alpha;\beta}$ into its irreducible tensorial parts
+\begin{equation}
+u_{\alpha;\beta} = \sigma_{\alpha\beta} + \tfrac{1}{3}\theta\, g_{\alpha\beta} + a_\alpha u_\beta
+\end{equation}
+[eq.\ (2.5.17)], and contract it into the stress-energy tensor (5.6.4a) to obtain
+\begin{equation}
+u_{\alpha;\beta}\, r^{\alpha\beta} = -\sigma_{\alpha\beta}\,r^{\alpha\beta}
++ \tfrac{1}{3}\theta\, r^\alpha{}_\alpha + \mathbf{a} \cdot \mathbf{q}.
+\tag{5.6.10}
+\end{equation}
+
+Then use relations (5.6.9) and (5.6.10) to rewrite the law of energy conservation
+(5.6.8) in the form
+\begin{equation}
+\rho_0\, d\Pi/d\tau + \nabla \cdot \mathbf{q}
+= -\sigma_{\alpha\beta}\,r^{\alpha\beta}
++ \tfrac{1}{3}\theta\, r^\alpha{}_\alpha
++ \mathbf{a} \cdot \mathbf{q}.
+\tag{5.6.11}
+\end{equation}
+
+The various terms in this equation have simple interpretations.  The left-hand side
+represents the fate of the energy being generated locally in the gas: $\rho_0\, d\Pi/d\tau$ is
+the energy being generated locally in the gas; $\nabla \cdot \mathbf{q}$ is the energy being transported out
+of the region of generation.  The right-hand side represents the rate at which
+energy is generated: $\sigma_{\alpha\beta}\,r^{\alpha\beta}$ is the energy being fed in by ``frictional''
+(viscous) heating; $-\tfrac{1}{3}\theta$ is the energy being fed in by compression.  The remain-
+
+ing term, $\mathbf{a} \cdot \mathbf{q}$, is a special relativistic correction associated with the inertia of
+the flowing energy $\mathbf{q}$ (see \S\,2.5).
+
+To put the law of energy conservation (5.6.11) into a form relevant to the
+radial structure of the disk, (i) we drop the internal energy and compressional
+work terms, $\rho_0\, d\Pi/d\tau$ and $\tfrac{1}{3}\theta\, \tilde{p}$, because our condition of ``negligible specific
+heat'' (\S\,5.8) guarantees that they are negligible:
+%
+\begin{align}
+&\int \bigl(\rho_0\, d\Pi/d\tau\bigr)\, dz
+  \sim \int \bigl(\tfrac{1}{3}\theta\, \tilde{p}\bigr)\, dz \notag\\
+&\ll (\text{energy generated by frictional heating}); \notag
+\end{align}
+
+(ii) we drop the special relativistic correction $\mathbf{a}\cdot\mathbf{q}$ because the gas is in nearly
+geodesic (unaccelerated) orbits; (iii) we average and integrate vertically, and use
+the relation $\langle q^{\hat{z}}(r,h)\rangle = \langle -q^{\hat{z}}(r,-h)\rangle = F$;
+(iv) we replace the averaged shear of
+the gas $\langle\sigma_{\alpha\beta}\rangle$ by the shear of the equatorial geodesic orbits.  The result is
+%
+\begin{equation}
+2F = -\sigma_{\hat{r}\hat{\phi}}^{(\mathrm{EGO})}\,
+  \int_{-h}^{h} \langle t^{\hat{r}\hat{\phi}} \rangle\, dz
+  = -2\,\sigma_{\hat{r}\hat{\phi}}^{(\mathrm{EGO})}\, W.
+\end{equation}
+%
+Using expression (5.4.6) for $\sigma_{\hat{r}\hat{\phi}}^{(\mathrm{EGO})}$,
+we obtain finally
+%
+\begin{equation}
+\tag{5.6.12}
+F = \tfrac{1}{2}(Mr^3)^{-1/2}\,\mathscr{G}^{-1/2}\,\mathscr{G}\,W.
+\end{equation}
+
+\paragraph*{Manipulation of conservation laws}
+The conservation laws (5.6.6) and (5.6.12) for angular momentum and energy,
+when combined, give a differential equation for the integrated stress
+%
+\begin{equation}
+\tag{5.6.13}
+\bigl(-\dot{M}_0 \tilde{L}/2\pi
+  + r^{3/2}\mathscr{G}^{-1/2}\,2\mathscr{G}\,W\bigr)_{,r}
+  + \tfrac{1}{2}(Mr)^{-1}\,\tilde{L}\,\mathscr{G}^{-1/2}\,\mathscr{G}\,W = 0.
+\end{equation}
+
+All quantities in this differential equation are explicit functions of $r$ that
+describe properties of the Kerr metric (\S\,5.4), except the constant accretion
+rate $\dot{M}_0$ and the unknown integrated stress $W(r)$.  It is straightforward to integrate
+this differential equation.  The constant of integration is fixed by the physical
+fact that once the gas reaches the stable circular orbit of minimum radius,
+$r = r_{ms}$, the gas will ``fall out'' of the disk and spiral rapidly down the hole.
+Consequently, the gas density at $r < r_{ms}$ is virtually zero compared to that at
+$r > r_{ms}$---which means that no viscous stresses can act across the surface $r = r_{ms}$;
+i.e., $W$ must vanish at $r = r_{ms}$.  The solution that satisfies this boundary
+condition is
+%
+\begin{equation}
+\tag{5.6.14a}
+W = \frac{\dot{M}_0}{2\pi}\left(\frac{M}{r^3}\right)^{\!1/2}
+  \frac{\mathscr{Q}^{1/2}}{\mathscr{B}\,\mathscr{G}}.
+\end{equation}
+
+The corresponding value of the flux, as obtained from the law of energy conserva\-tion
+(5.6.12), is
+%
+\begin{equation}
+\tag{5.6.14b}
+F = \frac{3\dot{M}_0}{8\pi r^2}\,\frac{M}{r}\,
+  \frac{\mathscr{Q}}{\tilde{r}\,\mathscr{B}\,\mathscr{G}^{1/2}}.
+\end{equation}
+
+The final equations of radial structure are these two equations for $W$ and $F$,
+plus the law of rest-mass conservation (5.6.2):
+%
+\begin{equation}
+\tag{5.6.14c}
+\dot{M}_0 = -2\pi r\,\Sigma\,\bar{v}^{\hat{r}}\,\mathscr{G}^{1/2}.
+\end{equation}
+
+These are the relativistic, black-hole versions of the Newtonian equations of
+radial structure (5.2.17), (5.2.18), and (5.2.19).
+
+The equations of radial structure can be viewed as three equations linking
+the four radial functions $\Sigma$ (surface density), $W$ (integrated stress), $\bar{v}^{\hat{r}}$ (mass-averaged radial velocity), and $F$ (radiant flux).  Note that these equations
+determine $W$ and $F$ explicitly; but they determine only the product $\Sigma\bar{v}^{\hat{r}}$, not
+the individual functions $\Sigma$ and $\bar{v}^{\hat{r}}$ individually---and to
+calculate other features of the disk such as thickness $2h$, internal temperature
+$T$, etc.---one must build a model for the vertical structure.
+
+
+%% ----------------------------------------------------------------
+%% 5.7  Equations of Vertical Structure
+%% ----------------------------------------------------------------
+
+\subsection{Equations of Vertical Structure}
+\label{sec:5.7}
+
+The equations of radial structure (5.6.14) are based on conservation laws,
+without any reference to the detailed properties of the gas in the disk (no
+reference to equation of state, or to nature of viscous stresses, or to nature
+of opacity, or turbulence and magnetic fields).  By contrast, the
+equations of vertical structure, discussed below, require explicit assumptions
+about the properties of the gas.  Hence, almost all of the uncertainties and
+complications of the model are lumped into the vertical structure.  Ten years
+hence one will have a much improved theory of the vertical structure, whereas
+the equations of (averaged, steady-state) radial structure will presumably be
+unchanged.
+
+Inside the disk the characteristic scale on which the vertical structure changes
+is $h$, while the characteristic scale for changes in the radial structure is $r \gg h$.
+Consequently, with good accuracy an observer inside the disk can regard the
+local variables (temperature, density, etc.)\ as functions of height, $z$, only.  To
+analyze the local vertical structure most conveniently, one performs calculations
+in the local orbiting orthonormal frame $\mathbf{e}_{\hat{r}}$, $\mathbf{e}_{\hat{\theta}}$,
+$\mathbf{e}_{\hat{\phi}}$, which is located in the
+central plane of the disk ($z = 0$).  Aside from rotation about the $\mathbf{e}_z$ axis---which
+produces Coriolis and centrifugal forces---this frame is (locally) inertial.  The
+Coriolis and centrifugal forces have no influence on the vertical structure;
+hence we can ignore them and throughout this section can regard the orbiting
+frame as inertial.
+
+The laws of physics in the orbiting inertial frame at any given $t$, $r$, $\varphi$ are those
+
+of special relativity (equivalence principle).  And because $\Pi \sim Tk/\rho_0 \ll 1$ those
+special relativistic laws take on their standard Newtonian forms.  At least they
+do so if one uses the correct Kerr-metric value for the tidal gravitational
+acceleration which compresses the disk into its ``pancake'' shape:
+
+(``acceleration of gravity'') $\equiv g = R^{\hat{z}}{}_{\hat{0}\hat{z}\hat{0}}\,z$
+%
+\begin{equation}
+\tag{5.7.1}
+\end{equation}
+
+(cf.\ eq.~5.2.24).  An explicit expression for $R^{\hat{z}}{}_{\hat{0}\hat{z}\hat{0}}$ can be obtained by a trans%
+formation of the ``LNRF'' components, $R^{(\hat{\alpha})}{}_{(\hat{\beta})(\hat{\gamma})(\hat{\delta})}$, of the Riemann tensor as
+given in Bardeen, Press and Teukolsky~(1972)~\cite{BardeenPressTeukolsky1972}:
+%
+\begin{equation}
+\tag{5.7.2}
+R_{\hat{0}\hat{z}\hat{0}\hat{z}}
+= \frac{M}{r^3}
+  \left[
+    \frac{(r^2 + a^2)^2 + 2\Delta\, a^2}{(r^2 + a^2)^2 - \Delta\, a^2}
+  \right]
+  \frac{M\,\mathscr{Q}^2\,\mathscr{Q}\,\mathscr{G}}
+       {4\pi\;(\mathscr{E},\,\mathscr{G})\;\mathscr{E}_{\text{(Causal Struct.)}}}
+\end{equation}
+
+Thus, a Newtonian astrophysicist can build a relativistically correct vertical
+structure without knowing any relativity at all.  He need merely follow standard
+Newtonian procedures and theory; but he must use expression~(5.7.1) for the
+vertical acceleration of gravity, rather than the Newtonian formula $g = (M/r^3)\,z$:
+
+We shall describe the vertical structure in terms of the following functions of
+height---which we tacitly assume have all been averaged over $t$, $r$, $\varphi$ by the
+methods of equation~(5.5.2):
+%
+\begin{alignat}{2}
+\rho(r,z) &= \text{density of rest mass;} & \notag \\
+p(r,z)   &= \text{vertical pressure, } T_{\hat{z}\hat{z}}\text{;} & \notag \\
+t_{\varphi r}(r,z) &= \text{shear stress, } T_{\hat{z}\hat{z}}\text{;} & \tag{5.7.3} \\
+T(r,z)   &= \text{temperature;} & \notag \\
+q^z(r,z) &= \text{flux of energy;} & \notag \\
+K(r,z)   &= \text{Rosseland mean opacity.} & \notag
+\end{alignat}
+
+These 6 vertical structure functions are governed by the following 6 ``equations
+of vertical structure'':
+
+\paragraph{Vertical pressure balance}
+%
+\begin{equation}
+\tag{5.7.4a}
+\frac{dp}{dz}
+= \rho_0 \times (\text{``acceleration of gravity''})
+= \rho_0\, R^{\hat{z}}{}_{\hat{0}\hat{z}\hat{0}}\, z
+\end{equation}
+
+\paragraph{Sources of viscosity}
+%
+\begin{equation}
+\tag{5.7.4b}
+t_{\varphi r}
+= \left\{
+    \begin{minipage}{0.55\columnwidth}
+    some explicit expression which depends on
+    the explicit assumptions of the model
+    \end{minipage}
+  \right\}
+\end{equation}
+
+\paragraph{Energy generation}
+[cf.\ eq.~(5.6.11)]
+%
+\begin{equation}
+\tag{5.7.4c}
+\frac{dq^z}{dz}
+= -2\sigma^{(\mathrm{SG})}_{\varphi r}\, t_{\varphi r}
+= \tfrac{3}{2}(M/r^3)^{1/2}\, t_{\varphi r}\,
+  \mathscr{G}^{-1}\,\mathscr{Q}.
+\end{equation}
+
+\paragraph{Energy transport}
+%
+\begin{equation}
+\tag{5.7.4d}
+q^z
+= \left\{
+    \begin{minipage}{0.6\columnwidth}
+    some explicit expression which depends on the
+    nature of the transport assumed by the model
+    \end{minipage}
+  \right\}.
+\end{equation}
+%
+The energy transport may be by radiative diffusion in some models, but by
+turbulent gas motions in others.  All models to date have assumed radiative
+transfer with large optical depth, $\tau_{es} + \tau \gg 1$ (see \S2.6).  In this case
+%
+\begin{equation}
+\tag{5.7.4d$'$}
+q^z = -\frac{1}{K\rho_0}\,\frac{d}{dz}\bigl(\tfrac{1}{3}b\,T^4\bigr).
+\end{equation}
+
+\paragraph{Equation of state for vertical pressure}
+%
+\begin{equation}
+\tag{5.7.4e}
+p
+= \left\{
+    \begin{minipage}{0.55\columnwidth}
+    some explicit expression which depends on
+    the explicit assumptions of the model
+    \end{minipage}
+  \right\}
+\end{equation}
+%
+Possible contributors to vertical pressure are thermal gas pressure, radiation
+pressure, magnetic pressure, and turbulent pressure.  Most models to date have
+ignored magnetic pressure and turbulent pressure, and have therefore taken
+%
+\begin{equation}
+\tag{5.7.4e$'$}
+p = \rho_0 (T/\mu_{mm}\, m_p)\, T + \tfrac{1}{3} b\, T^4,
+\end{equation}
+%
+where $\mu_{mm}$ is the mean molecular weight (0.5 for an ionized hydrogen gas).
+
+\paragraph{Equation for opacity}
+%
+\begin{equation}
+\tag{5.7.4f}
+K
+= \left\{
+    \begin{minipage}{0.55\columnwidth}
+    some explicit expression which depends on
+    the explicit assumptions of the model
+    \end{minipage}
+  \right\}
+\end{equation}
+
+Of these 6 equations of vertical structure, 3 are differential equations.  They
+must be subjected to 3 boundary conditions.  As in the theory of stellar structure,
+the boundary conditions at the surface, $z = h$, must be a join to an atmosphere in
+which the diffusion approximation for radiative transfer (eq.~5.7.4d$'$) is abandoned.
+Alternatively, one can use ``zero-order boundary conditions'' which ignore the
+atmosphere---and then ``tack'' an atmosphere onto the model afterwards.  The
+zero-order version of the boundary conditions is as follows: (i)~define the surface
+of the disk, $z = h$, to be that point at which the density goes to zero
+%
+\begin{equation}
+\tag{5.7.5a}
+\rho_0 = 0 \quad \text{at} \quad z = h;
+\end{equation}
+%
+then (ii) temperature must also go to zero at the surface
+%
+\begin{equation}
+\tag{5.7.5b}
+T = 0 \quad \text{at} \quad z = h;
+\end{equation}
+%
+(iii)~the flux must vanish on the central plane of the disk
+%
+\begin{equation}
+\tag{5.7.5c}
+q^z = 0 \quad \text{at} \quad z = 0;
+\end{equation}
+%
+(iv)~the integrated stress must equal the expression~(5.6.14a) calculated from the
+theory of radial structure
+%
+\begin{equation}
+\tag{5.7.5d}
+2\int_0^h t_{\varphi r}\,dz = W.
+\end{equation}
+
+The equations of \textit{vertical} structure~(5.7.4) and these boundary conditions
+automatically guarantee that 3 of the equations of \textit{radial} structure---(5.6.14a,\,b)---
+are satisfied.  The vertical structure also provides one with a value for
+%
+\begin{equation}
+\Sigma = 2\int_0^h \rho_0\,dz,
+\end{equation}
+%
+which one can insert into the third radial equation~(5.6.14c) to obtain the mean
+radial velocity $\bar{v}^r$.  Then the entire structure, both radial and vertical, is known.
+
+
+%% ----------------------------------------------------------------
+%% 5.8  Approximate Version of Vertical Structure
+%% ----------------------------------------------------------------
+
+\subsection{Approximate Version of Vertical Structure}
+\label{sec:5.8}
+
+Because of the great current uncertainties about the roles and forms of tur%
+bulence and magnetic fields, there is no justification in 1972 for building
+sophisticated models of vertical structure.  Therefore, let us solve for the
+vertical structure in the same very approximate manner as we used in the
+Newtonian treatment of \S5.2.  In particular, let us replace the vertical functions
+$\rho_0$, $p$, $t_{\varphi r}$, $T$, and $K$ by their mean values in the disk interior, and let us rewrite
+the equations of vertical structure~(5.7.4) in the following vertically-averaged
+form.  (i)~\textit{Vertical pressure balance}:
+%
+\begin{equation}
+\tag{5.8.1a}
+\bar{h}
+= (\bar{p}/\rho_0)^{1/2}\, (r/M)^{1/2}\, 2\,\mathscr{Q}^{1/2}\,\mathscr{Q}^{-1/2}.
+\end{equation}
+
+(ii)~\textit{Source of viscosity}:
+%
+\begin{equation}
+\tag{5.8.1b}
+t_{\varphi r} = \alpha\, p
+\end{equation}
+%
+[see eq.~(5.2.32) and preceding discussion].  (iii)~\textit{Energy generation}: we merely
+replace $q^z$ by a mean value of $\frac{1}{2}F$, where $F$ is the surface flux as calculated from
+the theory of radial structure.  (iv)~\textit{Energy transport}: we assume that radiative
+transport dominates over turbulent energy transport, so that
+%
+\begin{equation}
+\tag{5.8.1c}
+b\,T^4 = \kappa\,\Sigma\, F.
+\end{equation}
+
+(v)~\textit{Equation of state}: Turbulent pressure cannot exceed thermal pressure; if it
+did, the turbulence would be supersonic and would quickly dissipate into heat.
+
+% [Page 435]
+
+Magnetic pressure cannot exceed thermal pressure; if it did, the magnetic field
+would break free of the disk.  Therefore, we are not far wrong in ignoring
+turbulent and magnetic contributions to the pressure, and setting
+%
+\begin{equation}
+\tag{5.8.1d}
+p = p^{(\text{rad})} + p^{(\text{gas})},
+\end{equation}
+%
+\begin{equation}
+p^{(\text{rad})} = \tfrac{1}{3}\,b\,T^4, \qquad
+p^{(\text{gas})} = \rho_0 (T/\mu_{mm}\, m_p).
+\end{equation}
+
+(vi)~\textit{Opacity}: Ignoring line opacity and bound-free opacity, which are less than
+or of the order of free-free opacity at the high temperatures of our disk, we set,
+%
+\begin{equation}
+\tag{5.8.1e}
+\bar{\kappa} = \kappa_{ff} + \kappa_{es}\,,
+\end{equation}
+%
+\begin{equation}
+\bar{\kappa}_{ff}
+= (0.64 \times 10^{23})
+  \left(\frac{\rho_0}{\text{g/cm}^3}\right)
+  \left(\frac{T}{\text{K}}\right)^{\!-7/2}
+  \;\frac{\text{cm}^2}{\text{g}}\,,
+\qquad
+\bar{\kappa}_{es} = 0.40\;\frac{\text{cm}^2}{\text{g}}\,.
+\end{equation}
+
+
+%% ----------------------------------------------------------------
+%% 5.9  Explicit Models for Disk
+%% ----------------------------------------------------------------
+
+\subsection{Explicit Models for Disk}
+\label{sec:5.9}
+
+We shall here combine our approximate equations of vertical structure~(5.8.1)
+with our ``exact'' equations of radial structure~(5.6.14) to obtain explicit disk
+models.  These models are due originally to Shakura and Sunyaev~(1972)~\cite{ShakuraSunyaev1972}---except
+for relativistic corrections, which are due to Thorne~(1973b)~\cite{Thorne1973b}.
+
+In these models we shall express $M$ in units of $3M_\odot$ (a typical black-hole mass);
+we shall express $\dot{M}_0$ in units of $10^{17}$\,g\,sec$^{-1}$
+(a value that will produce
+a total X-ray luminosity typical of the strength of galactic X-ray sources,
+$L \sim 10^{37}$\,ergs/sec $\simeq 10^{-9}\,M_\odot/\text{yr}$);
+and we shall express $r$ in units of the radius of the extreme-Kerr
+horizon:
+%
+\begin{equation}
+\tag{5.9.1}
+M_* \equiv M / 10\,M_\odot, \qquad
+\dot{M}_{0*} \equiv \dot{M}_0 / 10^{17}\;\text{g\,sec}^{-1},
+\end{equation}
+%
+\begin{equation}
+r_* = r/M = (r / 4.4 \times 10^5\;\text{cm})\, M_*^{-1}.
+\end{equation}
+%
+Thus, for galactic X-ray sources, reasonable values are
+%
+\begin{equation}
+\tag{5.9.2a}
+M_* \sim \dot{M}_{0*} \sim 1;
+\end{equation}
+%
+for a possible supermassive hole at the center of our Galaxy
+($M \sim 3 \times 10^7\,M_\odot$,
+$\dot{M}_0 \sim 10^{-4}\,M_\odot/\text{yr}$, see \S5.3), reasonable values are
+%
+\begin{equation}
+\tag{5.9.2b}
+M_* \sim 10^7, \qquad \dot{M}_{0*} \sim 10^5.
+\end{equation}
+%
+In addition to the quantities that appear explicitly in the equations of structure,
+we shall calculate the optical depth at the center of the disk,
+%
+\begin{equation}
+\tag{5.9.3}
+\tau = \kappa\,\Sigma\,;
+\end{equation}
+%
+a rough limit on the strength of the chaotic magnetic field,
+%
+\begin{equation}
+\tag{5.9.4}
+B \lesssim (8\pi\, p)^{1/2};
+\end{equation}
+%
+and the characteristic timescale for the gas to move inward from radius $r$ to the
+inner edge of the disk
+%
+\begin{equation}
+\tag{5.9.5}
+\Delta(r) = -r/\bar{v}^r.
+\end{equation}
+
+The disk can be divided into 3 regions: an ``outer region'' (large radii) in
+which gas pressure dominates over radiation pressure, and in which the opacity
+is predominantly free-free; a ``middle region'' (smaller radii) in which gas
+pressure dominates over radiation pressure, but opacity is predominantly due
+to electron scattering; and an ``inner region'' (smallest radii) in which radiation
+pressure dominates over gas pressure, and opacity is predominantly due to
+electron scattering.  Depending on the size of the mass flux, the inner and middle
+regions may or may not exist.  For this reason, we shall use the fully relativistic
+equations for the radial structure in all regions, rather than take Newtonian
+limits from the beginning for the outer and middle regions.
+
+\paragraph{Outer region}
+
+$p = p^{(\text{gas})}$, $\kappa = \kappa_{ff}$.  In this region straightforward algebraic manipulations of
+equations~(5.8.1) and (5.6.14) yield the following radial profiles:
+%
+\begin{align}
+F &= (0.6 \times 10^{26}\;\text{erg/cm}^2\,\text{sec})\,
+    (M_*^{-2}\,\dot{M}_{0*})\,
+    r_*^{-3}\,\mathscr{B}^{-1}\,\mathscr{C}^{-1/2}\,\mathscr{Q}, \notag \\[4pt]
+%
+\Sigma &= (9 \times 10^{5}\;\text{g/cm}^2)\,
+    (\alpha^{-4/5}\,M_*^{1/4}\,\dot{M}_{0*}^{7/10})\,
+    r_*^{3/4}\,\mathscr{B}^{-4/5}\,\mathscr{Q}^{-7/10}\,\mathscr{Q}^{14/5}, \notag \\[4pt]
+%
+h &= (9 \times 10^{2}\;\text{cm})\,
+    (\alpha^{-1/10}\,M_*^{3/4}\,\dot{M}_{0*}^{3/20})\,
+    r_*^{9/8}\notag \\
+  &\qquad \times \mathscr{B}^{-3/8}\,\mathscr{Q}^{-11/10}\,
+    \mathscr{C}^{1/2}\,\mathscr{Q}^{3/5}, \notag
+\end{align}
+%
+\begin{align}
+\tag{5.9.6}
+\rho_0 &= (8 \times 10^{-1}\;\text{g/cm}^3)\,
+    (\alpha^{-7/10}\,M_*^{-7/10}\,\dot{M}_{0*}^{11/20})\,
+    r_*^{-15/8} \notag \\
+  &\qquad \times \mathscr{B}^{-2/5}\,\mathscr{Q}^{4/5}\,\mathscr{C}^{-1/2}\,\mathscr{Q}^{11/5}, \notag \\[4pt]
+%
+T &= (8 \times 10^{7}\;\text{K})\,
+    (\alpha^{-1/5}\,M_*^{-1/5}\,\dot{M}_{0*}^{3/10})\,
+    r_*^{-3/4}\,
+    \mathscr{B}^{-1/5}\,\mathscr{Q}^{-3/10}\,\mathscr{Q}^{6/5}, \notag \\[4pt]
+%
+\tau_{ff} &= (2 \times 10^{3})\,
+    (\alpha^{-4/5}\,M_*^{-7/8}\,\dot{M}_{0*}^{-2/5})\,
+    r_*^{-21/16}\notag \\
+  &\qquad \times \mathscr{B}^{2/5}\,\mathscr{C}^{1/2}\,
+    \mathscr{Q}^{-2/5}\,\mathscr{Q}^{-17/5}\,, \notag \\[4pt]
+%
+B &\lesssim (7 \times 10^{8}\;\text{G})\,
+    (\alpha^{-4/5}\,M_*^{-7/8}\,\dot{M}_{0*}^{2/5})\,
+    r_*^{-17/8}\notag \\
+  &\qquad \times \mathscr{B}^{-2/5}\,\mathscr{C}^{-1/2}\,
+    \mathscr{Q}^{4/5}\,\mathscr{Q}^{-11/5}\,, \notag
+\end{align}
+%
+\begin{align}
+\frac{p^{(\text{gas})}}{p^{(\text{rad})}}
+&= (0.02)\,(\alpha^{-1/10}\,M_*^{-1/10}\,\dot{M}_{0*}^{-1/5})\,
+   r_*^{1/2}\,\mathscr{Q}^{-4/5}\,\mathscr{Q}^{-1}\,, \notag \\[4pt]
+%
+\biggl(\frac{\tau_{ff}}{\tau_{es}}\biggr)
+&= (0.6 \times 10^{-5})\,
+  (M_*\,\dot{M}_{0*})^{3/2}\,
+  \mathscr{Q}^{3/2}\,\mathscr{B}^{1/2}\,\mathscr{C}^{1/2}\,\mathscr{Q}^{-1} \notag \\
+&= 50\,(\alpha^{-4/5}\,M_*^{-9/10}\,\dot{M}_{0*}^{1/10})\,
+   r_*^{3/2}\,
+   \mathscr{Q}^{-11/20}\,\mathscr{B}^{1/4}\,\mathscr{Q}^{1/10}\,, \notag \\[4pt]
+%
+\Delta(r)
+&= (2\;\text{sec})\,(\alpha^{-4/5}\,M_*^{5/4}\,\dot{M}_{0*}^{-4/5})\,
+   r_*^{5/4}\,\mathscr{B}^{4/5}\,\mathscr{Q}^{1/10}\,\mathscr{Q}^{-4/5}\,\mathscr{Q}^{-7/10}\,.
+   \notag
+\end{align}
+
+It is worth noting that $\mathscr{Q} \to 0$ as $r \to r_{ms}$---i.e., at
+the inner edge of the disk the relativistic correction $\mathscr{Q}$ goes to zero smoothly.
+$\mathscr{Q} \to 0$, $\mathscr{Q}_{,r} \to 0$ as $r \to r_{ms}$.
+
+The transition to the middle region occurs where $\tau_{ff}/\tau_{es} \sim 1$---i.e., at
+%
+\begin{equation}
+\tag{5.9.7}
+r_* = r_{om*}
+\equiv 2 \times 10^3\,
+(M_*^{-2/3}\,\dot{M}_{0*}^{2/3})\,
+\mathscr{Q}^{2/3}\,\mathscr{B}^{-8/15}\,\mathscr{C}^{-1/3}\,\mathscr{Q}^{-1/3}\,\mathscr{Q}^{2/3}.
+\end{equation}
+%
+$= 100$ for ``supermassive case.''
+
+\paragraph{Middle region}
+
+$p = p^{(\text{gas})}$, $\kappa = \kappa_{es}$.  In this region the equations of structure~(5.8.1) and (5.6.14)
+yield:
+%
+\begin{align}
+F &= (0.6 \times 10^{26}\;\text{erg/cm}^2\,\text{sec})\,
+    (M_*^{-2}\,\dot{M}_{0*})\,
+    r_*^{-3}\,\mathscr{B}^{-1}\,\mathscr{C}^{-6/5}\,\mathscr{Q}^{-4/5}\,\mathscr{Q}^{3/5}\,, \notag \\[4pt]
+%
+\Sigma &= (5 \times 10^{3}\;\text{g/cm}^2)\,
+    (\alpha^{-4/5}\,M_*^{2/5}\,\dot{M}_{0*}^{3/5})\,
+    r_*^{-3/5}\notag \\
+  &\qquad \times \mathscr{B}^{-4/5}\,\mathscr{Q}^{21/20}\,\mathscr{Q}\,
+    \mathscr{C}^{-6/5}\,\mathscr{Q}^{-4/5}\,\mathscr{Q}^{3/5}\,, \notag \\[4pt]
+%
+h &= (3 \times 10^{3}\;\text{cm})\,
+    (\alpha^{-1/10}\,M_*^{-7/10}\,\dot{M}_{0*}^{1/5})\,
+    r_*^{21/20}\notag \\
+  &\qquad \times \mathscr{B}_*^{-4/5}\,\mathscr{C}^{-6/5}\,
+    \mathscr{Q}^{-4/5}\,\mathscr{Q}^{3/5}\,, \notag \\[4pt]
+%
+\rho_0 &= (10\;\text{g/cm}^3)\,
+    (\alpha^{-7/10}\,M_*^{-7/10}\,\dot{M}_{0*}^{2/5})\,
+    r_*^{-33/20} \notag \\
+  &\qquad \times \mathscr{B}^{-11/10}\,
+    \mathscr{C}^{-1/5}\,\mathscr{Q}^{-4/5}\,\mathscr{Q}^{3/5}\,, \notag
+\end{align}
+%
+\begin{align}
+\tag{5.9.8}
+T &= (3 \times 10^{8}\;\text{K})\,
+    (\alpha^{-1/5}\,M_*^{-1/5}\,\dot{M}_{0*}^{2/5})\,
+    r_*^{-9/10}\notag \\
+  &\qquad \times \mathscr{B}^{-3/5}\,\mathscr{C}^{-1/5}\,
+    \mathscr{Q}^{-4/5}\,\mathscr{Q}^{3/5}\,, \notag \\[4pt]
+%
+\tau_{es} &= (2 \times 10^{3})\,
+    (\alpha^{-4/5}\,M_*^{1/5}\,\dot{M}_{0*}^{3/5})\,
+    r_*^{-3/5}\notag \\
+  &\qquad \times \mathscr{B}^{-4/5}\,\mathscr{C}^{1/2}\,
+    \mathscr{Q}^{1/5}\,, \notag \\[4pt]
+%
+B &\lesssim (2 \times 10^{8}\;\text{G})\,
+    (\alpha^{-1/5}\,M_*^{-7/10}\,\dot{M}_{0*}^{2/5})\,
+    r_*^{-51/40}\notag \\
+  &\qquad \times \mathscr{B}^{-1}\,\mathscr{C}^{-1/5}\,
+    \mathscr{Q}^{-4/5}\,\mathscr{Q}^{3/5}\,, \notag \\[4pt]
+%
+\frac{p^{(\text{gas})}}{p^{(\text{rad})}}
+&= (0.02)\,(\alpha^{-1/10}\,M_*^{-1/10}\,\dot{M}_{0*}^{-1/5})\,
+   r_*^{1/2}\notag \\
+  &\qquad \times \mathscr{Q}^{-4/5}\,\mathscr{C}^{1/2}\,\mathscr{Q}^{-1}\,, \notag \\[4pt]
+%
+\biggl(\frac{t_{ff}}{\tau_{es}}\biggr)
+&= (0.6 \times 10^{-5})\,
+  (M_*\,\dot{M}_{0*})^{3/2}\,\mathscr{Q}^{3/2}\,
+  \mathscr{B}^{1/2}\,\mathscr{C}^{1/2}\,\mathscr{Q}^{-1}\,, \notag \\[4pt]
+%
+r_*^{(\text{tr.})} &= (t_{ff}/\tau_{es})^{1/2} \notag \\
+&= 50\,(\alpha^{-4/5}\,M_*^{-9/10}\,\dot{M}_{0*}^{1/10})\,
+   r_*^{3/2}\notag \\
+  &\qquad \times \mathscr{Q}^{-11/20}\,\mathscr{B}^{1/4}\,\mathscr{Q}^{1/10}\,, \notag \\[4pt]
+%
+\Delta(r)
+&= (0.7\;\text{sec})\,(\alpha^{-4/5}\,M_*^{5/8}\,\dot{M}_{0*}^{-3/10})\,
+   r_*^{21/16}\notag \\
+  &\qquad \times \mathscr{Q}^{-4/5}\,\mathscr{B}^{1/2}\,\mathscr{Q}^{1/2}\,
+    \mathscr{Q}^{3/5}\,\mathscr{C}^{-1/20}\,\mathscr{Q}^{-7/20}\,.
+   \notag
+\end{align}
+
+The transition from the middle region to the inner region occurs where
+$p^{(\text{gas})}/p^{(\text{rad})} \sim 1$---i.e., at
+%
+\begin{equation}
+\tag{5.9.9}
+r_* = r_{mi*}
+\simeq 40\,
+(\alpha^{2/21}\,M_*^{2/3}\,\dot{M}_{0*}^{16/21})\,
+\mathscr{Q}^{20/21}\,\mathscr{B}^{-36/21}\,\mathscr{C}^{-8/21}\,\mathscr{Q}^{16/21}
+\end{equation}
+%
+$\simeq 4$ for supermassive case.
+
+Thus, in the supermassive case the ``middle region'' extends all the way---or
+almost all the way---into the inner edge of the disk.
+
+\medskip
+\noindent
+\textit{Inner region}
+
+\noindent
+$p = p^{(\text{rad})}$, $\bar{\kappa} = \kappa_{es}$.  In this region the equations of structure (5.8.1) and (5.6.14)
+yield:
+%
+\begin{align}
+F &= (0.6 \times 10^{26}~\text{erg/cm}^2~\text{sec})(M_*^{-2} \dot{M}_{0*})_*^{-3}\,\mathscr{g}^{-1}\,\mathscr{g}^{-1/2}\,\mathscr{Q}\,,
+\notag\\
+\Sigma &= (20~\text{g/cm}^2)(\alpha^{-1}M_*\dot{M}_{0*})_*^{3/2}\,\mathscr{g}^{-3/2}\,\mathscr{g}^{3}\,\mathscr{g}^{1/2}\,\mathscr{g}^{-1/2}\,\mathscr{Q}^{-1}\,,
+\notag\\
+h &= (1 \times 10^5~\text{cm})(\dot{M}_{0*}\mathscr{g}^{-3}\,\mathscr{g}^{-1/2}\,\mathscr{g}^{-1}\,\mathscr{Q}\,,
+\notag\\
+\rho_0 &= (1 \times 10^{-4}~\text{g/cm}^3)(\alpha^{-1}M_*\dot{M}_{0*})*^{3/2}\,\mathscr{g}^{-4}\mathscr{g}^{2}\,\mathscr{Q}^{-2}\,,
+\tag{5.9.10}\\
+T &= (4 \times 10^7~\text{K})(\alpha^{-1/4}M_*^{-1/4})_*^{-9/8}\,\mathscr{g}^{-1/2}\mathscr{g}^{1/2}\,\mathscr{Q}^{1/4}\,,
+\notag\\
+\tau_{es} &= 8(\alpha^{-1}M_*\dot{M}_{0*}^{1/2})_*^{3/2}\,\mathscr{g}^{-3/2}\,\mathscr{g}^{1/2}\,\mathscr{g}^{-1/2}\,\mathscr{g}^{-1}\,\mathscr{Q}^{-1}\,,
+\notag\\
+B &\leq (7 \times 10^7~\text{G})(M_*\dot{M}_{0*}^{1/2})_*^{-3/4}\,\mathscr{g}^{-1/2}\,\mathscr{g}^{1/2}\,\mathscr{Q}^{-1}\,,
+\notag
+\end{align}
+%
+\[
+\left(\frac{p^{(\text{gas})}}{p^{(\text{rad})}}\right)
+= (5 \times 10^{-5})(\alpha^{-1/4}M_*^{1/4}M_{0*}^{2})_*^{1/8}\,\mathscr{g}^{-5/2}\mathscr{g}^{6/4}\,\mathscr{Q}^{-2}\,,
+\]
+%
+\[
+r^{**} \equiv (\tau_{es}\tau_{ff})^{1/2}
+= (5 \times 10^{-5})(\alpha^{-17/16}\,M_*^{1/16}\,\mathscr{g}^{2/5}\,\mathscr{g}^{1/2}\,\mathscr{Q}^{-2/5}\,\mathscr{g}^{-25/16}
+\]
+%
+\[
+= (2 \times 10^{-3})(\alpha^{-17/16}\,M_*^{31/16}\,\dot{M}_{0*}^{3/1})
+\,\mathscr{g}^{93/32}\,\mathscr{g}^{-25/8}\mathscr{g}^{1/2}\,\mathscr{g}^{25/16}
+\]
+
+\[
+\Delta(r) = (2 \times 10^{-4}~\text{sec})(\alpha^{-1}M_*^{3/8}\dot{M}_{0*}^{3})_*^{2}\,\mathscr{g}^{-25/8}\,\mathscr{g}^{1/2}\,\mathscr{Q}^{1/2}\,\mathscr{g}^{-2}\,.
+\]
+
+Notice that for $\mathscr{Q} \leq 1$ ``typical'' cases of interest (galactic X-ray sources with
+$M_* \simeq M_{0*} \sim 1$, $a \simeq M$ (``maximal
+Kerr''), the disk will be optically thin over a narrow region between $r \sim 2M$ and
+$r \sim 10M$.  Inside this region it will be thick (because $\mathscr{Q} \to 0$ as $r \to M$); outside it
+will also be thick.
+
+In any case where the model
+is everywhere thin in the sense that $h/r \leq 0.1$.  In any case where $M_* \sim 10^7$, $\dot{M}_{0*} \sim 10^5$ the disk
+predicts $h/r \gtrsim 1$, the model is self-inconsistent.
+
+%% ================================================================
+%% 5.10  Spectrum of Radiation from Disk
+%% ================================================================
+
+\subsection{Spectrum of Radiation from Disk}
+\label{sec:5.10}
+
+\noindent
+\textit{Outer region}
+
+In the outer region electron-scattering opacity is negligible compared to free-free
+opacity, and the disk is optically thick.  Consequently, the disk's surface
+is able to build up a blackbody spectrum (see \S\ref{sec:2.6}).  The ``surface temperature''
+of the disk, which characterizes the blackbody spectrum, is
+%
+\begin{equation}
+\tag{5.10.1}
+T_s = \left(\frac{4F}{b}\right)^{1/4}
+= (3 \times 10^5~\text{K})(M_*^{-1/2}\dot{M}_{0*}^{1/4})_*^{-3/4}\,
+\mathscr{g}^{-1/4}\,\mathscr{g}^{-1/8}\,\mathscr{Q}^{1/4}
+\end{equation}
+%
+\[
+\simeq (1 \times 10^5~\text{K})(M_*^{4}(r_*/r_{om*})^{-3/4}\,.
+\]
+
+Here $r_{om*}$ is the inner edge of the outer region [eq.\ (5.9.7)].  Thus, the outer
+region of the disk's surface emits a blackbody spectrum with temperature
+${\sim}\,10^5$\,K to ${\sim}\,10^5$\,K.  For typical galactic X-ray sources ($M_* \sim M_{0*} \sim 1$) the
+inner edge of the outer region is located at $r_{om} \simeq 10^9$\,cm---compared to a size
+$r \sim 3 \times 10^{11}$\,cm for the inner Roche lobe of the disk region, and compared to a size
+$r \sim 10^6$\,cm for the inner edge of the disk if the central object is a black
+hole or neutron star, and $r \sim 10^9$\,cm if it is a white dwarf.
+
+\medskip
+\noindent
+\textit{Middle and inner region}
+
+In the middle region and inner region electron-scattering opacity modifies the
+emitted spectrum so it is no longer blackbody.  An unsophisticated way to calculate
+the modification is this: (i)~At some fixed radius consider all photons that
+emerge from the disk with some fixed frequency~$\nu$.  After being formed by free-free
+emission or some process, these photons must ``random-walk'' their
+way through scattering electrons before they can emerge from the disk's
+surface.  Let $y_\nu$ be the depth in the disk at which these photons are formed, as
+measured in g/cm$^2$.
+%
+\[
+y_\nu = \int_{\text{formation point}}^{\text{surface}} \rho_0 \, dz\,.
+\]
+
+The mean-free path of the photons between scatterings, as measured in these
+same units, is $\lambda = 1/\kappa_{es} = 2.5~\text{g/cm}^2$ (independent of photon frequency).  The
+total depth travelled, $y_\nu$, is the product of this mean-free path with the square-root
+of the number of scatterings $N_{ss}$
+%
+\[
+y_\nu = \lambda N_{ss}^{1/2} = \kappa_{es}^{-1} N_{ss}^{1/2}
+\]
+%
+(``standard square-root factor for random walks'').  Hence, the total number of
+scatterings between emission and emergence from disk is
+%
+\[
+N_{ss} = (\kappa_{es} y_\nu)^2\,.
+\]
+
+The depth of the emission point $y_\nu$ is determined by the demand that the total
+free-free optical depth traversed along a photon's tortured trajectory be unity:
+%
+\[
+1 = \kappa_{ff}^{\nu}(y_\nu \lambda) = \kappa_{ff}^{\nu}(y_\nu / \kappa_{es}^{1/2})\,.
+\]
+
+Here $\tau_{ff}^{\nu}$ like $\tau_{es}$ is measured not along the tortured random-walk photon path,
+but rather along the straight-line path of standard radiative transfer theory (\S\ref{sec:2.6}).
+Let us summarize: in an atmosphere dominated by electron scattering, those
+photons of frequency $\nu$ that escape from the surface are generated at a depth
+[Zel'dovich and Shakura (1969), Shakura (1972)]
+%
+\begin{equation}
+\tag{5.10.2}
+\tau_{es*}(\text{emission pt.})
+= [\tau_{ff}^{\nu}(\text{emission pt.})\,\tau_{es}(\text{emission pt.})]^{1/2}
+= (\kappa_{ff}^{\nu}\kappa_{es})^{1/2}\,y_\nu = 1\,.
+\end{equation}
+
+[Note: throughout this discussion we have ignored the tiny changes in photon
+frequency at each scattering; see \S\ref{sec:2.6} and see below.]
+
+Because $\kappa_{ff}^{\nu} \propto (1 - e^{-x})/x^3$ for $x \gg 1$, and $\simeq x^{-3}$ for $x \ll 1$,
+where $x \equiv h\nu/T$,
+%
+\begin{equation}
+\tag{5.10.3}
+\kappa_{ff}^{\nu} \; \text{decreases with increasing photon frequency.}
+\end{equation}
+
+[eq.\ (2.6.25)], the high frequency part of the spectrum gets formed at greater
+depths than the low-frequency spectrum.
+
+At the formation point, the specific intensity will be blackbody, $I_\nu = B_\nu$.  The
+specific flux that crosses outward through the surface at depth $\tau_\nu$ (ignoring for
+the moment the flux that crosses back inward) thus has the blackbody form
+%
+\[
+F_\nu(\tau_\nu) = \int_0^{\pi/2} B_\nu \cos\theta \, d\Omega = 2\pi B_\nu\,.
+\]
+
+But of all the photons in this specific flux, only a fraction $1/(N_{ss})^{1/2}$ ever
+reaches the surface of the disk (``standard $\sqrt{N}$ random-walk factor'').  All the
+rest eventually get scattered back to depths greater than $y_\nu$, and eventually get
+absorbed there.  Hence, the specific flux emerging from the surface of the disk
+will be
+%
+\begin{equation}
+\tag{5.10.4}
+F_\nu = 2\pi B_\nu (\tau_{es}(\text{at pt.\ where } \tau_{*} = 1))^{-1}\,.
+\end{equation}
+
+This is the ``modified spectrum'' which emerges from the middle and inner parts
+of the disk.
+
+However, a more sophisticated derivation, with an atmosphere in which tempera\-ture
+and density (and hence $\kappa_{ff}^{\nu}$) vary with height, yields essentially the same
+spectrum as (5.10.4).  (See Shakura and Sunyaev 1972.)  In the case of a homo\-geneous
+atmosphere, eqs.\ (5.10.2) and (5.10.3) show that the ``spectrum
+modification factor'' has the form
+%
+\begin{equation}
+\tag{5.10.5}
+[\tau_{es}\tau_{ff\nu*} = 1]^{-1/2}
+\propto \alpha_\nu^{-3/2}(1 - e^{-x})^{1/2}
+\end{equation}
+%
+so the spectrum has the form
+%
+\[
+F_\nu \propto \frac{x^{3/2} e^{-x/2}}{(e^x - 1)^{1/2}}
+\]
+%
+The total flux in this case works out to be
+%
+\begin{equation}
+\tag{5.10.6}
+F = (1.54 \times 10^{-4}~\text{erg/cm}^2~\text{sec})
+\left(\frac{\rho_0 m_p}{(\text{cm}^{-3})}\right)
+\left(\frac{T_s}{\text{K}}\right)^{9/4}
+\end{equation}
+
+If the atmosphere is not homogeneous, the spectrum and flux have somewhat
+different forms than these.  (See Shakura and Sunyaev 1972.)
+
+Assuming a homogeneous atmosphere with density roughly equal to that in
+the central regions of the disk, and combining eq.\ (5.10.7) for the flux with
+expressions (5.9.8) and (5.9.9) for the structures of the middle and inner regions,
+we obtain surface temperatures of
+%
+\begin{align}
+T_s &= (5 \times 10^7~\text{K})(\alpha^{28/80}M_*^{-1/5}\dot{M}_{0*}^{45})_*^{-87/90}\mathscr{g}^{21}\mathscr{g}^{-26/45}\,\mathscr{g}^{-2/9}
+\notag\\
+&\quad \text{for middle region}
+\tag{5.10.8}\\[6pt]
+T_s &= (6 \times 10^8~\text{K})(\alpha^{28/9}M_*^{-10/9}\dot{M}_{0*}^{8/9})_*^{-17/2}\mathscr{g}^{8/9}\,\mathscr{g}^{-16/9}\mathscr{g}^{-2/9}
+\notag\\
+&\quad \text{for inner region.}
+\notag
+\end{align}
+
+In the inner region these surface temperatures are roughly an order of magnitude
+higher than would occur if the disk could radiate as a blackbody [cf.\ eq.\
+(5.2.21)].
+
+The above estimates assume, of course, that the disk is optically thick in the
+sense that $\tau_* > 1$ at the central plane $z = 0$.  However, in the innermost regions
+of the disk this may not be the case.  In fact, our model [eq.\ (5.9.10)] predicts
+%
+\[
+\tau_*(z = 0) \simeq (1 \times 10^{-3})\alpha^{-17/16}M_*^{31/16}\dot{M}_{0*}^{93/32}\,\mathscr{g}^{-25/8}\,\mathscr{g}^{41/8}
+\]
+%
+\[
+\times\,\mathscr{g}^{1/2}\,\mathscr{g}^{25/16}\,\mathscr{g}^{-2}\,.
+\]
+
+Thus, for galactic X-ray sources with $\alpha \sim 1$, $M_* \sim M_{0*} \sim 1$, $a = M$ (``maximal
+Kerr''), the disk will be optically thin over a narrow region between $r \sim 2M$ and
+$r \sim 10M$, outside it
+will also be thick.
+
+In such an optically thin region the disk must still radiate the huge flux
+(5.6.14b) required by energy conservation.  It can do so only at temperatures far
+above the blackbody value for the given flux.  All the photons emitted will
+escape, so the spectrum will have the free-free form
+%
+\begin{equation}
+\tag{5.10.9}
+F_\nu \propto \alpha_{ff}^{\nu}\, e^{-x}
+\end{equation}
+%
+(see \S\ref{sec:2.1} and \ref{sec:2.6}).  At least this would be the case if Comptonization were
+negligible.  However, at such high temperatures ($T \sim 10^9$\,K), Comptonization
+must be taken into account.  The free-free spectrum has many more low-energy
+photons than high; and when scattered, each low-energy photon gets boosted
+in energy by a fractional amount
+%
+\begin{equation}
+\tag{5.10.10}
+\Delta h\nu / h\nu \simeq 4(T/m_e) \simeq (T/2 \times 10^8~\text{K})\,.
+\end{equation}
+
+As a result the low-energy end of the spectrum gets depleted and the high-energy
+end gets augmented.  [See Shakura and Sunyaev (1972) for quantitative estimates
+of this effect.]
+
+The total spectrum as observed from Earth is the integral of $F_\nu$ over the
+entire disk---with corrections in the innermost regions for the capture of some
+photons by the black hole.  The foundations for calculating the capture
+of the radiation by the black hole are given in Bardeen's lectures in this volume.
+
+Figure~5.10.1 shows the total spectrum as calculated by Shakura and Sunyaev
+(1972) for two typical cases, without taking account of relativistic effects or
+capture by the black hole.  In both cases the disk is optically thick everywhere.
+In the X-ray region (1 to 100\,keV) these spectra are similar to those observed
+for typical galactic X-ray sources; see lectures of Gursky in this volume.
+
+\begin{figure}[htbp]
+\centering
+% \includegraphics[width=\columnwidth]{fig_5_10_1}
+\fbox{\parbox{0.9\columnwidth}{\centering [Figure 5.10.1 placeholder]\\
+The total power per unit frequency $L_\nu$ emitted by two model disks around
+black holes, as calculated by Shakura and Sunyaev (1972) without taking account of
+capture of radiation by the hole.  In both models the hole was
+assumed to be nonrotating, so the inner edge of the disk was at $r_* = r/r_g = 3$.  Model (a)
+corresponds to\\
+$a \sim 10^{-3}$, \quad $M = M_\odot$, \quad $\dot{M}_0 = 10^{-9}\,M_\odot/\text{yr}$, \quad
+$L = L_{\text{crit}} = 10^{38}~\text{erg/sec}$;\\
+$\alpha \sim 10^{-2}$ to $1$ (spectrum insensitive to $\alpha$).\\
+Model (b) corresponds to\\
+$\alpha \sim 10^{-3}$, \quad $M = M_\odot$, \quad $\dot{M}_0 = 10^{-9}\,M_\odot/\text{yr}$,\\
+$L = 10^{38}~\text{erg/sec}$;\\
+$M = M_\odot$, \quad $\dot{M}_0 = 10^{-4}\,M_\odot/\text{yr}$, \quad $L = 10^{36}~\text{erg/sec}$.\\
+The portion of the spectrum marked ``blackbody'' is generated primarily by the outer,
+cool region of the disk where electron scattering is unimportant.  The portion marked
+``modified'' is generated by the middle and inner regions where electron scattering is the
+dominant source of opacity.  The temperature of the innermost region.}}
+\caption{Total spectrum emitted by model accretion disks around black holes, as
+calculated by Shakura and Sunyaev~\cite{ShakuraSunyaev1973}.  Curve (a) and curve (b) correspond
+to two different parameter choices (see text).  The blackbody portion corresponds to the outer
+region; the ``modified'' portion corresponds to the middle and inner regions dominated by
+electron scattering.}
+\label{fig:5.10.1}
+\end{figure}
+
+%% ================================================================
+%% 5.11  Heating of Outer Region by X-Rays from the Inner Region
+%% ================================================================
+
+\subsection{Heating of the Outer Region by X-Rays from the Inner Region}
+\label{sec:5.11}
+
+Thus far we have ignored any radiative energy transfer from one portion of the
+disk to another.  As long as the disk is optically thick, no significant transfer can
+occur through its interior.  However, radiation can skim along the surface of the
+disk from the hot, inner region toward the cooler outer region:  Because the disk
+is thick with increasing radius
+%
+\[
+h = \text{constant in inner region}
+\]
+\[
+h \propto r^{21/20} \quad \text{in middle region}
+\]
+\[
+h \propto r^{9/8} \quad \text{in outer region,}
+\]
+%
+such radiation will get captured in the middle and outer regions and will heat
+their surface layers.  As a result, the outer regions will thicken even more than is
+predicted by the above model.  Rough estimates by Shakura and Sunyaev (1972)
+suggest that for typical binary accretion models ${\sim}\,1$ per cent of the total X-ray
+luminosity can be captured and reradiated.  About 10 per cent of the reradiated
+flux comes off in spectral lines in the optical region, and about 90 per cent comes
+off in ultraviolet free-bound and free-free emission.
+
+\subsection{Fluctuations on the Steady-State Model}
+\label{sec:5.12}
+
+Superimposed on the steady-state disk structure will be local fluctuations due to
+turbulence, magnetic flux reconnection, and various plasma instabilities. Such
+fluctuations will probably be large if $\alpha \sim 1$, and unimportant if $\alpha \ll 1$.
+
+Local fluctuations will presumably create local, extra-luminous hot spots.
+Sunyaev~(1972) \cite{Sunyaev1972} estimates that such hot spots can last for many orbital periods.
+Doppler shifts and focusing by the black hole will cause the frequency and
+intensity of the radiation from a hot spot as seen at Earth to fluctuate with the
+orbital period. The minimum possible fluctuation period is the orbital period at
+the last stable circular orbit:
+
+\[
+P_{\min} = 12\pi \sqrt{6}\, GM/c^3 = (0.5 \;\text{msec})(M/M_\odot)
+\quad \text{for nonrotating hole},
+\]
+\[
+P_{\min} = 4\pi M = (0.06 \;\text{msec})(M/M_\odot)
+\quad \text{for maximally rotating hole}.
+\]
+
+In a binary system one can measure with some confidence the mass of the
+compact, accreting object by examining the Doppler shifts of spectral lines
+(lines from the normal star and from the outer regions of the disk, not from
+the inner disk.) If one could also find quasiperiodic fluctuations in the X-ray
+output and place a lower limit on their periods, one might be able to distinguish
+whether the black hole is nonrotating ($P_{\min} \sim (0.5\;\text{msec})(M/M_\odot)$) or rotating
+$[(0.06\;\text{msec})(M/M_\odot) \leq P_{\min} \leq (0.5\;\text{msec})(M/M_\odot)]$. This ``test for rotation'' was
+devised by the Moscow group of Zel'dovich, Novikov, Polnarev, and Sunyaev
+(see Sunyaev 1972) \cite{Sunyaev1972}.
+
+An alternative test for rotation devised by Thorne~(1973b) \cite{Thorne1973b} involves the shape
+of Doppler-broadened spectral features. The ``dragging of inertial frames'' by the
+rotation of the hole will produce a strong asymmetry in the Doppler broadening
+of any spectral features emitted from in or near the ergosphere. Three factors
+make such asymmetries a less attractive test for rotation than the Moscow test:
+(i) the spectrum from in and near the ergosphere should be rather featureless
+because of the high temperatures; (ii) the Doppler broadening is so great that
+it would smear into the background all features except abnormally strong ones;
+(iii) Comptonization can also produce asymmetries in spectral features.
+
+Local fluctuations (``hot spots'') may well produce nonthermal radiation. A
+case of particular interest is the synchrotron radiation emitted by charged particles
+that are accelerated in regions of reconnecting magnetic flux (see \S2.9). For
+supermassive holes at the centers of galaxies, Lynden-Bell~(1969) \cite{LyndenBell1969} has estimated
+the spectrum of such synchrotron radiation. He argues that the mean free paths
+of electrons against Coulomb scattering will be too small to permit acceleration
+in the reconnection regions; but that protons, having larger inertia, can get
+accelerated significantly. The result is a large amount of proton synchrotron
+radiation in the radio band. Efforts are being made to compare the predictions
+of this model with radio-frequency observations of the galactic center (Ekers
+and Lynden-Bell 1970) \cite{EkersLyndenBell1970}.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% §5.13 Supercritical Accretion
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Supercritical Accretion}
+\label{sec:5.13}
+
+If the accretion rate onto a black hole were larger than the ``Eddington limit'',
+
+\begin{equation}
+\dot{M}_{\text{crit}} \sim (1 \times 10^{-8}\, M_\odot/\text{yr})(M/M_\odot),
+\tag{5.13.1}
+\end{equation}
+
+the luminosity produced by our model would exceed the ``Eddington limit'',
+
+\begin{equation}
+L_{\text{crit}} = (1 \times 10^{38}\;\text{erg/sec})(M/M_\odot).
+\tag{5.13.2}
+\end{equation}
+
+[See eq.~(4.5.4) and \S5.1.] Shakura and Sunyaev~(1972) \cite{ShakuraSunyaev1972} suggest the following
+general picture for disk accretion in this ``supercritical'' case: In the outer regions
+of the disk the gas is shielded from radiation pressure by high opacity, so it
+accretes in the usual manner. However, as the gas nears the black hole, radiation
+pressure builds up, and ultimately becomes strong enough to eject the gas out of
+the disk, in the $z$-direction. Only a small fraction of the accreting matter ever
+reaches the hole, and the total luminosity is self-regulated at the Eddington
+critical value (\S5.1.2).
+
+Rough computations by Shakura and Sunyaev suggest that, if the accretion
+is strongly supercritical
+
+\[
+\dot{M}_0 \gg \dot{M}_{\text{crit}} \times (10^3 a_* M_\odot / M)^{2/3},
+\]
+
+the outflowing gas becomes opaque and reprocesses the radiation emitted near
+the hole from high frequencies to lower frequencies. Most of the energy comes
+off in the ultraviolet and optical regions; and the outflowing matter achieves
+velocities
+
+\[
+v \sim (10^5 \;\text{cm/sec})\, \alpha (\dot{M}_0 / \dot{M}_{\text{crit}}).
+\]
+
+The opaque region in this case is ${\sim}\,10^{10}$ to $10^{12}$~cm in radius, and may thus
+cover the normal star as well as the disk and the hole.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% §5.14 Comparison with Observations
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Comparison with Observations}
+\label{sec:5.14}
+
+Currently the time scale for 100 per cent improvements in the observations of
+X-ray sources is less than a year. Therefore, it would be foolhardy to present in
+these notes a detailed comparison of the above models with X-ray observations.
+We shall merely remark that as of August 1972 the comparisons are very
+promising. In particular, the X-ray sources Cyg X-1 and 2U\,0900-40 are excellent
+binary black-hole candidates.
+
+The comparison of these models with observations of galactic nuclei is much
+more difficult than comparison with X-ray source observations. Obscuration by
+dust, and the high density of radiation sources in galactic nuclei create great
+difficulties. However, the observations are not in conflict with the hypothesis
+that a supermassive hole of $M \lesssim 10^9\,M_\odot$ resides at the center of our Galaxy. (See
+Lynden-Bell and Rees 1971.) \cite{LyndenBellRees1971}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% §6 White Holes and Black Holes of Cosmological Origin
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

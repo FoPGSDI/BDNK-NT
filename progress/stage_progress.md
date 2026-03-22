@@ -4,10 +4,10 @@
 
 | Stage | Description | Status | Agents | Started | Completed |
 |-------|------------|--------|--------|---------|-----------|
-| 0 | Project setup & templates | In Progress | 1 | 2026-03-21 | - |
-| 1 | Plan mode: convention convergence | Pending | 28 | - | - |
-| 2 | Translate mode: LaTeX translation | Pending | 28 | - | - |
-| 3 | Merge & compile | Pending | 1 | - | - |
+| 0 | Project setup & templates | Complete | 1 | 2026-03-21 | 2026-03-21 |
+| 1 | Plan mode: convention convergence | Complete | 28 | 2026-03-21 | 2026-03-21 |
+| 2 | Translate mode: LaTeX translation | Complete | 28 | 2026-03-21 | 2026-03-21 |
+| 3 | Merge & compile | In Progress | 4 | 2026-03-21 | - |
 | 4 | Verification (2 rounds) | Pending | 10x2 | - | - |
 | 5 | Final check & finalize | Pending | 1 | - | - |
 
@@ -17,30 +17,36 @@
 - [x] Fetch CLAUDE.md and RESEARCH_NOTE.md templates from web
 - [x] Create project directory structure
 - [x] Initialize git repo
-- [ ] Create math conventions document
-- [ ] Create agent page assignments
-- [ ] Initial commit
+- [x] Create math conventions document
+- [x] Create agent page assignments
+- [x] Initial commit
 
 ## Stage 1: Plan Mode
 
-- [ ] Deploy 28 agents to read 1-2 PDF pages each
-- [ ] Each agent catalogs: equations, notation, symbols, conventions
-- [ ] Converge on unified convention document
-- [ ] Document in progress/stage1_diary.md
+- [x] Deploy 28 agents to read 1-2 PDF pages each
+- [x] Each agent catalogs: equations, notation, symbols, conventions
+- [x] Converge on unified convention document (conventions.md)
+- [x] Document in progress/stage1_diary.md
+- All 28 agents completed with thorough reports
 
 ## Stage 2: Translate Mode
 
-- [ ] Deploy 28 agents to translate assigned pages
-- [ ] Each agent creates: translate/agents/agent_XX.tex, agent_XX.bib
-- [ ] Each agent commits individually
-- [ ] Document in progress/stage2_diary.md
+- [x] Deploy 28 agents to translate assigned pages
+- [x] Each agent creates: translate/agents/agent_XX.tex, agent_XX.bib
+- [x] Each agent commits individually
+- All 28 agents completed successfully
+- Total: 28 .tex files, 28 .bib files
 
 ## Stage 3: Merge
 
-- [ ] Merge all .tex files into translate/merged/NT-Disk-translated.tex
-- [ ] Merge all .bib files into translate/merged/NT-Disk-translated.bib
+- [x] Section 1 (Introductory Remarks): 23 lines - COMPLETE
+- [ ] Section 2 (Radiation/Plasma Physics): merging from agents 01-10
+- [x] Section 3 (Origin of Stellar BH): 188 lines - COMPLETE
+- [ ] Section 4 (BH in ISM): merging from agents 12-17
+- [ ] Section 5 (Binary/Galactic): merging from agents 17-26
+- [x] Section 6 (Cosmological BH): 185 lines - COMPLETE
+- [ ] Merge all .bib files
 - [ ] Compile document
-- [ ] Document in progress/stage3_diary.md
 
 ## Stage 4: Verification
 

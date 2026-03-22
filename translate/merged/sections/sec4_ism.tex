@@ -1,19 +1,9 @@
-% =============================================================================
 % Section 4: Black Holes in the Interstellar Medium
-% Merged from: agent_12.tex (S4 intro, S4.1, S4.2 start),
-%              agent_13.tex (S4.2 continued),
-%              agent_14.tex (S4.2 end, S4.3, S4.4, S4.5 start),
-%              agent_16.tex (S4.7 end, S4.8),
-%              agent_17.tex (S4.8 end, S4.9)
-% NOTE: Sections 4.5 (end), 4.6, 4.7 (beginning) are missing (no agent_15).
-% =============================================================================
+% Merged from agent_12.tex through agent_17.tex
+% Subsections 4.1--4.9
 
 \section{Black Holes in the Interstellar Medium}
 \label{sec:4}
-
-%% ====================================================================
-%% 4.1 Accretion of Noninteracting Particles onto a Nonmoving Black Hole
-%% ====================================================================
 
 \subsection{Accretion of Noninteracting Particles onto a Nonmoving Black Hole}
 \label{sec:4.1}
@@ -76,17 +66,17 @@ that the electrons, ions, and magnetic fields of the interstellar gas interact s
 enough to make the accretion process obey fluid-dynamic laws rather than the
 laws of noninteracting particles (see \S4.6, below).
 
-%% ====================================================================
-%% 4.2 Adiabatic, Hydrodynamic Accretion onto a Nonmoving Black Hole
-%% ====================================================================
+%%% ====================================================================
+%%% SECTION 4.2: ADIABATIC, HYDRODYNAMIC ACCRETION
+%%% ====================================================================
 
 \subsection{Adiabatic, Hydrodynamic Accretion onto a Nonmoving Black Hole}
 \label{sec:4.2}
 
 Switch, then, from a noninteracting description of accretion to a hydrodynamic
 description. Assume, as above, that the black hole is at rest with respect to the gas
-and a Schwarzschild hole, so that the accretion is spherically symmetric. In the
-hydrodynamic case the accretion rate $\dot{M}_0$ and all other basic characteristics of the
+and a Schwarzschild hole, so that the accretion rate $\dot{M}_0$ and all other basic characteristics of the
+hydrodynamic case the flow is spherically symmetric. In the
 flow are governed by the gravitational field at distances much greater than the
 gravitational radius. (This is because the flow at small radii is supersonic and
 therefore cannot influence conditions at large radii.) Thus, one can calculate
@@ -165,66 +155,67 @@ determined parametrically by the intersections of corresponding ellipses and
 hyperbolae. It is clear (see Figure~4.2.1) that for every ellipse-hyperbola pair,
 there are either two intersection points, or one point of tangency, or no
 intersection at all. If, for a particular chosen $\dot{M}_0$, there exists any $r$ at which the
-curves do not intersect, then the two equations are incompatible for that $\dot{M}_0$, and
+curves do not intersect, then the two equations are incompatible for the $\dot{M}_0$, and
 such flow cannot occur. Rejecting this case, we have 2 remaining possibilities, for
 a given $\dot{M}_0$ (see Figure~4.2.2):
 
-\begin{enumerate}
-\item The ellipse and hyperbola intersect twice for every value of $r$
-  (Figure~\ref{fig:4.2.2}a). In this case we have 2 separate curves,
-  corresponding to 2 families of intersection points.
+1. The ellipse and hyperbola intersect twice for every value of $r$ (Figure~4.2.2a),
+except one $r$, corresponding to 2 families of intersection points.
 
-\item The ellipse and hyperbola meet tangentially (Figure~\ref{fig:4.2.2}b)
-  at one value of $r$ (call it $r_s$), at which the two families of intersection
-  points $u(a)$ cross each other. We shall show below that this crossing point
-  necessarily lies on the ``bisectrix'' of the graph, $u = a$.
-\end{enumerate}
-
-In both the cases, 1 and 2, the curves $u(a)$ describe possible flows of gas
-in the gravitational field. The curves begin on the innermost ellipse,
-$r = \infty$. On the upper curve $u(a)$, at this ellipse we have $a = 0$,
-but $u \neq 0$. These boundary conditions are not of interest for the
-accretion problem,\footnote{This curve describes the ``stellar wind'' by
-which some stars eject matter into interstellar space; see Chapter~13 of ZN.}
-because accretion requires $u_\infty = 0$, $a_\infty \neq 0$. The lower
-curve $u(a)$ begins at the point $u_\infty = 0$, $a_\infty \neq 0$ ---
+2. The ellipse and hyperbola meet tangentially (Figure~4.2.2b). In this case the two
+families of intersection points $u(a)$ cross each other at $r = r_s$. We shall call the two
+(call it $r_s$), at which they meet tangentially the ``bisectrix'' of the graph,
+below that this crossing point necessarily lies on the
+$u = a$. In both the cases, 1 and 2, the curves $u(a)$ describe possible flows of gas
+in the gravitational field. The curves begin on the innermost ellipse, $r = \infty$. On
+the upper branch $u(a)$, at this ellipse we have $a = 0$, but $u \neq 0$. These boundary
+conditions are not of interest for the accretion problem\footnote{This curve describes the ``stellar wind'' by which some stars eject matter into interstellar
+space; see Chapter~13 of ZN.} because accretion
+requires $u_\infty = 0$, $a_\infty \neq 0$, i.e., the lower curve $u(a)$ begins at the point $u_\infty = 0$, $a_\infty \neq 0$
 
 \begin{figure}[htbp]
 \centering
 % \includegraphics[width=\columnwidth]{fig_4_2_1}
 \fbox{\parbox{0.9\columnwidth}{\centering [Figure 4.2.1 placeholder]\\
-The $u$, $a$ ``solution plane'' for solving the coupled Bernoulli
-equation~(4.2.3) and law of mass conservation~(4.2.4).
-Solid curves: ellipses from the Bernoulli equation at several fixed values
-of~$r$.  Dashed curves: hyperbolae from the continuity equation.
-Heavy dots mark intersection points; the locus of these intersections
-traces the flow solution $u(a)$.  The diagonal $u = a$ is the
-``bisectrix''.  Regions above and below the bisectrix are labelled
-supersonic and subsonic respectively.}}
-\caption{The $u$, $a$ ``solution plane'' for solving the coupled Bernoulli
-equation~(4.2.3) and law of mass conservation~(4.2.4).}
+The $u$, $a$ ``solution plane'' for solving the coupled Bernoulli equation (4.2.3)
+and law of mass conservation (4.2.4).}}
+\caption{The $u$, $a$ ``solution plane'' for solving the coupled Bernoulli equation (4.2.3) and law of mass conservation (4.2.4).}
 \label{fig:4.2.1}
 \end{figure}
-
-\noindent
-to our desired boundary condition. Hence we shall restrict attention to the
-lower curve.
-
-We must still decide which type of lower curve is reasonable---one that remains
-always below the bisectrix (case~1), or one that crosses the bisectrix (case~2).
-In case~1 the flow is subsonic at all radii, $u < a$. But this requires a large
-back-pressure at all radii to retard the inflow---back pressure that can never
-be provided near the gravitational radius of a black hole. The gas must cross
-the gravitational radius.
 
 \begin{figure}[htbp]
 \centering
 % \includegraphics[width=\columnwidth]{fig_4_2_2}
 \fbox{\parbox{0.9\columnwidth}{\centering [Figure 4.2.2 placeholder]\\
 Possible forms of adiabatic gas flow in a spherical, Newtonian gravitational
-field.  (a)~[case~1 in text] corresponds to flow that remains subsonic
-or supersonic everywhere.  (b)~[case~2 in text] corresponds to flow for
-which there is a sonic point, $u = a$.}}
+field. Curves~(a) [case~1 in text] correspond to flow that remains subsonic or supersonic
+everywhere. Curves~(b) [case~2 in text] correspond to flow for which there is a sonic point,
+$u = a$.}}
+\caption{Possible forms of adiabatic gas flow in a spherical, Newtonian gravitational
+field. Curves~(a) [case~1 in text] correspond to flow that remains subsonic or supersonic
+everywhere. Curves~(b) [case~2 in text] correspond to flow for which there is a sonic point,
+$u = a$.}
+\label{fig:4.2.2}
+\end{figure}
+
+to our desired boundary condition.  Hence we shall restrict attention to the
+lower curve.
+
+We must still decide which type of lower curve is reasonable---one that
+remains always below the bisectrix (case~1), or one that crosses the
+bisectrix (case~2).  In case~1 the flow is subsonic at all radii, $u < a$.
+But this requires a large back-pressure at all radii to retard the
+inflow---back pressure that can never be provided near the gravitational
+radius of a black hole.  The gas must cross the gravitational
+
+\begin{figure}[htbp]
+\centering
+% \includegraphics[width=\columnwidth]{fig_4_2_2}
+\fbox{\parbox{0.9\columnwidth}{\centering [Figure 4.2.2 placeholder]\\[6pt]
+Possible forms of adiabatic gas flow in a spherical, Newtonian gravitational
+field.  Curves~(a) [case~1 in text] correspond to flow that remains subsonic
+or supersonic everywhere.  Curves~(b) [case~2 in text] correspond to flow
+for which there is a sonic point, $u = a$.}}
 \caption{Possible forms of adiabatic gas flow in a spherical, Newtonian
 gravitational field.  Curves~(a) [case~1 in text] correspond to flow that
 remains subsonic or supersonic everywhere.  Curves~(b) [case~2 in text]
@@ -241,118 +232,122 @@ Thus, the only acceptable solution $u(a)$ is the lower curve of case~2
 (Figure~\ref{fig:4.2.2}b).  This curve begins at $u = u_\infty = 0$,
 $a = a_\infty \neq 0$, and it crosses from the subsonic region into the
 supersonic region at $r = r_s$.  This transition to supersonic flow is
-crucial to the accretion process.  It governs the accretion rate
-$\dot{M}_0$, in the same manner as the transition to supersonic flow in the
-throat of a rocket nozzle.  In both cases one and only one mass flow rate is
-compatible with the required transition to supersonic flow.
+crucial to the accretion process.  It governs the accretion rate~$\dot{M}_0$,
+in the same manner as the transition to supersonic flow in the throat of a
+rocket nozzle.  In both cases one and only one mass flow rate is compatible
+with the required transition to supersonic flow.
 
-Let us calculate the required accretion rate $\dot{M}_0$.  We begin by
-calculating the flow velocity at the transition radius (``sonic radius'')
-$r_s$.  To do this, we rewrite the Euler equation~(4.2.2) in the form
+Let us calculate the required accretion rate~$\dot{M}_0$.  We begin by
+calculating the flow velocity at the transition radius (``sonic
+radius'')~$r_s$.  To do this, we rewrite the Euler equation~(4.2.2) in the
+form
 \begin{equation}
-\frac{du}{dr} = \frac{a^2}{r} \cdot \frac{GM/r - 2a^2}{u^2 - a^2}\,.
+\frac{du}{dr} = -\,\frac{a^2\,dp}{p\,dr} - \frac{GM}{r^2}\,.
 \tag{4.2.5}
 \end{equation}
 
 We differentiate the law of mass conservation~(4.2.1) with respect to $r$
 and put $du/dr$ from it into~(4.2.5).  As a result we obtain
 \begin{equation}
-\frac{dp}{dr}\,\frac{(u^2 - a^2)}{p} =
-  -\frac{GM}{r^2}\,\frac{2u^2}{r} + \frac{GM}{r^2}\,,
+\frac{dp}{dr}\;\frac{(u^2 - a^2)}{p}
+  = -\frac{GM}{r^2} + \frac{2u^2}{r}\,,
 \tag{4.2.6}
 \end{equation}
 %
 which shows that at the sonic point, where $a = u$,
 \begin{equation}
-2u_s^2 = \frac{GM}{r_s}, \qquad \text{or} \quad
-u_s^2 = a_s^2 = \tfrac{1}{2}\,\frac{GM}{r_s}\,;
+2u_s^2 = \frac{GM}{r_s}\,,\qquad \text{or} \quad
+u_s^2 = a_s^2 = \tfrac{1}{2}\,\frac{GM}{r_s}\,.
 \tag{4.2.7}
 \end{equation}
-%
+
 By combining this result with the Bernoulli equation~(4.2.3) we obtain the
 speed of sound at the sonic point in terms of the speed of sound at infinity
 \begin{equation}
-a_s = u_s = a_\infty \left(\frac{2}{5 - 3\Gamma}\right)^{1/2};
+a_s = u_s = a_\infty \left(\frac{2}{5-3\Gamma}\right)^{1/2}\!;
 \tag{4.2.8}
 \end{equation}
 %
 and using equation~(4.2.7) we obtain the radius at the sonic point
 \begin{equation}
-r_s = \left(\frac{5 - 3\Gamma}{4}\right)\frac{GM}{a_\infty^2}\,.
+r_s = \left(\frac{5-3\Gamma}{4}\right)\frac{GM}{a_\infty^2}\,.
 \tag{4.2.9}
 \end{equation}
 %
 (Notice that the gravitational potential $GM/r_s$ at the sonic point is of
-order $a_\infty^2$.)
+order~$a_\infty^2$.)
 
 Now it is straightforward to calculate the accretion rate from
 equation~(4.2.4):
 \begin{equation}
-\dot{M}_0
-= 4\pi\alpha\,G^2 M^2\,\rho_\infty / a_\infty^3
-= 4\Gamma^{3/2}\,\alpha\,G^2\,M^2\,\rho_\infty\,(m_p/kT_\infty)^{3/2},
+\dot{M}_0 = 4\pi\,\alpha\,G^2 M^2\,\rho_\infty\,a_\infty^{-3}
+= 4\Gamma^{3/2}\,\alpha\,G^2\,M^2\,\rho_\infty\,
+  (m_p / k T_\infty)^{3/2}\,.
 \tag{4.2.10}
 \end{equation}
-%
-where
+
+Here $\alpha$ is a constant of order unity which depends on~$\Gamma$:
 \begin{equation}
-p_\infty = K\rho_\infty^\Gamma,
-\qquad
-a_\infty^2 = \Gamma\,K\,\rho_\infty^{\Gamma-1}
-            = \Gamma\,p_\infty/\rho_\infty
-            = \Gamma\,k\,T_\infty/(m_p\,\mu'),
+\alpha \equiv \frac{\pi}{4\Gamma^{3/2}}
+  \left(\frac{2}{5-3\Gamma}\right)^{(5-3\Gamma)/[2(\Gamma-1)]}\!.
+\tag{4.2.11}
 \end{equation}
+%
+\begin{align}
+\alpha &\simeq 1.5  \quad \text{for} \quad \Gamma = 1,    \notag \\
+\alpha &\simeq 1.2  \quad \text{for} \quad \Gamma = 1.4,  \notag \\
+\alpha &\simeq 0.3  \quad \text{for} \quad \Gamma = 5/3;
+\end{align}
 %
 and we have used the equation of state
 $p_\infty = (\rho_\infty / m_p)\,k\,T_\infty$.
 
-Here $\alpha$ is a constant of order unity which depends on $\Gamma$:
-\begin{equation}
-\alpha \equiv \frac{\pi}{4\Gamma^{3/2}}
-  \left(\frac{2}{5-3\Gamma}\right)^{(5-3\Gamma)/[2(\Gamma-1)]}.
-\tag{4.2.11}
-\end{equation}
-%
-\begin{alignat}{3}
-&\alpha \simeq 1.5  &\qquad &\text{for} &\qquad &\Gamma = 1, \notag \\
-&\alpha \simeq 1.2  &\qquad &\text{for} &\qquad &\Gamma = 1.4, \notag \\
-&\alpha \simeq 0.3  &\qquad &\text{for} &\qquad &\Gamma = 5/3;
-\end{alignat}
-
 This expression for the accretion rate is the main result of our calculation.
 
-It is now straightforward to derive from equations~(4.2.3) and~(4.2.4)
-the radial distributions of all quantities.  The general picture is as
-follows.  Outside the ``radius of influence''
+Notice that $\dot{M}_0$ depends on~$\Gamma$.  At a typical temperature of
+$T_\infty \sim 10^4$\,K the interstellar gas will be partially ionized, so
+when it is compressed some energy will go into further ionization.  This means
+that the value of $\Gamma$ outside and near the sonic point will be somewhat
+below $5/3$.  A value of $\Gamma = 1.4$ might be reasonable for use in
+equations~(4.2.10) and~(4.2.11).
+
+It is now straightforward to derive from equations~(4.2.3) and~(4.2.4) the
+radial distributions of all quantities.  The general picture is as follows.
+Outside the ``radius of influence''
 \begin{equation}
-r_i = 2\,GM/a_\infty^2
-    = r_g\,(c/a_\infty)^2
+r_i = 2\,GM/a_\infty^2 = r_g\,(c/a_\infty)^2
 \tag{4.2.12}
 \end{equation}
+%
+\[
+\simeq 10\,r_g \quad \text{for} \quad \Gamma = 1.4,
+\]
 %
 the pull of the hole hardly makes itself felt, so $\rho$ and $a$ are nearly
 equal to their values at ``infinity''; $\rho \simeq \rho_\infty$,
 $a \simeq a_\infty$; and the density and sound velocity begin to rise.
-After the gas passes through the sonic point $r_s$, it is in near free-fall
+After the gas passes through the sonic point~$r_s$, it is in near free-fall
+
 \begin{equation}
-u = (2GM/r)^{1/2} = a_\infty\,(r_i/r)^{1/2} \quad \text{at} \quad r < r_s\,;
+u = (2GM/r)^{1/2} = a_\infty\,(r_i/r)^{1/2}
+\qquad \text{at} \quad r < r_s\,;
 \tag{4.2.13a}
 \end{equation}
 %
 so the law of mass conservation requires the density to increase as
 \begin{equation}
-\rho = \frac{\dot{M}_0}{4\pi r^2 u}
-     \propto \frac{\rho_\infty}{r^2}
-       \left(\frac{r_i}{r}\right)^{3/2} \quad
-\text{at} \quad r < r_s\,.
+\rho = \frac{\dot{M}_0}{4\pi r^2\,u}
+\simeq 0.2\,\rho_\infty\,(r_i/r)^{3/2}
+\qquad \text{at} \quad r < r_s\,.
 \tag{4.2.13b}
 \end{equation}
 
 For adiabatic compression, temperature rises as
-$T \propto \rho^{\Gamma - 1}$; consequently, at $r < r_s$
+$T \propto \rho^{\,\Gamma-1}$; consequently, at $r < r_s$
 \begin{equation}
-T \simeq 0.5\,T_\infty\left(\frac{r_i}{r}\right)^{1/2(\Gamma-1)}
-\quad \text{if } \Gamma = 1.4 \text{ near sonic point.}
+T = \left(\frac{a\Gamma^{3/2}}{4\pi}\right)^{(\Gamma-1)}
+\simeq 0.5\,T_\infty\left(\frac{r_i}{r}\right)^{\frac{1}{2}(\Gamma-1)}
+\qquad \text{if} \quad \Gamma = 1.4\;\text{near sonic point.}
 \tag{4.2.13c}
 \end{equation}
 
@@ -360,33 +355,37 @@ The above solution, (4.2.10)--(4.2.13), for adiabatic hydrodynamic accretion
 is due originally to \citet{Bondi1952}.
 
 Rewrite the accretion rate~(4.2.10) for hydrodynamic flow in a form similar
-to that (eq.\ 4.1.3) for noninteracting particles
+to that (eq.~4.1.3) for noninteracting particles
 \begin{equation}
-\dot{M}_0 = \pi r_s^2\,\rho_\infty\,c\,(a_\infty/a_s)^3.
+\dot{M}_0 = \pi\,r_g^2\,\rho_\infty\,c\,(c/a_\infty)^3.
 \tag{4.2.14}
 \end{equation}
 
 Direct comparison, and use of the approximate equality between speed of sound
-$a_\infty$ and proton speeds $v_\infty$, shows that the hydrodynamic
-accretion rate is larger by a factor
-$(c/a_\infty)^2 \simeq 10^{10}$ than the accretion rate for independent
-particles.  The physical reason for this is clear: gas is distinguished from
-independent particles by the frequent collisions of its atoms; these
-collisions limit the tangential velocities during infall, but permit radial
-velocities to grow.
+$a_\infty$ and proton speeds~$v_\infty$, shows that the hydrodynamic
+accretion rate is larger by a factor $(c/a_\infty)^2 \simeq 10^{10}$ than
+the accretion rate for independent particles.  The physical reason for this
+is clear: gas is distinguished from independent particles by the frequent
+collisions of its atoms; these collisions limit the tangential velocities
+during infall, but permit radial velocities to grow.
 
 Other, useful forms for the hydrodynamic accretion rate are
 \begin{equation}
-\dot{M}_0 \simeq \left(1\times 10^{11}\;\frac{\text{g}}{\text{sec}}\right)
-\left(\frac{M}{M_\odot}\right)^{2}
+\dot{M}_0 \simeq 10^{5}
+\left(\frac{M}{M_\odot}\right)^{\!2}
 \left(\frac{\rho_\infty}{10^{-24}\;\text{g\,cm}^{-3}}\right)
-\left(\frac{T_\infty}{10^4\;\text{K}}\right)^{-3/2}.
-\tag{4.2.15}
+\left(\frac{a_\infty}{10\;\text{km\,sec}^{-1}}\right)^{\!-3}
+\;\text{,}
+\tag{4.2.15a}
 \end{equation}
-
-%% ====================================================================
-%% 4.3 Thermal Bremsstrahlung from the Accreting Gas
-%% ====================================================================
+%
+\begin{equation}
+\dot{M}_0 \simeq \left(1\times 10^{11}\;\frac{\text{g}}{\text{sec}}\right)
+\left(\frac{M}{M_\odot}\right)^{\!2}
+\left(\frac{\rho_\infty}{10^{-24}\;\text{g\,cm}^{-3}}\right)
+\left(\frac{T_\infty}{10^4\;\text{K}}\right)^{\!-3/2}\!.
+\tag{4.2.15b}
+\end{equation}
 
 \subsection{Thermal Bremsstrahlung from the Accreting Gas}
 \label{sec:4.3}
@@ -407,9 +406,9 @@ one gram of gas at radius $r$ radiates thermal bremsstrahlung is [cf.\ eq.~(2.1.
 \tag{4.3.1}
 \varepsilon_{ff}
 = \bigl(5 \times 10^{20}~\text{ergs/(g\,sec)}\bigr)\,
-  (\rho / \text{g\,cm}^{-3})
+  (\rho / g\,\text{cm}^{-3})
   \left(\frac{T_\infty}{10^4\,\text{K}}\right)^{\!1/2}
-  \left(\frac{r_i}{r}\right)^{\!-(3/2)(\Gamma-1)}
+  \left(\frac{r_i}{r}\right)^{\!-(3/a)(\Gamma-1)}
 \end{equation}
 %
 For comparison, the rate at which adiabatic compression increases the energy of
@@ -463,9 +462,9 @@ tivistic corrections in eq.~(2.1.31)].  Even with such an increase, and even for
 $M = 100\,M_\odot$, $L_{ff}$ is so small that it is of little or no observational interest.  For
 this reason, we shall not attempt a more rigorous calculation of it.
 
-%% ====================================================================
-%% 4.4 Influence of Magnetic Fields and Synchrotron Radiation
-%% ====================================================================
+%% ----------------------------------------------------------------
+%% 4.4  Influence of Magnetic Fields and Synchrotron Radiation
+%% ----------------------------------------------------------------
 
 \subsection{Influence of Magnetic Fields and Synchrotron Radiation}
 \label{sec:4.4}
@@ -541,7 +540,7 @@ per unit mass.
 The mass density corresponding to this equipartition condition,
 $4\pi r^2 \rho u = \dot{M}_0$, because $\dot{M}_0$ is determined by conditions
 outside and at the sonic point, where the magnetic field is not yet large enough
-to strongly influence the flow, we can use equation~(4.2.15) for $\dot{M}_0$ and write
+to strongly influence the flow, we can use equation~(4.2.15b) for $\dot{M}_0$ and write
 %
 \begin{equation}
 \tag{4.4.3a}
@@ -631,9 +630,9 @@ Such rapid fluctuations in an object so faint should be very difficult to detect
 even with the 200-inch telescope.  For further details on the fluctuations, see
 the end of \S\ref{sec:4.7}.
 
-%% ====================================================================
-%% 4.5 Interaction of Outflowing Radiation with the Gas
-%% ====================================================================
+%% ----------------------------------------------------------------
+%% 4.5  Interaction of Outflowing Radiation with the Gas (beginning)
+%% ----------------------------------------------------------------
 
 \subsection{Interaction of Outflowing Radiation with the Gas}
 \label{sec:4.5}
@@ -669,48 +668,246 @@ scatters; so this effect can be ignored.  (iii)~The outpouring photons exert a
 pressure on the infalling gas when they scatter, and this effect can retard the
 inflow.  Notice that the magnitude of the first two effects is governed by the
 
-% NOTE: The text of Section 4.5 is incomplete here. Agent 14 ends mid-sentence.
-% Sections 4.5 (conclusion), 4.6, and 4.7 (beginning) are missing (no agent_15 available).
+density of the inflowing gas.  By contrast, the magnitude of the pressure effect
+is governed by the luminosity of the outpouring radiation.  Let us calculate this
+effect explicitly, at radii sufficiently large that the electrons are nonrelativistic.
 
-%% ====================================================================
-%% 4.7 Gas Flow Near the Horizon (continuation from agent_16)
-%% ====================================================================
+Because the electron scattering cross-section $d\sigma/d\Omega = \tfrac{1}{2}r_0^2(1+\cos^2\theta)$ is
+symmetric between forward and backward angles, $h\nu/c$, to the electron.  Hence, the time-averaged
+photon force acting on an electron at radius $r$ is
 
-% [Section 4.7 beginning is missing; the following is the continuation from agent_16]
+\begin{equation}
+\langle\text{Force}\rangle = \left\langle\frac{d(\text{momentum})}{dt}\right\rangle
+= \int \frac{d(\text{number of photons})}{d(\text{area})\,dt\,d\nu}\, h\nu\,\sigma_e\, d\nu
+\tag{4.5.2}
+\end{equation}
+%
+\[
+= \sigma_{eF} F = \sigma_e (L/4\pi r^2)\,,
+\]
+%
+where $\sigma_e = (8\pi/3)r_0^2 = 0.657 \times 10^{-24}$~cm$^2$ is the total scattering cross section,
+$F$ is the radiation flux (ergs~cm$^{-2}$~sec$^{-1}$) and $L$ is the total luminosity of the hole.
+Notice that this time-averaged force is completely independent of the spectrum
+of the radiation (so long as most of the photons have $h\nu \ll m_e c^2$ as seen in the
+electron rest frame, so that nonrelativistic cross sections are applicable).  It is
+also independent of the optical thickness---being equally valid for $\tau \gg 1$, in
+which case
+
+$F \ll J$ (see \S2.6 for notation).
+
+The pull of gravity must work against this $\sigma_e^{} (L/4\pi r^2)$ force.  The photon force
+acts almost entirely on the electrons ($\sigma_e \sim 1$~(mass)$^{-2}$, so each proton feels a
+force $3 \times 10^6$ times weaker than that felt by an electron).  By contrast, the
+acceleration of gravity acts equally on electrons and photons.  Hence, the electrons
+move outward and slightly relative to the photons, creating an electric field that
+transmits the photon force $\sigma_e L/4\pi r^2$ from electrons to protons.  The net force
+that then acts on proton (assuming a completely ionized hydrogen gas) is
+
+\begin{equation}
+\langle\text{Force}\rangle_{\text{total}} = \frac{\sigma_e L}{4\pi r^2} - \frac{GMm_p}{r^2}\,.
+\tag{4.5.3}
+\end{equation}
+
+Thus, there is a critical luminosity [``Eddington'' (1926) limit]
+
+\begin{equation}
+L_{\text{crit}} \equiv \frac{4\pi G M m_p}{\sigma_e}
+= (1.3 \times 10^{38}~\text{ergs/sec})\,(M/M_\odot)
+\tag{4.5.4}
+\end{equation}
+
+such that for $L \ll L_{\text{crit}}$ gravity dominates at all radii, but for $L \gg L_{\text{crit}}$ photon
+pressure dominates at all radii.  \cite{Zeldovich1964} derived this limit for the case of
+stellar equilibrium.  \cite{Zeldovich1964} derived this limit for the case of
+theory for the cases of quasars and accretion.
+
+For the case of current interest---a black hole of $M\sim 1$ to $100\,M_\odot$ swallowing
+interstellar gas---the luminosity is far below the critical value, so the photon
+pressure can be ignored.
+
+%% ============================================================
+%% Page 401
+%% ============================================================
+
+However, in other contexts the accretion rate $\dot{M}_0$ may be so great, and the
+efficiency $\xi$ for converting the inflowing mass-energy into outgrowing luminosity
+$L$ may be sufficiently high that
+
+\begin{equation}
+\frac{L}{L_{\text{crit}}} = \frac{\xi \dot{M}_0 c^2}{L_{\text{crit}}}
+\lesssim \frac{\xi}{0.1} \left(\frac{\dot{M}_0}{10^{18}~\text{g/sec}}\right)
+\tag{4.5.5}
+\end{equation}
+
+may temporarily exceed unity.  When this happens, the photon pressure will
+impede further mass inflow, thereby reducing the luminosity to $L \lesssim L_{\text{crit}}$.  Such
+accretion is said to be ``\emph{self-regulated}''.  Self-regulated accretion, with modifications due to lack of spherical symmetry, may be important for black holes in
+close binary systems; see \S5.13.  However, it is unimportant for the case at
+hand.
+
+The outflowing radiation from a black hole in interstellar space ($L \sim 10^{32}$
+ergs/sec, $\nu \sim 10^{14}$--$10^{15}$~Hz) can also interact with the surrounding interstellar
+gas.  One can verify that the radiation is sufficiently intense to keep the gas at a
+temperature $T_\infty \sim 10^4$~K in the neighborhood of $r = r_t$, and to keep it partially
+ionized.
+
+%% ============================================================
+%% S4.6 — Validity of the Hydrodynamical Approximation
+%% ============================================================
+
+\subsection{Validity of the Hydrodynamical Approximation}
+\label{sec:4.6}
+
+The above model for accretion onto an interstellar black hole relies crucially on
+the validity of the hydrodynamical approximation at and outside the sonic point,
+and on equipartition assumptions inside the sonic point.  If the gas were to behave
+like independent particles rather than like a fluid, then the accretion rate would
+be greatly reduced (see \S4.1).  Thus, it is crucial to check the validity of the
+hydrodynamical approximation.
+
+In an ionized hydrogen plasma \emph{without} magnetic fields, the deflection of
+protons away from straight-line paths is caused primarily by the cumulative
+effects of many small-angle Coulomb scatterings.  The total distance a proton
+must travel before the ``random-walk'' deflections add up to an angle of ${\sim}90^\circ$
+is [see, e.g., \cite{Shkarofsky1966} or \cite{Pikelner1961}]
+
+\begin{equation}
+\lambda_p = \frac{9}{4\pi}\,\frac{(kT)^2}{n_p e^4 L_c}
+\simeq (7 \times 10^{12}~\text{cm})\left(\frac{\rho_\infty}{10^{-24}~\text{g\,cm}^{-3}}\right)^{-1}
+\left(\frac{T}{10^4\,\text{K}}\right)^{2}\,.
+\tag{4.6.1}
+\end{equation}
+
+Here $L_c$ is a ``Coulomb-logarithm'' (analogue of Gaunt factor in theory of
+Bremsstrahlung) given by
+
+\begin{equation}
+L_c \simeq 23 + \tfrac{3}{2}\ln (n_e/n_{\text{cm}^{-3}});
+\tag{4.6.2}
+\end{equation}
+
+$n_e$ and $n_p$ are the number densities of electrons and (ionized) protons; and we
+have evaluated $\lambda_p$ for the case of a fully ionized hydrogen plasma.  The plasma
+will behave like a fluid on scales $l \gg \lambda_p$, but like independent particles on scales
+$l \ll \lambda_p$.
+
+The scale of interest for determining the accretion rate is the sonic radius
+
+\begin{equation}
+r_s = \frac{5 - 3\Gamma}{4}\,\frac{GM}{a_\infty^2}
+\simeq (10^{13}~\text{cm})\left(\frac{M}{M_\odot}\right)
+\left(\frac{T_\infty}{10^4\,\text{K}}\right)^{-1}
+\tag{4.6.3}
+\end{equation}
+
+$(\ll \lambda_p)$.  The scale of interest for $\left(\frac{M}{M_\odot}\right)\left(\frac{T_\infty}{10^4\,\text{K}}\right)^{-1}$
+
+at which point $T \sim T_\infty$, $\rho \sim \rho_\infty$, so
+
+\begin{equation}
+\lambda_p(r_s) \sim 0.7 \left(\frac{M}{M_\odot}\right)^{-1}
+\left(\frac{T_\infty}{10^4\,\text{K}}\right)^{-1}\,.
+\tag{4.6.4}
+\end{equation}
+
+%% ============================================================
+%% Page 402
+%% ============================================================
+
+Thus, if one ignores the magnetic field, then the gas will not quite behave like a
+fluid near the sonic point---and it may fail even more to be fluid-like at small
+radii; cf.\ \S\,13.4 of ZN.
+
+The interstellar magnetic field, of strength $B_\infty \sim 10^{-6}$~G, can ``save'' the
+hydrodynamic approximation.  It deflects protons away from straight-line
+motion in a distance of the order of the Larmour radius
+
+\begin{equation}
+\lambda_L = \frac{m_p c\,v}{eB}
+\simeq (1 \times 10^{8}~\text{cm})
+\left(\frac{B}{10^{-6}~\text{G}}\right)^{-1}
+\left(\frac{T}{10^4\,\text{K}}\right)^{1/2}
+\tag{4.6.5}
+\end{equation}
+
+and this is true even when the thermal pressure of the plasma exceeds the
+magnetic pressure so that the field gets dragged about by the gas.  The Larmour
+radius is small compared to all macroscopic scales of interest (e.g.\ small compared
+to $r_S$ when one uses the values $B \sim B_\infty$ and $T \sim T_\infty$ appropriate to $r_S$).  Hence,
+the hydrodynamical approximation is fairly well justified.
+
+%% ============================================================
+%% S4.7 — Gas Flow Near the Horizon
+%% ============================================================
 
 \subsection{Gas Flow Near the Horizon}
 \label{sec:4.7}
 
-% [Beginning of section not available -- text continues mid-section]
+Near the horizon, $r \sim r_g$, relativistic effects will modify the Newtonian picture
+of accretion.  It is in fact difficult to solve for the relativistic flow using the
+relativistic Bernoulli equation (2.5.33) and the law of mass conservation (2.5.23').
+Such a solution is analogous to the Newtonian hydrodynamical solution studied
+in \S4.2.  However, such a solution is partially irrelevant because it ignores the
+role of the magnetic field, and such a solution is not needed because the intensity
+of the gravitational pull, as viewed in stationary frames near the horizon, is so
+great as to guarantee supersonic flow with qualitatively the same form as free-particle
+fall.  Thus, from a knowledge of geodesic orbits one can infer the main
+features of the flow.
 
-\noindent
+Consider, first, spherical accretion onto a nonrotating hole (Schwarzschild
+gravitational field).  A fluid element in the accreting gas, like a freely falling
+particle, reaches the horizon in finite proper time.  The moment of crossing the
+horizon is in no way peculiar, as seen by proper time.  The density does not
+reach infinity there; and the temperature does not reach infinity.  In fact,
+because the equation for radial geodesics in the Schwarzschild geometry
+
+\begin{equation}
+ds^2 = (1 - r_g/r)\,c^2\,dt^2 + (1 - r_g/r)^{-1}\,dr^2 + r^2\,d\Omega^2\,.
+\tag{4.7.1}
+\end{equation}
+
 has the first integral
+
 \begin{equation}
-(dr/dt)^2 = 2GM/r \quad \text{(for fall from rest at } r \gg r_g\text{)}, \tag{4.7.2}
-\end{equation}
-and because the law of rest-mass conservation $\nabla \cdot (\rho \mathbf{u}) = 0$ has the first integral
-\begin{equation}
-4\pi r^2 \sqrt{-g}\, \rho\, (dr/dt) = \dot{M}_0, \tag{4.7.3}
-\end{equation}
-the density of rest mass must vary as
-\begin{equation}
-\rho = \frac{\dot{M}_0}{4\pi r^2} \left(\frac{r}{2GM}\right)^{1/2}
-\simeq (6 \times 10^{-12} \;\text{g\,cm}^{-3})\, (r/r_g)^{-3/2}. \tag{4.7.4}
+(dr/d\tau)^2 = 2GM/r \quad\text{(for fall from rest at } r \gg r_g\text{)},
+\tag{4.7.2}
 \end{equation}
 
-This must be as true near and inside the horizon, $r \leq r_g$, as it is in the Newtonian
-realm $r \gg r_g$. Similarly, the temperature will retain its Newtonian form (4.4.2):
+and because the law of rest-mass conservation $\boldsymbol{\nabla}\cdot(\rho \fvec{u}) = 0$ has the first integral
+
 \begin{equation}
-T \simeq (10^{12}\;\text{K})\, (r_g/r); \tag{4.7.5}
+4\pi r^2 \sqrt{-g}\, \rho\,(dr/d\tau) = \dot{M}_0\,,
+\tag{4.7.3}
 \end{equation}
-and the synchrotron emissivity will retain its Newtonian value (4.4.4). However,
+
+the density of rest mass must vary as
+
+\begin{equation}
+\rho \simeq \left(6 \times 10^{-12}~\text{g\,cm}^{-3}\right)
+\left(\frac{M}{M_\odot}\right)^{-1}
+\left(\frac{T_\infty}{10^4\,\text{K}}\right)^{-3/2}
+\,(r/r_g)^{-3/2}\,.
+\tag{4.7.4}
+\end{equation}
+
+This must be as true near and inside the horizon, $r \lesssim r_g$, as it is in the Newtonian
+realm $r \gg r_g$.  Similarly, the temperature will retain its Newtonian form (4.4.2):
+
+\begin{equation}
+T \simeq (10^{12}~\text{K})(r_g/r)\,;
+\tag{4.7.5}
+\end{equation}
+
+and the synchrotron emissivity will retain its Newtonian value (4.4.4).  However,
 the radiation which reaches infinity will be sharply cut off as the gas element
 passes through the horizon.
 
 \begin{equation}
-\left(\text{fraction of emitted radiation that reaches } r = \infty
-\text{ from infalling gas at radius } r_f\right)
-\simeq \frac{27}{64}\left(1 - \frac{r_g}{r_f}\right). \tag{4.7.6}
+\left(\text{fraction of emitted radiation that}\atop
+\text{reaches } r = \infty \text{ from infalling gas at radius } r_f\right)
+\simeq \frac{27}{64}\left(1 - \frac{r_g}{r_f}\right)\,.
+\tag{4.7.6}
 \end{equation}
 
 In previous sections we have taken rough account of this cutoff and of the
@@ -718,30 +915,28 @@ accompanying redshift by retaining the Newtonian luminosity down to $r = 2r_g$.
 
 In the case of a rotating (Kerr) hole, near and inside the ergosphere the
 dragging of inertial frames will swing the infalling gas into orbital rotation
-about the hole. As the gas approaches the horizon, its angular velocity as seen
+about the hole.  As the gas approaches the horizon, its angular velocity as seen
 from infinity must approach the angular velocity of the horizon,
+
 \begin{equation}
 \Omega \to \Omega_{\text{horizon}} = \frac{a}{r_+^2 + a^2}
-= \frac{c^3}{2GM} = \left(\text{sec}\right)^{-1}
-\frac{10^5}{M_\odot}\left(\frac{M}{M_\odot}\right)^{-1}
-\quad \text{for ``maximally rotating hole'', } a = M. \tag{4.7.7}
+= \frac{c^3}{2GM}\,\frac{1}{(\text{sec})}\left(\frac{10^5}{M_*}\right)
+\quad\text{(geometrized units, } c = G = 1\text{)}
+\tag{4.7.7}
 \end{equation}
-(geometrized units, $c = G = 1$)
 
-Here $a$ is the hole's angular momentum per unit mass. Any extra-luminous hot
+for ``maximally rotating hole'', $a = M$.
+
+Here $a$ is the hole's angular momentum per unit mass.  Any extra-luminous hot
 spot in the gas (e.g.\ a region where magnetic field lines are reconnecting; cf.\
-\S2.9) must orbit the hole with this angular velocity as it falls inward. The
+\S2.9) must orbit the hole with this angular velocity as it falls inward.  The
 brightness of the hole as seen at Earth will be modulated with a period
-$P \simeq 4\pi r/\Omega \simeq (10^{-4}\;\text{sec})(M/M_\odot)$ as a result of the Doppler shift of the spot's
-light and the bending of its rays. (A factor of $2\pi/\Omega$ is the orbital period; the
+$P \simeq 4\pi r_g/\Omega \gtrsim (10^{-4}~\text{sec})(M/M_\odot)$ as a result of the Doppler shift of the spot's
+light and the bending of its rays.  (A factor of $2\pi/\Omega$ is the orbital period; the
 other factor of $2\pi/\Omega$ is the light travel time between the radius at which the
 spot is located at the beginning of one period and the radius to which it has
-fallen at the end of the period.) Thus, one might expect quasiperiodic
+fallen at the end of the period.)  Thus, one might expect quasiperiodic
 fluctuations in the light from a black hole living alone in the interstellar medium.
-
-%% ====================================================================
-%% 4.8 Accretion onto a Moving Hole
-%% ====================================================================
 
 \subsection{Accretion onto a Moving Hole}
 \label{sec:4.8}
@@ -755,8 +950,7 @@ hole becomes significant. Because the flow is supersonic the gas will respond to
 that pull in the same manner as would noninteracting particles; its pressure
 cannot have an influence. (One can see this, for example, in the Euler equation
 \begin{equation}
-\text{const.} = \tfrac{1}{2}v^2 + \frac{a^2}{\Gamma - 1} - \frac{GM}{r}\,,
-\tag{4.8.1}
+\text{const.} = \tfrac{1}{2}v^2 + \frac{a^2}{\Gamma - 1} - \frac{GM}{r}\,, \tag{4.8.1}
 \end{equation}
 where the speed-of-sound (enthalpy) term---which accounts for pressure effects---is
 negligible compared to the kinetic-energy term.) Thus, the flow lines will be
@@ -813,13 +1007,13 @@ collisions (trajectory intersections).\\[6pt]
 (heavy line). The characteristic size $l_s$ and capture impact parameter
 $b_{\text{capture}}$ are indicated. The dividing line between escape and capture
 is shown as a dotted line.}}
-\caption{The trajectories of test particles~(a), and the flow lines of supersonic gas~(b)
+\caption{\textit{Figure 4.8.1.} The trajectories of test particles (a), and the flow lines of supersonic gas (b)
 relative to a black hole, as viewed in the rest frame of the hole. The trajectories and flow
 lines are virtually the same, until the gas encounters the shock front.}
 \label{fig:4.8.1}
 \end{figure}
 
-More careful calculations give accretion rates which differ from this by multiplicative factors of $\sim 0.5$ to 1.0 (Bondi and Hoyle 1944)\cite{BondiHoyle1944}.
+More careful calculations give accretion rates which differ from this by multiplicative factors of $\sim 0.5$ to 1.0 (Bondi and Hoyle 1944).
 
 Notice that the rate (4.8.4) for the supersonic case, and the rate
 (4.2.10) for a hole at rest are identical except for the replacement of sound
@@ -828,9 +1022,10 @@ unity. In the intermediate case of $u_\infty \sim a_\infty$, one can use the hyb
 
 \begin{equation}
 \dot{M}_0 \simeq \frac{4\pi G^2 M^2 \rho_\infty}{(a_\infty^2 + u_\infty^2)^{3/2}}
-\tag{4.8.5}
+\simeq \frac{(M/M_\odot)^2 \rho_\infty / (10^{-24}\;\text{g\,cm}^{-3})}
+{(u_\infty / 10\;\text{km\,sec}^{-1})^2 + (a_\infty / 10\;\text{km\,sec}^{-1})^2]^{3/2}} \tag{4.8.5}
 \end{equation}
-(Bondi 1952, Hunt 1971)\cite{Bondi1952,Hunt1971}.
+(Bondi 1952).
 
 [Salpeter (1964) gave the first application of these formulas to black holes; all
 previous work dealt with normal stars.]
@@ -838,94 +1033,87 @@ previous work dealt with normal stars.]
 It is worth noting that a significant fraction of the kinetic energy released in
 the shock
 \begin{equation}
-\frac{dE}{dt} \simeq \tfrac{1}{2}\dot{M}_0\, u_\infty^2
-\simeq \left(10^{24}~\text{ergs}\right)
+\frac{d\dot{E}}{dt} \simeq \tfrac{1}{2} u_\infty \dot{M}_0
+\simeq \left(10^{24}\;\text{ergs}\right)
 \left(\frac{M}{M_\odot}\right)^2
-\left(\frac{\rho_\infty}{10^{-24}~\text{g~cm}^{-3}}\right)
-\left(\frac{u_\infty}{10~\text{km~sec}^{-1}}\right)^{-1/2}
-\tag{4.8.6}
+\left(\frac{\rho_\infty}{10^{-24}\;\text{g\,cm}^{-3}}\right)
+\left(\frac{u_\infty}{10\;\text{km\,sec}^{-1}}\right)^{-1/2} \tag{4.8.6}
 \end{equation}
 may go into excitation of unionized atoms and thence into light as the atoms
 decay, thus producing a shock front that glows (albeit weakly). See, e.g.,
-Pikel'ner~(1961), and \S\S\,9 and~10 of Kaplan~(1966)\cite{Pikelner1961,Kaplan1966}.
+Pikel'ner (1961), and \S\S\,10 of Kaplan (1966).
 
 The motion of the gas behind the shock is practically unknown, particularly
 when one takes account of magnetic fields. Many different types of instabilities
 may occur, both here and in the case of a stationary black hole. For example at
-radii $r < l_s$, where the inflow has become supersonic again, turbulence may
-create shock waves which convert kinetic energy into heat (Bisnovatyi-Kogan and
-Sunyaev~1971). A variety of plasma instabilities may also arise. And the recon\-nection
-of magnetic field lines will surely be important. One can only guess that
-the overall, time-averaged equipartition model of
-Schwartzman~(\S\,4.4)\cite{Schwartzman1971} applies.
+radii $r < l_s$, where the inflow has become supersonic again, the Bisnovatyi-Kogan and
+Sunyaev (1971) variety of plasma instabilities may also arise. And the reconnection
+of magnetic field lines will surely be important. Almost all one can only guess that
+the overall, time-averaged angular momentum per unit mass of the accreting
+gas has no luminosity is produced, is angular momentum. Suppose that the accreting
+Schwartzman (\S4.4).
 
-One factor that may be important near the gravitational radius, where most
-of the luminosity is produced, is angular momentum. Suppose that the accreting
-gas has nonzero angular momentum per unit mass. If the angular momentum per unit mass, $\mathscr{L}$, exceeds
+One factor that may be important near the gravitational radius, where the most
+of the gas luminosity is produced, is angular momentum in the direction of motion of the hole.
+Such a solution is partially irrelevant because it ignores the intensity
+($\sim$ direction in Fig.~\ref{fig:4.8.1}). If the angular momentum per unit mass, $L$, exceeds
 $r_g c$, then centrifugal forces will become important before the infalling gas reaches
 the horizon; the gas will be thrown into circulating orbits; and only after viscous
 stresses have transported away the excess angular momentum will the gas fall
-down the hole. (See \S\,5 for a situation similar to this.) The resulting viscous
+down the hole. (See \S5 for a situation similar to this.) The resulting viscous
 heating and lengthened time spent outside the hole, as well as the changed flow
 pattern, may affect the outpouring significantly. Moreover, when the
 hole moves from a region with angular momentum of gas in one direction to a
 region with angular momentum in another, the gas flow may become particularly
 violent for a while near the horizon; and a strong flare of luminosity may be
-produced (Salpeter 1964; Schwartzman 1971)\cite{Salpeter1964,Schwartzman1971}. Almost nothing is known today
+produced (Salpeter 1964; Schwartzman 1971). Almost nothing is known today
 about these issues.
 
 Is the specific angular momentum of the accreting gas likely to exceed $r_g c$?
 Interstellar gas is accreted from a region of diameter
 \begin{equation}
-2 b_{\text{capture}} = \frac{2r_g c^2}{u_\infty^2} = (3 \times 10^{14}\;\text{cm})
+2 b_{\text{capture}} = \frac{2r_g}{u_\infty^2} = (3 \times 10^{14}\;\text{cm})
 \left(\frac{M}{M_\odot}\right)
 \left(\frac{u_\infty}{10\;\text{km\,sec}^{-1}}\right)^{-2}. \tag{4.8.7}
 \end{equation}
 (For $u_\infty < a_\infty$, we must replace $u_\infty$ by $a_\infty$.) The interstellar gas is turbulent with
-the turbulent velocity $v_{\text{turb}}$ on scales $l$ given roughly by
+the turbulent velocity $v_{\text{turb}}$ on scales $l \sim b_{\text{capture}}$ given roughly by
 \begin{equation}
-v_{\text{turb}} = \left(10^5~\frac{\text{cm}}{\text{sec}}\right)
-\left(\frac{l}{3 \times 10^{20}~\text{cm}}\right)^q\,,
-\tag{4.8.8}
+v_{\text{turb}} \sim \left(\frac{\text{cm}}{\text{sec}}\right)
+\left(\frac{10^{20}\;\text{cm}}{l}\right)^q
+\left(3 \times 10^{20}\;\text{cm}\right)  \tag{4.8.8}
 \end{equation}
-where $q$ is a coefficient believed to lie between $1/2$ and $1$ (Kaplan and Pikel'ner
+where $q$ is a coefficient believed to lie between 1/2 and 1 (Kaplan and Pikel'ner
 1970), and the coefficient $10^6$~cm/sec is taken from astronomical observations.
 Let us take $q = 0.75$ as a best guess. Then the specific angular momentum
 associated with this turbulence, for a gas element of size $l$, is
 \begin{equation}
-\mathscr{L}_{\text{turb}} \simeq v_{\text{turb}}\, l
-\simeq \left(3 \times 10^{26}~\frac{\text{cm}^2}{\text{sec}}\right)
-\left(\frac{l}{3 \times 10^{20}~\text{cm}}\right)^{1.75}\,.
-\tag{4.8.9}
+L_{\text{turb}} \simeq v_{\text{turb}} \, l
+\simeq \left(3 \times 10^{26}\;\text{cm}^2\;\text{sec}^{-1}\right)
+\left(\frac{l}{3 \times 10^{20}\;\text{cm}}\right)^{1.75}. \tag{4.8.9}
 \end{equation}
 
 Consequently, the specific angular momentum of the gas that accretes from a
 region of size $l = 2b_{\text{capture}}$ should be
 \begin{equation}
-\mathscr{L}_{\text{turb}} \simeq 1 \times 10^{20}\;\text{cm}^2\;\text{sec}^{-1}
+L_{\text{turb}} \simeq 1 \times 10^{20}\;\text{cm}^2\;\text{sec}^{-1}
 \left(\frac{M}{M_\odot}\right)^{3/4}
-\left(\frac{u_\infty}{10\;\text{km\,sec}^{-1}}\right)^{-7/2}\,.
-\tag{4.8.10}
+\left(\frac{u_\infty}{10\;\text{km\,sec}^{-1}}\right)^{-7/2}. \tag{4.8.10}
 \end{equation}
 
 Evidently, the angular momentum may be important in some cases and may not
 be in others.
 
-%% ====================================================================
-%% 4.9 Optical Appearance of Hole: Summary
-%% ====================================================================
-
 \subsection{Optical Appearance of Hole: Summary}
 \label{sec:4.9}
 
 In summary, a black hole alone in the interstellar medium may be expected to
-emit $\sim\! 10^{29}$ to $10^{35}$~ergs/sec of synchrotron radiation, concentrated in the
-optical part of the spectrum ($\sim\! 10^{14}$~Hz to $10^{15}$~Hz). The output may
-fluctuate on timescales of $\sim\! 10^{-2}$ to $10^{-4}$ seconds due to instabilities, and to
+emit ${\sim}\,10^{29}$ to $10^{35}$~ergs/sec of synchrotron radiation, concentrated in the
+optical part of the spectrum (${\sim}\,10^{14}$~Hz to $10^{15}$~Hz). The output may
+fluctuate on timescales of ${\sim}\,10^{-2}$ to $10^{-4}$ seconds due to instabilities, and to
 orbital motion of hot spots about the hole (\S\S\,4.4, 4.7, 4.8). There may also
 be strong flares when the hole moves out of one turbulent cell of interstellar
 gas into another. The time interval between flares would be about
-
 \begin{equation}
 \Delta t_\text{flares}
 \simeq 2b_\text{capture}/u_\infty

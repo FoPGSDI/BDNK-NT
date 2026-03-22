@@ -1,6 +1,2936 @@
-% Section 2: Radiation and Plasma Physics
-% Placeholder - to be populated by translation agents 01-10
-\section{Thermal Bremsstrahlung (``Free-Free Radiation'') From a Plasma}
+% Section 2: Thermal Bremsstrahlung (``Free-Free Radiation'' From a Plasma)
+% Merged from agent_01.tex through agent_11.tex
+% Subsections 2.1--2.9
+
+\section{Thermal Bremsstrahlung (``Free-Free Radiation'' From a Plasma)}
 \label{sec:2}
 
-% Content will be merged from agent_02.tex through agent_10.tex
+\subsection{Thermal Bremsstrahlung (``Free-Free Radiation'' From a Plasma)}
+\label{sec:2.1}
+
+\textit{Basic references}\quad chapter~6 of Shkarofsky, Johnston, and
+Bachynski~(1966)\cite{Shkarofsky1966};
+chapter~15 of Jackson~(1962)\cite{Jackson1962}; \S4 of
+Ginzburg~(1967)\cite{Ginzburg1967}.
+
+\bigskip
+
+\textit{Notation for fundamental constants}
+
+\medskip
+
+\noindent
+\begin{tabular}{ll}
+$h$            & Planck's constant \\
+$m_e$          & rest mass of electron \\
+$m_p$          & rest mass of proton \\
+$e$            & charge of electron \\
+$c$            & speed of light \\
+$\alpha$       & fine-structure constant \\
+$r_0$          & classical electron radius \\
+$R_y$          & Rydberg energy \\
+$Z$            & charge of ions in plasma \\
+$\mathcal{A}$  & atomic weight of ions \\
+$k$            & Boltzmann's constant \\
+$\xi$          & Euler constant ($= 1.78\ldots$)
+\end{tabular}
+
+\bigskip
+
+\textit{Radiation from a single classical collision}
+
+\medskip
+
+Consider a single ion of charge~$Z$, at rest in the laboratory frame. Let a single
+electron of speed $v \ll c$ (nonrelativistic) scatter off the nucleus (Coulomb
+scattering), with impact parameter~$b$. Let $I(\omega)$ be the total energy per unit
+circular frequency, $\omega$, radiated by the electron as it scatters. A simple classical
+calculation [e.g.\ Jackson~(1962)\cite{Jackson1962}, p.~507] gives
+%
+\begin{equation}
+I(\omega) = \frac{2}{3} \frac{e^2}{m_e c^3} \left|\Delta \mathbf{v}_\omega\right|^2,
+\tag{2.1.1}
+\end{equation}
+%
+where $\Delta \mathbf{v}_\omega$ is the change in electron velocity during a time $\tau = 1/\omega$ centered
+about the electron's point of closest approach to the nucleus.
+
+It is useful to examine two limiting cases: small-angle scattering ($\theta \ll 1$)
+corresponding to large impact parameter ($b \gg b_{s\text{-}l}$); and large-angle scattering
+($\theta \sim 2\pi$), corresponding to small impact parameter ($b \ll b_{s\text{-}l}$). The impact
+parameter, $b_{s\text{-}l}$, which separates small-angle from large-angle scattering, is given
+by
+%
+\begin{equation}
+Ze^2 / b_{s\text{-}l} = \tfrac{1}{2}\, m_e v^2.
+\tag{2.1.2}
+\end{equation}
+
+\textit{For small-angle scattering} the total scattering angle $\theta$ is
+%
+\begin{equation}
+\theta = \frac{1}{v}\, |\Delta \mathbf{v}|
+      = \frac{Ze^2/b}{\frac{1}{2}\, m_e v^2}
+      = \frac{b_{s\text{-}l}}{b}\,,
+\tag{2.1.3}
+\end{equation}
+%
+and the time during which the scattering occurs is $\Delta t \approx b/v$.  Hence, for
+$\tau = 1/\omega \gg \Delta t$, the change in velocity during time $\tau$, $|\Delta \mathbf{v}_\tau|$,
+is the full change $|\Delta \mathbf{v}|$ of~(2.1.3); while for $\tau = 1/\omega \ll \Delta t$ the change is
+essentially zero.  Inserting these changes into equation~(2.1.1), we obtain
+%
+\begin{align}
+I(\omega) &= 0  &\text{for}&\quad \omega \gg v/b, \notag \\[4pt]
+I(\omega) &= \frac{8}{3}\,\frac{Z^2 e^2}{m_e c}\left(\frac{r_0}{v\,b}\right)^{\!2}
+           &\text{for}&\quad \omega \ll v/b.
+\tag{2.1.4}
+\end{align}
+
+\textit{For large-angle scattering} the electron orbit is very nearly a parabola, with
+``perihelion'' at radius
+%
+\begin{equation}
+r_p = b^2 / b_{s\text{-}l}
+\tag{2.1.5a}
+\end{equation}
+%
+and with speed at perihelion
+%
+\begin{equation}
+v_p = c\bigl(2 Z r_0 / r_p\bigr)^{1/2}.
+\tag{2.1.5b}
+\end{equation}
+%
+During time intervals $\tau = 1/\omega \ll r_p/v_p$, a negligible amount of velocity change
+occurs; hence
+%
+\begin{equation}
+I(\omega) = 0 \qquad \text{for}\quad \omega \gg v_p/r_p
+           = c(2Zr_0\, b_{s\text{-}l}^{\,3})^{1/2}/b^3.
+\tag{2.1.6a}
+\end{equation}
+
+During time intervals $\tau = 1/\omega \gg r_p/v_p$ but $\tau < b/v$, the electron is initially
+($\tau = -\tau/2$) headed directly toward the nucleus with ``parabolic'' speed
+
+\noindent it swings into a sharp turn around the nucleus; and it emerges
+at $t = +\tau/2$ with its initial velocity precisely reversed.
+Consequently, $|\Delta v_\omega|$ is equal to~$2v_f$, and $I(\omega)$~is
+\begin{equation}
+  I(\omega)
+  = \frac{32}{3}\,\frac{e^{2}}{c^{3}}
+    \left(\frac{Zr_0\,\omega\,c^{2}}{3}\right)^{\!2/3}
+  \quad\text{for}\quad
+  \frac{v}{b_{s-1}} < \omega < \frac{v_p}{r_p}
+  = \frac{c(2Zr_0\,b_{s-1}^{3})^{1/2}}{b^{3}}\,.
+  \tag{2.1.6b}
+\end{equation}
+
+%=============================================================================
+% Radiation from a nonrelativistic beam of electrons
+%=============================================================================
+
+\bigskip
+\noindent\textit{Radiation from a nonrelativistic beam of electrons}
+
+\medskip
+
+Consider a single ion of charge~$Z$, at rest in the laboratory frame.
+Bombard the ion with a monochromatic beam of electrons with speed
+$v \ll 1$ and flux (number per unit time per unit area)~$S$.  Examine the
+radiation of frequency~$\nu$ (circular frequency $\omega = 2\pi\nu$)
+emitted by the electrons as they scatter off the nucleus.
+Let $\mathscr{P}_\nu$ be the total power emitted per unit frequency
+(ergs~sec$^{-1}$~Hz$^{-1}$); and define the emission cross section per
+unit frequency, $d\sigma/d\nu$, by
+\begin{equation}
+  \mathscr{P}_\nu = (d\sigma/d\nu)\,S\,h\nu.
+  \tag{2.1.7}
+\end{equation}
+The dependence of the emission cross section on photon frequency~$\nu$
+and on electron speed~$v$ is most conveniently expressed in terms of
+the two dimensionless parameters
+\begin{equation}
+  \frac{h\nu}{\tfrac{1}{2}m_e v^{2}}\,,
+  \qquad
+  \frac{\tfrac{1}{2}m_e v^{2}}{2R_y}
+  = \left(\frac{v/c}{\alpha Z}\right)^{\!2}.
+  \tag{2.1.8}
+\end{equation}
+
+On a sheet of paper (Figure~\ref{fig:2.1.1}) plot
+$(h\nu)/(\tfrac{1}{2}m_e v^{2})$ vertically, and plot
+$(\tfrac{1}{2}m_e v^{2})/(2R_y)$ horizontally.  This 2-dimensional plot
+can be split into several different regions, in each of which the details
+of the emission process are different.
+
+%--- Forbidden region ---------------------------------------------------
+\bigskip
+\noindent\textit{Forbidden region}\quad
+The individual photons emitted while scattering cannot have energies
+greater than the electron kinetic energy---unless the electron gets
+captured into a bound state around the ion.  But capture produces
+``free-bound'' rather than bremsstrahlung radiation (\S\,2.2).
+Consequently, the region
+\begin{equation}
+  (h\nu)/(\tfrac{1}{2}m_e v^{2}) > 1
+  \tag{2.1.9a}
+\end{equation}
+of Figure~\ref{fig:2.1.1} is a ``forbidden region''; no bremsstrahlung
+is emitted in this region; $d\sigma/d\nu$ vanishes in this region.
+
+%--- Photon-discreteness region -----------------------------------------
+\bigskip
+\noindent\textit{Photon-discreteness region}\quad In the region
+\begin{equation}
+  \tfrac{1}{3} < (h\nu)/(\tfrac{1}{2}m_e v^{2}) \le 1
+  \tag{2.1.9b}
+\end{equation}
+no more than 3~photons can be emitted by each scattering.  This ``photon
+discreteness'' has a significant effect on the emission cross section,
+cutting it down toward zero as one approaches the edge of the forbidden
+region, $(h\nu)/(\tfrac{1}{2}m_e v^{2}) = 1$.  No classical calculation
+can reveal such an effect; the photon-discreteness region must be
+analyzed in a quantum mechanical manner; see, e.g., Heitler
+\cite{Heitler1954}, and see below.
+
+%=============================================================================
+% Large-angle region (page 350)
+%=============================================================================
+
+\bigskip
+\noindent\textit{Large-angle region}\quad
+All small-angle scatterings last too long
+($\Delta\tau \sim b/v > b_{s-1}/v$; cf.\ eq.~(2.1.4)) to produce any
+radiation of $\tau = 1/\omega < b_{s-1}/v$; cf.\ eq.~(2.1.4).
+Consequently, in the region
+\begin{equation}
+  \frac{h\nu}{\tfrac{1}{2}m_e v^{2}}
+  > \frac{h\omega}{\tfrac{1}{2}m_e v^{2}}
+  = \left(\frac{\tfrac{1}{2}m_e v^{2}}{Z^{2}R_y}\right)^{\!1/2}
+  \tag{2.1.10}
+\end{equation}
+only large-angle scatterings produce radiation.  This region is shown in
+Figure~\ref{fig:2.1.1}.  The power per unit frequency emitted at a fixed
+frequency~$\nu$ in this region is
+\begin{equation}
+  \mathscr{P}_\nu
+  = 2\pi \int_0^{b_{\max}} I(\omega)\,S\,2\pi\,b\,db\,,
+  \tag{2.1.11a}
+\end{equation}
+where $I(\omega)$ is given by the large-angle formula~(2.1.6), and
+$b_{\max}$ is the ``cutoff''
+\begin{equation}
+  b_{\max} = (2c^{2}\,Zr_0\,b_{s-1}^{3})^{1/6}
+  \tag{2.1.11b}
+\end{equation}
+in that formula.
+
+Performing the integration, dividing by $S\,h\nu$ to obtain
+$d\sigma/d\nu$, and reexpressing the result in terms of fundamental
+atomic constants, one obtains
+\begin{equation}
+  \frac{d\sigma}{d\nu}
+  = \frac{2^{1/3}\,16\,\alpha\,c^{2}\,Z^{2}\,r_0^{2}}
+         {3^{5/3}\;v^{2}}\,.
+\end{equation}
+
+A more exact classical calculation gives a slightly different numerical
+coefficient:
+\begin{equation}
+  \left(\frac{d\sigma}{d\nu}\right)_{\!\text{LA}}
+  = \frac{16\pi}{3\sqrt{3}}\;
+    \frac{\alpha\,c^{2}\,Z^{2}\,r_0^{2}}{v^{2}}\,.
+  \tag{2.1.12}
+\end{equation}
+
+\noindent(Here ``LA'' stands for ``large-angle region''.)
+
+In other regions of Figure~\ref{fig:2.1.1}, one gets other formulas for
+$d\sigma/d\nu$ (see below).  It is conventional in all regions to lump
+the deviations from this large-angle cross section into a correction
+$G(\nu,v)$ which is called the ``Gaunt factor'':
+\begin{equation}
+  G(\nu,v)
+  \equiv \frac{(d\sigma/d\nu)}{(d\sigma/d\nu)_{\text{LA}}}\,.
+  \tag{2.1.13}
+\end{equation}
+
+Thus, in the large-angle region $G = 1$; and in the forbidden region
+$G = 0$.  Throughout the large-angle and photon-discreteness portion of
+the large-angle region, $G$~remains approximately~1; see
+Figure~\ref{fig:2.1.1}.
+
+%=============================================================================
+% Small-angle, classical region (pages 350--351)
+%=============================================================================
+
+\bigskip
+\noindent\textit{Small-angle, classical region}\quad
+In the region $\tau = 1/\omega \gg b_{s-1}/v$---i.e.
+\begin{equation}
+  \frac{h\nu}{\tfrac{1}{2}m_e v^{2}}
+  \ll \left(\frac{\tfrac{1}{2}m_e v^{2}}{2R_y}\right)^{\!1/2},
+  \tag{2.1.14}
+\end{equation}
+radiation is produced by small-angle scatterings as well as by
+large-angle scatterings.  As a function of impact parameter~$b$, the
+energy radiated by a single electron is constant in the large-angle
+region, $b < b_{s-1}$ [eq.~(2.1.6b)], and decreases as~$1/b^{2}$ in
+the small-angle region, $b > b_{s-1}$ [eq.~(2.1.4)].  Hence, when one
+integrates over $2\pi\,b\,db$ to get the power radiated,
+$\mathscr{P}_\nu$, one obtains
+
+\smallskip
+\noindent(contribution from small angles)
+$\displaystyle{}= \ln\!\left(\frac{b_{\max}}{b_{s-1}}\right)$,
+
+\smallskip
+\noindent(contribution from large angles) ${}= \text{const}$,
+
+\smallskip
+\noindent where $b_{\max}$ is the cutoff in the small-angle region
+(eq.~2.1.4):
+\begin{equation}
+  b_{\max} = v/\omega.
+  \tag{2.1.15}
+\end{equation}
+
+Since the small-angle contribution is logarithmically dominant, one can
+ignore the contribution from large-angle scatterings and calculate
+\begin{equation}
+  \frac{d\sigma}{d\nu}
+  = \frac{\mathscr{P}_\nu}{S\,h\nu}
+  = \frac{16\,\alpha\,c^{2}\,Z^{2}\,r_0^{2}}{3\,v^{2}}\,
+    \ln\!\left(\frac{b_{\max}}{b_{s-1}}\right).
+  \tag{2.1.16}
+\end{equation}
+
+\noindent A more exact classical calculation gives a slightly different
+argument in the logarithm:
+\begin{equation}
+  \frac{d\sigma}{d\nu}
+  = \frac{16\,\alpha\,c^{2}\,Z^{2}\,r_0^{2}}{3\,v^{2}}\,
+    \ln\!\left(\frac{2\,b_{\max}}{\xi\;b_{s-1}}\right),
+  \tag{2.1.18}
+\end{equation}
+where $\xi = 1.781\ldots$ is the ``Euler constant''.  Consequently, the
+Gaunt factor for the small-angle, classical region is
+\begin{equation}
+  G(\nu,v)
+  = \frac{\sqrt{3}}{\pi}\,
+    \ln\!\left[
+      \frac{2}{\xi}
+      \left(\frac{\tfrac{1}{2}m_e v^{2}}{h\nu}\right)
+      \left(\frac{\tfrac{1}{2}m_e v^{2}}{2R_y}\right)^{\!1/2}
+    \right].
+  \tag{2.1.19}
+\end{equation}
+
+Actually, this small-angle classical result is not valid throughout the
+region~(2.1.14).  The uncertainty principle requires a modification at
+electron energies $\tfrac{1}{2}m_e v^{2}$ larger than~$Z^{2}R_y$.
+
+%=============================================================================
+% Small-angle, uncertainty-principle region (pages 351--352)
+%=============================================================================
+
+\bigskip
+\noindent\textit{Small-angle, uncertainty-principle region}\quad
+Consider an electron with impact parameter~$b$ and speed~$v$.  The
+electron is actually not a classical object; rather, it is a
+quantum-mechanical wave packet.  To scatter with impact parameter~$b$,
+the wave packet (i)~must have transverse dimensions, $\Delta x$, less
+than~$b$
+\begin{equation}
+  \Delta x < b,
+\end{equation}
+and (ii)~must not spread transversely by more than~$b$ during the
+classical scattering time $\Delta t = b/v$
+\begin{equation}
+  b > \left(\frac{\text{spreading}}{\text{during }\Delta t}\right)
+  = \left(\frac{\Delta p_x}{m_e}\right)\Delta t
+  > \left(\frac{\hbar}{m_e\,\Delta x}\right)\Delta t
+  > \frac{\hbar}{m_e\,v}
+  = \frac{b}{m_e\,v}\,\frac{\hbar}{b}\,.
+\end{equation}
+
+\noindent Thus, the uncertainty principle (``$\ge$'' in the above
+equation) prevents the existence of scatterings with~$b$ less than the
+electron de~Broglie wavelength
+\begin{equation}
+  b_{dB} = \hbar / m_e v.
+  \tag{2.1.20}
+\end{equation}
+
+If $b_{dB} < b_{s-1}$, this limitation has no effect on small-angle
+scatterings; and the small-angle, classical Gaunt factor~(2.1.19) is
+valid.  If $b_{dB} > b_{s-1}$, the uncertainty principle comes into
+play, and one must use~$b_{dB}$ rather than~$b_{s-1}$ as the lower
+limit on the small-angle integral~(2.1.17) for $d\sigma/d\nu$.  The
+result is
+\begin{equation}
+  \frac{d\sigma}{d\nu}
+  = \frac{16\,\alpha\,c^{2}\,Z^{2}\,r_0^{2}}{3\,v^{2}}\,
+    \ln\!\left(\frac{2\,b_{\max}}{\xi\;b_{dB}}\right),
+  \tag{2.1.21}
+\end{equation}
+corresponding to the Gaunt factor
+\begin{equation}
+  G(\nu,v)
+  = \frac{\sqrt{3}}{\pi}\,
+    \ln\!\left(\frac{2\,b_{\max}}{\xi\;b_{dB}}\right)
+  = \frac{\sqrt{3}}{\pi}\,
+    \ln\!\left[
+      \frac{2}{\xi}
+      \left(\frac{\tfrac{1}{2}m_e v^{2}}{h\nu}\right)
+    \right].
+  \tag{2.1.22}
+\end{equation}
+
+The ``small-angle, uncertainty-principle region,'' in which this
+expression holds, is separated from the ``small-angle, classical
+region'' by the line
+\begin{equation}
+  b_{dB}/b_{s-1}
+  = (\tfrac{1}{2}m_e v^{2})/(Z^{2}R_y) = 1.
+\end{equation}
+
+\noindent See Figure~\ref{fig:2.1.1}.
+
+From Figure~\ref{fig:2.1.1} it is clear that the uncertainty principle
+cannot have any effect on the large-angle region.
+
+%=============================================================================
+% Figure 2.1.1
+%=============================================================================
+
+\begin{figure}[htbp]
+\centering
+% \includegraphics[width=\columnwidth]{fig_2_1_1}
+\fbox{\parbox{0.9\columnwidth}{\centering
+[Figure 2.1.1 placeholder]\\[6pt]
+Horizontal axis:
+$\bigl(\tfrac{1}{2}m_e v^{2}\bigr)\big/\bigl(Z^{2}R_y\bigr)$.\quad
+Vertical axis:
+$h\nu\big/\bigl(\tfrac{1}{2}m_e v^{2}\bigr)$.\\[4pt]
+Five regions shown:\\[2pt]
+(1) Forbidden region ($G = 0$, $d\sigma/d\nu = 0$)
+    --- above the line $h\nu/(\tfrac{1}{2}m_ev^2) = 1$.\\
+(2) Photon-discreteness region ($G \lesssim 1$)
+    --- between $\tfrac{1}{3}$ and~$1$.\\
+(3) Large-angle region ($G = 1$)
+    --- below discreteness, above
+    $h\nu/(\tfrac{1}{2}m_ev^2) =
+     [(\tfrac{1}{2}m_ev^2)/(2R_y)]^{1/2}$.\\
+(4) Small-angle, classical region:
+    $G = \dfrac{\sqrt{3}}{\pi}
+    \ln\!\Bigl[\dfrac{4}{\xi}
+    \bigl(\dfrac{\frac{1}{2}m_ev^{2}}{h\nu}\bigr)
+    \bigl(\dfrac{\frac{1}{2}m_ev^{2}}{2R_y}\bigr)^{\!1/2}\Bigr]$
+    --- lower-left.\\[4pt]
+(5) Small-angle, U.P.\ (uncertainty-principle) region:
+    $G = \dfrac{\sqrt{3}}{\pi}
+    \ln\!\Bigl[\dfrac{4}{\xi}
+    \bigl(\dfrac{\frac{1}{2}m_ev^{2}}{h\nu}\bigr)\Bigr]$
+    --- lower-right.
+}}
+\caption{Regions and Gaunt factors for bremsstrahlung of frequency~$\nu$
+emitted by an electron of kinetic energy~$\tfrac{1}{2}m_e v^{2}$
+when it impinges on an ion of charge~$Ze$.}
+\label{fig:2.1.1}
+\end{figure}
+
+out that throughout the photon-discreteness portion of the large-angle region,
+$G$ remains approximately 1; see Figure~2.1.1.
+
+\textit{Small-angle, classical region}\quad In the region $\tau = 1/\omega \gg b_{s-l}/v$---i.e.
+\begin{equation}
+\frac{h\nu}{\frac{1}{2}m_e v^2}
+\ll \left(\frac{\frac{1}{2}m_e v^2}{Z^2 R_y}\right)^{1/2}
+\tag{2.1.14}
+\end{equation}
+
+In the ``photon-discreteness'' portion of the small-angle, uncertainty-principle
+region, discreteness effects modify the Gaunt factor (2.1.22) into the form
+\begin{subequations}
+\begin{align}
+G(\nu,v) &= \frac{\sqrt{3}}{\pi}\,
+\ln\!\left[\frac{\frac{1}{2}m_e(v_i + v_f)^2}{h\nu}\right],
+\tag{2.1.24a}\\[6pt]
+G(\nu,v) &= \frac{\sqrt{3}}{\pi}\,
+\ln\!\left[\frac{v_i + v_f}{v_i - v_f}\right]^2,
+\tag{2.1.24b}
+\end{align}
+\end{subequations}
+
+Here $v_i$ and $v_f$ are the electron speeds before and after the collision:
+\begin{equation}
+\tfrac{1}{2}m_e v_f^2 = \tfrac{1}{2}m_e v_i^2 - h\nu.
+\end{equation}
+
+[Expression (2.1.24) is the result of a quantum-mechanical Born-approximation
+calculation, valid throughout the small-angle, uncertainty-principle region.]
+
+%%---------------------------------------------------------------------------
+%% Radiation from a plasma
+%%---------------------------------------------------------------------------
+
+\bigskip
+\textit{Radiation from a plasma}
+
+Consider a plasma which may contain a variety of ionic species.  Focus attention
+on radiation from all ions of a particular type, with charge $Ze$ and atomic weight
+$A$.  Let $C_A$ be the concentration by mass of the species of atom that gives rise to
+this ion, and let $f_i$ be the fraction of all such atoms ionized to the state of interest.
+Let $f_e$ be the number of unbound electrons per baryon in the gas.  Then
+\begin{equation}
+n_I = \text{(number of ions per unit volume)} = f_i C_A \rho_0 / A m_p.
+\tag{2.1.25}
+\end{equation}
+
+Here $\rho_0$ is the density of rest mass.  (Of course, $f_i \leq 1$; $C_A \leq 1$.)  The ions
+and electrons both have Maxwell velocity distributions; but because $m_e \ll A m_p$,
+the velocities of the electrons and their accelerations during Coulomb scattering
+are far greater than those of the ions.  Therefore, in calculating bremsstrahlung
+one can regard the ions as at rest.  The number of photons per unit mass of plasma
+is $f_e/m_p$, so the total power per unit frequency emitted from one gram of plasma
+by electron-ion scatterings is
+\begin{equation}
+\varepsilon_\nu
+= \frac{C_A f_i}{A m_p}
+\underbrace{\vphantom{\bigg|}\quad}_{\substack{
+\text{fractions of all} \\
+\text{ions per} \\
+\text{unit mass}
+}}
+\cdot \int
+\underbrace{\vphantom{\bigg|}\quad}_{\substack{
+\text{number} \\
+\text{of electrons}
+}}
+\underbrace{\vphantom{\bigg|}\quad}_{\substack{
+\text{electrons that have} \\
+\text{speeds $v$ in range $dv$}
+}}
+\frac{f_e \rho_0}{m_p}\;v\,h\nu\;
+\frac{d\sigma}{dv}\;dv.
+\tag{2.1.26}
+\end{equation}
+
+Here $T$ is the temperature in the plasma.  By inserting into the integrand
+expressions (2.1.12) and (2.1.13) for $d\sigma/dv$ and performing the integration, one
+obtains
+\begin{align}
+\varepsilon_\nu
+&= \frac{C_A f_i f_e^2}{A m_p}\,
+\frac{32\pi e^6}{3\,m_e c^3}\,
+\left(\frac{2\pi m_e}{3kT}\right)^{\!1/2}\!
+\frac{\rho_0^2}{m_p^2}\;
+e^{-h\nu/kT}\;
+\bar{G}(\nu,T)
+\notag\\[4pt]
+&= 2.5 \times 10^{10}\;
+\frac{\text{erg}}{\text{g\;sec\;Hz}}\;
+\left(\frac{C_A f_i f_e^2}{A}\right)
+\left(\frac{\rho_0}{\text{g\;cm}^{-3}}\right)
+\left(\frac{\rho_0}{A}\right)
+T_K^{\,1/2}\;e^{-h\nu/kT}\;\bar{G}(\nu,T).
+\tag{2.1.27}
+\end{align}
+
+%%---------------------------------------------------------------------------
+%% Mean Gaunt factor \bar{G}
+%%---------------------------------------------------------------------------
+
+Here $T_K$ is temperature measured in ${}^\circ$K, and $\bar{G}(\nu,T)$ is the ``Maxwell--Boltzmann-averaged
+Gaunt factor'', also called the ``mean Gaunt factor'':
+\begin{equation}
+\bar{G}(\nu,T) = \int_0^\infty
+G\!\left(\nu,\;v = \left[\frac{2(xkT + h\nu)}{m_e}\right]^{1/2}\right)
+e^{-x}\,dx.
+\tag{2.1.28}
+\end{equation}
+
+Corresponding to the 2-dimensional plot of Gaunt factors (Figure~2.1.1) one
+can make a 2-dimensional plot of mean Gaunt factors (Figure~2.1.2).  It is
+straightforward to calculate the mean Gaunt factors shown there (up to
+quantities of order unity) from the Gaunt factors of Figure~2.1.1.  Notice that,
+
+%%---------------------------------------------------------------------------
+%% Figure 2.1.2 — Mean Gaunt factors
+%%---------------------------------------------------------------------------
+
+\begin{figure}[htbp]
+\centering
+% \includegraphics[width=\columnwidth]{fig_2_1_2}
+\fbox{\parbox{0.9\columnwidth}{\centering [Figure 2.1.2 placeholder]\\[6pt]
+Mean Gaunt factors for bremsstrahlung of frequency $\nu$ emitted by
+electron-ion collisions in a plasma of temperature $T$.\\[4pt]
+Horizontal axis: $h\nu/kT$.\\
+Vertical axis: $(kT)/(Z^2 R_y)$.\\[4pt]
+Regions shown:\\
+--- ``Small-angle, u.p., tail region'',
+$\bar{G} = \bigl(\frac{3}{\pi}\bigr)\,\bigl(\frac{kT}{h\nu}\bigr)^{1/2}$\\
+--- ``Small-angle, u.p.\ region'',
+$\bar{G} = \frac{\sqrt{3}}{\pi}\ln\!\left[\frac{4}{\xi}\,\frac{kT}{h\nu}\right]$\\
+--- ``Small-angle, classical region'',
+$\bar{G} = \frac{\sqrt{3}}{\pi}\,\ln\!\left[\left(\frac{4}{\xi^{3/2}}\right)
+\left(\frac{kT}{h\nu}\right)\left(\frac{kT}{Z^2 R_y}\right)^{1/2}\right]$\\
+--- ``Large-angle region'', $\bar{G} = 1$\\
+--- ``Large-angle, tail region'', $\bar{G} = 1$\\
+--- ``Forbidden region''}}
+\caption{\textit{Figure~2.1.2.}\ Mean Gaunt factors for bremsstrahlung of frequency $\nu$ emitted by
+electron-ion collisions in a plasma of temperature~$T$.}
+\label{fig:2.1.2}
+\end{figure}
+
+aside from quantities of order unity, the mean Gaunt factors in the large-angle
+and small-angle regions are obtained by simply taking the Gaunt
+factors and making the replacement $\frac{1}{2}m_e v^2 \approx kT$:
+\begin{equation}
+\bar{G}(\nu,kT) \simeq G\bigl(\nu,\;\tfrac{1}{2}m_e v^2 = kT\bigr).
+\end{equation}
+
+Notice also that the ``forbidden region'' of the Gaunt-factor plot is replaced, in
+the mean-Gaunt-factor plot, by ``tail regions''.  The radiation in these tail regions
+is produced by the high-energy tail, $\frac{1}{2}m_e v^2 \approx h\nu \gg kT$, of the Maxwell--Boltzmann
+distribution.
+
+Tables of mean Gaunt factors, calculated with much higher accuracy than
+Figure~2.1.2, are given by \citet{Green1959} and by \citet{Karzas1961}.
+
+From Figure~2.1.1 it is clear that the uncertainty principle cannot have any
+effect on the large-angle region.
+
+%%---------------------------------------------------------------------------
+%% Total emissivity and frequency-averaged mean Gaunt factor
+%%---------------------------------------------------------------------------
+
+The total energy emitted by electron-ion collisions is obtained by integrating
+expression (2.1.27) over frequency:
+\begin{align}
+e &= \int \varepsilon_\nu\,d\nu
+= \frac{16\,C_A f_i f_e^2}{3}\;
+\frac{\alpha\,m_e c^2_0}{A}\;
+\left(\frac{2\pi kT}{m_e c^2}\right)^{\!1/2}\!
+\frac{\rho_0}{m_p^2}\;
+\left(\frac{C_A f_i f_e^2}{A}\right)
+\left(\frac{\rho_0}{\text{g\;cm}^{-3}}\right)
+T_K^{\,1/2}\;\bar{G}(T)
+\notag\\[4pt]
+&= 5.2 \times 10^{20}\;
+\frac{\text{ergs}}{\text{g\;sec}}\;
+\left(\frac{C_A f_i f_e^2}{A}\right)
+\left(\frac{\rho_0}{\text{g\;cm}^{-3}}\right)
+T_K^{\,1/2}\;\bar{G}(T).
+\tag{2.1.29}
+\end{align}
+
+Here $\bar{G}(T)$ is the frequency-averaged mean Gaunt factor
+\begin{equation}
+\bar{G}(T) = \int_0^\infty \bar{G}(\nu = xkT/h,\;T)\;e^{-x}\,dx.
+\tag{2.1.30}
+\end{equation}
+
+From a value of $\bar{G} \simeq 1.2$ at $kT/Z^2 R_y \sim 0.01$, it increases gradually to a maximum
+of $1.42$ at $kT/Z^2 R_y \sim 1$, and then decreases gradually toward an asymptotic,
+high-temperature value of $1.103$ at $kT/Z^2 R_y > 100$; see Figure~2 of \citet{Green1959}.
+
+In a plasma at nonrelativistic temperatures, the radiation from electron-electron
+collisions and from ion-ion collisions is negligible compared to electron-ion
+radiation.  This is because (i) when identical particles scatter, the first time
+derivative of the electric dipole moment is conserved, so only radiation of
+quadrupole order and higher [with intensity $\sim(v/c)^2$ less than dipole radiation]
+can be emitted; (ii) the speeds and accelerations of colliding ions are far less than
+those of electrons because of their much larger masses.
+
+Equations (2.1.27) and (2.1.29), together with Figures~2.1.2 and~2.1.3, are
+the chief results of astrophysical interest from this section.  When dealing with
+atoms that are only partially ionized, one must sometimes correct these results
+for screening of the nuclear charge by the bound electrons; see, e.g.,
+\citet{Ginzburg1967}.  For temperatures approaching and exceeding $kT = m_e c^2$,
+relativistic effects and electron-electron collisions modify the emissivity
+(2.1.29) to the form
+\begin{align}
+e &= 5.2 \times 10^{20}\;
+\frac{\text{ergs}}{\text{g\;sec}}\;
+\left(\frac{C_A f_i f_e^2}{A}\right)
+\left(\frac{\rho_0}{\text{g\;cm}^{-3}}\right)
+T_K^{\,1/2}\bigl(1 + 4.4 \times 10^{-10}\,T_K\bigr)\,\bar{G}(T).
+\tag{2.1.31}
+\end{align}
+
+\noindent (\citealt{Ginzburg1967}).
+
+
+%%---------------------------------------------------------------------------
+%%  SECTION 2.2 — Free-Bound Radiation
+%%---------------------------------------------------------------------------
+
+\subsection{Free-Bound Radiation}
+\label{sec:2.2}
+
+\textit{Basic references}\quad \citet{Jackson1962}; \citet{Ginzburg1967}.
+
+\bigskip
+\textit{Basic physics and formulas}
+
+When an electron of kinetic energy
+\begin{equation}
+\tfrac{1}{2}m_e v^2 \leq Z^2 R_y
+\end{equation}
+impinges on an ion, there is a significant probability that, instead of scattering
+with the emission of bremsstrahlung, it will get captured into a bound state with
+an accompanying emission of ``free-bound'' radiation.
+
+We shall not compute here the details of the radiation.  Instead we cite the
+results of such a computation from the above references.
+
+Consider a plasma at temperature $T$ and density of rest mass $\rho_0$.  Let $C_A$ be
+the concentration by mass of a particular atom in the plasma; let $f_i$ be the fraction
+of all such atoms ionized into a given state, with charge $Ze$; and let $n_q$ be the
+principal quantum number of that state, and $E_i$ its
+ionization energy.  Then the emissivity due to such transitions is
+\begin{align}
+\varepsilon_\nu &= 8c^2
+\left(\frac{C_A f_i f_e^2}{An_q^5}\right)
+\left(\frac{\alpha^2 m_e e^2}{m_p}\right)^{\!3/2}
+\rho_0
+\left(\frac{\rho_0}{3kT}\right)^{\!3/2}
+e^{-(h\nu - E_i)/kT}\;G_{bf}
+\notag\\[4pt]
+&= 3.9 \times 10^{15}\;
+\frac{\text{ergs}}{\text{g\;sec\;Hz}}\;
+\left(\frac{C_A f_i f_e^2}{An_q^5}\right)
+\left(\frac{\rho_0}{\text{g\;cm}^{-3}}\right)
+T_K^{-3/2}\;e^{-(h\nu - E_i)/kT}\;G_{bf}.
+\tag{2.2.1}
+\end{align}
+
+Here $G_{bf}$ is a ``bound-free Gaunt factor'', analogous to the ``free-free'' Gaunt
+factors of \S\ref{sec:2.1}.  It depends on the kinetic energy
+\begin{equation}
+\tfrac{1}{2}m_e v^2 = h\nu - E_i
+\tag{2.2.2}
+\end{equation}
+of the electron that is captured, and on the structure of the bound state (which
+one characterizes by its quantum numbers $n_q, l_q, \ldots$):
+\begin{equation}
+G_{bf} = G_{bf}(h\nu - E_i;\;n_q, l_q, \ldots).
+\tag{2.2.3}
+\end{equation}
+
+Gaunt factors for various bound-free transitions of astrophysical interest are
+tabulated and graphed by \citet{Karzas1961}.  Energy conservation
+requires that all photons emitted have energies greater than $E_i$; consequently,
+\begin{equation}
+G_{bf} = 0 \quad \text{for} \quad h\nu - E_i < 0.
+\tag{2.2.4}
+\end{equation}
+
+In general, $G_{bf}$ ``turns on'' discontinuously at $h\nu = E_i$, with an initial value
+between ${\sim}\,0.5$ and ${\sim}\,1.5$:
+\begin{equation}
+G_{bf} \simeq 1 \quad \text{for} \quad 0 < h\nu - E_i \lesssim E_i.
+\tag{2.2.5}
+\end{equation}
+
+For $h\nu - E_i \gtrsim Z^2 R_y$, $G_{bf}$ typically remains within an order of magnitude of
+unity; as $h\nu - E_i \geq 10\,Z^2 R_y$, $G_{bf}$ falls rapidly.
+See \citet{Karzas1961}.
+
+The total emissivity, $e = \int \varepsilon_\nu\,d\nu$, due to a given free-bound transition is
+\begin{align}
+e &= 8\sqrt{3}\,c^2
+\left(\frac{C_A f_i f_e^2}{An_q^5}\right)
+\left(\frac{\alpha^2 m_e e^2}{m_p^2}\right)^{\!3/2}
+\rho_0
+\left(\frac{2\pi m_e c^2}{3kT}\right)^{\!1/2}
+T_K^{-1/2}\;\bar{G}_{bf}
+\notag\\[4pt]
+&= 4.2 \times 10^{26}\;
+\frac{\text{ergs}}{\text{g\;sec}}\;
+\left(\frac{C_A f_i f_e^2}{An_q^5}\right)
+\left(\frac{\rho_0}{\text{g\;cm}^{-3}}\right)
+T_K^{-1/2}\;\bar{G}_{bf}
+\tag{2.2.6}
+\end{align}
+
+where $\bar{G}_{bf}$, the mean Gaunt factor, depends only on temperature and on the
+bound state, and is approximately equal to one.
+\begin{equation}
+\bar{G}_{bf} = \int_0^\infty G_{bf}(h\nu - E_i = xkT;\;n_q, l_q, \ldots)\;e^{-x}\,dx \simeq 1.
+\tag{2.2.7}
+\end{equation}
+
+The total emissivity (2.2.6) due to a given free-bound transition, compared
+to the total emissivity (2.1.29) of free-free radiation from the same type of ion,
+is
+\begin{equation}
+\frac{\varepsilon_{fb}}{\varepsilon_{ff}}
+\simeq \frac{Z^2}{n_q^5}\,
+\left(\frac{8 \times 10^5}{T}\right).
+\tag{2.2.8}
+\end{equation}
+
+\citet{Ginzburg1967} states that for astrophysical plasmas the ratio of total free-bound
+radiation to total free-free radiation (summed over all states and all ions)
+generally is less than
+\begin{equation}
+\frac{\varepsilon_{fb\,\text{total}}}{\varepsilon_{ff\,\text{total}}}
+< \left(\frac{8 \times 10^5\,\text{K}}{T}\right).
+\tag{2.2.9}
+\end{equation}
+
+\subsection{Thermal Cyclotron and Synchrotron Radiation}
+\label{sec:2.3}
+
+\textit{Basic references}\quad Jackson~\cite{Jackson1962};\
+Ginzburg~\cite{Ginzburg1967}.
+
+\bigskip
+\noindent\textit{Power radiated by a single electron}
+
+\medskip
+Consider an electron of speed~$v$ and total mass-energy~$\gamma m_e c^2$,
+\begin{equation}
+\gamma \equiv (1 - v^2)^{-1/2},
+\tag{2.3.1}
+\end{equation}
+spiralling in a magnetic field of strength~$B$. The Lorentz 4-acceleration of the
+electron is
+\begin{equation}
+a^0 = 0, \qquad
+\mathbf{a} = (e / m_e c)\,\gamma\,\mathbf{v} \times \mathbf{B}.
+\tag{2.3.2}
+\end{equation}
+Consequently, the total power radiated---as obtained from the standard
+Lorentz-invariant equation,
+\begin{equation}
+\frac{dE}{dt} = \frac{2e^2}{3c^3}\,a^2
+\tag{2.3.3}
+\end{equation}
+
+\noindent---is
+\begin{equation}
+\frac{dE}{dt} = \frac{2\,r_0^2}{3\,c}\,(\gamma v_\perp)^2\,B^2.
+\tag{2.3.4}
+\end{equation}
+Here $v_\perp$ is the component of the electron velocity perpendicular to the magnetic
+field. If the electron is nonrelativistic, $v \ll c$, this radiation is called ``cyclotron
+radiation''. If the electron is ultrarelativistic, $\gamma \gg 1$, it is called ``synchrotron
+radiation''.
+
+\bigskip
+\noindent\textit{Cyclotron radiation from a nonrelativistic plasma}
+
+\medskip
+Consider a plasma with temperature
+\begin{equation}
+kT \ll m_e c^2, \quad \text{i.e.}\ T \lesssim 6 \times 10^9\;\text{K},
+\tag{2.3.5}
+\end{equation}
+and with a magnetic field of strength~$B$. As in the nonrelativistic case, radiation
+from protons spiralling
+in the magnetic field is smaller by a factor $(m_e/m_p)^3 \simeq 10^{-10}$ than that from
+electrons, since
+\begin{equation}
+\frac{dE}{dt} \propto \frac{v^2}{m^2} \propto \frac{1}{m^3}\,.
+\tag{2.3.6}
+\end{equation}
+(Recall: in thermal equilibrium the mean kinetic energies of protons and electrons
+are the same.) Hence, we can ignore protons and other ions when calculating
+cyclotron radiation. Let $f_e$ be the number of unbound electrons per baryon in
+the plasma. Then the total emissivity (ergs per second per gram of plasma) is
+\begin{equation}
+\varepsilon = f_e \left\langle \frac{dE}{dt} \right\rangle
+\bigg/\!\left(\frac{1}{m_p}\right),
+\tag{2.3.7}
+\end{equation}
+where $\langle\;\rangle$ denotes an average over the Maxwell-Boltzmann velocity distribution
+of the electrons. Since $\gamma = 1$, since 2 of the 3 spatial directions are orthogonal
+to~$B$, and since the mean kinetic energy per electron is $\tfrac{3}{2}kT$, we have
+\begin{equation}
+\langle \gamma v_\perp^2 \rangle
+= \frac{2}{3}\,\frac{2\,\bar{E}}{m_e}
+= \frac{2}{3}\,\frac{3kT}{m_e}
+= \frac{2kT}{m_e}\,.
+\tag{2.3.8}
+\end{equation}
+Combining this with equations~(2.3.4) and~(2.3.7), we obtain for the total
+emissivity of the plasma
+\begin{align}
+\varepsilon &= \frac{4}{3}\left(\frac{f_e\,r_0^2}{m_p}\right)
+\left(\frac{kT}{m_e c^2}\right) B^2
+\tag{2.3.9}\\
+&= (0.32\;\text{ergs/g\,sec})\;f_e\;T_{\rm K}\;B_G^2\,,
+\notag
+\end{align}
+where $T_{\rm K}$ is temperature in~${}^\circ$K and $B_G$ is magnetic field in Gauss.
+
+Each electron emits its radiation monochromatically, with the cyclotron
+frequency (orbital frequency of electron's spiral motion)
+\begin{equation}
+\nu_{\text{cyc}} = \frac{eB}{2\pi m_e c}
+= (2.79\;\text{MHz})\;B_G\,.
+\tag{2.3.10}
+\end{equation}
+
+Thus, if the magnetic field is uniform, the radiation will be monochromatic
+with this frequency. But in Nature the magnetic field will always be inhomo\-geneous,
+and the spectrum will show a spread proportional to the spread in~$B^2$.
+(Of course, there are always other sources of spread in the spectrum---e.g., doppler
+shifts and relativistic generation of harmonics.)
+
+\textit{Synchrotron radiation from a relativistic plasma.}
+
+\medskip
+\noindent
+Consider a plasma with temperature
+\begin{equation}
+kT \gg m_e c^2, \quad \text{i.e.}\ T \gg 6 \times 10^9\,\text{K},
+\tag{2.3.11}
+\end{equation}
+and with a magnetic field of strength $B$.
+As in the nonrelativistic case, radiation
+from protons and ions is totally negligible.
+The total emissivity due to electrons
+and positrons (recall: at $kT \gg m_e c^2$, there will be many electron-positron pairs!)
+is given, as before, by equation~(2.3.7); but now the factor $f_e$ must be the number
+of electrons and positrons per baryon,\footnote{The case of an optically thin plasma
+is of particular interest in astrophysics. The kinetic theory of the creation and
+annihilation of positrons in this case is somewhat complex; see, e.g.,
+\citet{BisnovatyiKogan1971}.}
+and the relevant, ultrarelativistic Maxwell--Boltzmann average is
+
+\begin{equation}
+\langle (\gamma v_\perp)^2 \rangle = \tfrac{2}{3}\langle\gamma^2\rangle
+= 8\left(\frac{kT}{m_e c^2}\right)^{\!2}.
+\tag{2.3.12}
+\end{equation}
+[One evaluates $\langle\gamma^2\rangle$ using the distribution function in phase space
+\begin{equation}
+\mathscr{N} = \frac{dN}{d^3 x\,d^3 p} \propto e^{-E/kT} = e^{-\gamma m_e c^2/kT},
+\tag*{}
+\end{equation}
+with
+\begin{equation}
+d^3 p = 4\pi c^{-3}E^2\,dE
+\tag*{}
+\end{equation}
+in ultrarelativistic limit;
+in particular
+\begin{equation}
+\langle\gamma^2\rangle = \frac{1}{(m_e c^2)^2}\,
+\frac{\displaystyle\int_0^\infty E^2\,e^{-E/kT}\,E^2\,dE}
+{\displaystyle\int_0^\infty e^{-E/kT}\,E^2\,dE}
+= 12\left(\frac{kT}{m_e c^2}\right)^{\!2}.\,]
+\tag*{}
+\end{equation}
+
+Combining equations~(2.3.12), (2.3.7), and~(2.3.4), we obtain for the total
+emissivity of the plasma
+\begin{align}
+\varepsilon &= \frac{16}{3}\left(\frac{r_0^2 c}{m_p}\right)
+\left(\frac{kT}{m_e c^2}\right)^{\!2} B^2 \notag \\
+&= (2.2 \times 10^{-10}~\text{ergs/g\,sec})\,f_e\,T_K^2\,B_G^2.
+\tag{2.3.13}
+\end{align}
+
+In the ultrarelativistic case the electrons do not emit monochromatically.
+An electron of energy $\gamma m_e c^2$ beams most of its radiation into a forward cone of
+half-angle $\alpha = 1/\gamma$ (special-relativistic ``headlight effect'').
+Since the electron is
+headed toward the observer with speed $v$ when its cone is directed toward him,
+the cone sweeps past the observer in time
+\begin{equation}
+\Delta t = (1-v^2)\left(\frac{2\alpha}{\omega_{\text{cyc}}}\right) = (1-v^2)\,\frac{1}{\gamma^3\,\omega_{\text{cyc}}}
+= \frac{1}{\gamma^3\,\omega_{\text{cyc}}}.
+\tag{2.3.14}
+\end{equation}
+Here $\omega_{\text{cyc}}$ is the angular velocity of the electron in its spiralling orbit
+\begin{equation}
+\omega_{\text{cyc}} = \frac{eB}{\gamma m_e c}.
+\tag{2.3.15}
+\end{equation}
+
+Thus, the radiation comes in short bursts, of duration $\sim\!\Delta t = 1/(\gamma^3\omega_{\text{cyc}})$,
+separated by long intervals of time $2\pi/\omega_{\text{cyc}}$.
+When Fourier analyzed, such
+radiation must be concentrated near the ``critical frequency''
+\begin{equation}
+\nu_{\text{crit}} = \tfrac{3}{2}\,\nu_{\text{cyc}} = \gamma^2\,eB/m_e c.
+\tag{2.3.16}
+\end{equation}
+
+A detailed calculation [chapter~14 of \citet{Jackson1962}] reveals a fairly broad
+spectrum which rises as $\nu^{1/3}$ at low frequencies, which peaks at
+\begin{equation}
+\nu_{\text{peak}} = 0.29\,\nu_{\text{crit}},
+\tag{2.3.17}
+\end{equation}
+and which decays exponentially $\sim\nu^{1/2}\,e^{-2\nu/\nu_{\text{crit}}}$, at $\nu \gg \nu_{\text{crit}}$.
+When averaged over the relativistic plasma, such a spectrum will have a broad
+peak, with maximum located at
+\begin{equation}
+\nu_{\text{peak, plasma}} = \frac{\gamma_{\text{peak}}^2\,eB}{4\,m_e c}
+\simeq 12(kT/m_e c^2)^2
+\quad\left[\text{value of $\gamma_{\text{peak}}^2$ for electrons of}\right]
+\tag{2.3.18}
+\end{equation}
+\begin{equation}
+\nu_{\text{peak, plasma}} \simeq (100~\text{MHz})\,T_{10}^2 B_G.
+\tag*{}
+\end{equation}
+Here $T_{10}$ is temperature in units of $10^{10}$\,K.
+At $\nu \ll \nu_{\text{peak, plasma}}$
+the spectrum will rise as a power law.
+
+%%% ====================================================================
+%%% SECTION 2.4 — Electron Scattering of Radiation
+%%% ====================================================================
+
+\subsection{Electron Scattering of Radiation}
+\label{sec:2.4}
+
+\textit{Basic references}
+
+\citet{Jackson1962}, \S\,14.7 of \citet{Jackson1962b};
+\S\,12.3 of \citet{Leighton1959};
+\citet{Kompaneets1957}; \citet{Weyman1965};
+\citet{Sunyaev1973}.
+
+\medskip
+\noindent
+\textit{Basic physics and formulas}
+
+\medskip
+\noindent
+In discussing electron scattering, we shall confine attention to the nonrelativistic
+case---i.e.\ we shall demand that the temperature of the gas and the photon
+frequencies satisfy
+\begin{equation}
+kT \ll m_e c^2 \quad (T \ll 6 \times 10^9\,\text{K}); \quad
+h\nu \ll m_e c^2 = 500~\text{keV}.
+\tag{2.4.1}
+\end{equation}
+
+The differential cross section for a free electron to scatter a photon has the
+form
+\begin{equation}
+\frac{d\sigma_e}{d\Omega} = \tfrac{1}{2}\,r_0^2\,(1 + \cos^2\theta),
+\tag{2.4.2}
+\end{equation}
+where $\theta$ is the angle between incoming and outgoing photon.  The total
+cross section (``Thomson cross section''), obtained by integrating over all
+directions, is
+\begin{equation}
+\sigma_T = (8\pi/3)\,r_0^2 = 0.665 \times 10^{-24}~\text{cm}^2.
+\tag{2.4.3}
+\end{equation}
+It is important for astrophysical applications that the scattering cross section
+is ``color blind'' (no dependence on frequency).  See, e.g., \S\,4.
+
+It is also important that the differential cross section is symmetric between
+forward and backward directions.  This guarantees, for example, that on the
+average a scattered photon transmits \textit{all} of its momentum to the electron
+(Here $\mathbf{n}_s$ is a unit vector in the direction of the initial photon motion).  By
+contrast, only a tiny fraction of the photon energy is transmitted to the electron.
+In a frame where the electron is initially at rest, it receives a kinetic energy
+\begin{subequations}
+\begin{equation}
+\Delta E_\gamma = (h\nu/m_e c^2)\,h\nu\,(1-\cos\theta).
+\tag{2.4.4a}
+\end{equation}
+\begin{equation}
+(\Delta\mathbf{p}_e) = \mathbf{p}_\gamma = (h\nu/c)\,\mathbf{n}_s.
+\tag{2.4.4b}
+\end{equation}
+\end{subequations}
+(Recall: we have assumed $h\nu/m_e c^2 \ll 1$.)
+
+Consider a monochromatic beam of photons, with frequency $\nu$, moving
+through a thermalized plasma of temperature $T$.  Scattering by protons and ions
+will be negligible compared to scattering by electrons, since
+\begin{equation}
+\sigma_e \propto r_0^2 = (e^2/m_e c^2)^2 \propto 1/(\text{mass of scatterer})^2.
+\tag{2.4.5}
+\end{equation}
+
+On the average, how much energy $\langle\Delta E_\gamma\rangle$ is transmitted to the electron in a
+single scattering?  The answer for electrons nearly at rest ($kT \ll h\nu$) is obtained
+by averaging expression~(2.4.4b) over all angles.  Because of the forward-backward
+symmetry of the differential cross section, $\cos\theta$ averages to zero and one obtains
+\begin{equation}
+\langle\Delta E_\gamma\rangle = (h\nu/m_e c^2)\,h\nu, \quad \text{if } kT \ll h\nu.
+\tag{2.4.6}
+\end{equation}
+
+One can calculate $\langle\Delta E_\gamma\rangle$ for higher temperatures by invoking conservation
+of 4-momentum, and averaging over all angles and electron speeds.  However,
+such a calculation is rather long and messy.  To obtain the answer more easily,
+one can use the following trick: An examination of the law of 4-momentum
+conservation convinces one that $\langle\Delta E_\gamma\rangle$ must have the temperature dependence
+\begin{equation}
+\langle\Delta E_\gamma\rangle \propto (h\nu - \alpha kT),
+\tag{2.4.7}
+\end{equation}
+where $\alpha$ is a constant to be calculated.  (Thus, if $h\nu > \alpha kT$, the electrons get
+heated by the photons; if $h\nu < \alpha kT$, they get cooled.)
+This law will reduce to
+expression~(2.4.6) for $kT \ll h\nu$ if and only if the proportionality constant is
+$h\nu/m_e c^2$:
+\begin{equation}
+\langle\Delta E_\gamma\rangle = (h\nu/m_e c^2)(h\nu - \alpha kT).
+\tag*{}
+\end{equation}
+
+To calculate the constant $\alpha$, imagine the following experiment.  Place a large
+number of photons and electrons into a box with perfectly reflective walls.
+Require that the photons and electrons interact only by electron scattering.  Then
+photons cannot be created or destroyed; only scattered.  Hence, when thermal
+equilibrium is reached, the photons acquire a Boltzmann energy distribution,
+rather than a Planck distribution.  (Recall that stimulated emissions are responsible
+for Planckian deviations from the Boltzmann law; \S\,2.5.)  Since photons have
+zero rest mass, their Boltzmann distribution
+\begin{equation}
+\mathscr{N} = \frac{dN}{d^3 x\,d^3 p} \propto e^{-h\nu/kT},
+\tag*{}
+\end{equation}
+corresponds to a number of photons per unit frequency given by
+\begin{equation}
+\frac{dN}{d\nu} \propto \nu^2\,e^{-h\nu/kT},
+\tag{2.4.8}
+\end{equation}
+and corresponds to
+\begin{equation}
+\langle h\nu\rangle = 3kT, \qquad
+\langle (h\nu)^2\rangle = 12(kT)^2.
+\tag*{}
+\end{equation}
+Thus, for our thought experiment the energy transfer in each collision, expression
+(2.4.7) averaged over the equilibrium photon distribution, is
+\begin{equation}
+\langle\langle\Delta E_\gamma\rangle\rangle = (3kT/m_e c^2)(4-\alpha)\,kT.
+\tag*{}
+\end{equation}
+
+But in equilibrium there must be no average energy transfer between photons
+and electrons; $\langle\langle\Delta E_\gamma\rangle\rangle$ must be zero.
+This condition tells us that $\alpha = 4$.
+Thus, turning back to the general situation, we conclude that monochromatic
+photons passing through a plasma of temperature $T$ transfer an average energy
+per collision
+\begin{equation}
+\langle\Delta E_\gamma\rangle = (h\nu/m_e c^2)(h\nu - 4kT)
+\tag{2.4.9}
+\end{equation}
+to the electrons.  When $4kT \gg h\nu$, the photon energies get boosted by the
+collisions, and one says that the radiation is being ``Comptonized''; see \S\,5.10;
+see, e.g., \citet{Illarionov1972}.
+
+This concludes, for the moment, our discussion of the interaction between
+radiation and plasmas.  We must point out that we have ignored a number of
+plasma effects and instabilities which can be important in astrophysical
+situations.  See, e.g., \citet{Bekefi1966} and \citet{KaplanTsytovich1972}.
+
+%%% ====================================================================
+%%% SECTION 2.5 — Hydrodynamics and Thermodynamics
+%%% ====================================================================
+
+\subsection{Hydrodynamics and Thermodynamics}
+\label{sec:2.5}
+
+\textit{Basic references}\quad
+\S\S\,22.2 and 22.3 of \citet{MTW1973};
+\citet{Lichnerowicz1967} and references cited therein.
+We adopt the notational conventions of \citet{MTW1973},
+including signature ``$-+++$''; geometrized units ($c = G = 1$); Greek
+indices ranging from 0 to 3 and Latin from 1 to 3; ``hats'' on indices that refer
+to local orthonormal frames, e.g.\ $\mu^{\hat{\alpha}}$ and $T^{\hat{\alpha}\hat{\beta}}$; extra-bold, sans-serif type for
+4-vectors and 4-tensors, e.g.\ $\fvec{u}$ and $\mathbf{T}$; normal bold-face type for 3-vectors and
+3-tensors (local Euclidean geometry).
+
+\medskip
+\noindent
+\textit{Parameters describing the ``fluid.''}
+
+\medskip
+\noindent
+``LRF'' $=$ local rest frame of the baryons; i.e.\ local orthonormal frame in which
+there is no net baryon flux in any direction.
+
+\begin{itemize}
+\item[$\fvec{u}$] 4-velocity of LRF; i.e.\ 4-velocity of the ``fluid''.
+\item[$n$] number density of baryons (number of baryons per unit volume) as
+measured in LRF.
+\item[$m_B$] mean rest mass of a baryon in the fluid; i.e.
+\end{itemize}
+\begin{equation}
+m_B = \left(\!\!
+\begin{array}{c}
+\text{rest mass of}\\
+\text{hydrogen atom}
+\end{array}\!\!\right)
+\times
+\left(\!\!
+\begin{array}{c}
+\text{fraction of all baryons that are}\\
+\text{in the form of hydrogen nuclei}
+\end{array}\!\!\right)
++
+\frac{1}{4}
+\left(\!\!
+\begin{array}{c}
+\text{rest mass of}\\
+\text{helium atom}
+\end{array}\!\!\right)
+\times
+\left(\!\!
+\begin{array}{c}
+\text{fraction of all baryons that}\\
+\text{are in helium nuclei}
+\end{array}\!\!\right)
++ \cdots
+\tag{2.5.1}
+\end{equation}
+
+\textit{Note}: in this section we restrict ourselves to fluids that are chemically
+homogeneous and in which no nuclear reactions occur (``standard
+fluid'').  Thus, $m_B$ is constant.
+
+\begin{align}
+\rho_0 &\equiv m_B\,n, && \text{rest-mass density, defined by}
+\tag{2.5.2} \\[4pt]
+\mathcal{V} &\equiv 1/n, && \text{specific volume, i.e.\ volume per baryon, defined by}
+\tag{2.5.3} \\[4pt]
+\mathcal{V}_0 &= 1/\rho_0, && \text{specific volume, i.e.\ volume per unit rest mass, defined by}
+\tag{2.5.4}
+\end{align}
+
+\begin{align}
+\rho &= \rho_0(1 + \Pi), && \text{total density of mass-energy, as measured in LRF.}
+\tag{2.5.5}\\[4pt]
+\Pi &\quad && \text{specific internal energy, defined by}
+\tag*{}
+\end{align}
+
+\textit{Note}: here and throughout this section we set the speed of light equal to
+one.
+\begin{align}
+p  &\quad && \text{isotropic pressure, as measured in LRF.}
+\tag*{} \\
+T  &\quad && \text{temperature, as measured in LRF.}
+\tag*{} \\
+s  &\quad && \text{entropy per baryon, as measured in LRF; of course,}
+\tag*{} \\
+s_0 &= m_B^{-1}\,s. && \text{entropy per unit mass, as measured in LRF.}
+\tag{2.5.6}
+\end{align}
+
+$\mu$ \quad chemical potential, as measured in LRF; defined by
+%
+\begin{equation}
+\tag{2.5.7}
+\mu \equiv \left(\frac{\partial\rho}{\partial n}\right)_{\!s}
+  = \frac{\rho + p}{n}\,.
+\end{equation}
+
+(The second equality follows from the first law of thermodynamics,
+below.)
+
+\medskip
+\noindent
+$\mathbf{q}$ \quad flux of energy (due to heat conduction, radiation,
+convection, etc.)\ as measured in LRF.  This flux
+(ergs\,cm$^{-2}$\,sec$^{-1}$) is a purely spatial vector as measured
+in LRF; i.e.
+%
+\begin{equation}
+\tag{2.5.8}
+\mathbf{q} \cdot \mathbf{u} = 0.
+\end{equation}
+
+\noindent
+$\mathbf{S}$ \quad entropy density-flux vector.  In LRF this vector has
+time component equal to the entropy density, $S^0 = ns$, and space
+components equal to the entropy flux, $S^j = q^j / T$.  Hence, in
+frame-independent notation
+%
+\begin{equation}
+\tag{2.5.9}
+\mathbf{S} = ns\,\mathbf{u} + \mathbf{q}/T.
+\end{equation}
+
+\noindent
+Note that
+%
+\begin{equation}
+\tag{2.5.10}
+\boldsymbol{\nabla}\cdot\mathbf{S}
+= \left\{
+\begin{array}{l}
+\text{rate at which entropy is being generated}\\
+\text{per unit volume as measured in LRF}
+\end{array}
+\right\}.
+\end{equation}
+
+\bigskip
+\noindent
+\emph{First law of thermodynamics}
+
+\smallskip
+\noindent
+Follow a fluid element, containing $A$ baryons, along its world tube.
+The total mass-energy in the fluid element, $\rho A/n$, changes as a
+result of compression (change in volume, $A/n$) and as a result of
+influx of heat:
+%
+\begin{equation}
+\tag{2.5.11}
+d(\rho A/n) = -p\,d(A/n) + T\,d(As).
+\end{equation}
+
+\noindent
+[Here and throughout this section we assume for simplicity no internal
+generation of entropy in the fluid element---e.g., no irreversible
+chemical reactions; this enables us to write the influx of heat in
+terms of the change in entropy, $T\,d(As)$.]
+
+One often uses $A = \text{const.}$ and $\mu \equiv (\rho + p)/n$ to
+rewrite this first law of thermodynamics in the equivalent forms
+%
+\begin{align}
+\tag{2.5.12}
+d\rho &= \frac{\rho + p}{n}\, dn + nT\, ds, \\[4pt]
+\tag{2.5.12$'$}
+d\mu  &= V\, dp + T\, ds.
+\end{align}
+
+\noindent
+From the first law one can read off partial derivatives, e.g.
+%
+\begin{equation}
+\tag{2.5.12$''$}
+(\partial\rho/\partial n)_s = (\rho + p)/n, \qquad
+(\partial\mu/\partial p)_s = T.
+\end{equation}
+
+\bigskip
+\noindent
+\emph{Fundamental relation and equations of state}
+
+\smallskip
+\noindent
+The peculiar thermodynamic properties of the particular fluid being
+studied are determined by a ``fundamental thermodynamic relation''
+%
+\begin{equation}
+\tag{2.5.13}
+\rho = \rho(n,\,s) \qquad \text{or} \qquad
+\mu = \mu(p,\,s).
+\end{equation}
+
+\noindent
+Once this relation has been specified---and once the constant $m_B$ has
+been specified---one can use the first law of thermodynamics
+(2.5.12) or (2.5.12$'$) to derive explicit expressions
+for all other thermodynamic variables as functions of $n$, $s$ or $p$,
+$s$.  For example, by combining with the first law one can derive the
+``equations of state''
+%
+\begin{equation}
+\tag{2.5.8$'$}
+T(n,s) = \frac{1}{n}\left(\frac{\partial\rho}{\partial s}\right)_{\!n},
+\qquad
+p(n,s) = n\!\left(\frac{\partial\rho}{\partial n}\right)_{\!s} - \rho.
+\end{equation}
+
+\bigskip
+\noindent
+\emph{Adiabatic index and speed of sound}
+
+\smallskip
+\noindent
+One defines the adiabatic index $\Gamma_1$ by
+%
+\begin{equation}
+\tag{2.5.14}
+\Gamma_1
+\equiv \left(\frac{\partial\ln p}{\partial\ln n}\right)_{\!s}
+= \frac{\rho + p}{p}\,
+  \left(\frac{\partial p}{\partial\rho}\right)_{\!s}\,,
+\end{equation}
+%
+where the third equality follows from the first law of thermodynamics.
+It turns out that weak adiabatic perturbations (weak ``sound waves'')
+propagate, in the LRF, with ordinary velocity
+%
+\begin{equation}
+\tag{2.5.15}
+c_s
+= \left[\left(\frac{\partial p}{\partial\rho}\right)_{\!s}\right]^{1/2}
+= \left(\frac{\Gamma_1\, p}{\rho + p}\right)^{\!1/2}.
+\end{equation}
+
+\bigskip
+\noindent
+\emph{Second law of thermodynamics}
+
+\smallskip
+\noindent
+Equation~(2.5.10) allows one to write the second law of thermodynamics
+in the form
+%
+\begin{equation}
+\tag{2.5.16}
+\boldsymbol{\nabla}\cdot\mathbf{S} \geq 0.
+\end{equation}
+
+\bigskip
+\noindent
+\emph{Decomposition of 4-velocity}
+
+\smallskip
+\noindent
+One decomposes the gradient of the 4-velocity, $\nabla\mathbf{u}$,
+into its ``irreducible'' tensorial parts:
+%
+\begin{equation}
+\tag{2.5.17}
+u_{\alpha;\beta}
+= \sigma_{\alpha\beta} + \omega_{\alpha\beta}
+  + \tfrac{1}{3}\,\theta\, h_{\alpha\beta}
+  - a_\alpha\, u_\beta\,.
+\end{equation}
+
+\noindent
+Here $\mathbf{a}$ is the 4-acceleration of the fluid
+%
+\begin{equation}
+\tag{2.5.18a}
+\mathbf{a} \equiv \nabla_{\mathbf{u}}\,\mathbf{u},
+\qquad\text{i.e.}\quad
+a^\alpha = u^\alpha{}_{;\beta}\, u^\beta\,,
+\end{equation}
+%
+and $-a_\alpha u_\beta$ is that portion of $u_{\alpha;\beta}$ which is
+not orthogonal to $\mathbf{u}$.  The remainder of $u_{\alpha;\beta}$
+(i.e.\ $\sigma_{\alpha\beta} + \omega_{\alpha\beta} +
+\tfrac{1}{3}\theta\, h_{\alpha\beta}$) is orthogonal to $\mathbf{u}$;
+i.e.\ in the LRF it has only spatial components.  This orthogonal part
+is decomposed into an isotropic part,
+%
+\begin{equation}
+\tag{2.5.18b}
+\theta \equiv \nabla \cdot \mathbf{u}
+= u^\alpha{}_{;\alpha}\,,
+\end{equation}
+%
+expansion, $\tfrac{1}{3}\theta h_{\alpha\beta}$, where $\theta$ is the
+``expansion''; and $h_{\alpha\beta}$ is the ``projection tensor''
+%
+\begin{equation}
+\tag{2.5.18c}
+h_{\alpha\beta} \equiv g_{\alpha\beta} + u_\alpha\, u_\beta\,;
+\end{equation}
+%
+plus a symmetric, trace-free ``shear''
+%
+\begin{equation}
+\tag{2.5.18d}
+\sigma_{\alpha\beta}
+= \tfrac{1}{2}(u_{\alpha;\mu}\, h^\mu{}_\beta
+              + u_{\beta;\mu}\, h^\mu{}_\alpha)
+  - \tfrac{1}{3}\theta\, h_{\alpha\beta}\,;
+\end{equation}
+%
+plus an antisymmetric ``rotation'' or ``vorticity''
+%
+\begin{equation}
+\tag{2.5.18e}
+\omega_{\alpha\beta}
+= \tfrac{1}{2}(u_{\alpha;\mu}\, h^\mu{}_\beta
+              - u_{\beta;\mu}\, h^\mu{}_\alpha).
+\end{equation}
+
+An observer in the LRF sees all fluid elements in his neighborhood to
+move with low (nonrelativistic) velocities.  Let him use standard
+Newtonian methods to calculate or measure the expansion $\theta$; shear
+$\sigma^{\hat{j}}_{\;\hat{k}}$; and rotation $\omega^{\hat{j}}_{\;\hat{k}}$
+of the fluid, and let a relativist calculate $\theta$,
+$\sigma^{\hat{j}}_{\;\hat{k}}$, and
+$\omega^{\hat{j}}_{\;\hat{k}}$ in the LRF from the above equations.
+The two calculations will give the same answers.
+[See, e.g., Ellis (1971).]
+
+\bigskip
+\noindent
+\emph{Frozen-in magnetic field}
+
+\smallskip
+\noindent
+Consider an ionized plasma which contains a ``frozen-in'' magnetic field.
+The field is pure magnetic (no electric field) in the LRF.  Therefore
+it can be described by a magnetic-field 4-vector $\mathbf{B}$
+orthogonal to $\mathbf{u}$,
+%
+\begin{equation}
+\tag{2.5.19}
+\mathbf{B}\cdot\mathbf{u} = 0.
+\end{equation}
+
+\noindent
+[For simplicity we assume that the magnetic permeability of the plasma
+is the same as that of vacuum; so we do not distinguish between
+``$\mathbf{B}$'' and ``$\mathbf{M}$''.  For a more general treatment, see
+Lichnerowicz (1967).]  As the fluid moves, carrying with it the
+frozen-in B-field, $\mathbf{B}$ must change as
+%
+\begin{equation}
+\tag{2.5.20}
+\frac{DB^\alpha}{d\tau}
+= u_{\alpha;\beta}\, B^\beta
+  + (\sigma_{\alpha\beta} - \tfrac{2}{3}\theta\, h_{\alpha\beta})\, B^\beta\,.
+\end{equation}
+
+\noindent
+The term $u_{\alpha;\beta}\, B^\beta$ is required to keep $\mathbf{B}$
+orthogonal to $\mathbf{u}$; by the term $\sigma_{\alpha\beta}\, B^\beta$,
+the rotation of the fluid rotates the field lines; by the term
+$-\tfrac{2}{3}\theta\, h_{\alpha\beta}\, B^\beta$, the compression of the
+fluid orthogonal to $\mathbf{B}$ magnifies $\mathbf{B}$, conserving
+flux.
+
+\bigskip
+\noindent
+\emph{Stress-energy tensor}
+
+\smallskip
+\noindent
+Consider a fluid with isotropic pressure, with shear and bulk viscosity,
+with energy flowing between fluid elements, and with a frozen-in
+magnetic field.  The stress-energy tensor for such a fluid is
+%
+\begin{align}
+\tag{2.5.21}
+T^{\alpha\beta}
+&= \rho u^\alpha u^\beta + (p - \zeta\theta)\, h^{\alpha\beta}
+   - 2\eta\, \sigma^{\alpha\beta}
+   + q^\alpha u^\beta + u^\alpha q^\beta + \pi^{\alpha\beta}
+\notag \\
+&\quad
+   + \frac{1}{8\pi}(B^2 u^\alpha u^\beta + B^2 h^{\alpha\beta}
+   - 2B^\alpha B^\beta).
+\end{align}
+
+\noindent
+The term $\rho u^\alpha u^\beta$ is the total density of mass-energy
+(excluding only that of the frozen-in B-field) as measured in the LRF.
+The term $p\, h^{\alpha\beta}$ is the isotropic pressure that would be
+measured in the LRF if the gas were not changing volume (if $\theta$
+were zero).  The quantities $\zeta$ and $\eta$ are the
+\emph{coefficients of bulk viscosity and of dynamic viscosity},
+respectively.  The term $-\zeta\theta\, h^{\alpha\beta}$ is the
+isotropic viscous stress which resists isotropic expansion
+($\theta > 0$) or compression ($\theta < 0$) of the fluid.
+The term $-2\eta\, \sigma^{\alpha\beta}$ is the viscous shear stress
+which resists shearing motions.  The term
+$q^\alpha u^\beta + u^\alpha q^\beta$ is the energy density and
+stresses associated with the flowing energy $\mathbf{q}$, as measured
+in the LRF, are here neglected by comparison with $\rho u^\alpha u^\beta$
+and $p\, h^{\alpha\beta}$.
+
+(\emph{Note:} the energy density and stresses associated with the
+flowing energy $\mathbf{q}$, as measured in the LRF, are here
+neglected by comparison with $\rho u^\alpha u^\beta$ and
+$p\, h^{\alpha\beta}$.  This neglect is valid with enormous accuracy in
+most contexts of interest in these lectures.  An exception is the
+radiation pressure which produces ``self-regulation'' of accretion onto
+black holes when the inflowing mass is sufficiently large; see
+\S\S\,4.5 and 5.13.)  The term
+%
+\begin{equation}
+\tag{2.5.22}
+T^{\alpha\beta}_{\text{MAG}}
+= \frac{1}{8\pi}(B^2 u^\alpha u^\beta + B^2 h^{\alpha\beta}
+  - 2B^\alpha B^\beta)
+\end{equation}
+%
+is the Maxwell stress-energy associated with the frozen-in B-field (in
+LRF: energy density $B^2/8\pi$, pressure $B^2/8\pi$ orthogonal to
+field lines; tension $-B^2/8\pi$ along field lines).
+
+\bigskip
+\noindent
+\emph{Equations of hydrodynamics}
+
+\smallskip
+\noindent
+The fundamental equations governing the motion of a fluid in a given
+gravitational field (spacetime geometry) are (i) the law of
+\emph{baryon conservation}
+%
+\begin{equation}
+\tag{2.5.23}
+\nabla \cdot (n\,\mathbf{u}) = 0,
+\quad\text{i.e.}\quad dn/d\tau = -\theta\, n,
+\end{equation}
+%
+or equivalently rest-mass conservation
+%
+\begin{equation}
+\tag{2.5.23$'$}
+\nabla \cdot (\rho_0\, \mathbf{u}) = 0,
+\quad\text{i.e.}\quad d\rho_0/d\tau = -\theta\, \rho_0\,;
+\end{equation}
+
+\noindent
+(ii) the law of \emph{local energy conservation}
+%
+\begin{equation}
+\tag{2.5.24}
+\mathbf{u}\cdot(\nabla\cdot\mathbf{T}) = 0;
+\end{equation}
+
+\noindent
+(iii) the \emph{Euler equations} (i.e.\ law of local momentum
+conservation)
+%
+\begin{equation}
+\tag{2.5.25}
+\mathbf{h}\cdot(\nabla\cdot\mathbf{T}) = 0;
+\end{equation}
+
+\noindent
+(iv) the laws of thermodynamics, (2.5.11)--(2.5.16); (v) the laws of
+energy transport for the frozen-in B-field, (2.5.20); the laws of
+energy transport, which govern $\mathbf{q}$ (see \S\,2.6, 2.6.43).
+
+\bigskip
+\noindent
+\emph{Law of local energy conservation}
+
+\smallskip
+\noindent
+When one evaluates the law of local energy conservation,
+$\mathbf{u}\cdot(\nabla\cdot\mathbf{T}) = 0$,
+for the stress-energy tensor (2.5.21), one finds that the Maxwell
+stress-energy
+%
+\begin{equation}
+\tag{2.5.26}
+\mathbf{u}\cdot(\nabla\cdot\mathbf{T}_{\text{MAG}}) = 0
+\end{equation}
+%
+gives zero contribution (work done to compress magnetic field is
+precisely equal to increase in magnetic field energy); and that the
+remainder of the stress-energy tensor gives
+%
+\begin{equation}
+\tag{2.5.27}
+d\rho/d\tau = -(\rho + p)\,\theta
++ \zeta\,\theta^2 + 2\eta\,\sigma_{\alpha\beta}\,\sigma^{\alpha\beta}
+- \nabla\cdot\mathbf{q} - \mathbf{a}\cdot\mathbf{q}\,.
+\end{equation}
+
+\noindent
+Here $d/d\tau$ is derivative with respect to proper time along the
+world lines of the fluid; i.e., in the language of the differential
+geometer, $d/d\tau = \mathbf{u}$.  The terms $-(\rho + p)\,\theta$ is
+the increase in mass-energy density due to compression.  The term
+$\zeta\,\theta^2$ and $2\eta\,\sigma_{\alpha\beta}\,\sigma^{\alpha\beta}$
+are the increases in mass-energy density due to viscous heating
+(conversion of relative kinetic energy of adjacent fluid elements into
+heat).  The term $-\nabla\cdot\mathbf{q}$ is the influx of
+mass-energy from neighboring fluid elements.  The term
+$-\mathbf{a}\cdot\mathbf{q}$ is a special relativistic correction to
+the ``redshift'' of $\mathbf{q}$.  To understand this term, consider a
+flux of energy $\mathbf{q}$---or, equivalently, with the inertia of
+the energy flux $\mathbf{q}$ associated with it, a flux of mass-energy
+from the viewpoint of an accelerated fluid (photons do not interact with
+them).  The acceleration gives rise to a redshift (a gravitational
+redshift) and hence to a nonzero $\nabla\cdot\mathbf{q}$ (no
+interaction between fluid and photons), one must include the correction
+factor $-\mathbf{a}\cdot\mathbf{q}$.  For a similar reason, a similar
+relativistic correction appears in the law of heat conduction.
+
+\bigskip
+\noindent
+\emph{Euler equation for a perfect fluid}
+
+\smallskip
+\noindent
+Consider a perfect fluid, flowing adiabatically through spacetime
+($\zeta = \eta = \mathbf{B} = \mathbf{q} = 0$).  In this case the
+Euler equations $\mathbf{h}\cdot(\nabla\cdot\mathbf{T}) = 0$ reduce to
+%
+\begin{equation}
+\tag{2.5.30}
+(\rho + p)\,\mathbf{a} = -\nabla p - \mathbf{u}\,(\mathbf{u}\cdot\nabla p).
+\end{equation}
+%
+In words:
+\[
+(\rho + p)\,\mathbf{a}
+= -\left(\!\text{inertial mass per}\atop\text{unit volume}\!\right)
+  \times\text{(4-acceleration)}
+= -\left(\!\text{pressure gradient}\atop\text{projected orthogonal to }\mathbf{u}\!\right).
+\]
+
+\textit{Bernoulli equation}
+
+Consider a perfect fluid undergoing stationary, adiabatic flow in a stationary
+spacetime.  More particularly, set $\zeta = \eta = \fvec{B} = \fvec{q} = 0$; assume that spacetime is
+endowed with a Killing vector field $\boldsymbol{\xi}$,
+
+\begin{equation}
+\xi_{\alpha;\beta} + \xi_{\beta;\alpha} = 0\,,
+\tag{2.5.31}
+\end{equation}
+
+which need not be timelike; and assume that the flow is adiabatic, $ds/d\tau = 0$,
+and stationary in the sense that
+
+\begin{equation}
+\mathscr{L}_{\boldsymbol{\xi}}\,p = 0, \quad
+\nabla_{\boldsymbol{\xi}}\,\rho = \nabla_{\boldsymbol{\xi}}\,p = \cdots = 0\,.
+\tag{2.5.32}
+\end{equation}
+
+Here $\mathscr{L}_{\boldsymbol{\xi}}$ is the Lie derivative along $\boldsymbol{\xi}$.  In this case the Euler equations~(2.5.30),
+together with the first law of thermodynamics~(2.5.12), imply the relativistic
+Bernoulli equation
+
+\begin{equation}
+d(\mu\,\fvec{u}\cdot\boldsymbol{\xi})/d\tau = 0\,;
+\tag{2.5.33}
+\end{equation}
+
+i.e., $\mu\,\fvec{u}\cdot\boldsymbol{\xi}$ is constant along flow lines.
+
+\bigskip
+\textit{Newtonian limit}
+
+The Newtonian limit of relativistic hydrodynamics is obtained when, in a nearly
+global Lorentz frame, the following approximations hold:
+
+\begin{gather}
+g_{00} = -(1 + 2\Phi), \quad |\Phi| \ll 1, \quad
+B^2/\rho_0 \ll 1,
+\notag\\
+p/\rho_0 \ll 1, \quad \Pi \ll 1, \quad v^2 \ll 1\,.
+\tag{2.5.34}
+\end{gather}
+
+Here $\Phi$ is the Newtonian gravitational potential with sign $\Phi < 0$, and $v$ is the
+ordinary velocity of the fluid
+
+\begin{equation}
+\fvec{v} \equiv v_j = (u^j/u^0)\,\fvec{e}_j\,.
+\tag{2.5.35}
+\end{equation}
+
+In the Newtonian limit the chemical potential $\mu$ reduces to
+
+\begin{equation}
+\mu = m_B(1 + w)\,,
+\tag{2.5.36}
+\end{equation}
+
+%%% ============================================================
+%%% Book page 370
+%%% (PDF p.15, left column)
+%%% ============================================================
+
+where $w$ is the \textit{enthalpy}
+
+\begin{equation}
+w = \Pi + p/\rho_0\,.
+\tag{2.5.37}
+\end{equation}
+
+The Bernoulli equation~(2.5.33) reduces to the familiar form
+
+\begin{equation}
+\Phi + \tfrac{1}{2}v^2 + w = \text{constant along flow lines}\,.
+\tag{2.5.38}
+\end{equation}
+
+The Euler equation for a perfect fluid in adiabatic flow, (2.5.30), reduces to
+
+\begin{equation}
+\frac{d\fvec{v}}{dt} = -\nabla\Phi - \frac{1}{\rho_0}\nabla p\,,
+\tag{2.5.39}
+\end{equation}
+
+where $d/dt$, the derivative with respect to proper time along the flow lines, has
+the Newtonian form
+
+\begin{equation}
+d/dt = \partial/\partial t + \fvec{v}\cdot\boldsymbol{\nabla}\,.
+\tag{2.5.40}
+\end{equation}
+
+The first law of thermodynamics, (2.5.12) and (2.5.12$'$), reduces to
+
+\begin{equation}
+d\Pi = -p\,dV_0 + T\,ds_0\,,
+\tag{2.5.41}
+\end{equation}
+
+\begin{equation}
+dw = V_0\,dp + T\,ds_0\,.
+\tag{2.5.42}
+\end{equation}
+
+(In Newtonian theory one usually adopts a per-unit-mass viewpoint rather than a
+per-baryon viewpoint; and thus one uses $\rho_0$, $V_0$ rather than $n$, $\mathcal{V}$, $s_0$.)
+
+%%% ============================================================
+%%% Section 2.6: Radiative Transfer
+%%% Book page 370–371 (PDF p.15, left–right columns)
+%%% ============================================================
+
+\subsection{Radiative Transfer}
+\label{sec:2.6}
+
+\textit{Basic references}\quad
+Chandrasekhar (1960); Appendix~1 of Pacholczyk (1970); Mihalas (1970).
+
+\bigskip
+\textit{Notation and terminology}
+
+At an arbitrary event in spacetime pick an arbitrary
+local Lorentz frame.  In that frame pick an arbitrary spatial direction $\fvec{n}$ (a
+unit vector; see Figure~2.6.1).  Examine the amount of energy $dE$ that is (i) carried
+by photons across a unit surface area $dA$ orthogonal to $\fvec{n}$ (the surface $\mathscr{S}_m$ of
+Figure~2.6.1) during unit time $dt$, with (ii) the photons having frequencies $\nu$ in
+the range $d\nu$, and (iii) the photons being directed into a solid angle $d\Omega$ about
+$\fvec{n}$.  The ratio
+
+\begin{equation}
+I_\nu = \frac{dE}{dt\;dA\;d\nu\;d\Omega}
+\tag{2.6.1}
+\end{equation}
+
+is called the \textit{specific intensity} or simply the \textit{intensity}.  It depends on (a) the
+event in spacetime; (b) the choice of Lorentz frame; (c) the direction $\fvec{n}$; (d)
+the frequency $\nu$.  One also defines the \textit{total intensity} $I$ by
+
+\begin{equation}
+I = \int I_\nu\;d\nu = \frac{dE}{dt\;dA\;d\Omega}\,;
+\tag{2.6.2}
+\end{equation}
+
+the \textit{average specific intensity} or \textit{average intensity} $J_\nu$ (averaged over all directions)
+by
+
+\begin{equation}
+J_\nu = \frac{1}{4\pi}\int I_\nu\;d\Omega\,;
+\tag{2.6.3}
+\end{equation}
+
+and the \textit{average total intensity} $J$ by
+
+\begin{equation}
+J = \frac{1}{4\pi}\int I\;d\Omega = \frac{1}{4\pi}\int I_\nu\;d\nu\;d\Omega\,.
+\tag{2.6.4}
+\end{equation}
+
+It is easy to see that the \textit{energy density per unit frequency} in the radiation is
+
+\begin{equation}
+\rho^{(\text{rad})} = \frac{dE}{d^3x\;d\nu} = \frac{4\pi J_\nu}{c}\,,
+\tag{2.6.5}
+\end{equation}
+
+and that the \textit{total energy density} in the radiation is
+
+\begin{equation}
+\rho^{(\text{rad})} = \frac{dE}{d^3x} = \frac{4\pi J}{c}\,.
+\tag{2.6.6}
+\end{equation}
+
+%%% ============================================================
+%%% Book page 371 (right column) — Figure 2.6.1, flux, invariance
+%%% ============================================================
+
+Pick a 2-surface $\mathscr{S}_m$ in the chosen Lorentz frame, with unit normal $\fvec{m}$ (Fig.\
+2.6.1).  Examine the total energy $dE$ per unit area $dA$ that is carried across the
+chosen surface during unit time $dt$, by photons having frequency $\nu$ in the range
+$d\nu$.  Make no restrictions on the photon direction or solid angle; but count
+negatively those photons that cross $dA$ from the front side toward the back.
+The ratio
+
+\begin{equation}
+F_\nu = \frac{dE}{dt\;dA\;d\nu}
+\tag{2.6.7}
+\end{equation}
+
+is called the \textit{specific flux}, or simply the \textit{flux}.  It is easy to see from Figure~2.6.1
+that
+
+\begin{equation}
+F_\nu = \int I_\nu\,\cos\theta\;d\Omega\,.
+\tag{2.6.8}
+\end{equation}
+
+\begin{figure}[htbp]
+\centering
+\fbox{\parbox{0.9\columnwidth}{\centering [Figure 2.6.1 placeholder]\\
+The surfaces, directions, and solid angle used in the definition of intensity
+and of flux.  $\mathscr{S}_m$ is a surface with unit normal $\fvec{m}$;
+$\fvec{n}$ is a unit vector in the photon propagation direction;
+$\theta$ is the angle between $\fvec{m}$ and $\fvec{n}$; $d\Omega$ is the solid angle element.}}
+\caption{The surfaces, directions, and solid angle used in the definition of intensity
+and of flux.}
+\label{fig:2.6.1}
+\end{figure}
+
+The specific flux depends on (a) the chosen event in spacetime; (b) the chosen
+Lorentz frame at that event; (c) the chosen 2-surface $\mathscr{S}_m$ in that Lorentz frame.
+
+%%% ============================================================
+%%% Book page 372 — Invariance of I_nu/nu^3, equation of radiative transfer
+%%% (PDF p.16, left column)
+%%% ============================================================
+
+The integral of the flux over all frequencies is called the \textit{total flux}
+
+\begin{equation}
+F = \int F_\nu\;d\nu = \int I\,\cos\theta\;d\Omega\,.
+\tag{2.6.9}
+\end{equation}
+
+Notice that the total flux is the ``first moment'' of the total intensity (the
+``moment'' being taken with respect to the unit normal $\fvec{m}$).  One can readily
+verify that the ``second moment'' is equal to the radiation pressure that acts
+across the surface $\mathscr{S}_m$:
+
+\begin{equation}
+T^{(\text{rad})} \equiv \fvec{m}\cdot\fvec{T}^{(\text{rad})}\cdot\fvec{m}
+= \int I\,\cos^2\theta\;d\Omega\,.
+\tag{2.6.10}
+\end{equation}
+
+\bigskip
+\textit{Invariance of $I_\nu/\nu^3$}
+
+Choose a particular photon that passes through a given event in spacetime.
+Observe that particular photon, and all others in the vicinity, from several different
+Lorentz frames at the given event.  The frequency $\nu$ of the photon will depend
+on the choice of Lorentz frame (Doppler shift from one frame to another).
+The specific intensity $I_\nu$ in the frame neighborhood of the photon will also depend
+on the choice of Lorentz frame.  However, the ratio $I_\nu/\nu^3$ will be Lorentz-
+invariant. (Aside from a factor $h^{-4}$, $I_\nu/\nu^3$ is the invariant number density in
+phase space
+
+\begin{equation}
+\mathscr{N} = \frac{dN}{d^3x\,d^3p} = \frac{1}{h^3}\,\frac{I_\nu}{\nu^3}\,;
+\tag{2.6.11}
+\end{equation}
+
+see, e.g., \S22.6 of MTW.)
+
+When photons propagate freely through curved spacetime (no interaction with
+matter), the ratio $I_\nu/\nu^3$ is conserved along the world line of each photon
+(Liouville's theorem).
+
+\paragraph*{Equation of Radiative Transfer}
+
+Consider the propagation of photons through a medium (e.g., through gas that
+is falling into a black hole).\ Analyze the photon propagation from the viewpoint
+of observers at rest in the medium (local rest frame; ``LRF'').\ At each event
+denote by $\mathbf{u}$ the 4-velocity of the medium---and hence also of the LRF.\ Focus
+attention on all photons in the (phase-space) neighborhood of a given null
+geodesic ray.\ Denote by $\mathbf{p}$ the 4-momentum of that ray.\ Then at each event
+along the given ray $\mathbf{p}$ is given by
+%
+\begin{equation}
+\mathbf{p} = h\nu(\mathbf{u} + \mathbf{n}).
+\tag{2.6.12}
+\end{equation}
+%
+Here $\mathbf{n}$ is a unit vector;
+%
+\[
+\mathbf{n} \cdot \mathbf{u} = 0,
+\]
+%
+and (i) is interpreted in the LRF as the direction of propagation of the ray
+(same as 3-vector $\mathbf{n}$ of Figure~2.6.1).\ Also, in eq.~(2.6.12), $\nu$ is the frequency of
+any photon which propagates along the ray, and $h\nu$ is its energy, as measured in
+the LRF.
+
+Because of the acceleration and shear of the medium, the frequency
+$\nu$ of the chosen ray changes from point to point along the ray.\ The change $d\nu$,
+when the ray propagates a proper spatial distance $dl$ as seen in the LRF, is
+%
+\begin{equation}
+d\nu = \nu(-\,\mathbf{p} \cdot \mathbf{u}/h)\,dl.
+\tag{2.6.13}
+\end{equation}
+%
+(This frame-independent equation is derived easily by geometrical arguments
+in the LRF.)\ A straightforward calculation, using the geodesic equation for the
+ray
+%
+\[
+\boldsymbol{\nabla}_{\mathbf{p}}\,\mathbf{p} = 0,
+\]
+%
+and using expansion (2.5.17) for $\boldsymbol{\nabla}\mathbf{u}$, reveals
+%
+\begin{equation}
+d\nu/dl = -\nu(\mathbf{n} \cdot \mathbf{a} + \tfrac{1}{3}\theta
+  + n^\alpha n^\beta \sigma_{\alpha\beta}).
+\tag{2.6.14}
+\end{equation}
+%
+The first term, $-\nu\,\mathbf{n} \cdot \mathbf{a}$, is the ``gravitational redshift'' produced by the acceleration
+of the LRF; the second and third terms, $-\nu(\tfrac{1}{3}\theta + n^\alpha n^\beta \sigma_{\alpha\beta})$, are the
+``cosmological redshift'' due to the expansion of the medium along the direction
+of the ray.
+
+If there were no interaction with the medium, then $I_\nu/\nu^3$ would be conserved
+along the ray.\ Hence, the equation of radiative transfer along the given ray must
+have the form
+%
+\begin{equation}
+\frac{dI_\nu}{dl} - \left(\frac{3}{\nu}\,\frac{d\nu}{dl}\right) I_\nu
+  = \text{(effects of interaction with medium)};
+\tag{2.6.15}
+\end{equation}
+%
+i.e.,
+%
+\[
+dI_\nu/dl + (3\mathbf{n} \cdot \mathbf{a} + \theta
+  + 3n^\alpha n^\beta \sigma_{\alpha\beta})\,I_\nu
+  = \text{(interaction effects)}.
+\]
+%
+Four types of interaction can occur: spontaneous emission of radiation by the
+matter; stimulated emission; absorption; and scattering.
+
+We shall assume that on all length scales of interest the medium is isotropic;
+and we shall denote its emissivity by
+%
+\begin{equation}
+\varepsilon_\nu \equiv \frac{dE}{d\nu\,dt\,dm_0}
+  = \begin{pmatrix} \text{energy emitted spontaneously per unit frequency}\\
+    \text{during unit time by a unit rest mass, integrated}\\
+    \text{over all angles, and measured in LRF} \end{pmatrix}.
+\tag{2.6.16}
+\end{equation}
+%
+(The emissivities for free-free and free-bound transitions were discussed in \S\S\,2.1
+and 2.2.)\ Then spontaneous emission contributes
+%
+\begin{equation}
+\left(\frac{dI_\nu}{dl}\right)_{\!\text{spontaneous emission}}
+  = \frac{1}{4\pi}\,\rho_0\,\varepsilon_\nu
+\tag{2.6.17}
+\end{equation}
+%
+to the specific intensity along the given ray.\ Here $\rho_0$ is the density of rest mass
+in the medium.
+
+The rate of absorption and the rate of stimulated emission are both proportional
+to the intensity of the passing beam.\ Hence, the effects of absorption and of
+stimulated emission can be lumped together into a single \textit{absorption coefficient}
+$\kappa_\nu$, defined by
+%
+\begin{equation}
+\left(\frac{dI_\nu}{dl}\right)_{\!\substack{\text{absorption plus}\\[2pt]
+  \text{stimulated emission}}}
+  = -\rho_0\,\kappa_\nu\,I_\nu.
+\tag{2.6.18}
+\end{equation}
+%
+The dimensions of the absorption coefficient are $\mathrm{cm}^2/\mathrm{g}$ (``absorption cross section
+per unit mass'' at the given frequency).\ When absorption dominates over
+stimulated emission, $\kappa_\nu$ is positive; when stimulated emission dominates,
+$\kappa_\nu$ is negative (``negative absorption'').
+
+Scattering is more complicated to treat than emission and absorption.\ Let
+%
+\begin{equation}
+\frac{d\kappa_s}{d\Omega'\,d\nu'}\,(\mathbf{p},\,\mathbf{p}')
+\tag{2.6.19}
+\end{equation}
+%
+be the differential cross section (as measured in the LRF) for a unit rest mass to
+convert a photon of momentum $\mathbf{p}$ into a photon of momentum $\mathbf{p}'$; and let
+%
+\[
+\kappa_s(\nu) = \int \frac{d\kappa_s}{d\Omega'\,d\nu'}\,d\Omega'\,d\nu'
+\]
+%
+be the total scattering cross-section (``scattering opacity'') per unit rest mass.
+For example, in the case of electron scattering by a nonrelativistic plasma
+($h\nu \ll m_e c^2$; $kT \ll m_e c^2$; see \S\,4.4), when one neglects the tiny change in photon
+frequency the cross sections per unit rest mass are
+%
+\begin{equation}
+\frac{d\kappa_s}{d\Omega'\,d\nu'}\,(\mathbf{p},\,\mathbf{p}')
+  = \frac{f_e}{2m_p}\,\sigma_T\,\tfrac{3}{8\pi}\,
+    [1 + (\mathbf{n} \cdot \mathbf{n}')^2]\,\delta(\nu' - \nu)
+\tag{2.6.20}
+\end{equation}
+%
+\[
+\kappa_s = (f_e/m_p)\,\sigma_T = (0.40\;\mathrm{cm}^2/\mathrm{g})\,f_e
+\]
+%
+(Recall: $n = \rho/h\nu$, $n' = \rho'/h\nu'$; $f_e$ is the number of free electrons per baryon in
+the plasma.)\ Scattering, as described by the appropriate differential cross section,
+can increase $I_\nu$ (scattering into the beam from other directions), or can decrease
+$I_\nu$ (scattering out of the beam into other directions):
+%
+\begin{equation}
+\left(\frac{dI_\nu}{dl}\right)_{\!\text{scattering}}
+  = +\rho_0 \!\int \frac{d\kappa_s}{d\Omega\,d\nu}\,
+    (\mathbf{p}',\,\mathbf{p})\,I_{\nu'}\,d\Omega'\,d\nu'
+    \;-\; \rho_0\,\kappa_s\,I_\nu.
+\tag{2.6.21}
+\end{equation}
+%
+By combining equations (2.6.15)--(2.6.21), we obtain our final form of the
+equation of radiative transfer
+%
+\begin{align}
+dI_\nu/dl &+ (3\mathbf{n} \cdot \mathbf{a} + \theta
+  + 3n^\alpha n^\beta \sigma_{\alpha\beta})\,I_\nu \notag\\
+  &= +\rho_0 \!\int \frac{d\kappa_s}{d\Omega\,d\nu}\,
+     (\mathbf{p}',\,\mathbf{p})\,I_{\nu'}\,d\Omega'\,d\nu'
+     - \rho_0\,\kappa_s\,I_\nu \notag\\
+  &\quad + \tfrac{1}{4\pi}\,\rho_0\,\varepsilon_\nu
+     - \rho_0\,\kappa_\nu\,I_\nu.
+\tag{2.6.22}
+\end{align}
+
+%%% -----------------------------------------------------------------
+%%% Relationship between emissivity and absorption
+%%% -----------------------------------------------------------------
+
+\paragraph*{Relationship between emissivity and absorption}
+
+Into an insulated box place a material medium and a radiation field; and then wait
+until complete thermodynamic equilibrium is achieved.\ If $T$ is the equilibrium
+temperature, then the radiation field as seen in the LRF will be isotropic with the
+standard black-body intensity, $I_\nu = B_\nu$, where
+%
+\begin{equation}
+B_\nu = \frac{2h\nu^3/c^2}{e^{h\nu/kT} - 1}.
+\tag{2.6.23}
+\end{equation}
+%
+In equilibrium there must be no net change of $I_\nu$ along any ray: scattering into
+the beam must be completely balanced by scattering out of the beam; and
+emission must be completely balanced by absorption.\ The requirement of
+``detailed balance'' for emission and absorption can be met only if the emissivity
+and the absorption coefficient are related by
+%
+\begin{equation}
+\frac{dI_\nu}{dl} = \rho_0\,\kappa_\nu
+  \!\left(\frac{\varepsilon_\nu}{4\pi\kappa_\nu}
+  - I_\nu\right) = 0;
+\tag{2.6.24}
+\end{equation}
+%
+i.e.,
+%
+\[
+\varepsilon_\nu / 4\pi\kappa_\nu = B_\nu.
+\]
+%
+Since $\varepsilon_\nu$ and $\kappa_\nu$ depend only on the thermodynamic state of the matter, and
+have nothing to do with the state of the radiation, relation~(2.6.24) must be
+satisfied not only inside our insulated box, but also in all other cases where
+the matter by itself is in thermodynamic equilibrium but the radiation might
+not be.
+
+For matter not in thermodynamic equilibrium one can use a more sophisticated
+version of the principle of detailed balance (``Einstein A and B coefficients'') to
+derive a more complicated relationship between the emissivity and the absorption
+coefficient.\ See, e.g., Chandrasekhar~\cite{Chandrasekhar1960}.
+
+As an application of the equilibrium relationship $\varepsilon_\nu/4\pi\kappa_\nu = B_\nu$, consider free-free
+transitions in an ionized gas.\ Whenever the free electrons (which do the
+emitting and absorbing) are in thermodynamic equilibrium with each other
+(Maxwell--Boltzmann velocity distribution), the absorption coefficient---as
+derived from the emissivity (2.1.27)---must be
+%
+\begin{equation}
+\kappa_\nu^{\mathrm{ff}} = (1.50 \times 10^{25}\;\mathrm{cm}^5\;\mathrm{g}^{-1})
+  \left(\frac{\rho_0}{\mathcal{A}}\right)
+  \left(\frac{(eZ)^2}{\mathcal{A}}\right)
+  \bar{G}\;T^{-7/2}\;\nu^{-3}
+  \left(\frac{1 - e^{-x}}{x^{-1}}\right),
+\tag{2.6.25}
+\end{equation}
+%
+where
+\[
+x = h\nu/kT.
+\]
+%
+See \S\,2.1 for notation.
+
+Notice that for matter in thermodynamic equilibrium the relationship
+$\varepsilon_\nu / 4\pi\kappa_\nu = B_\nu$ permits one to rewrite the equation
+of radiative transfer~(2.6.22) in the form
+%
+\begin{equation}
+\tag{2.6.26}
+\frac{dI_\nu}{dl} + (3n\cdot a + \dot\theta + 3\sigma^{\alpha\beta}
+n_\alpha n_\beta)\, I_\nu
+= \rho_0\,\kappa_\nu\bigl(B_\nu - I_\nu\bigr)
+  + \left.\frac{dI_\nu}{dl}\right|_{\text{scattering}}
+  + \left.\frac{d(I_\nu/\nu^3)}{d\tau_\nu}\right|_{\text{scattering}} ;
+\end{equation}
+%
+or, equivalently,
+%
+\begin{equation}
+\tag{2.6.27}
+\frac{d(I_\nu/\nu^3)}{d\tau_\nu}
+= \rho_0\,\kappa_\nu \left(\frac{B_\nu}{\nu^3}
+  - \frac{I_\nu}{\nu^3}\right)
+  + \left.\frac{d(I_\nu/\nu^3)}{d\tau_\nu}\right|_{\text{scattering}}.
+\end{equation}
+
+%%% ---------------------------------------------------------------
+%%% Optical depth
+%%% ---------------------------------------------------------------
+
+\bigskip
+\noindent
+\emph{Optical depth}
+
+\medskip
+\noindent
+Consider radiation propagating out of a medium into surrounding empty space.
+Follow a given ray ``backward'', from ``infinity'' into the medium.  Let the ray
+have frequency $\nu_\infty$ at infinity; then its frequency at location~$l$
+($l = {}$proper distance measured in LRF of medium) is
+%
+\begin{equation}
+\tag{2.6.28}
+\nu(l) = \nu_\infty \exp\!\left[\,-\int_i^l
+\bigl(\dot\theta + n^\alpha n^\beta \sigma_{\alpha\beta}\bigr)\,dl\right].
+\end{equation}
+%
+[cf.\ eq.~(2.6.14)].  In calculating the change of intensity along the ray, it is
+often useful to replace the proper-length parameter~$l$ by the
+``optical-depth'' parameter
+%
+\begin{equation}
+\tag{2.6.29}
+\tau_\nu = \int_i^l \rho_0\,\kappa_\nu\,dl.
+\end{equation}
+
+In the integration $\kappa_\nu$ must be evaluated at the frequency
+$\nu(l)$.  The optical depth $\tau_\nu$ depends on (i) the world line of
+the chosen ray, (ii) the frequency of the ray in spacetime, (iii) location
+along that ray.  Then the equation of transfer
+world line; and (iii) location along the ray at ``infinity'' $\nu_\infty$\ldots
+
+One can also introduce an optical depth for scattering radiation out of the
+beam, $\tau_s$:
+%
+\begin{equation}
+\tag{2.6.30}
+\tau_s = \int_i^l \rho_0\,\kappa_s\,dl.
+\end{equation}
+
+In terms of optical depths, the law of radiative transfer~(2.6.27) reads
+%
+\begin{equation}
+\tag{2.6.31}
+\frac{d(I_\nu/\nu^3)}{d\tau_\nu}
+= \frac{B_\nu}{\nu^3} - \frac{I_\nu}{\nu^3}
+  - \frac{\kappa_s}{\kappa_\nu}
+  \left.\frac{d(I_\nu/\nu^3)}{d\tau_\nu}\right|_{\text{scattering}},
+\end{equation}
+%
+where
+%
+\begin{equation}
+\tag{2.6.32}
+\left.\frac{d(I_\nu/\nu^3)}{d\tau_\nu}\right|_{\text{scattering}}
+= \frac{\kappa_s}{\kappa_\nu}\left[\frac{I_\nu}{\nu^3} - \frac{1}{\kappa_s}
+  \int \frac{dk_s}{d\Omega\,d\nu'}\,
+  (\mathbf{p}',\mathbf{p})\,I_\nu'\,d\Omega'\,d\nu'
+  - \rho_0\,\kappa_s\,I_\nu \right].
+\end{equation}
+
+%%% ---------------------------------------------------------------
+%%% Optically thin / optically thick
+%%% ---------------------------------------------------------------
+
+One says that the medium is \emph{optically thin} if everywhere along
+the ray $\tau_\nu \ll 1$ (or $\tau_s \ll 1$).
+
+Consider a medium that (i) has its matter in thermodynamic equilibrium with
+a spatially uniform temperature, (ii) is optically thick along a chosen ray, and
+(iii) has absorption dominant over scattering, i.e.,
+%
+\begin{equation}
+\tag{2.6.33}
+\kappa_\nu \gg \kappa_s.
+\end{equation}
+
+One says that a medium is \emph{optically thick} to emission and absorption (or to
+scattering) along a given ray if optical depths $\tau_\nu \gg 1$
+(or $\tau_s \gg 1$) are achieved.
+
+\medskip
+\noindent
+Along that ray, then the radiation emerging to infinity along the chosen ray must
+have the blackbody form
+%
+\begin{equation}
+\tag{2.6.34}
+\frac{I_\nu}{\nu^3} = \frac{B_\nu}{\nu^3}
+= \frac{2h\nu^3/c^3}{e^{h\nu/kT} - 1}.
+\end{equation}
+%
+[One can prove this easily from the equation of transfer~(2.6.31).]\
+Moreover, at a point in the medium where all rays are optically thick, the
+radiation will have a blackbody intensity at all frequencies and in all
+directions; so the energy density and pressure in the radiation will be
+%
+\begin{equation}
+\tag{2.6.35}
+\rho^{\text{rad}} = 3p^{\text{rad}} = bT^4,
+\end{equation}
+%
+where $b$ is the universal constant
+%
+\begin{equation}
+\tag{2.6.36}
+b = \frac{8\pi^5 k^4}{15c^3 h^3}
+  = 7.56 \times 10^{-15}\;\frac{\text{ergs}}{\text{cm}^3\,\text{K}^4}.
+\end{equation}
+
+Consider, alternatively, a medium that is optically thin along a chosen ray,
+and has negligible scattering ($\tau_s \ll 1$) along that ray.  Then the
+equation of transfer~(2.6.31) predicts for the radiation emerging to infinity
+%
+\begin{equation}
+\tag{2.6.37}
+I_\nu\,\nu^3 = \int_{\text{entire ray}} (\varepsilon_\nu/\nu^3)\,\rho_0\,dl
+= (1/4\pi)\int (\varepsilon_\nu/\nu^3)_{\text{in region of strongest emission}}
+  \rho_0\,dl.
+\end{equation}
+
+\begin{equation}
+\tag{2.6.38}
+\simeq \left(\int \rho_0\,dl\right)\!(1/4\pi)\,
+(\varepsilon_\nu/\nu^3)_{\text{in region of strongest emission}}.
+\end{equation}
+
+In summary, the radiation from an optically thin source with negligible
+scattering $I_\nu \propto \varepsilon_\nu$, and has an intensity proportional
+to the amount of matter along the line of sight.  But radiation from an
+optically thick source in thermodynamic equilibrium with negligible scattering
+has the blackbody form independent of the nature of its emissivity.  Media with
+non-negligible scattering will be studied in~\S5.10.
+
+%%% ---------------------------------------------------------------
+%%% Radiative transfer in the diffusion approximation
+%%% ---------------------------------------------------------------
+
+\bigskip
+\noindent
+\emph{Radiative transfer in the diffusion approximation}
+
+\medskip
+\noindent
+Consider the interior of an optically thick medium $\tau_\nu \gg 1$ which is
+in local thermodynamic equilibrium.  Suppose that the medium has a temperature
+gradient and/or an acceleration, but that the characteristic length scale
+%
+\begin{equation}
+\tag{2.6.39}
+l_T \equiv \frac{T}{|\boldsymbol{\nabla}T + \dot{\mathbf{a}}\,T|}
+\end{equation}
+%
+over which the temperature changes are long compared to the mean-free path of a
+photon,
+%
+\begin{equation}
+\tag{2.6.40}
+l_T \gg 1/\kappa_\nu\,\rho_0 \equiv l_\nu.
+\end{equation}
+%
+Then the radiation distribution will consist of a large, isotropic, blackbody
+component, plus a tiny ``correction'' due to the temperature gradient
+%
+\begin{equation}
+\tag{2.6.41}
+I_\nu \simeq B_\nu + I_\nu^{(1)};\qquad
+I_\nu^{(1)} \ll B_\nu.
+\end{equation}
+
+There is no net flux $F$ across any surface associated with the blackbody
+component~$B_\nu$; but the ``correction'' term $I_\nu^{(1)}$ will lead to a
+flux in the direction of
+$\mathbf{h}\cdot(\boldsymbol{\nabla}T+\dot{\mathbf{a}}\,T)$.
+
+(Here $\mathbf{h}$ is the projection operator of~\S2.5.)  One can calculate
+the magnitude of that flux by inserting expression~(2.6.41) for~$I_\nu$ into
+the equation of transfer~(2.6.22), and by then integrating over
+$\cos\theta\,d\Omega\,d\nu$.  (Here $\theta$ is the angle between
+$d\Omega$~and the direction of
+$\mathbf{h}\cdot(\boldsymbol{\nabla}T+\dot{\mathbf{a}}\,T)$.)
+The result is
+%
+\begin{equation}
+\tag{2.6.43}
+\mathbf{q} = (1/\kappa_R\rho_0)(\tfrac{1}{3}\partial T^4/\partial \mathbf{x})
+  \,\mathbf{h}\cdot(\boldsymbol{\nabla}T + \dot{\mathbf{a}}\,T).
+\end{equation}
+
+Here $\mathbf{q}$ is the energy flux vector of~\S2.5, and its magnitude is the
+flux of energy in the
+$\mathbf{h}\cdot(\boldsymbol{\nabla}T+\dot{\mathbf{a}}\,T)$ direction
+%
+\begin{equation}
+\tag{2.6.44}
+|\mathbf{q}| = F.
+\end{equation}
+
+Also, in eq.~(2.6.43) $\bar{\kappa}$ is the ``Rosseland mean opacity'',
+defined by
+%
+\begin{equation}
+\tag{2.6.45}
+\frac{1}{\bar{\kappa}}
+\equiv \frac{\displaystyle\int_0^\infty
+  (\kappa_\nu + \kappa_s)^{-1}\,
+  (dB_\nu/dT)\,d\nu}
+  {\displaystyle\int_0^\infty (dB_\nu/dT)\,d\nu}.
+\end{equation}
+
+For free-free transitions by themselves (eq.~2.6.25) the Rosseland mean
+opacity is
+%
+\begin{equation}
+\tag{2.6.46}
+\kappa_{ff} = (0.645\times 10^{23}\;\text{cm}^2/\text{g})
+  \left(\frac{C_f\,\bar{f}\,\bar{g}^2}{\mathcal{A}}\right)
+  \left(\frac{\rho_0}{\text{g\;cm}^{-3}}\right) T^{-7/2}.
+\end{equation}
+
+See~\S2.1 for notation.  For electron scattering by itself in the nonrelativistic
+case, the Rosseland mean opacity is
+%
+\begin{equation}
+\tag{2.6.47}
+\bar{\kappa}_{es} = \kappa_{es} = 0.40\;\text{cm}^2/\text{g}.
+\end{equation}
+
+
+%%% ===============================================================
+%%% SECTION 2.7: Shock Waves
+%%% ===============================================================
+
+\subsection{Shock Waves}
+\label{sec:2.7}
+
+\emph{Basic references}\quad
+Zel'dovich and Raizer~(1966)~\cite{ZeldovichRaizer1966};
+Landau and Lifshitz~(1959)~\cite{LandauLifshitz1959};
+Taub~(1948)~\cite{Taub1948};
+Lichnerowicz~(1967, 1970, 1971)~\cite{Lichnerowicz1967};
+Thorne~(1973a)~\cite{Thorne1973a}.
+
+\bigskip
+\noindent
+\emph{Types of shock waves}
+
+\medskip
+\noindent
+When gas in supersonic flow encounters an obstacle (e.g., the surface of a star,
+or the geometric structure of the ergosphere of a black hole), a shock front
+develops.  In the shock front the flow decelerates sharply from supersonic to
+subsonic, and some of the kinetic energy of the flow gets converted into heat
+(increase in entropy).
+
+The structure of the shock depends on the nature of the forces which decelerate
+the gas particles (atoms, ions, electrons).  If those forces are collisions between
+the particles themselves (the usual case), one has an ordinary shock.  But if the
+particles are decelerated without colliding---e.g., by impact onto the dipole
+magnetic field of a neutron star, which swings the particles into Larmour
+orbits---one has a \emph{collisionless} shock.  These notes will be confined to ordinary
+shocks.  For the theory of collisionless shocks see, e.g., the end of~\S12 of Kaplan
+(1966).
+
+Shock waves in a partially ionized gas (e.g., the interstellar medium) can have
+a somewhat different form than ordinary shocks.  As gas passes through the shock
+front, much of its kinetic energy of supersonic flow can be converted into
+excitation energy of atoms and ions, and can be quickly radiated away as ``line''
+radiation.  The result is a bright glow from the shock front itself.  See, e.g.,
+Pikel'ner~(1961) and~\S10 of Kaplan~(1966).  In this section we shall ignore such
+energy losses to radiation---i.e., we shall demand that the gas behind the shock
+have the same total energy per unit rest mass as the gas in front of the shock.
+
+%%% ---------------------------------------------------------------
+%%% The relativistic Rankine--Hugoniot equations
+%%% ---------------------------------------------------------------
+
+\bigskip
+\noindent
+\emph{The relativistic Rankine--Hugoniot equations}
+
+\medskip
+\noindent
+Pick a particular event~$\mathscr{P}$ on a shock front.  In the neighborhood
+of~$\mathscr{P}$ introduce a local Lorentz frame (``rest frame of the shock'')
+in which (i) the shock is the surface $y = z = 0$; and (iii) on both sides of
+the shock the fluid is moving in the $x$~direction, i.e., perpendicular to the
+shock front (``normal shock''; see Figure~\ref{fig:2.7.1}).  That such a local
+Lorentz frame exists in general one can prove quite easily [see, e.g.,
+Taub~(1948)].
+
+Denote the ``front'' side of the shock (side \emph{from} which the fluid moves)
+by a ``1'', and denote the ``back'' side (side \emph{toward} which the fluid
+moves) by a ``2''; see Figure~\ref{fig:2.7.1}.  Denote the velocity of the
+fluid, as measured in the rest frame of the shock, by
+%
+\begin{subequations}
+\begin{align}
+\tag{2.7.1a}
+v_1 &= (dx/dt)_1 = \text{ordinary velocity on front side},\\[4pt]
+\tag{2.7.1b}
+v_2 &= (dx/dt)_2 = \text{ordinary velocity on back side}.
+\end{align}
+\end{subequations}
+%
+(Note that these ``4-velocities'' are scalars, not vectors.)
+
+In the rest frame of the shock the law of baryon conservation is equivalent
+to continuity of the \emph{baryon flux}:
+%
+\begin{equation}
+\tag{2.7.2a}
+j \equiv n_1\,u_1 = n_2\,u_2,
+\end{equation}
+%
+and the relations $n = 1/V_1$, $\mu_1 = p_1$,
+%
+\begin{subequations}
+\begin{align}
+\tag{2.7.1c}
+u_1 &= v_1\,\gamma_1 = v_1/(1 - v_1^2)^{1/2}
+  = \text{``4-velocity'' on front side},\\[4pt]
+\tag{2.7.1d}
+u_2 &= v_2\,\gamma_2 = v_2/(1 - v_2^2)^{1/2}
+  = \text{``4-velocity'' on back side}.
+\end{align}
+\end{subequations}
+
+\noindent
+Similarly, energy and momentum conservation are equivalent to continuity of
+energy flux and momentum flux:
+%
+\begin{subequations}
+\begin{align}
+\tag{2.7.2b}
+\bigl[(\rho + p)\,v\,u\bigr]_1
+  &= \bigl[(\rho + p)\,v\,u\bigr]_2,\\[4pt]
+\tag{2.7.2c}
+\bigl[(\rho + p)\,u^2 + p\bigr]_1
+  &= \bigl[(\rho + p)\,u^2 + p\bigr]_2.
+\end{align}
+\end{subequations}
+
+%%% ---------------------------------------------------------------
+%%% Figure 2.7.1
+%%% ---------------------------------------------------------------
+
+\begin{figure}[htbp]
+\centering
+% \includegraphics[width=\columnwidth]{fig_2_7_1}
+\fbox{\parbox{0.9\columnwidth}{\centering [Figure 2.7.1 placeholder]\\[6pt]
+Diagram of a shock wave viewed in the local-Lorentz rest frame of the
+shock front at an event~$\mathscr{P}$.  The front (``1'' side) is on the left,
+and the back (``2'' side) is on the right.  Arrows indicate gas flow with
+velocity~$v_1$ entering from the left and velocity~$v_2$ exiting to the right.
+The $x$-axis is perpendicular to the shock surface, which lies in the
+$y$-$z$ plane.  Hatching indicates the compressed gas behind the shock.}}
+\caption{\textit{Figure~2.7.1.}  A shock wave viewed in the local-Lorentz
+rest frame of the shock front at an event~$\mathscr{P}$.}
+\label{fig:2.7.1}
+\end{figure}
+
+These junction conditions are more easily understood by writing them in a
+form analogous to the Rankine--Hugoniot equations of Newtonian theory:
+First take the law of baryon conservation~(2.7.2a) and turn it into equations
+for the fluid 4-velocities
+%
+\begin{equation}
+\tag{2.7.3a}
+u_1 = jV_1, \qquad u_2 = jV_2.
+\end{equation}
+%
+(See~\S2.5 for notation.)  Then take the law of momentum conservation~(2.7.2a)
+and rewrite it in terms of $\mu$, $V_1$, and $p$ using the law of baryon
+conservation~(2.7.2a) to obtain
+%
+\begin{subequations}
+\begin{align}
+\tag{2.7.3b}
+j^2 &= -\frac{p_2 - p_1}{\mu_2\,V_2 - \mu_1\,V_1},\\[6pt]
+\end{align}
+\end{subequations}
+%
+and the relations
+$j^2 = (p_2-p_1)/(\mu_2 V_2 - \mu_1 V_1)$.
+
+Finally, use the law of baryon conservation~(2.7.2b) to rewrite the energy
+equation~(2.7.3b) by $(\mu_1 V_1 + \mu_2 V_2)$, and combine with
+$j = u_1/V_1 = u_2/V_2$; divide equation~(2.7.3b) by the square of the energy
+equation $(\mu_2\gamma_2)^2 - (\mu_1\gamma_1)^2 = (p_1 - p_2)(\mu_1 V_1 + \mu_2 V_2)$;
+then subtract this from [eq.~(2.7.2a)] to obtain
+%
+\begin{equation}
+\tag{2.7.3c}
+\mu_2^2 - \mu_1^2 = (p_2 - p_1)(\mu_1\,V_1 + \mu_2\,V_2).
+\end{equation}
+
+\emph{Equations~(2.7.3) are Taub's~(1948) junction conditions for shock waves.}
+Their Newtonian limits are the standard Rankine--Hugoniot equations:
+%
+\begin{subequations}
+\begin{align}
+\tag{2.7.4a}
+v_1 &= j_0\,V_{01},\qquad v_2 = j_0\,V_{02}\\[4pt]
+\tag{2.7.4b}
+j_0 &\equiv \frac{p_2 - p_1}{V_{01} - V_{02}}\quad
+\text{(``mass flux'' of Newtonian theory)};\\[4pt]
+\tag{2.7.4c}
+w_2 - w_1 &= \tfrac{1}{2}(p_2 - p_1)(V_{01} + V_{02}).
+\end{align}
+\end{subequations}
+%
+The form of the Newtonian junction conditions~(2.7.4) motivates one to use $p$
+and $V_0$ as one's independent thermodynamic variables when analyzing Newtonian
+shocks; similarly, the form of the relativistic junction conditions~(2.7.3)
+motivates one to use $p$ and~$\mu V$ as one's independent variables for
+relativistic shocks.
+
+\subsubsection*{The Rankine-Hugoniot curve}
+
+Consider a family of shocks, each with the same thermodynamic state on the
+front face (same $\mu_1$, $V_1$, $p_1$, etc.), but with different states on the
+back face (different $\mu_2$, $V_2$, $p_2$, etc.).  This family of shocks is
+a one-parameter family.  Thus, if one plots all back-face states
+$(\mu_2 V_2,\,p_2)$ in the $\mu V$--$p$ plane, they lie on a single
+curve---the ``Rankine-Hugoniot curve''---passing through the point
+$(\mu_1 V_1,\,p_1)$.  (In the relativistic case this curve is also called the
+``Taub adiabat'' or ``Poisson adiabat''.)
+
+One can also plot, in the $\mu V$--$p$ plane, the Poisson adiabat (curve of
+constant entropy) passing through $(\mu_1 V_1,\,p_1)$.  These two curves
+typically have the relative shapes and locations shown in Figure~2.7.2.  In
+particular, from the Rankine-Hugoniot equations one can derive the following
+general properties of the Rankine-Hugoniot
+curve:\footnote{See \citet{Thorne1973a} for derivation.  (i)~The
+  Rankine-Hugoniot curve is tangent to the Poisson adiabat, and has the same
+  second derivative at point~``1''.  The derivation requires the assumption
+  $[\partial^2(\mu V)/\partial p^2]_{s} > 0$; a condition which is satisfied
+  by all materials of astrophysical or laboratory interest; see
+  \citet{LandauLifshitz1959}.  Some, but not all, of the listed properties
+  remain true without this condition; see \citet{ZeldovichRaizer1966} for
+  nonrelativistic details, and \citet{Thorne1973a} for relativistic details.}
+
+\begin{enumerate}
+\item[(i)] The Rankine-Hugoniot curve is tangent to the Poisson adiabat, and
+  has the same second derivative at point~``1''; i.e., for weak shocks the
+  increase in entropy is third-order in the pressure jump:
+  %
+  \begin{equation}
+    s_2 - s_1 = \left[\frac{1}{12\mu T}\,
+      \frac{\partial^2(\mu V)}{\partial p^2}\bigg|_{s,\,1}\right]
+      (p_2 - p_1)^3 + O\!\left[(p_2-p_1)^4\right].
+    \tag{2.7.5}
+  \end{equation}
+
+\item[(ii)] As the gas passes from the front of the shock to the back, its
+  entropy, pressure, and chemical potential increase
+  %
+  \begin{equation}
+    s_2 > s_1\,,\qquad p_2 > p_1\,,\qquad \mu_2 > \mu_1\,;
+    \tag{2.7.6a}
+  \end{equation}
+  %
+  while its specific volume and the product $\mu V$ decrease
+  %
+  \begin{equation}
+    V_2 < V_1\,,\qquad \mu_2 V_2 < \mu_1 V_1\,.
+    \tag{2.7.6b}
+  \end{equation}
+  %
+  (Hence, only the ``upper branch'' of the Rankine-Hugoniot curve,
+  Figure~2.7.2, is physically relevant.)
+
+\item[(iii)] The flow on the front side is always supersonic; on the back side
+  is always subsonic
+  %
+  \begin{equation}
+    u_1/u_{S1} > 1\,,\qquad u_2/u_{S2} < 1\,;
+    \tag{2.7.7}
+  \end{equation}
+  %
+  \[
+    u_S = c_S/(1 - c_S^2)^{1/2}\,.
+  \]
+
+\item[(iv)] As one moves up the Rankine-Hugoniot curve, away from point
+  ``1''---i.e., as one studies a sequence of ever ``stronger''
+  shocks---the following quantities increase monotonically:
+  %
+  \begin{equation}
+  \begin{gathered}
+    \text{the baryon flux across the shock, } j\,; \\
+    \text{the jump in entropy across the shock, } s_2 - s_1\,; \\
+    \text{the ``relativistic'' Mach number on the front side of the shock, }
+      M_1 = u_1/u_{S1}\,.
+  \end{gathered}
+    \tag{2.7.8}
+  \end{equation}
+\end{enumerate}
+
+Notice that, once the thermodynamic state on the front face of the shock
+has been specified, the shock has only one free parameter.  If one fixes the
+baryon flux across the shock~$j$, or the speed on the front face~$u_1$, or
+the pressure on the back face~$p_2$, or any other single parameter, then all
+other properties of the shock are uniquely determined.  To calculate them, one
+need merely invoke the Rankine-Hugoniot equations~(2.7.4), the laws of
+thermodynamics, and the equation of state of the gas.
+
+%%% Shocks in an ideal gas %%%
+
+\subsubsection*{Shocks in an ideal gas}
+
+Consider, as a special but important case, a nonrelativistic ideal gas with
+constant adiabatic index $\Gamma = -(\partial\ln p/\partial\ln V_0)_s$, so
+that
+%
+\begin{equation}
+  pV_0 = kT/\bar{m}\,.
+  \tag{2.7.9}
+\end{equation}
+
+By a straightforward calculation (\S85 of \citealt{LandauLifshitz1959}), one
+can derive the following relationships between various quantities along the
+Rankine-Hugoniot curve:
+%
+\begin{equation}
+\begin{aligned}
+  \frac{V_{02}}{V_{01}} &= \frac{(\Gamma+1)\,p_1 + (\Gamma-1)\,p_2}
+                               {(\Gamma-1)\,p_1 + (\Gamma+1)\,p_2}
+  \;\to\; \frac{\Gamma-1}{\Gamma+1}
+  &&\text{for strong shock,} \\[6pt]
+  %
+  \frac{T_2}{T_1} &= \frac{p_2}{p_1}\,
+    \frac{(\Gamma-1)\,p_2 + (\Gamma+1)\,p_1}
+         {(\Gamma+1)\,p_2 + (\Gamma-1)\,p_1}
+  \;\to\; \frac{\Gamma-1}{\Gamma+1}\,\frac{p_2}{p_1}
+  &&\text{for strong shock,} \\[6pt]
+  %
+  \hat{\jmath}_0^{\,2} &=
+    \frac{(\Gamma-1)\,p_1 + (\Gamma+1)\,p_2}{2V_{01}}
+  \;\to\; \frac{\Gamma+1}{2}\,\frac{p_2}{V_{01}}
+  &&\text{for strong shock,} \\[6pt]
+  %
+  f^2 &= \tfrac{1}{2}\,V_{01}
+    \bigl[(\Gamma+1)\,p_1 + (\Gamma-1)\,p_2\bigr]
+  \;\to\; \tfrac{1}{2}\,(\Gamma-1)\,V_{01}\,p_2
+  &&\text{for strong shock,} \\[6pt]
+  %
+  \hat{\jmath}_0^{\,2} &=
+    \frac{V_{01}\bigl[(\Gamma+1)\,p_1 + (\Gamma-1)\,p_2\bigr]^2}
+         {2(\Gamma+1)}
+  \;\to\; \frac{(\Gamma-1)^2}{2(\Gamma+1)}\,V_{01}\,p_2^{\,2}
+  &&\text{for strong shock.}
+\end{aligned}
+  \tag{2.7.10}
+\end{equation}
+%
+Here ``strong shock'' means ``in the limit $p_2/p_1 \gg 1$''.
+
+\begin{figure}[htbp]
+\centering
+\fbox{\parbox{0.9\columnwidth}{\centering [Figure 2.7.2 placeholder]\\
+The Poisson adiabat $\mathscr{P}\,\mathscr{P}'$ and the Rankine-Hugoniot
+curve $\mathscr{R}\,\mathscr{R}'$ plotted in the $\mu V$--$p$ plane.}}
+\caption{The Poisson adiabat $\mathscr{P}\,\mathscr{P}'$ and the
+  Rankine-Hugoniot curve $\mathscr{R}\,\mathscr{R}'$ plotted in the
+  $\mu V$--$p$ plane.}
+\label{fig:2.7.2}
+\end{figure}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% SECTION 2.8  TURBULENCE
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Turbulence}
+\label{sec:2.8}
+
+In the accretion of gas onto a black hole, turbulence probably plays an
+important role.  (See \S\S4 and~5.)  Unfortunately, the theory of turbulence
+is in a very uncertain state.  Little is known with confidence about the
+astrophysical circumstances under which turbulence should develop, or about
+the strength of the turbulence; see, e.g., Chapter~3 of
+\citet{LandauLifshitz1959}; also \citet{Pikelner1961}.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% SECTION 2.9  RECONNECTION OF MAGNETIC FIELD LINES
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Reconnection of Magnetic Field Lines}
+\label{sec:2.9}
+
+\emph{Basic references}\quad \S5.3 of \citet{Cowling1965};
+\citet{Sonnerup1970}; \citet{Yeh1970};
+\citet{VainshteinZeldovich1972}.
+
+\subsubsection*{Basic ideas}
+
+In flat spacetime consider a plasma that is macroscopically neutral, that has a
+high electrical conductivity~$\sigma$, that is sufficiently dilute for one to
+ignore its dielectric properties: $\varepsilon = \mu = 1$.  Let the plasma be
+endowed with a large-scale magnetic field, and examine the evolution of that
+field in a Lorentz frame where the plasma has low velocity
+$|\mathbf{v}| \ll c$.  Maxwell's equations for the electromagnetic field then
+read
+%
+\begin{align}
+  \nabla \times \mathbf{E} + (1/c)(\partial\mathbf{B}/\partial t) &= 0\,,
+  \tag{2.9.1} \\[4pt]
+  \nabla \times \mathbf{B} - (1/c)(\partial\mathbf{E}/\partial t)
+    &= 4\pi\mathbf{J}/c\,.
+  \tag{2.9.2}
+\end{align}
+
+In the local rest frame of the plasma the current is proportional to the
+electric field, $\mathbf{J} = \sigma\mathbf{E}$.  When transformed to the
+Lorentz frame where the plasma moves with velocity~$\mathbf{v}$, this
+equation says
+%
+\begin{equation}
+  \mathbf{J} = \sigma\bigl[\mathbf{E}
+    + (\mathbf{v}/c) \times \mathbf{B}\bigr].
+  \tag{2.9.3}
+\end{equation}
+
+A straightforward calculation from the above equations leads to the following
+law for the rate of change of magnetic field along the world lines of the
+plasma:
+%
+\begin{equation}
+  \frac{d\mathbf{B}}{d\tau}
+  = (\omega + \sigma - \tfrac{2}{3}\theta\,\mathbf{1}) \cdot \mathbf{B}
+    - \frac{1}{4\pi\sigma}\left(
+      \frac{\partial^2\mathbf{B}}{\partial t^2}
+      - c^2\,\nabla^2\mathbf{B}\right).
+  \tag{2.9.4}
+\end{equation}
+%
+Here $\mathbf{1}$ is the unit 3-tensor; $\omega$, $\sigma$, and~$\theta$ are
+the rotation, shear, and expansion of the plasma
+[cf.\ eqs.~(2.5.17) and~(2.5.18)]; and
+%
+\[
+  d/d\tau = \partial/\partial t + \mathbf{v}\cdot\nabla\,.
+\]
+
+Because of the very high electrical conductivity, one can ignore the
+``wave-equation'' part of eq.~(2.9.4) almost everywhere in the plasma;
+and the magnetic field evolves in a ``frozen-in'' manner:
+%
+\begin{equation}
+  d\mathbf{B}/d\tau
+  = (\omega + \sigma - \tfrac{2}{3}\theta\,\mathbf{1}) \cdot \mathbf{B}\,.
+  \tag{2.9.5}
+\end{equation}
+
+[Cf.\ Eq.~(2.5.20) and associated discussion.]  However, in regions of plasma
+where the field has strong gradients, the ``wave-equation'' part must come
+into play.
+
+Consider, as the case of greatest importance, a magnetic field that is chaotic
+with an ordered structure on some scale~$l_c$ (subscript $c$ for ``cell
+size'').  At the interface between adjacent cells, the magnetic field must
+reverse sign (``neutral point'' or ``neutral sheet''), and its gradients will
+be very large.  Hence, at the interface, ``wave-equation'' behavior can come
+into play destroying the frozen-in behavior of the field.  The result is a
+reconnection of magnetic field lines, as
+
+\begin{figure}[htbp]
+\centering
+\fbox{\parbox{0.9\columnwidth}{\centering [Figure 2.9.1 placeholder]\\
+(a)~Top view and (b)~perspective view of reconnecting magnetic field lines
+in a plasma.  The reconnection region is stippled; the magnetic field lines
+are drawn solidly and the flow lines of the plasma are dotted.  The innermost
+field line is in the process of reconnecting into the dashed form.
+The perspective view~(b) shows the closed curve~$\mathscr{E}$ around which
+one integrates to derive eq.~(2.9.6) for the EMF in the connecting region.}}
+\caption{The region in a plasma where magnetic field lines are
+  reconnecting (schematic picture).  In the top view, (a), the
+  reconnection region is stippled; the magnetic field lines are drawn
+  solidly; and the flow lines of the plasma are dotted.  The innermost
+  field line is in the process of reconnecting into the dashed form.
+  The perspective view, (b), shows the closed curve~$\mathscr{E}$
+  around which one integrates to derive eq.~(2.9.6) for the EMF in the
+  connecting region.}
+\label{fig:2.9.1}
+\end{figure}
+
+depicted in Figure~2.9.1.  This reconnection gradually converts the two adjacent
+cells into a single cell, reducing the overall strength of the magnetic field.
+
+In situations of interest (\S\S4.4 and 5.2), the decrease of field strength due
+to reconnection will be counterbalanced by an increase in strength due to
+compression or shear of the plasma.
+
+The reconnection process creates very strong electric fields.  In particular,
+a simple application of Faraday's law
+%
+\begin{equation}
+\oint_{\mathscr{C}} \mathbf{E}\cdot d\mathbf{l}
+  = -\frac{d}{d\tau}\!\int \mathbf{B}\cdot d\mathbf{A},
+\end{equation}
+%
+with the curve~$\mathscr{C}$ as shown in Figure~2.9.1b, shows that the EMF built up
+in the reconnecting region is
+%
+\begin{equation}
+\Delta\phi_e
+  = (\text{rate of reconnection of magnetic flux})
+  \equiv d\Psi/dt.
+\tag{2.9.6}
+\end{equation}
+
+In situations of interest to us [\S5.12; Lynden-Bell~(1969)\cite{LyndenBell1969}],
+these EMF's can be far greater than $10^{10}$~volts.  If the density of the plasma is
+sufficiently low to permit long mean-free paths for charged particles, and if the
+reconnecting region is sufficiently straight, then these EMF's can accelerate
+particles to ultra-relativistic energies; and the particles can then radiate intense
+synchrotron radiation.  In this manner regions of reconnecting field lines may be
+sources of flares.
+
+%% ============================================================
+%%  Section 3  The Origin of Stellar Black Holes
+%% ============================================================
