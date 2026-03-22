@@ -1,0 +1,384 @@
+% Agent 03: Pages 352--355 (book pp.352--355, PDF pp.5--7)
+% Content: End of Section 2.1 (from eq.~2.1.20 onward), Figure 2.1.2,
+%          beginning of Section 2.2 (Free-Bound Radiation)
+% Equations: (2.1.20)--(2.1.31), (2.2.1)--(2.2.9)
+
+%%---------------------------------------------------------------------------
+%% Continuation of Section 2.1
+%% Small-angle, uncertainty-principle region (cont.)
+%%---------------------------------------------------------------------------
+
+Thus, the uncertainty principle (``$\geq$'' in above equation) prevents the existence
+of scatterings with $b$ less than the electron de~Broglie wavelength
+\begin{equation}
+b_{dB} = \hbar / m_e v.
+\tag{2.1.20}
+\end{equation}
+
+If $b_{dB} < b_{s-l}$, this limitation has no effect on small-angle scatterings; and the
+small-angle, classical Gaunt factor (2.1.19) is valid.  If $b_{dB} > b_{s-l}$, the uncertainty
+principle comes into play, and one must use $b_{dB}$ rather than $b_{s-l}$ as the lower
+limit on the small-angle integral (2.1.17) for $d\sigma/dv$.  The result is
+\begin{equation}
+\frac{d\sigma}{dv} = \frac{16\,\alpha^2}{3}\,\frac{Z^2 r_0^2}{v^2}\,
+\ln\!\left(\frac{b_{\max}}{b_{dB}}\right).
+\tag{2.1.21}
+\end{equation}
+
+A more exact, quantum mechanical calculation gives a slightly different argument
+in the logarithm,
+\begin{equation}
+\frac{d\sigma}{dv} = \frac{16\,\alpha^2}{3}\,\frac{Z^2 r_0^2}{v^2}\,
+\ln\!\left(\frac{2\,b_{\max}}{b_{dB}}\right).
+\tag{2.1.22}
+\end{equation}
+
+corresponding to the Gaunt factor
+\begin{equation}
+G(\nu,v) = \frac{\sqrt{3}}{\pi}\,
+\ln\!\left(\frac{4\,\frac{1}{2}m_e v^2}{h\nu}\right).
+\tag{2.1.23}
+\end{equation}
+
+Thus, in the large-angle region $G = 1$; and in the forbidden region $G = 0$.  It turns
+out that throughout the photon-discreteness portion of the large-angle region,
+$G$ remains approximately 1; see Figure~2.1.1.
+
+\textit{Small-angle, classical region}\quad In the region $\tau = 1/\omega \gg b_{s-l}/v$---i.e.
+\begin{equation}
+\frac{h\nu}{\frac{1}{2}m_e v^2}
+\ll \left(\frac{\frac{1}{2}m_e v^2}{Z^2 R_y}\right)^{1/2}
+\tag{2.1.14}
+\end{equation}
+
+In the ``photon-discreteness'' portion of the small-angle, uncertainty-principle
+region, discreteness effects modify the Gaunt factor (2.1.22) into the form
+\begin{subequations}
+\begin{align}
+G(\nu,v) &= \frac{\sqrt{3}}{\pi}\,
+\ln\!\left[\frac{\frac{1}{2}m_e(v_i + v_f)^2}{h\nu}\right],
+\tag{2.1.24a}\\[6pt]
+G(\nu,v) &= \frac{\sqrt{3}}{\pi}\,
+\ln\!\left[\frac{v_i + v_f}{v_i - v_f}\right]^2,
+\tag{2.1.24b}
+\end{align}
+\end{subequations}
+
+Here $v_i$ and $v_f$ are the electron speeds before and after the collision:
+\begin{equation}
+\tfrac{1}{2}m_e v_f^2 = \tfrac{1}{2}m_e v_i^2 - h\nu.
+\end{equation}
+
+[Expression (2.1.24) is the result of a quantum-mechanical Born-approximation
+calculation, valid throughout the small-angle, uncertainty-principle region.]
+
+%%---------------------------------------------------------------------------
+%% Radiation from a plasma
+%%---------------------------------------------------------------------------
+
+\bigskip
+\textit{Radiation from a plasma}
+
+Consider a plasma which may contain a variety of ionic species.  Focus attention
+on radiation from all ions of a particular type, with charge $Ze$ and atomic weight
+$A$.  Let $C_A$ be the concentration by mass of the species of atom that gives rise to
+this ion, and let $f_i$ be the fraction of all such atoms ionized to the state of interest.
+Let $f_e$ be the number of unbound electrons per baryon in the gas.  Then
+\begin{equation}
+n_I = \text{(number of ions per unit volume)} = f_i C_A \rho_0 / A m_p.
+\tag{2.1.25}
+\end{equation}
+
+Here $\rho_0$ is the density of rest mass.  (Of course, $f_i \leq 1$; $C_A \leq 1$.)  The ions
+and electrons both have Maxwell velocity distributions; but because $m_e \ll A m_p$,
+the velocities of the electrons and their accelerations during Coulomb scattering
+are far greater than those of the ions.  Therefore, in calculating bremsstrahlung
+one can regard the ions as at rest.  The number of photons per unit mass of plasma
+is $f_e/m_p$, so the total power per unit frequency emitted from one gram of plasma
+by electron-ion scatterings is
+\begin{equation}
+\varepsilon_\nu
+= \frac{C_A f_i}{A m_p}
+\underbrace{\vphantom{\bigg|}\quad}_{\substack{
+\text{fractions of all} \\
+\text{ions per} \\
+\text{unit mass}
+}}
+\cdot \int
+\underbrace{\vphantom{\bigg|}\quad}_{\substack{
+\text{number} \\
+\text{of electrons}
+}}
+\underbrace{\vphantom{\bigg|}\quad}_{\substack{
+\text{electrons that have} \\
+\text{speeds $v$ in range $dv$}
+}}
+\frac{f_e \rho_0}{m_p}\;v\,h\nu\;
+\frac{d\sigma}{dv}\;dv.
+\tag{2.1.26}
+\end{equation}
+
+Here $T$ is the temperature in the plasma.  By inserting into the integrand
+expressions (2.1.12) and (2.1.13) for $d\sigma/dv$ and performing the integration, one
+obtains
+\begin{align}
+\varepsilon_\nu
+&= \frac{C_A f_i f_e^2}{A m_p}\,
+\frac{32\pi e^6}{3\,m_e c^3}\,
+\left(\frac{2\pi m_e}{3kT}\right)^{\!1/2}\!
+\frac{\rho_0^2}{m_p^2}\;
+e^{-h\nu/kT}\;
+\bar{G}(\nu,T)
+\notag\\[4pt]
+&= 2.5 \times 10^{10}\;
+\frac{\text{erg}}{\text{g\;sec\;Hz}}\;
+\left(\frac{C_A f_i f_e^2}{A}\right)
+\left(\frac{\rho_0}{\text{g\;cm}^{-3}}\right)
+\left(\frac{\rho_0}{A}\right)
+T_K^{\,1/2}\;e^{-h\nu/kT}\;\bar{G}(\nu,T).
+\tag{2.1.27}
+\end{align}
+
+%%---------------------------------------------------------------------------
+%% Mean Gaunt factor \bar{G}
+%%---------------------------------------------------------------------------
+
+Here $T_K$ is temperature measured in ${}^\circ$K, and $\bar{G}(\nu,T)$ is the ``Maxwell--Boltzmann-averaged
+Gaunt factor'', also called the ``mean Gaunt factor'':
+\begin{equation}
+\bar{G}(\nu,T) = \int_0^\infty
+G\!\left(\nu,\;v = \left[\frac{2(xkT + h\nu)}{m_e}\right]^{1/2}\right)
+e^{-x}\,dx.
+\tag{2.1.28}
+\end{equation}
+
+Corresponding to the 2-dimensional plot of Gaunt factors (Figure~2.1.1) one
+can make a 2-dimensional plot of mean Gaunt factors (Figure~2.1.2).  It is
+straightforward to calculate the mean Gaunt factors shown there (up to
+quantities of order unity) from the Gaunt factors of Figure~2.1.1.  Notice that,
+
+%%---------------------------------------------------------------------------
+%% Figure 2.1.2 — Mean Gaunt factors
+%%---------------------------------------------------------------------------
+
+\begin{figure}[htbp]
+\centering
+% \includegraphics[width=\columnwidth]{fig_2_1_2}
+\fbox{\parbox{0.9\columnwidth}{\centering [Figure 2.1.2 placeholder]\\[6pt]
+Mean Gaunt factors for bremsstrahlung of frequency $\nu$ emitted by
+electron-ion collisions in a plasma of temperature $T$.\\[4pt]
+Horizontal axis: $h\nu/kT$.\\
+Vertical axis: $(kT)/(Z^2 R_y)$.\\[4pt]
+Regions shown:\\
+--- ``Small-angle, u.p., tail region'',
+$\bar{G} = \bigl(\frac{3}{\pi}\bigr)\,\bigl(\frac{kT}{h\nu}\bigr)^{1/2}$\\
+--- ``Small-angle, u.p.\ region'',
+$\bar{G} = \frac{\sqrt{3}}{\pi}\ln\!\left[\frac{4}{\xi}\,\frac{kT}{h\nu}\right]$\\
+--- ``Small-angle, classical region'',
+$\bar{G} = \frac{\sqrt{3}}{\pi}\,\ln\!\left[\left(\frac{4}{\xi^{3/2}}\right)
+\left(\frac{kT}{h\nu}\right)\left(\frac{kT}{Z^2 R_y}\right)^{1/2}\right]$\\
+--- ``Large-angle region'', $\bar{G} = 1$\\
+--- ``Large-angle, tail region'', $\bar{G} = 1$\\
+--- ``Forbidden region''}}
+\caption{\textit{Figure~2.1.2.}\ Mean Gaunt factors for bremsstrahlung of frequency $\nu$ emitted by
+electron-ion collisions in a plasma of temperature~$T$.}
+\label{fig:2.1.2}
+\end{figure}
+
+aside from quantities of order unity, the mean Gaunt factors in the large-angle
+and small-angle regions are obtained by simply taking the Gaunt
+factors and making the replacement $\frac{1}{2}m_e v^2 \approx kT$:
+\begin{equation}
+\bar{G}(\nu,kT) \simeq G\bigl(\nu,\;\tfrac{1}{2}m_e v^2 = kT\bigr).
+\end{equation}
+
+Notice also that the ``forbidden region'' of the Gaunt-factor plot is replaced, in
+the mean-Gaunt-factor plot, by ``tail regions''.  The radiation in these tail regions
+is produced by the high-energy tail, $\frac{1}{2}m_e v^2 \approx h\nu \gg kT$, of the Maxwell--Boltzmann
+distribution.
+
+Tables of mean Gaunt factors, calculated with much higher accuracy than
+Figure~2.1.2, are given by \citet{Green1959} and by \citet{Karzas1961}.
+
+From Figure~2.1.1 it is clear that the uncertainty principle cannot have any
+effect on the large-angle region.
+
+%%---------------------------------------------------------------------------
+%% Total emissivity and frequency-averaged mean Gaunt factor
+%%---------------------------------------------------------------------------
+
+The total energy emitted by electron-ion collisions is obtained by integrating
+expression (2.1.27) over frequency:
+\begin{align}
+e &= \int \varepsilon_\nu\,d\nu
+= \frac{16\,C_A f_i f_e^2}{3}\;
+\frac{\alpha\,m_e c^2_0}{A}\;
+\left(\frac{2\pi kT}{m_e c^2}\right)^{\!1/2}\!
+\frac{\rho_0}{m_p^2}\;
+\left(\frac{C_A f_i f_e^2}{A}\right)
+\left(\frac{\rho_0}{\text{g\;cm}^{-3}}\right)
+T_K^{\,1/2}\;\bar{G}(T)
+\notag\\[4pt]
+&= 5.2 \times 10^{20}\;
+\frac{\text{ergs}}{\text{g\;sec}}\;
+\left(\frac{C_A f_i f_e^2}{A}\right)
+\left(\frac{\rho_0}{\text{g\;cm}^{-3}}\right)
+T_K^{\,1/2}\;\bar{G}(T).
+\tag{2.1.29}
+\end{align}
+
+Here $\bar{G}(T)$ is the frequency-averaged mean Gaunt factor
+\begin{equation}
+\bar{G}(T) = \int_0^\infty \bar{G}(\nu = xkT/h,\;T)\;e^{-x}\,dx.
+\tag{2.1.30}
+\end{equation}
+
+From a value of $\bar{G} \simeq 1.2$ at $kT/Z^2 R_y \sim 0.01$, it increases gradually to a maximum
+of $1.42$ at $kT/Z^2 R_y \sim 1$, and then decreases gradually toward an asymptotic,
+high-temperature value of $1.103$ at $kT/Z^2 R_y > 100$; see Figure~2 of \citet{Green1959}.
+
+In a plasma at nonrelativistic temperatures, the radiation from electron-electron
+collisions and from ion-ion collisions is negligible compared to electron-ion
+radiation.  This is because (i) when identical particles scatter, the first time
+derivative of the electric dipole moment is conserved, so only radiation of
+quadrupole order and higher [with intensity $\sim(v/c)^2$ less than dipole radiation]
+can be emitted; (ii) the speeds and accelerations of colliding ions are far less than
+those of electrons because of their much larger masses.
+
+Equations (2.1.27) and (2.1.29), together with Figures~2.1.2 and~2.1.3, are
+the chief results of astrophysical interest from this section.  When dealing with
+atoms that are only partially ionized, one must sometimes correct these results
+for screening of the nuclear charge by the bound electrons; see, e.g.,
+\citet{Ginzburg1967}.  For temperatures approaching and exceeding $kT = m_e c^2$,
+relativistic effects and electron-electron collisions modify the emissivity
+(2.1.29) to the form
+\begin{align}
+e &= 5.2 \times 10^{20}\;
+\frac{\text{ergs}}{\text{g\;sec}}\;
+\left(\frac{C_A f_i f_e^2}{A}\right)
+\left(\frac{\rho_0}{\text{g\;cm}^{-3}}\right)
+T_K^{\,1/2}\bigl(1 + 4.4 \times 10^{-10}\,T_K\bigr)\,\bar{G}(T).
+\tag{2.1.31}
+\end{align}
+
+\noindent (\citealt{Ginzburg1967}).
+
+
+%%---------------------------------------------------------------------------
+%%  SECTION 2.2 — Free-Bound Radiation
+%%---------------------------------------------------------------------------
+
+\subsection{Free-Bound Radiation}
+\label{sec:2.2}
+
+\textit{Basic references}\quad \citet{Jackson1962}; \citet{Ginzburg1967}.
+
+\bigskip
+\textit{Basic physics and formulas}
+
+When an electron of kinetic energy
+\begin{equation}
+\tfrac{1}{2}m_e v^2 \leq Z^2 R_y
+\end{equation}
+impinges on an ion, there is a significant probability that, instead of scattering
+with the emission of bremsstrahlung, it will get captured into a bound state with
+an accompanying emission of ``free-bound'' radiation.
+
+We shall not compute here the details of the radiation.  Instead we cite the
+results of such a computation from the above references.
+
+Consider a plasma at temperature $T$ and density of rest mass $\rho_0$.  Let $C_A$ be
+the concentration by mass of a particular atom in the plasma; let $f_i$ be the fraction
+of all such atoms ionized into a given state, with charge $Ze$; and let $n_q$ be the
+principal quantum number of that state, and $E_i$ its
+ionization energy.  Then the emissivity due to such transitions is
+\begin{align}
+\varepsilon_\nu &= 8c^2
+\left(\frac{C_A f_i f_e^2}{An_q^5}\right)
+\left(\frac{\alpha^2 m_e e^2}{m_p}\right)^{\!3/2}
+\rho_0
+\left(\frac{\rho_0}{3kT}\right)^{\!3/2}
+e^{-(h\nu - E_i)/kT}\;G_{bf}
+\notag\\[4pt]
+&= 3.9 \times 10^{15}\;
+\frac{\text{ergs}}{\text{g\;sec\;Hz}}\;
+\left(\frac{C_A f_i f_e^2}{An_q^5}\right)
+\left(\frac{\rho_0}{\text{g\;cm}^{-3}}\right)
+T_K^{-3/2}\;e^{-(h\nu - E_i)/kT}\;G_{bf}.
+\tag{2.2.1}
+\end{align}
+
+Here $G_{bf}$ is a ``bound-free Gaunt factor'', analogous to the ``free-free'' Gaunt
+factors of \S\ref{sec:2.1}.  It depends on the kinetic energy
+\begin{equation}
+\tfrac{1}{2}m_e v^2 = h\nu - E_i
+\tag{2.2.2}
+\end{equation}
+of the electron that is captured, and on the structure of the bound state (which
+one characterizes by its quantum numbers $n_q, l_q, \ldots$):
+\begin{equation}
+G_{bf} = G_{bf}(h\nu - E_i;\;n_q, l_q, \ldots).
+\tag{2.2.3}
+\end{equation}
+
+Gaunt factors for various bound-free transitions of astrophysical interest are
+tabulated and graphed by \citet{Karzas1961}.  Energy conservation
+requires that all photons emitted have energies greater than $E_i$; consequently,
+\begin{equation}
+G_{bf} = 0 \quad \text{for} \quad h\nu - E_i < 0.
+\tag{2.2.4}
+\end{equation}
+
+In general, $G_{bf}$ ``turns on'' discontinuously at $h\nu = E_i$, with an initial value
+between ${\sim}\,0.5$ and ${\sim}\,1.5$:
+\begin{equation}
+G_{bf} \simeq 1 \quad \text{for} \quad 0 < h\nu - E_i \lesssim E_i.
+\tag{2.2.5}
+\end{equation}
+
+For $h\nu - E_i \gtrsim Z^2 R_y$, $G_{bf}$ typically remains within an order of magnitude of
+unity; as $h\nu - E_i \geq 10\,Z^2 R_y$, $G_{bf}$ falls rapidly.
+See \citet{Karzas1961}.
+
+The total emissivity, $e = \int \varepsilon_\nu\,d\nu$, due to a given free-bound transition is
+\begin{align}
+e &= 8\sqrt{3}\,c^2
+\left(\frac{C_A f_i f_e^2}{An_q^5}\right)
+\left(\frac{\alpha^2 m_e e^2}{m_p^2}\right)^{\!3/2}
+\rho_0
+\left(\frac{2\pi m_e c^2}{3kT}\right)^{\!1/2}
+T_K^{-1/2}\;\bar{G}_{bf}
+\notag\\[4pt]
+&= 4.2 \times 10^{26}\;
+\frac{\text{ergs}}{\text{g\;sec}}\;
+\left(\frac{C_A f_i f_e^2}{An_q^5}\right)
+\left(\frac{\rho_0}{\text{g\;cm}^{-3}}\right)
+T_K^{-1/2}\;\bar{G}_{bf}
+\tag{2.2.6}
+\end{align}
+
+where $\bar{G}_{bf}$, the mean Gaunt factor, depends only on temperature and on the
+bound state, and is approximately equal to one.
+\begin{equation}
+\bar{G}_{bf} = \int_0^\infty G_{bf}(h\nu - E_i = xkT;\;n_q, l_q, \ldots)\;e^{-x}\,dx \simeq 1.
+\tag{2.2.7}
+\end{equation}
+
+The total emissivity (2.2.6) due to a given free-bound transition, compared
+to the total emissivity (2.1.29) of free-free radiation from the same type of ion,
+is
+\begin{equation}
+\frac{\varepsilon_{fb}}{\varepsilon_{ff}}
+\simeq \frac{Z^2}{n_q^5}\,
+\left(\frac{8 \times 10^5}{T}\right).
+\tag{2.2.8}
+\end{equation}
+
+\citet{Ginzburg1967} states that for astrophysical plasmas the ratio of total free-bound
+radiation to total free-free radiation (summed over all states and all ions)
+generally is less than
+\begin{equation}
+\frac{\varepsilon_{fb\,\text{total}}}{\varepsilon_{ff\,\text{total}}}
+< \left(\frac{8 \times 10^5\,\text{K}}{T}\right).
+\tag{2.2.9}
+\end{equation}
