@@ -1,0 +1,574 @@
+% Agent 06: Book pages 365--368 (PDF pp.11--14)
+% Section 2.5 Hydrodynamics and Thermodynamics
+% Covers: basic references, notation, parameters describing the fluid,
+%         fundamental thermodynamic relation, equation of state,
+%         adiabatic index, speed of sound, first and second laws of
+%         thermodynamics, decomposition of 4-velocity, frozen-in magnetic
+%         field, stress-energy tensor, equations of hydrodynamics
+
+%% ----------------------------------------------------------------
+%% 2.5  Hydrodynamics and Thermodynamics
+%% ----------------------------------------------------------------
+
+\subsection{Hydrodynamics and Thermodynamics}
+\label{sec:2.5}
+
+\emph{Basic references}~~\S\S\,22.2 and 22.3 of Misner, Thorne, and Wheeler
+(1973)~\cite{MTW1973}; Lichnerowicz (1967)~\cite{Lichnerowicz1967} and
+references cited therein.  We adopt the notational conventions of
+Misner, Thorne, and Wheeler (cited henceforth as MTW), including
+signature ``$-\,+\,+\,+$''; geometrized units ($c = G = 1$); Greek
+indices ranging from 0 to 3; and Latin from 1 to 3.  ``Hats'' on indices
+refer to local orthonormal frames, e.g.\ $\mu^{\hat{\alpha}}$ and
+$T^{\hat{\alpha}\hat{\beta}}$; extra-bold, sans-serif type for 4-vectors
+and 4-tensors, e.g.\ $\mathbf{u}$, $\mathbf{p}^{\hat{\alpha}}$ and
+$\mathbf{T}^{\hat{\alpha}\hat{\beta}}$; normal bold-face type for
+3-vectors and 3-tensors (local Euclidean geometry).
+
+\bigskip
+\noindent
+\emph{Parameters describing the ``fluid''}
+
+\smallskip
+\noindent
+``LRF'' \quad local rest frame of the baryons; i.e.\ local orthonormal
+frame in which there is no net baryon flux in any direction.
+
+\smallskip
+\noindent
+$\mathbf{u}$ \quad 4-velocity of LRF; i.e.\ 4-velocity of the ``fluid''.
+
+\smallskip
+\noindent
+$n$ \quad number density of baryons (number of baryons per unit volume)
+as measured in LRF.
+
+\smallskip
+\noindent
+$m_B$ \quad mean rest mass of a baryon in the fluid; i.e.
+%
+\begin{equation}
+\tag{2.5.1}
+m_B
+= \left(\!\text{rest mass of}\atop\text{hydrogen atom}\!\right)
+  \times \left(\!\text{fraction of all baryons that are}\atop
+              \text{in the form of hydrogen nuclei}\!\right)
+  + \frac{1}{4}\!\left(\!\text{rest mass of}\atop\text{helium atom}\!\right)
+  \times \left(\!\text{fraction of all baryons that}\atop
+              \text{are in helium nuclei}\!\right)
+  + \cdots
+\end{equation}
+
+\emph{Note:} in this section we restrict ourselves to fluids that are
+chemically homogeneous and in which no nuclear reactions occur
+(``standard fluid'').  Thus, $m_B$ is constant.
+
+\medskip
+\noindent
+$\rho_0$ \quad rest-mass density, defined by
+%
+\begin{equation}
+\tag{2.5.2}
+\rho_0 \equiv m_B\, n.
+\end{equation}
+
+\noindent
+$\mathcal{V}$ \quad specific volume, i.e.\ volume per baryon, defined by
+%
+\begin{equation}
+\tag{2.5.3}
+\mathcal{V} = 1/n.
+\end{equation}
+
+\noindent
+$V_0$ \quad specific volume,
+%
+\begin{equation}
+\tag{2.5.4}
+V_0 = 1/\rho_0.
+\end{equation}
+
+\noindent
+$\rho$ \quad total density of mass-energy, as measured in LRF.
+
+\noindent
+$\Pi$ \quad specific internal energy, defined by
+%
+\begin{equation}
+\tag{2.5.5}
+\rho = \rho_0\,(1 + \Pi).
+\end{equation}
+
+\noindent
+\emph{Note:} here and throughout this section we set the speed of light
+equal to one.
+
+\medskip
+\noindent
+$p$ \quad isotropic pressure, as measured in LRF.
+
+\noindent
+$T$ \quad temperature, as measured in LRF.
+
+\noindent
+$s$ \quad entropy per baryon, as measured in LRF; of course,
+
+\noindent
+$s_0$ \quad entropy per unit mass, as measured in LRF.
+%
+\begin{equation}
+\tag{2.5.6}
+s_0 = m_B^{-1}\, s.
+\end{equation}
+
+\noindent
+$\mu$ \quad chemical potential, as measured in LRF; defined by
+%
+\begin{equation}
+\tag{2.5.7}
+\mu \equiv \left(\frac{\partial\rho}{\partial n}\right)_{\!s}
+  = \frac{\rho + p}{n}\,.
+\end{equation}
+
+(The second equality follows from the first law of thermodynamics,
+below.)
+
+\medskip
+\noindent
+$\mathbf{q}$ \quad flux of energy (due to heat conduction, radiation,
+convection, etc.)\ as measured in LRF.  This flux
+(ergs\,cm$^{-2}$\,sec$^{-1}$) is a purely spatial vector as measured
+in LRF; i.e.
+%
+\begin{equation}
+\tag{2.5.8}
+\mathbf{q} \cdot \mathbf{u} = 0.
+\end{equation}
+
+\noindent
+$\mathbf{S}$ \quad entropy density-flux vector.  In LRF this vector has
+time component equal to the entropy density, $S^0 = ns$, and space
+components equal to the entropy flux, $S^j = q^j / T$.  Hence, in
+frame-independent notation
+%
+\begin{equation}
+\tag{2.5.9}
+\mathbf{S} = ns\,\mathbf{u} + \mathbf{q}/T.
+\end{equation}
+
+\noindent
+Note that
+%
+\begin{equation}
+\tag{2.5.10}
+\boldsymbol{\nabla}\cdot\mathbf{S}
+= \left\{
+\begin{array}{l}
+\text{rate at which entropy is being generated}\\
+\text{per unit volume as measured in LRF}
+\end{array}
+\right\}.
+\end{equation}
+
+\bigskip
+\noindent
+\emph{First law of thermodynamics}
+
+\smallskip
+\noindent
+Follow a fluid element, containing $A$ baryons, along its world tube.
+The total mass-energy in the fluid element, $\rho A/n$, changes as a
+result of compression (change in volume, $A/n$) and as a result of
+influx of heat:
+%
+\begin{equation}
+\tag{2.5.11}
+d(\rho A/n) = -p\,d(A/n) + T\,d(As).
+\end{equation}
+
+\noindent
+[Here and throughout this section we assume for simplicity no internal
+generation of entropy in the fluid element---e.g., no irreversible
+chemical reactions; this enables us to write the influx of heat in
+terms of the change in entropy, $T\,d(As)$.]
+
+One often uses $A = \text{const.}$ and $\mu \equiv (\rho + p)/n$ to
+rewrite this first law of thermodynamics in the equivalent forms
+%
+\begin{align}
+\tag{2.5.12}
+d\rho &= \frac{\rho + p}{n}\, dn + nT\, ds, \\[4pt]
+\tag{2.5.12$'$}
+d\mu  &= V\, dp + T\, ds.
+\end{align}
+
+\noindent
+From the first law one can read off partial derivatives, e.g.
+%
+\begin{equation}
+\tag{2.5.12$''$}
+(\partial\rho/\partial n)_s = (\rho + p)/n, \qquad
+(\partial\mu/\partial p)_s = T.
+\end{equation}
+
+\bigskip
+\noindent
+\emph{Fundamental relation and equations of state}
+
+\smallskip
+\noindent
+The peculiar thermodynamic properties of the particular fluid being
+studied are determined by a ``fundamental thermodynamic relation''
+%
+\begin{equation}
+\tag{2.5.13}
+\rho = \rho(n,\,s) \qquad \text{or} \qquad
+\mu = \mu(p,\,s).
+\end{equation}
+
+\noindent
+Once this relation has been specified---and once the constant $m_B$ has
+been specified---one can use the first law of thermodynamics
+(2.5.12) or (2.5.12$'$) to derive explicit expressions
+for all other thermodynamic variables as functions of $n$, $s$ or $p$,
+$s$.  For example, by combining with the first law one can derive the
+``equations of state''
+%
+\begin{equation}
+\tag{2.5.8$'$}
+T(n,s) = \frac{1}{n}\left(\frac{\partial\rho}{\partial s}\right)_{\!n},
+\qquad
+p(n,s) = n\!\left(\frac{\partial\rho}{\partial n}\right)_{\!s} - \rho.
+\end{equation}
+
+\bigskip
+\noindent
+\emph{Adiabatic index and speed of sound}
+
+\smallskip
+\noindent
+One defines the adiabatic index $\Gamma_1$ by
+%
+\begin{equation}
+\tag{2.5.14}
+\Gamma_1
+\equiv \left(\frac{\partial\ln p}{\partial\ln n}\right)_{\!s}
+= \frac{\rho + p}{p}\,
+  \left(\frac{\partial p}{\partial\rho}\right)_{\!s}\,,
+\end{equation}
+%
+where the third equality follows from the first law of thermodynamics.
+It turns out that weak adiabatic perturbations (weak ``sound waves'')
+propagate, in the LRF, with ordinary velocity
+%
+\begin{equation}
+\tag{2.5.15}
+c_s
+= \left[\left(\frac{\partial p}{\partial\rho}\right)_{\!s}\right]^{1/2}
+= \left(\frac{\Gamma_1\, p}{\rho + p}\right)^{\!1/2}.
+\end{equation}
+
+\bigskip
+\noindent
+\emph{Second law of thermodynamics}
+
+\smallskip
+\noindent
+Equation~(2.5.10) allows one to write the second law of thermodynamics
+in the form
+%
+\begin{equation}
+\tag{2.5.16}
+\boldsymbol{\nabla}\cdot\mathbf{S} \geq 0.
+\end{equation}
+
+\bigskip
+\noindent
+\emph{Decomposition of 4-velocity}
+
+\smallskip
+\noindent
+One decomposes the gradient of the 4-velocity, $\nabla\mathbf{u}$,
+into its ``irreducible'' tensorial parts:
+%
+\begin{equation}
+\tag{2.5.17}
+u_{\alpha;\beta}
+= \sigma_{\alpha\beta} + \omega_{\alpha\beta}
+  + \tfrac{1}{3}\,\theta\, h_{\alpha\beta}
+  - a_\alpha\, u_\beta\,.
+\end{equation}
+
+\noindent
+Here $\mathbf{a}$ is the 4-acceleration of the fluid
+%
+\begin{equation}
+\tag{2.5.18a}
+\mathbf{a} \equiv \nabla_{\mathbf{u}}\,\mathbf{u},
+\qquad\text{i.e.}\quad
+a^\alpha = u^\alpha{}_{;\beta}\, u^\beta\,,
+\end{equation}
+%
+and $-a_\alpha u_\beta$ is that portion of $u_{\alpha;\beta}$ which is
+not orthogonal to $\mathbf{u}$.  The remainder of $u_{\alpha;\beta}$
+(i.e.\ $\sigma_{\alpha\beta} + \omega_{\alpha\beta} +
+\tfrac{1}{3}\theta\, h_{\alpha\beta}$) is orthogonal to $\mathbf{u}$;
+i.e.\ in the LRF it has only spatial components.  This orthogonal part
+is decomposed into an isotropic part,
+%
+\begin{equation}
+\tag{2.5.18b}
+\theta \equiv \nabla \cdot \mathbf{u}
+= u^\alpha{}_{;\alpha}\,,
+\end{equation}
+%
+expansion, $\tfrac{1}{3}\theta h_{\alpha\beta}$, where $\theta$ is the
+``expansion''; and $h_{\alpha\beta}$ is the ``projection tensor''
+%
+\begin{equation}
+\tag{2.5.18c}
+h_{\alpha\beta} \equiv g_{\alpha\beta} + u_\alpha\, u_\beta\,;
+\end{equation}
+%
+plus a symmetric, trace-free ``shear''
+%
+\begin{equation}
+\tag{2.5.18d}
+\sigma_{\alpha\beta}
+= \tfrac{1}{2}(u_{\alpha;\mu}\, h^\mu{}_\beta
+              + u_{\beta;\mu}\, h^\mu{}_\alpha)
+  - \tfrac{1}{3}\theta\, h_{\alpha\beta}\,;
+\end{equation}
+%
+plus an antisymmetric ``rotation'' or ``vorticity''
+%
+\begin{equation}
+\tag{2.5.18e}
+\omega_{\alpha\beta}
+= \tfrac{1}{2}(u_{\alpha;\mu}\, h^\mu{}_\beta
+              - u_{\beta;\mu}\, h^\mu{}_\alpha).
+\end{equation}
+
+An observer in the LRF sees all fluid elements in his neighborhood to
+move with low (nonrelativistic) velocities.  Let him use standard
+Newtonian methods to calculate or measure the expansion $\theta$; shear
+$\sigma^{\hat{j}}_{\;\hat{k}}$; and rotation $\omega^{\hat{j}}_{\;\hat{k}}$
+of the fluid, and let a relativist calculate $\theta$,
+$\sigma^{\hat{j}}_{\;\hat{k}}$, and
+$\omega^{\hat{j}}_{\;\hat{k}}$ in the LRF from the above equations.
+The two calculations will give the same answers.
+[See, e.g., Ellis (1971).]
+
+\bigskip
+\noindent
+\emph{Frozen-in magnetic field}
+
+\smallskip
+\noindent
+Consider an ionized plasma which contains a ``frozen-in'' magnetic field.
+The field is pure magnetic (no electric field) in the LRF.  Therefore
+it can be described by a magnetic-field 4-vector $\mathbf{B}$
+orthogonal to $\mathbf{u}$,
+%
+\begin{equation}
+\tag{2.5.19}
+\mathbf{B}\cdot\mathbf{u} = 0.
+\end{equation}
+
+\noindent
+[For simplicity we assume that the magnetic permeability of the plasma
+is the same as that of vacuum; so we do not distinguish between
+``$\mathbf{B}$'' and ``$\mathbf{M}$''.  For a more general treatment, see
+Lichnerowicz (1967).]  As the fluid moves, carrying with it the
+frozen-in B-field, $\mathbf{B}$ must change as
+%
+\begin{equation}
+\tag{2.5.20}
+\frac{DB^\alpha}{d\tau}
+= u_{\alpha;\beta}\, B^\beta
+  + (\sigma_{\alpha\beta} - \tfrac{2}{3}\theta\, h_{\alpha\beta})\, B^\beta\,.
+\end{equation}
+
+\noindent
+The term $u_{\alpha;\beta}\, B^\beta$ is required to keep $\mathbf{B}$
+orthogonal to $\mathbf{u}$; by the term $\sigma_{\alpha\beta}\, B^\beta$,
+the rotation of the fluid rotates the field lines; by the term
+$-\tfrac{2}{3}\theta\, h_{\alpha\beta}\, B^\beta$, the compression of the
+fluid orthogonal to $\mathbf{B}$ magnifies $\mathbf{B}$, conserving
+flux.
+
+\bigskip
+\noindent
+\emph{Stress-energy tensor}
+
+\smallskip
+\noindent
+Consider a fluid with isotropic pressure, with shear and bulk viscosity,
+with energy flowing between fluid elements, and with a frozen-in
+magnetic field.  The stress-energy tensor for such a fluid is
+%
+\begin{align}
+\tag{2.5.21}
+T^{\alpha\beta}
+&= \rho u^\alpha u^\beta + (p - \zeta\theta)\, h^{\alpha\beta}
+   - 2\eta\, \sigma^{\alpha\beta}
+   + q^\alpha u^\beta + u^\alpha q^\beta + \pi^{\alpha\beta}
+\notag \\
+&\quad
+   + \frac{1}{8\pi}(B^2 u^\alpha u^\beta + B^2 h^{\alpha\beta}
+   - 2B^\alpha B^\beta).
+\end{align}
+
+\noindent
+The term $\rho u^\alpha u^\beta$ is the total density of mass-energy
+(excluding only that of the frozen-in B-field) as measured in the LRF.
+The term $p\, h^{\alpha\beta}$ is the isotropic pressure that would be
+measured in the LRF if the gas were not changing volume (if $\theta$
+were zero).  The quantities $\zeta$ and $\eta$ are the
+\emph{coefficients of bulk viscosity and of dynamic viscosity},
+respectively.  The term $-\zeta\theta\, h^{\alpha\beta}$ is the
+isotropic viscous stress which resists isotropic expansion
+($\theta > 0$) or compression ($\theta < 0$) of the fluid.
+The term $-2\eta\, \sigma^{\alpha\beta}$ is the viscous shear stress
+which resists shearing motions.  The term
+$q^\alpha u^\beta + u^\alpha q^\beta$ is the energy density and
+stresses associated with the flowing energy $\mathbf{q}$, as measured
+in the LRF, are here neglected by comparison with $\rho u^\alpha u^\beta$
+and $p\, h^{\alpha\beta}$.
+
+(\emph{Note:} the energy density and stresses associated with the
+flowing energy $\mathbf{q}$, as measured in the LRF, are here
+neglected by comparison with $\rho u^\alpha u^\beta$ and
+$p\, h^{\alpha\beta}$.  This neglect is valid with enormous accuracy in
+most contexts of interest in these lectures.  An exception is the
+radiation pressure which produces ``self-regulation'' of accretion onto
+black holes when the inflowing mass is sufficiently large; see
+\S\S\,4.5 and 5.13.)  The term
+%
+\begin{equation}
+\tag{2.5.22}
+T^{\alpha\beta}_{\text{MAG}}
+= \frac{1}{8\pi}(B^2 u^\alpha u^\beta + B^2 h^{\alpha\beta}
+  - 2B^\alpha B^\beta)
+\end{equation}
+%
+is the Maxwell stress-energy associated with the frozen-in B-field (in
+LRF: energy density $B^2/8\pi$, pressure $B^2/8\pi$ orthogonal to
+field lines; tension $-B^2/8\pi$ along field lines).
+
+\bigskip
+\noindent
+\emph{Equations of hydrodynamics}
+
+\smallskip
+\noindent
+The fundamental equations governing the motion of a fluid in a given
+gravitational field (spacetime geometry) are (i) the law of
+\emph{baryon conservation}
+%
+\begin{equation}
+\tag{2.5.23}
+\nabla \cdot (n\,\mathbf{u}) = 0,
+\quad\text{i.e.}\quad dn/d\tau = -\theta\, n,
+\end{equation}
+%
+or equivalently rest-mass conservation
+%
+\begin{equation}
+\tag{2.5.23$'$}
+\nabla \cdot (\rho_0\, \mathbf{u}) = 0,
+\quad\text{i.e.}\quad d\rho_0/d\tau = -\theta\, \rho_0\,;
+\end{equation}
+
+\noindent
+(ii) the law of \emph{local energy conservation}
+%
+\begin{equation}
+\tag{2.5.24}
+\mathbf{u}\cdot(\nabla\cdot\mathbf{T}) = 0;
+\end{equation}
+
+\noindent
+(iii) the \emph{Euler equations} (i.e.\ law of local momentum
+conservation)
+%
+\begin{equation}
+\tag{2.5.25}
+\mathbf{h}\cdot(\nabla\cdot\mathbf{T}) = 0;
+\end{equation}
+
+\noindent
+(iv) the laws of thermodynamics, (2.5.11)--(2.5.16); (v) the laws of
+energy transport for the frozen-in B-field, (2.5.20); the laws of
+energy transport, which govern $\mathbf{q}$ (see \S\,2.6, 2.6.43).
+
+\bigskip
+\noindent
+\emph{Law of local energy conservation}
+
+\smallskip
+\noindent
+When one evaluates the law of local energy conservation,
+$\mathbf{u}\cdot(\nabla\cdot\mathbf{T}) = 0$,
+for the stress-energy tensor (2.5.21), one finds that the Maxwell
+stress-energy
+%
+\begin{equation}
+\tag{2.5.26}
+\mathbf{u}\cdot(\nabla\cdot\mathbf{T}_{\text{MAG}}) = 0
+\end{equation}
+%
+gives zero contribution (work done to compress magnetic field is
+precisely equal to increase in magnetic field energy); and that the
+remainder of the stress-energy tensor gives
+%
+\begin{equation}
+\tag{2.5.27}
+d\rho/d\tau = -(\rho + p)\,\theta
++ \zeta\,\theta^2 + 2\eta\,\sigma_{\alpha\beta}\,\sigma^{\alpha\beta}
+- \nabla\cdot\mathbf{q} - \mathbf{a}\cdot\mathbf{q}\,.
+\end{equation}
+
+\noindent
+Here $d/d\tau$ is derivative with respect to proper time along the
+world lines of the fluid; i.e., in the language of the differential
+geometer, $d/d\tau = \mathbf{u}$.  The terms $-(\rho + p)\,\theta$ is
+the increase in mass-energy density due to compression.  The term
+$\zeta\,\theta^2$ and $2\eta\,\sigma_{\alpha\beta}\,\sigma^{\alpha\beta}$
+are the increases in mass-energy density due to viscous heating
+(conversion of relative kinetic energy of adjacent fluid elements into
+heat).  The term $-\nabla\cdot\mathbf{q}$ is the influx of
+mass-energy from neighboring fluid elements.  The term
+$-\mathbf{a}\cdot\mathbf{q}$ is a special relativistic correction to
+the ``redshift'' of $\mathbf{q}$.  To understand this term, consider a
+flux of energy $\mathbf{q}$---or, equivalently, with the inertia of
+the energy flux $\mathbf{q}$ associated with it, a flux of mass-energy
+from the viewpoint of an accelerated fluid (photons do not interact with
+them).  The acceleration gives rise to a redshift (a gravitational
+redshift) and hence to a nonzero $\nabla\cdot\mathbf{q}$ (no
+interaction between fluid and photons), one must include the correction
+factor $-\mathbf{a}\cdot\mathbf{q}$.  For a similar reason, a similar
+relativistic correction appears in the law of heat conduction.
+
+\bigskip
+\noindent
+\emph{Euler equation for a perfect fluid}
+
+\smallskip
+\noindent
+Consider a perfect fluid, flowing adiabatically through spacetime
+($\zeta = \eta = \mathbf{B} = \mathbf{q} = 0$).  In this case the
+Euler equations $\mathbf{h}\cdot(\nabla\cdot\mathbf{T}) = 0$ reduce to
+%
+\begin{equation}
+\tag{2.5.30}
+(\rho + p)\,\mathbf{a} = -\nabla p - \mathbf{u}\,(\mathbf{u}\cdot\nabla p).
+\end{equation}
+%
+In words:
+\[
+(\rho + p)\,\mathbf{a}
+= -\left(\!\text{inertial mass per}\atop\text{unit volume}\!\right)
+  \times\text{(4-acceleration)}
+= -\left(\!\text{pressure gradient}\atop\text{projected orthogonal to }\mathbf{u}\!\right).
+\]
