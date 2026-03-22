@@ -1,0 +1,278 @@
+% Agent 08: Pages 373--376 (PDF pages 15--17)
+% Section 2.6 Radiative Transfer (continued)
+% Equations (2.6.11) through (2.6.25)
+% Covers: Invariance of I_nu/nu^3, Liouville's theorem,
+%         equation of radiative transfer, absorption, stimulated emission,
+%         scattering, absorption coefficient kappa_nu, kappa_s, detailed balance
+
+%%% -----------------------------------------------------------------
+%%% Invariance of I_nu / nu^3 (continued from earlier on p.~372)
+%%% -----------------------------------------------------------------
+
+\textit{Invariance of $I_\nu/\nu^3$}
+
+Choose a particular photon that passes through a given event in spacetime.
+Observe that particular photon, and all others in the vicinity, from several different
+Lorentz frames at the given event.\ The frequency $\nu$ of the photon will depend
+on the choice of Lorentz frame (doppler shift from one frame to another).
+The specific intensity $I_\nu$ in the photon's neighborhood will also depend
+on the choice of Lorentz frame.\ However, the ratio $I_\nu/\nu^3$ will be Lorentz-invariant.\ (Aside from a factor $h^{-4}$, $I_\nu/\nu^3$ is the invariant number density in
+phase space
+%
+\begin{equation}
+\mathscr{N} = \frac{dN}{d^3 x\,d^3 p}
+  = \frac{1}{h^3}\,\frac{I_\nu}{\nu^3}\,;
+\tag{2.6.11}
+\end{equation}
+%
+see, e.g., \S\,22.6 of MTW.)
+
+When photons propagate freely through curved spacetime (no interaction with
+matter), the ratio $I_\nu/\nu^3$ is conserved along the world line of each photon
+(Liouville's theorem).
+
+%%% -----------------------------------------------------------------
+%%% Equation of Radiative Transfer
+%%% -----------------------------------------------------------------
+
+\paragraph*{Equation of Radiative Transfer}
+
+Consider the propagation of photons through a medium (e.g., through gas that
+is falling into a black hole).\ Analyze the photon propagation from the viewpoint
+of observers at rest in the medium (local rest frame; ``LRF'').\ At each event
+denote by $\mathbf{u}$ the 4-velocity of the medium---and hence also of the LRF.\ Focus
+attention on all photons in the (phase-space) neighborhood of a given null
+geodesic ray.\ Denote by $\mathbf{p}$ the 4-momentum of that ray.\ Then at each event
+along the given ray $\mathbf{p}$ is given by
+%
+\begin{equation}
+\mathbf{p} = h\nu(\mathbf{u} + \mathbf{n}).
+\tag{2.6.12}
+\end{equation}
+%
+Here $\mathbf{n}$ is a unit vector;
+%
+\[
+\mathbf{n} \cdot \mathbf{u} = 0,
+\]
+%
+and (i) is interpreted in the LRF as the direction of propagation of the ray
+(same as 3-vector $\mathbf{n}$ of Figure~2.6.1).\ Also, in eq.~(2.6.12), $\nu$ is the frequency of
+any photon which propagates along the ray, and $h\nu$ is its energy, as measured in
+the LRF.
+
+Because of the acceleration and shear of the medium, the frequency
+$\nu$ of the chosen ray changes from point to point along the ray.\ The change $d\nu$,
+when the ray propagates a proper spatial distance $dl$ as seen in the LRF, is
+%
+\begin{equation}
+d\nu = \nu(-\,\mathbf{p} \cdot \mathbf{u}/h)\,dl.
+\tag{2.6.13}
+\end{equation}
+%
+(This frame-independent equation is derived easily by geometrical arguments
+in the LRF.)\ A straightforward calculation, using the geodesic equation for the
+ray
+%
+\[
+\boldsymbol{\nabla}_{\mathbf{p}}\,\mathbf{p} = 0,
+\]
+%
+and using expansion (2.5.17) for $\boldsymbol{\nabla}\mathbf{u}$, reveals
+%
+\begin{equation}
+d\nu/dl = -\nu(\mathbf{n} \cdot \mathbf{a} + \tfrac{1}{3}\theta
+  + n^\alpha n^\beta \sigma_{\alpha\beta}).
+\tag{2.6.14}
+\end{equation}
+%
+The first term, $-\nu\,\mathbf{n} \cdot \mathbf{a}$, is the ``gravitational redshift'' produced by the acceleration
+of the LRF; the second and third terms, $-\nu(\tfrac{1}{3}\theta + n^\alpha n^\beta \sigma_{\alpha\beta})$, are the
+``cosmological redshift'' due to the expansion of the medium along the direction
+of the ray.
+
+If there were no interaction with the medium, then $I_\nu/\nu^3$ would be conserved
+along the ray.\ Hence, the equation of radiative transfer along the given ray must
+have the form
+%
+\begin{equation}
+\frac{dI_\nu}{dl} - \left(\frac{3}{\nu}\,\frac{d\nu}{dl}\right) I_\nu
+  = \text{(effects of interaction with medium)};
+\tag{2.6.15}
+\end{equation}
+%
+i.e.,
+%
+\[
+dI_\nu/dl + (3\mathbf{n} \cdot \mathbf{a} + \theta
+  + 3n^\alpha n^\beta \sigma_{\alpha\beta})\,I_\nu
+  = \text{(interaction effects)}.
+\]
+%
+Four types of interaction can occur: spontaneous emission of radiation by the
+matter; stimulated emission; absorption; and scattering.
+
+We shall assume that on all length scales of interest the medium is isotropic;
+and we shall denote its emissivity by
+%
+\begin{equation}
+\varepsilon_\nu \equiv \frac{dE}{d\nu\,dt\,dm_0}
+  = \begin{pmatrix} \text{energy emitted spontaneously per unit frequency}\\
+    \text{during unit time by a unit rest mass, integrated}\\
+    \text{over all angles, and measured in LRF} \end{pmatrix}.
+\tag{2.6.16}
+\end{equation}
+%
+(The emissivities for free-free and free-bound transitions were discussed in \S\S\,2.1
+and 2.2.)\ Then spontaneous emission contributes
+%
+\begin{equation}
+\left(\frac{dI_\nu}{dl}\right)_{\!\text{spontaneous emission}}
+  = \frac{1}{4\pi}\,\rho_0\,\varepsilon_\nu
+\tag{2.6.17}
+\end{equation}
+%
+to the specific intensity along the given ray.\ Here $\rho_0$ is the density of rest mass
+in the medium.
+
+The rate of absorption and the rate of stimulated emission are both proportional
+to the intensity of the passing beam.\ Hence, the effects of absorption and of
+stimulated emission can be lumped together into a single \textit{absorption coefficient}
+$\kappa_\nu$, defined by
+%
+\begin{equation}
+\left(\frac{dI_\nu}{dl}\right)_{\!\substack{\text{absorption plus}\\[2pt]
+  \text{stimulated emission}}}
+  = -\rho_0\,\kappa_\nu\,I_\nu.
+\tag{2.6.18}
+\end{equation}
+%
+The dimensions of the absorption coefficient are $\mathrm{cm}^2/\mathrm{g}$ (``absorption cross section
+per unit mass'' at the given frequency).\ When absorption dominates over
+stimulated emission, $\kappa_\nu$ is positive; when stimulated emission dominates,
+$\kappa_\nu$ is negative (``negative absorption'').
+
+Scattering is more complicated to treat than emission and absorption.\ Let
+%
+\begin{equation}
+\frac{d\kappa_s}{d\Omega'\,d\nu'}\,(\mathbf{p},\,\mathbf{p}')
+\tag{2.6.19}
+\end{equation}
+%
+be the differential cross section (as measured in the LRF) for a unit rest mass to
+convert a photon of momentum $\mathbf{p}$ into a photon of momentum $\mathbf{p}'$; and let
+%
+\[
+\kappa_s(\nu) = \int \frac{d\kappa_s}{d\Omega'\,d\nu'}\,d\Omega'\,d\nu'
+\]
+%
+be the total scattering cross-section (``scattering opacity'') per unit rest mass.
+For example, in the case of electron scattering by a nonrelativistic plasma
+($h\nu \ll m_e c^2$; $kT \ll m_e c^2$; see \S\,4.4), when one neglects the tiny change in photon
+frequency the cross sections per unit rest mass are
+%
+\begin{equation}
+\frac{d\kappa_s}{d\Omega'\,d\nu'}\,(\mathbf{p},\,\mathbf{p}')
+  = \frac{f_e}{2m_p}\,\sigma_T\,\tfrac{3}{8\pi}\,
+    [1 + (\mathbf{n} \cdot \mathbf{n}')^2]\,\delta(\nu' - \nu)
+\tag{2.6.20}
+\end{equation}
+%
+\[
+\kappa_s = (f_e/m_p)\,\sigma_T = (0.40\;\mathrm{cm}^2/\mathrm{g})\,f_e
+\]
+%
+(Recall: $n = \rho/h\nu$, $n' = \rho'/h\nu'$; $f_e$ is the number of free electrons per baryon in
+the plasma.)\ Scattering, as described by the appropriate differential cross section,
+can increase $I_\nu$ (scattering into the beam from other directions), or can decrease
+$I_\nu$ (scattering out of the beam into other directions):
+%
+\begin{equation}
+\left(\frac{dI_\nu}{dl}\right)_{\!\text{scattering}}
+  = +\rho_0 \!\int \frac{d\kappa_s}{d\Omega\,d\nu}\,
+    (\mathbf{p}',\,\mathbf{p})\,I_{\nu'}\,d\Omega'\,d\nu'
+    \;-\; \rho_0\,\kappa_s\,I_\nu.
+\tag{2.6.21}
+\end{equation}
+%
+By combining equations (2.6.15)--(2.6.21), we obtain our final form of the
+equation of radiative transfer
+%
+\begin{align}
+dI_\nu/dl &+ (3\mathbf{n} \cdot \mathbf{a} + \theta
+  + 3n^\alpha n^\beta \sigma_{\alpha\beta})\,I_\nu \notag\\
+  &= +\rho_0 \!\int \frac{d\kappa_s}{d\Omega\,d\nu}\,
+     (\mathbf{p}',\,\mathbf{p})\,I_{\nu'}\,d\Omega'\,d\nu'
+     - \rho_0\,\kappa_s\,I_\nu \notag\\
+  &\quad + \tfrac{1}{4\pi}\,\rho_0\,\varepsilon_\nu
+     - \rho_0\,\kappa_\nu\,I_\nu.
+\tag{2.6.22}
+\end{align}
+
+%%% -----------------------------------------------------------------
+%%% Relationship between emissivity and absorption
+%%% -----------------------------------------------------------------
+
+\paragraph*{Relationship between emissivity and absorption}
+
+Into an insulated box place a material medium and a radiation field; and then wait
+until complete thermodynamic equilibrium is achieved.\ If $T$ is the equilibrium
+temperature, then the radiation field as seen in the LRF will be isotropic with the
+standard black-body intensity, $I_\nu = B_\nu$, where
+%
+\begin{equation}
+B_\nu = \frac{2h\nu^3/c^2}{e^{h\nu/kT} - 1}.
+\tag{2.6.23}
+\end{equation}
+%
+In equilibrium there must be no net change of $I_\nu$ along any ray: scattering into
+the beam must be completely balanced by scattering out of the beam; and
+emission must be completely balanced by absorption.\ The requirement of
+``detailed balance'' for emission and absorption can be met only if the emissivity
+and the absorption coefficient are related by
+%
+\begin{equation}
+\frac{dI_\nu}{dl} = \rho_0\,\kappa_\nu
+  \!\left(\frac{\varepsilon_\nu}{4\pi\kappa_\nu}
+  - I_\nu\right) = 0;
+\tag{2.6.24}
+\end{equation}
+%
+i.e.,
+%
+\[
+\varepsilon_\nu / 4\pi\kappa_\nu = B_\nu.
+\]
+%
+Since $\varepsilon_\nu$ and $\kappa_\nu$ depend only on the thermodynamic state of the matter, and
+have nothing to do with the state of the radiation, relation~(2.6.24) must be
+satisfied not only inside our insulated box, but also in all other cases where
+the matter by itself is in thermodynamic equilibrium but the radiation might
+not be.
+
+For matter not in thermodynamic equilibrium one can use a more sophisticated
+version of the principle of detailed balance (``Einstein A and B coefficients'') to
+derive a more complicated relationship between the emissivity and the absorption
+coefficient.\ See, e.g., Chandrasekhar~\cite{Chandrasekhar1960}.
+
+As an application of the equilibrium relationship $\varepsilon_\nu/4\pi\kappa_\nu = B_\nu$, consider free-free
+transitions in an ionized gas.\ Whenever the free electrons (which do the
+emitting and absorbing) are in thermodynamic equilibrium with each other
+(Maxwell--Boltzmann velocity distribution), the absorption coefficient---as
+derived from the emissivity (2.1.27)---must be
+%
+\begin{equation}
+\kappa_\nu^{\mathrm{ff}} = (1.50 \times 10^{25}\;\mathrm{cm}^5\;\mathrm{g}^{-1})
+  \left(\frac{\rho_0}{\mathcal{A}}\right)
+  \left(\frac{(eZ)^2}{\mathcal{A}}\right)
+  \bar{G}\;T^{-7/2}\;\nu^{-3}
+  \left(\frac{1 - e^{-x}}{x^{-1}}\right),
+\tag{2.6.25}
+\end{equation}
+%
+where
+\[
+x = h\nu/kT.
+\]
+%
+See \S\,2.1 for notation.
