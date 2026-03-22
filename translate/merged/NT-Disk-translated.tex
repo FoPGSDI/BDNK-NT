@@ -1,0 +1,121 @@
+% NT-Disk: Astrophysics of Black Holes
+% Original: I. D. Novikov and K. S. Thorne (1973)
+% LaTeX Translation in Physical Review D format
+%
+% From: "Black Holes" (Les Houches 1972), eds. C. DeWitt and B. S. DeWitt
+% Gordon and Breach, New York, 1973, pp. 345--450
+%
+\documentclass[aps,prd,twocolumn,superscriptaddress,nofootinbib,%
+  longbibliography]{revtex4-2}
+
+% === Packages ===
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{mathrsfs}       % Script letters (\mathscr)
+\usepackage{bm}             % Bold math (\bm)
+\usepackage{graphicx}       % Figures
+\usepackage{hyperref}       % Hyperlinks
+\usepackage{xcolor}         % Colors (for placeholder figures)
+\usepackage{array}          % Enhanced tables
+\usepackage{booktabs}       % Professional tables
+
+% === Custom Commands ===
+% Fundamental constants
+\newcommand{\me}{m_e}          % electron mass
+% \mp is already defined in LaTeX (minus-plus); use m_p directly in equations
+\newcommand{\Ry}{R_y}          % Rydberg energy
+\newcommand{\kB}{k}            % Boltzmann constant (paper uses just k)
+
+% Vectors and tensors
+\newcommand{\fvec}[1]{\mathbf{#1}}     % 4-vectors (bold upright)
+\newcommand{\tvec}[1]{\mathbf{#1}}     % 3-vectors (bold)
+
+% Kerr metric script functions (Section 5.4)
+\newcommand{\scrA}{\mathscr{A}}
+\newcommand{\scrB}{\mathscr{B}}
+\newcommand{\scrC}{\mathscr{C}}
+\newcommand{\scrD}{\mathscr{D}}
+\newcommand{\scrE}{\mathscr{E}}
+\newcommand{\scrF}{\mathscr{F}}
+\newcommand{\scrG}{\mathscr{G}}
+\newcommand{\scrP}{\mathscr{P}}        % Power/luminosity script P
+
+% Accretion notation
+\newcommand{\Mdot}{\dot{M}}
+\newcommand{\Mdotzero}{\dot{M}_0}
+\newcommand{\Msun}{M_\odot}
+\newcommand{\Lcrit}{L_{\text{crit}}}
+\newcommand{\rg}{r_g}                  % gravitational radius
+\newcommand{\rs}{r_s}                  % sonic radius
+\newcommand{\rms}{r_{\text{ms}}}       % marginally stable orbit
+\newcommand{\Lms}{\tilde{L}_{\text{ms}}}
+
+% Differential operators
+\newcommand{\grad}{\boldsymbol{\nabla}}
+\newcommand{\divg}{\boldsymbol{\nabla} \cdot}
+
+% Averages
+\newcommand{\avg}[1]{\langle #1 \rangle}
+
+% Dimensionless parameters for Section 5.9
+\newcommand{\mstar}{M_*}
+\newcommand{\mdotstar}{\dot{M}_*}
+\newcommand{\rstar}{r_*}
+
+% Text shortcuts
+\newcommand{\ie}{i.e.}
+\newcommand{\eg}{e.g.}
+\newcommand{\cf}{cf.}
+
+% === Equation numbering ===
+% The paper uses (section.subsection.number) format
+% We use \tag{} for explicit equation numbers to match original
+\numberwithin{equation}{section}
+
+% === Document ===
+\begin{document}
+
+\title{Astrophysics of Black Holes}
+
+\author{Igor D. Novikov}
+\thanks{Supported in part by the Academy of Sciences of the USSR}
+\affiliation{Institute of Applied Mathematics, Academy of Sciences, Moscow}
+
+\author{Kip S. Thorne}
+\thanks{Supported in part by the U.S. National Science Foundation [GP-27304, GP-28027]}
+\affiliation{California Institute of Technology, Pasadena}
+
+\date{1973}
+
+\begin{abstract}
+Lectures on the astrophysics of black holes, covering radiation processes in plasmas,
+hydrodynamics, accretion onto isolated and binary black holes, relativistic disk structure,
+and cosmological aspects of black holes. Originally published in \textit{Black Holes}
+(Les Houches 1972), eds.\ C.~DeWitt and B.~S.~DeWitt (Gordon and Breach, New York, 1973),
+pp.~345--450.
+\end{abstract}
+
+\maketitle
+\tableofcontents
+
+% === SECTION 1: Introductory Remarks ===
+\input{sections/sec1_intro}
+
+% === SECTION 2: Radiation and Plasma Physics ===
+\input{sections/sec2_radiation}
+
+% === SECTION 3: Origin of Stellar Black Holes ===
+\input{sections/sec3_origin}
+
+% === SECTION 4: Black Holes in the Interstellar Medium ===
+\input{sections/sec4_ism}
+
+% === SECTION 5: Binary Systems and Galactic Nuclei ===
+\input{sections/sec5_binary}
+
+% === SECTION 6: Cosmological Black Holes ===
+\input{sections/sec6_cosmo}
+
+% === References ===
+\bibliography{NT-Disk-translated}
+
+\end{document}

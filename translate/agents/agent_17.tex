@@ -1,0 +1,221 @@
+% Agent 17: Pages 404--407 (PDF pages 32--33)
+% Sections: 4.8 Accretion onto a Moving Hole,
+%           4.9 Optical Appearance of Hole: Summary
+
+%% ============================================================
+%% Section 4.8: Accretion onto a Moving Hole
+%% ============================================================
+
+\subsection{Accretion onto a Moving Hole}
+\label{sec:4.8}
+
+Turn attention now from a hole at rest in the interstellar medium, to a hole that
+moves with a speed much larger than the sound speed, $u_\infty \gg a_\infty$. Examine the
+resulting accretion in the rest frame of the hole. At radii $r \gg 2GM/u_\infty^2$, the kinetic
+energy per unit mass, $\frac{1}{2}u_\infty^2$, is far larger than the potential energy, $GM/r$; so the
+pull of the hole has no effect on the gas flow. At $r \sim 2GM/u_\infty^2$, the pull of the
+hole becomes significant. Because the flow is supersonic the gas will respond to
+that pull in the same manner as would noninteracting particles; its pressure
+cannot have an influence. (One can see this, for example, in the Euler equation
+
+\begin{equation}
+\text{const.} = \tfrac{1}{2}v^2 + \frac{a^2}{\Gamma - 1} - \frac{GM}{r}\,,
+\tag{4.8.1}
+\end{equation}
+
+where the speed-of-sound (enthalpy) term---which accounts for pressure effects---is
+negligible compared to the kinetic-energy term.) Thus, the flow lines will be
+identical to the trajectories of test particles: they will be hyperbolae
+(Fig.~4.8.1a).
+
+After passing around the hole, the trajectories of test particles intersect
+(particle collisions; dotted line of Figure~4.8.1a). In the gas-dynamic case such
+intersection of flow lines is prevented by rapidly mounting pressure. Consequently,
+a shock front must develop around the black hole (Fig.~4.8.1b).
+Outside the shock front the flow lines will be hyperbolic test-particle trajectories.
+Behind the shock front, they will not. The shock will be located roughly where
+potential energy equals kinetic energy, so its characteristic size $l_s$ as shown in
+Figure~4.8.1b will be
+\begin{equation}
+l_s \sim GM/u_\infty^2\,.
+\tag{4.8.2}
+\end{equation}
+
+In the shock, the gas will lose most of its velocity perpendicular to the shock
+front [``strong shock'' in terminology of \S\,2.7; ``strong'' because $u_\infty/a_\infty ={}$
+(speed of gas)/(speed of sound) $\gg 1$ on front side]; but it will retain all of its
+velocity parallel to the front (denote this by $u_\|$). For a given gas element, if the
+remaining kinetic energy behind the front greatly exceeds the potential energy,
+$\frac{1}{2}u_\|^2 \gg GM/r$, then the gas element will escape the pull of the hole. If
+$\frac{1}{2}u_\|^2 \lesssim GM/r$, then it cannot escape. The dividing line between escape and
+capture is a dotted line in Figure~4.8.1b; and the corresponding impact parameter
+is labelled $b_\text{capture}$.
+
+We can calculate $b_\text{capture}$ in order of magnitude by idealizing the shock as
+confined to the thin dotted region of Figure~4.8.1a (Hoyle and Lyttleton~1939)\cite{HoyleLyttleton1939}.
+The value of $b_\text{capture}$ will correspond to an orbit for which
+\begin{equation}
+\tfrac{1}{2}v_\perp^2 = GM/x \quad \text{at}\quad y = 0.
+\end{equation}
+
+Straightforward examination of Kepler orbits reveals that
+\begin{equation}
+b_\text{capture} = 2GM/u_\infty^2\,.
+\tag{4.8.3}
+\end{equation}
+
+Since the mass flux in the gas at large radii is $\rho_\infty u_\infty$, the accretion rate is
+\begin{equation}
+\dot{M}_0 = (\pi b_\text{capture}^2)\,\rho_\infty\, u_\infty
+= 4\pi G^2 M^2 \rho_\infty / u_\infty^3\,.
+\tag{4.8.4}
+\end{equation}
+
+\begin{figure}[htbp]
+\centering
+% \includegraphics[width=\columnwidth]{fig_4_8_1}
+\fbox{\parbox{0.9\columnwidth}{\centering [Figure 4.8.1 placeholder]\\[6pt]
+(a)~Trajectories of test particles (and of supersonic gas)
+relative to a black hole, as viewed in the rest frame of the hole.\\[4pt]
+(b)~The flow lines of supersonic gas
+relative to a black hole, as viewed in the rest frame of the hole.
+The trajectories and flow lines are virtually the same, until
+the gas encounters the shock front.}}
+\caption{\textit{Figure~4.8.1.} The trajectories of test particles~(a), and the flow lines
+of supersonic gas~(b) relative to a black hole, as viewed in the rest frame of the hole.
+The trajectories and flow lines are virtually the same, until the gas encounters the
+shock front.}
+\label{fig:4.8.1}
+\end{figure}
+
+More careful calculations give accretion rates which differ from this by
+multiplicative factors of ${\sim}\,0.5$ to $1.0$ (Bondi and Hoyle~1944)\cite{BondiHoyle1944}.
+
+Notice that the accretion rate~(4.8.4) for the supersonic case, and the rate
+(4.2.10) for a hole at rest are identical except for the replacement of sound
+speed $a_\infty$ by speed of flow $u_\infty$, and except for a numerical coefficient of order
+unity. In the intermediate case of $u_\infty \sim a_\infty$, one can use the hybrid formula
+\begin{equation}
+\dot{M}_0 \simeq \frac{4\pi G^2 M^2 \rho_\infty}{(a_\infty^2 + u_\infty^2)^{3/2}}
+\tag{4.8.5}
+\end{equation}
+
+(Bondi~1952, Hunt~1971)\cite{Bondi1952,Hunt1971}.
+\begin{equation}
+\dot{M}_0 \simeq \left(1 \times 10^{11}~\frac{\text{g}}{\text{sec}}\right)
+\frac{(M/M_\odot)^2\;(\rho_\infty/10^{-24}~\text{g~cm}^{-3})}
+{\bigl[(u_\infty/10~\text{km~sec}^{-1})^2 + (a_\infty/10~\text{km~sec}^{-1})^2\bigr]^{3/2}}\,.
+\notag
+\end{equation}
+
+[Salpeter~(1964)\cite{Salpeter1964} gave the first application of these formulas to black holes; all
+previous work dealt with normal stars.]
+
+It is worth noting that a significant fraction of the kinetic energy released in
+the shock
+\begin{equation}
+\frac{dE}{dt} \simeq \tfrac{1}{2}\dot{M}_0\, u_\infty^2
+\simeq \left(10^{24}~\text{ergs~sec}^{-1}\right)
+\left(\frac{M}{M_\odot}\right)^{\!2}
+\left(\frac{\rho_\infty}{10^{-24}~\text{g~cm}^{-3}}\right)
+\left(\frac{u_\infty}{10~\text{km~sec}^{-1}}\right)^{-1/2}
+\tag{4.8.6}
+\end{equation}
+may go into excitation of unionized atoms and thence into light as the atoms
+decay, thus producing a shock front that glows (albeit weakly). See, e.g.,
+Pikel'ner~(1961), and \S\S\,9 and~10 of Kaplan~(1966)\cite{Pikelner1961,Kaplan1966}.
+
+The motion of the gas behind the shock is practically unknown, particularly
+when one takes account of magnetic fields. Many different types of instabilities
+may occur, both here and in the case of a stationary black hole. For example at
+radii $r < l_s$, where the inflow has become supersonic again, turbulence may
+create shock waves which convert kinetic energy into heat (Bisnovatyi-Kogan and
+Sunyaev~1971)\cite{BisnovatyiKoganSunyaev1971}. A variety of plasma instabilities may also arise. And the
+reconnection of magnetic field lines will surely be important. One can only guess that
+the overall, time-averaged equipartition model of
+Shvartsman~(\S\,4.4)\cite{Shvartsman1971} will resemble the equipartition model of
+Shvartsman~(\S\,4.4).
+
+One of the factors that may be important near the gravitational radius, where
+most of the luminosity is produced, is angular momentum in the direction of motion
+of the hole. Suppose that the accreting gas has nonzero angular momentum per
+unit mass. If the angular momentum per unit mass, $\mathscr{L}$, exceeds
+$r_g c$, then centrifugal forces will become important before the infalling gas reaches
+the horizon; the gas will be thrown into circulating orbits; and only after viscous
+stresses have transported away the excess angular momentum will the gas fall
+down the hole. (See \S\,5 for a situation similar to this.) The resulting viscous
+heating and lengthened time spent outside the hole, as well as the changed flow
+pattern, may affect the outpouring significantly. Moreover, when the
+hole moves from a region with angular momentum of gas in one direction to a
+region with angular momentum in another, the gas flow may become particularly
+violent for a while near the horizon; and a strong flare of luminosity may be
+produced (Salpeter~1964; Shvartsman~1971)\cite{Salpeter1964,Shvartsman1971}. Almost nothing is known today
+about these issues.
+
+Is the specific angular momentum of the accreting gas likely to exceed $r_g c$?
+Interstellar gas is accreted from a region of diameter
+\begin{equation}
+2b_\text{capture} = \frac{2r_g}{u_\infty^2/c^2}
+= (3 \times 10^{14}~\text{cm})
+\left(\frac{M}{M_\odot}\right)
+\left(\frac{u_\infty}{10~\text{km~sec}^{-1}}\right)^{-2}\,.
+\tag{4.8.7}
+\end{equation}
+
+(For $u_\infty < a_\infty$, we must replace $u_\infty$ by $a_\infty$.) The interstellar gas is turbulent with
+the turbulent velocity $v_\text{turb}$ on scales $l$ given roughly by
+\begin{equation}
+v_\text{turb} = \left(10^5~\frac{\text{cm}}{\text{sec}}\right)
+\left(\frac{l}{3 \times 10^{20}~\text{cm}}\right)^{q}\,,
+\tag{4.8.8}
+\end{equation}
+where $q$ is a coefficient believed to lie between $1/2$ and~$1$ (Kaplan and Pikel'ner
+1970)\cite{KaplanPikelner1970}, and the coefficient $10^6$~cm/sec is taken from astronomical observations.
+Let us take $q = 0.75$ as a best guess. Then the specific angular momentum
+associated with this turbulence, for a gas element of size $l$, is
+\begin{equation}
+\mathscr{L}_\text{turb} \simeq v_\text{turb}\, l
+\simeq \left(3 \times 10^{26}~\frac{\text{cm}^2}{\text{sec}}\right)
+\left(\frac{l}{3 \times 10^{20}~\text{cm}}\right)^{1.75}\,.
+\tag{4.8.9}
+\end{equation}
+
+Consequently, the specific angular momentum of the gas that accretes from a
+region of size $l = 2b_\text{capture}$ should be
+\begin{equation}
+\frac{\mathscr{L}_\text{turb}}{r_g c}
+\simeq 1 \times
+\left(\frac{M}{M_\odot}\right)^{3/4}
+\left(\frac{u_\infty}{10~\text{km~sec}^{-1}}\right)^{-7/2}\,.
+\tag{4.8.10}
+\end{equation}
+
+Evidently, the angular momentum may be important in some cases and may not
+be in others.
+
+%% ============================================================
+%% Section 4.9: Optical Appearance of Hole: Summary
+%% ============================================================
+
+\subsection{Optical Appearance of Hole: Summary}
+\label{sec:4.9}
+
+In summary, a black hole alone in the interstellar medium may be expected to
+emit ${\sim}\,10^{29}$ to $10^{35}$~ergs/sec of synchrotron radiation, concentrated in the
+optical part of the spectrum (${\sim}\,10^{14}$~Hz to $10^{15}$~Hz). The output may
+fluctuate on timescales of ${\sim}\,10^{-2}$ to $10^{-4}$ seconds due to instabilities, and to
+orbital motion of hot spots about the hole (\S\S\,4.4, 4.7, 4.8). There may also
+be strong flares when the hole moves out of one turbulent cell of interstellar
+gas into another. The time interval between flares would be about
+\begin{equation}
+\Delta t_\text{flares}
+\simeq 2b_\text{capture}/u_\infty
+\simeq (10~\text{years})
+\left(\frac{M}{M_\odot}\right)
+\left(\frac{u_\infty}{10~\text{km~sec}^{-1}}\right)^{-3}\,.
+\tag{4.9.1}
+\end{equation}
+
+It will probably be difficult observationally to distinguish accreting, isolated
+black holes from accreting, old neutron stars without magnetic fields. The only
+distinguishing feature will be the emission from the surface of the neutron star.
