@@ -1,0 +1,314 @@
+% Agent 07: Book pages 369–372 (PDF pp.13–16)
+% Section 2.5 (end): Euler equation for perfect fluid, Bernoulli equation, Newtonian limit
+% Section 2.6 (beginning): Radiative Transfer — notation, specific intensity,
+%   mean intensity, energy density, flux, invariance of I_nu/nu^3
+% Equations (2.5.30) through (2.5.42), then (2.6.1) through (2.6.11)
+
+\documentclass[aps,prd,twocolumn,superscriptaddress,nofootinbib]{revtex4-2}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{graphicx}
+\usepackage{bm}
+\usepackage{mathrsfs}
+\usepackage{hyperref}
+\usepackage{physics}
+
+% Custom commands
+\newcommand{\fvec}[1]{\mathbf{#1}}
+
+\begin{document}
+
+%%% ============================================================
+%%% Book page 369 — Euler equation, Bernoulli equation, Newtonian limit
+%%% (PDF p.14, right column)
+%%% ============================================================
+
+\textit{Euler equation for a perfect fluid}
+
+Consider a perfect fluid, flowing adiabatically through spacetime ($\zeta = \eta = \fvec{B} = \fvec{q} = 0$).
+In this case the Euler equations $\fvec{h}\cdot(\nabla\cdot\fvec{T}) = 0$ reduce to
+
+\begin{equation}
+(\rho + p)\,\fvec{a} = -\fvec{h}\cdot\nabla p\,.
+\tag{2.5.30}
+\end{equation}
+
+In words:
+\begin{equation*}
+\left(\!\!
+\begin{array}{c}
+\text{inertial mass per}\\
+\text{unit volume}
+\end{array}
+\!\!\right)
+\times\text{(4-acceleration)}
+= -\left(\!\!
+\begin{array}{c}
+\text{pressure gradient}\\
+\text{projected orthogonal to }\fvec{u}
+\end{array}
+\!\!\right).
+\end{equation*}
+
+\bigskip
+\textit{Bernoulli equation}
+
+Consider a perfect fluid undergoing stationary, adiabatic flow in a stationary
+spacetime.  More particularly, set $\zeta = \eta = \fvec{B} = \fvec{q} = 0$; assume that spacetime is
+endowed with a Killing vector field $\boldsymbol{\xi}$,
+
+\begin{equation}
+\xi_{\alpha;\beta} + \xi_{\beta;\alpha} = 0\,,
+\tag{2.5.31}
+\end{equation}
+
+which need not be timelike; and assume that the flow is adiabatic, $ds/d\tau = 0$,
+and stationary in the sense that
+
+\begin{equation}
+\mathscr{L}_{\boldsymbol{\xi}}\,p = 0, \quad
+\nabla_{\boldsymbol{\xi}}\,\rho = \nabla_{\boldsymbol{\xi}}\,p = \cdots = 0\,.
+\tag{2.5.32}
+\end{equation}
+
+Here $\mathscr{L}_{\boldsymbol{\xi}}$ is the Lie derivative along $\boldsymbol{\xi}$.  In this case the Euler equations~(2.5.30),
+together with the first law of thermodynamics~(2.5.12), imply the relativistic
+Bernoulli equation
+
+\begin{equation}
+d(\mu\,\fvec{u}\cdot\boldsymbol{\xi})/d\tau = 0\,;
+\tag{2.5.33}
+\end{equation}
+
+i.e., $\mu\,\fvec{u}\cdot\boldsymbol{\xi}$ is constant along flow lines.
+
+\bigskip
+\textit{Newtonian limit}
+
+The Newtonian limit of relativistic hydrodynamics is obtained when, in a nearly
+global Lorentz frame, the following approximations hold:
+
+\begin{gather}
+g_{00} = -(1 + 2\Phi), \quad |\Phi| \ll 1, \quad
+B^2/\rho_0 \ll 1,
+\notag\\
+p/\rho_0 \ll 1, \quad \Pi \ll 1, \quad v^2 \ll 1\,.
+\tag{2.5.34}
+\end{gather}
+
+Here $\Phi$ is the Newtonian gravitational potential with sign $\Phi < 0$, and $v$ is the
+ordinary velocity of the fluid
+
+\begin{equation}
+\fvec{v} \equiv v_j = (u^j/u^0)\,\fvec{e}_j\,.
+\tag{2.5.35}
+\end{equation}
+
+In the Newtonian limit the chemical potential $\mu$ reduces to
+
+\begin{equation}
+\mu = m_B(1 + w)\,,
+\tag{2.5.36}
+\end{equation}
+
+%%% ============================================================
+%%% Book page 370
+%%% (PDF p.15, left column)
+%%% ============================================================
+
+where $w$ is the \textit{enthalpy}
+
+\begin{equation}
+w = \Pi + p/\rho_0\,.
+\tag{2.5.37}
+\end{equation}
+
+The Bernoulli equation~(2.5.33) reduces to the familiar form
+
+\begin{equation}
+\Phi + \tfrac{1}{2}v^2 + w = \text{constant along flow lines}\,.
+\tag{2.5.38}
+\end{equation}
+
+The Euler equation for a perfect fluid in adiabatic flow, (2.5.30), reduces to
+
+\begin{equation}
+\frac{d\fvec{v}}{dt} = -\nabla\Phi - \frac{1}{\rho_0}\nabla p\,,
+\tag{2.5.39}
+\end{equation}
+
+where $d/dt$, the derivative with respect to proper time along the flow lines, has
+the Newtonian form
+
+\begin{equation}
+d/dt = \partial/\partial t + \fvec{v}\cdot\boldsymbol{\nabla}\,.
+\tag{2.5.40}
+\end{equation}
+
+The first law of thermodynamics, (2.5.12) and (2.5.12$'$), reduces to
+
+\begin{equation}
+d\Pi = -p\,dV_0 + T\,ds_0\,,
+\tag{2.5.41}
+\end{equation}
+
+\begin{equation}
+dw = V_0\,dp + T\,ds_0\,.
+\tag{2.5.42}
+\end{equation}
+
+(In Newtonian theory one usually adopts a per-unit-mass viewpoint rather than a
+per-baryon viewpoint; and thus one uses $\rho_0$, $V_0$ rather than $n$, $\mathcal{V}$, $s_0$.)
+
+%%% ============================================================
+%%% Section 2.6: Radiative Transfer
+%%% Book page 370–371 (PDF p.15, left–right columns)
+%%% ============================================================
+
+\subsection{Radiative Transfer}
+\label{sec:2.6}
+
+\textit{Basic references}\quad
+Chandrasekhar (1960); Appendix~1 of Pacholczyk (1970); Mihalas (1970).
+
+\bigskip
+\textit{Notation and terminology}
+
+At an arbitrary event in spacetime pick an arbitrary
+local Lorentz frame.  In that frame pick an arbitrary spatial direction $\fvec{n}$ (a
+unit vector; see Figure~2.6.1).  Examine the amount of energy $dE$ that is (i) carried
+by photons across a unit surface area $dA$ orthogonal to $\fvec{n}$ (the surface $\mathscr{S}_m$ of
+Figure~2.6.1) during unit time $dt$, with (ii) the photons having frequencies $\nu$ in
+the range $d\nu$, and (iii) the photons being directed into a solid angle $d\Omega$ about
+$\fvec{n}$.  The ratio
+
+\begin{equation}
+I_\nu = \frac{dE}{dt\;dA\;d\nu\;d\Omega}
+\tag{2.6.1}
+\end{equation}
+
+is called the \textit{specific intensity} or simply the \textit{intensity}.  It depends on (a) the
+event in spacetime; (b) the choice of Lorentz frame; (c) the direction $\fvec{n}$; (d)
+the frequency $\nu$.  One also defines the \textit{total intensity} $I$ by
+
+\begin{equation}
+I = \int I_\nu\;d\nu = \frac{dE}{dt\;dA\;d\Omega}\,;
+\tag{2.6.2}
+\end{equation}
+
+the \textit{average specific intensity} or \textit{average intensity} $J_\nu$ (averaged over all directions)
+by
+
+\begin{equation}
+J_\nu = \frac{1}{4\pi}\int I_\nu\;d\Omega\,;
+\tag{2.6.3}
+\end{equation}
+
+and the \textit{average total intensity} $J$ by
+
+\begin{equation}
+J = \frac{1}{4\pi}\int I\;d\Omega = \frac{1}{4\pi}\int I_\nu\;d\nu\;d\Omega\,.
+\tag{2.6.4}
+\end{equation}
+
+It is easy to see that the \textit{energy density per unit frequency} in the radiation is
+
+\begin{equation}
+\rho^{(\text{rad})} = \frac{dE}{d^3x\;d\nu} = \frac{4\pi J_\nu}{c}\,,
+\tag{2.6.5}
+\end{equation}
+
+and that the \textit{total energy density} in the radiation is
+
+\begin{equation}
+\rho^{(\text{rad})} = \frac{dE}{d^3x} = \frac{4\pi J}{c}\,.
+\tag{2.6.6}
+\end{equation}
+
+%%% ============================================================
+%%% Book page 371 (right column) — Figure 2.6.1, flux, invariance
+%%% ============================================================
+
+Pick a 2-surface $\mathscr{S}_m$ in the chosen Lorentz frame, with unit normal $\fvec{m}$ (Fig.\
+2.6.1).  Examine the total energy $dE$ per unit area $dA$ that is carried across the
+chosen surface during unit time $dt$, by photons having frequency $\nu$ in the range
+$d\nu$.  Make no restrictions on the photon direction or solid angle; but count
+negatively those photons that cross $dA$ from the front side toward the back.
+The ratio
+
+\begin{equation}
+F_\nu = \frac{dE}{dt\;dA\;d\nu}
+\tag{2.6.7}
+\end{equation}
+
+is called the \textit{specific flux}, or simply the \textit{flux}.  It is easy to see from Figure~2.6.1
+that
+
+\begin{equation}
+F_\nu = \int I_\nu\,\cos\theta\;d\Omega\,.
+\tag{2.6.8}
+\end{equation}
+
+\begin{figure}[htbp]
+\centering
+\fbox{\parbox{0.9\columnwidth}{\centering [Figure 2.6.1 placeholder]\\
+The surfaces, directions, and solid angle used in the definition of intensity
+and of flux.  $\mathscr{S}_m$ is a surface with unit normal $\fvec{m}$;
+$\fvec{n}$ is a unit vector in the photon propagation direction;
+$\theta$ is the angle between $\fvec{m}$ and $\fvec{n}$; $d\Omega$ is the solid angle element.}}
+\caption{The surfaces, directions, and solid angle used in the definition of intensity
+and of flux.}
+\label{fig:2.6.1}
+\end{figure}
+
+The specific flux depends on (a) the chosen event in spacetime; (b) the chosen
+Lorentz frame at that event; (c) the chosen 2-surface $\mathscr{S}_m$ in that Lorentz frame.
+
+%%% ============================================================
+%%% Book page 372 — Invariance of I_nu/nu^3, equation of radiative transfer
+%%% (PDF p.16, left column)
+%%% ============================================================
+
+The integral of the flux over all frequencies is called the \textit{total flux}
+
+\begin{equation}
+F = \int F_\nu\;d\nu = \int I\,\cos\theta\;d\Omega\,.
+\tag{2.6.9}
+\end{equation}
+
+Notice that the total flux is the ``first moment'' of the total intensity (the
+``moment'' being taken with respect to the unit normal $\fvec{m}$).  One can readily
+verify that the ``second moment'' is equal to the radiation pressure that acts
+across the surface $\mathscr{S}_m$:
+
+\begin{equation}
+T^{(\text{rad})} \equiv \fvec{m}\cdot\fvec{T}^{(\text{rad})}\cdot\fvec{m}
+= \int I\,\cos^2\theta\;d\Omega\,.
+\tag{2.6.10}
+\end{equation}
+
+\bigskip
+\textit{Invariance of $I_\nu/\nu^3$}
+
+Choose a particular photon that passes through a given event in spacetime.
+Observe that particular photon, and all others in the vicinity, from several different
+Lorentz frames at the given event.  The frequency $\nu$ of the photon will depend
+on the choice of Lorentz frame (Doppler shift from one frame to another).
+The specific intensity $I_\nu$ in the frame neighborhood of the photon will also depend
+on the choice of Lorentz frame.  However, the ratio $I_\nu/\nu^3$ will be Lorentz-
+invariant. (Aside from a factor $h^{-4}$, $I_\nu/\nu^3$ is the invariant number density in
+phase space
+
+\begin{equation}
+\mathscr{N} = \frac{dN}{d^3x\,d^3p} = \frac{1}{h^3}\,\frac{I_\nu}{\nu^3}\,;
+\tag{2.6.11}
+\end{equation}
+
+see, e.g., \S22.6 of MTW.)
+
+When photons propagate freely through curved spacetime (no interaction with
+matter), the ratio $I_\nu/\nu^3$ is conserved along the world line of each photon
+(Liouville's theorem).
+
+\bibliography{agent_07}
+
+\end{document}
