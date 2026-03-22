@@ -1,0 +1,457 @@
+% Agent 09: Pages 377--380 (PDF pp.18--20)
+% Section 2.6 Radiative Transfer (end): optical depth, optically thick/thin,
+%   diffusion approximation, Rosseland mean opacity
+% Section 2.7 Shock Waves (beginning): types of shocks, relativistic
+%   Rankine-Hugoniot equations, Figure 2.7.1
+% Equations (2.6.26)--(2.6.47), (2.7.1a)--(2.7.1d)
+% =============================================================================
+
+%%% ---------------------------------------------------------------
+%%% Continuation of S2.6  Radiative Transfer
+%%% (picking up from the equation of radiative transfer, eq.~(2.6.22))
+%%% ---------------------------------------------------------------
+
+Notice that for matter in thermodynamic equilibrium the relationship
+$\varepsilon_\nu / 4\pi\kappa_\nu = B_\nu$ permits one to rewrite the equation
+of radiative transfer~(2.6.22) in the form
+%
+\begin{equation}
+\tag{2.6.26}
+\frac{dI_\nu}{dl} + (3n\cdot a + \dot\theta + 3\sigma^{\alpha\beta}
+n_\alpha n_\beta)\, I_\nu
+= \rho_0\,\kappa_\nu\bigl(B_\nu - I_\nu\bigr)
+  + \left.\frac{dI_\nu}{dl}\right|_{\text{scattering}}
+  + \left.\frac{d(I_\nu/\nu^3)}{d\tau_\nu}\right|_{\text{scattering}} ;
+\end{equation}
+%
+or, equivalently,
+%
+\begin{equation}
+\tag{2.6.27}
+\frac{d(I_\nu/\nu^3)}{d\tau_\nu}
+= \rho_0\,\kappa_\nu \left(\frac{B_\nu}{\nu^3}
+  - \frac{I_\nu}{\nu^3}\right)
+  + \left.\frac{d(I_\nu/\nu^3)}{d\tau_\nu}\right|_{\text{scattering}}.
+\end{equation}
+
+%%% ---------------------------------------------------------------
+%%% Optical depth
+%%% ---------------------------------------------------------------
+
+\bigskip
+\noindent
+\emph{Optical depth}
+
+\medskip
+\noindent
+Consider radiation propagating out of a medium into surrounding empty space.
+Follow a given ray ``backward'', from ``infinity'' into the medium.  Let the ray
+have frequency $\nu_\infty$ at infinity; then its frequency at location~$l$
+($l = {}$proper distance measured in LRF of medium) is
+%
+\begin{equation}
+\tag{2.6.28}
+\nu(l) = \nu_\infty \exp\!\left[\,-\int_i^l
+\bigl(\dot\theta + n^\alpha n^\beta \sigma_{\alpha\beta}\bigr)\,dl\right].
+\end{equation}
+%
+[cf.\ eq.~(2.6.14)].  In calculating the change of intensity along the ray, it is
+often useful to replace the proper-length parameter~$l$ by the
+``optical-depth'' parameter
+%
+\begin{equation}
+\tag{2.6.29}
+\tau_\nu = \int_i^l \rho_0\,\kappa_\nu\,dl.
+\end{equation}
+
+In the integration $\kappa_\nu$ must be evaluated at the frequency
+$\nu(l)$.  The optical depth $\tau_\nu$ depends on (i) the world line of
+the chosen ray, (ii) the frequency of the ray in spacetime, (iii) location
+along that ray.  Then the equation of transfer
+world line; and (iii) location along the ray at ``infinity'' $\nu_\infty$\ldots
+
+One can also introduce an optical depth for scattering radiation out of the
+beam, $\tau_s$:
+%
+\begin{equation}
+\tag{2.6.30}
+\tau_s = \int_i^l \rho_0\,\kappa_s\,dl.
+\end{equation}
+
+In terms of optical depths, the law of radiative transfer~(2.6.27) reads
+%
+\begin{equation}
+\tag{2.6.31}
+\frac{d(I_\nu/\nu^3)}{d\tau_\nu}
+= \frac{B_\nu}{\nu^3} - \frac{I_\nu}{\nu^3}
+  - \frac{\kappa_s}{\kappa_\nu}
+  \left.\frac{d(I_\nu/\nu^3)}{d\tau_\nu}\right|_{\text{scattering}},
+\end{equation}
+%
+where
+%
+\begin{equation}
+\tag{2.6.32}
+\left.\frac{d(I_\nu/\nu^3)}{d\tau_\nu}\right|_{\text{scattering}}
+= \frac{\kappa_s}{\kappa_\nu}\left[\frac{I_\nu}{\nu^3} - \frac{1}{\kappa_s}
+  \int \frac{dk_s}{d\Omega\,d\nu'}\,
+  (\mathbf{p}',\mathbf{p})\,I_\nu'\,d\Omega'\,d\nu'
+  - \rho_0\,\kappa_s\,I_\nu \right].
+\end{equation}
+
+%%% ---------------------------------------------------------------
+%%% Optically thin / optically thick
+%%% ---------------------------------------------------------------
+
+One says that the medium is \emph{optically thin} if everywhere along
+the ray $\tau_\nu \ll 1$ (or $\tau_s \ll 1$).
+
+Consider a medium that (i) has its matter in thermodynamic equilibrium with
+a spatially uniform temperature, (ii) is optically thick along a chosen ray, and
+(iii) has absorption dominant over scattering, i.e.,
+%
+\begin{equation}
+\tag{2.6.33}
+\kappa_\nu \gg \kappa_s.
+\end{equation}
+
+One says that a medium is \emph{optically thick} to emission and absorption (or to
+scattering) along a given ray if optical depths $\tau_\nu \gg 1$
+(or $\tau_s \gg 1$) are achieved.
+
+\medskip
+\noindent
+Along that ray, then the radiation emerging to infinity along the chosen ray must
+have the blackbody form
+%
+\begin{equation}
+\tag{2.6.34}
+\frac{I_\nu}{\nu^3} = \frac{B_\nu}{\nu^3}
+= \frac{2h\nu^3/c^3}{e^{h\nu/kT} - 1}.
+\end{equation}
+%
+[One can prove this easily from the equation of transfer~(2.6.31).]\
+Moreover, at a point in the medium where all rays are optically thick, the
+radiation will have a blackbody intensity at all frequencies and in all
+directions; so the energy density and pressure in the radiation will be
+%
+\begin{equation}
+\tag{2.6.35}
+\rho^{\text{rad}} = 3p^{\text{rad}} = bT^4,
+\end{equation}
+%
+where $b$ is the universal constant
+%
+\begin{equation}
+\tag{2.6.36}
+b = \frac{8\pi^5 k^4}{15c^3 h^3}
+  = 7.56 \times 10^{-15}\;\frac{\text{ergs}}{\text{cm}^3\,\text{K}^4}.
+\end{equation}
+
+Consider, alternatively, a medium that is optically thin along a chosen ray,
+and has negligible scattering ($\tau_s \ll 1$) along that ray.  Then the
+equation of transfer~(2.6.31) predicts for the radiation emerging to infinity
+%
+\begin{equation}
+\tag{2.6.37}
+I_\nu\,\nu^3 = \int_{\text{entire ray}} (\varepsilon_\nu/\nu^3)\,\rho_0\,dl
+= (1/4\pi)\int (\varepsilon_\nu/\nu^3)_{\text{in region of strongest emission}}
+  \rho_0\,dl.
+\end{equation}
+
+\begin{equation}
+\tag{2.6.38}
+\simeq \left(\int \rho_0\,dl\right)\!(1/4\pi)\,
+(\varepsilon_\nu/\nu^3)_{\text{in region of strongest emission}}.
+\end{equation}
+
+In summary, the radiation from an optically thin source with negligible
+scattering $I_\nu \propto \varepsilon_\nu$, and has an intensity proportional
+to the amount of matter along the line of sight.  But radiation from an
+optically thick source in thermodynamic equilibrium with negligible scattering
+has the blackbody form independent of the nature of its emissivity.  Media with
+non-negligible scattering will be studied in~\S5.10.
+
+%%% ---------------------------------------------------------------
+%%% Radiative transfer in the diffusion approximation
+%%% ---------------------------------------------------------------
+
+\bigskip
+\noindent
+\emph{Radiative transfer in the diffusion approximation}
+
+\medskip
+\noindent
+Consider the interior of an optically thick medium $\tau_\nu \gg 1$ which is
+in local thermodynamic equilibrium.  Suppose that the medium has a temperature
+gradient and/or an acceleration, but that the characteristic length scale
+%
+\begin{equation}
+\tag{2.6.39}
+l_T \equiv \frac{T}{|\boldsymbol{\nabla}T + \dot{\mathbf{a}}\,T|}
+\end{equation}
+%
+over which the temperature changes are long compared to the mean-free path of a
+photon,
+%
+\begin{equation}
+\tag{2.6.40}
+l_T \gg 1/\kappa_\nu\,\rho_0 \equiv l_\nu.
+\end{equation}
+%
+Then the radiation distribution will consist of a large, isotropic, blackbody
+component, plus a tiny ``correction'' due to the temperature gradient
+%
+\begin{equation}
+\tag{2.6.41}
+I_\nu \simeq B_\nu + I_\nu^{(1)};\qquad
+I_\nu^{(1)} \ll B_\nu.
+\end{equation}
+
+There is no net flux $F$ across any surface associated with the blackbody
+component~$B_\nu$; but the ``correction'' term $I_\nu^{(1)}$ will lead to a
+flux in the direction of
+$\mathbf{h}\cdot(\boldsymbol{\nabla}T+\dot{\mathbf{a}}\,T)$.
+
+(Here $\mathbf{h}$ is the projection operator of~\S2.5.)  One can calculate
+the magnitude of that flux by inserting expression~(2.6.41) for~$I_\nu$ into
+the equation of transfer~(2.6.22), and by then integrating over
+$\cos\theta\,d\Omega\,d\nu$.  (Here $\theta$ is the angle between
+$d\Omega$~and the direction of
+$\mathbf{h}\cdot(\boldsymbol{\nabla}T+\dot{\mathbf{a}}\,T)$.)
+The result is
+%
+\begin{equation}
+\tag{2.6.43}
+\mathbf{q} = (1/\kappa_R\rho_0)(\tfrac{1}{3}\partial T^4/\partial \mathbf{x})
+  \,\mathbf{h}\cdot(\boldsymbol{\nabla}T + \dot{\mathbf{a}}\,T).
+\end{equation}
+
+Here $\mathbf{q}$ is the energy flux vector of~\S2.5, and its magnitude is the
+flux of energy in the
+$\mathbf{h}\cdot(\boldsymbol{\nabla}T+\dot{\mathbf{a}}\,T)$ direction
+%
+\begin{equation}
+\tag{2.6.44}
+|\mathbf{q}| = F.
+\end{equation}
+
+Also, in eq.~(2.6.43) $\bar{\kappa}$ is the ``Rosseland mean opacity'',
+defined by
+%
+\begin{equation}
+\tag{2.6.45}
+\frac{1}{\bar{\kappa}}
+\equiv \frac{\displaystyle\int_0^\infty
+  (\kappa_\nu + \kappa_s)^{-1}\,
+  (dB_\nu/dT)\,d\nu}
+  {\displaystyle\int_0^\infty (dB_\nu/dT)\,d\nu}.
+\end{equation}
+
+For free-free transitions by themselves (eq.~2.6.25) the Rosseland mean
+opacity is
+%
+\begin{equation}
+\tag{2.6.46}
+\kappa_{ff} = (0.645\times 10^{23}\;\text{cm}^2/\text{g})
+  \left(\frac{C_f\,\bar{f}\,\bar{g}^2}{\mathcal{A}}\right)
+  \left(\frac{\rho_0}{\text{g\;cm}^{-3}}\right) T^{-7/2}.
+\end{equation}
+
+See~\S2.1 for notation.  For electron scattering by itself in the nonrelativistic
+case, the Rosseland mean opacity is
+%
+\begin{equation}
+\tag{2.6.47}
+\bar{\kappa}_{es} = \kappa_{es} = 0.40\;\text{cm}^2/\text{g}.
+\end{equation}
+
+
+%%% ===============================================================
+%%% SECTION 2.7: Shock Waves
+%%% ===============================================================
+
+\subsection{Shock Waves}
+\label{sec:2.7}
+
+\emph{Basic references}\quad
+Zel'dovich and Raizer~(1966)~\cite{ZeldovichRaizer1966};
+Landau and Lifshitz~(1959)~\cite{LandauLifshitz1959};
+Taub~(1948)~\cite{Taub1948};
+Lichnerowicz~(1967, 1970, 1971)~\cite{Lichnerowicz1967};
+Thorne~(1973a)~\cite{Thorne1973a}.
+
+\bigskip
+\noindent
+\emph{Types of shock waves}
+
+\medskip
+\noindent
+When gas in supersonic flow encounters an obstacle (e.g., the surface of a star,
+or the geometric structure of the ergosphere of a black hole), a shock front
+develops.  In the shock front the flow decelerates sharply from supersonic to
+subsonic, and some of the kinetic energy of the flow gets converted into heat
+(increase in entropy).
+
+The structure of the shock depends on the nature of the forces which decelerate
+the gas particles (atoms, ions, electrons).  If those forces are collisions between
+the particles themselves (the usual case), one has an ordinary shock.  But if the
+particles are decelerated without colliding---e.g., by impact onto the dipole
+magnetic field of a neutron star, which swings the particles into Larmour
+orbits---one has a \emph{collisionless} shock.  These notes will be confined to ordinary
+shocks.  For the theory of collisionless shocks see, e.g., the end of~\S12 of Kaplan
+(1966).
+
+Shock waves in a partially ionized gas (e.g., the interstellar medium) can have
+a somewhat different form than ordinary shocks.  As gas passes through the shock
+front, much of its kinetic energy of supersonic flow can be converted into
+excitation energy of atoms and ions, and can be quickly radiated away as ``line''
+radiation.  The result is a bright glow from the shock front itself.  See, e.g.,
+Pikel'ner~(1961) and~\S10 of Kaplan~(1966).  In this section we shall ignore such
+energy losses to radiation---i.e., we shall demand that the gas behind the shock
+have the same total energy per unit rest mass as the gas in front of the shock.
+
+%%% ---------------------------------------------------------------
+%%% The relativistic Rankine--Hugoniot equations
+%%% ---------------------------------------------------------------
+
+\bigskip
+\noindent
+\emph{The relativistic Rankine--Hugoniot equations}
+
+\medskip
+\noindent
+Pick a particular event~$\mathscr{P}$ on a shock front.  In the neighborhood
+of~$\mathscr{P}$ introduce a local Lorentz frame (``rest frame of the shock'')
+in which (i) the shock is the surface $y = z = 0$; and (iii) on both sides of
+the shock the fluid is moving in the $x$~direction, i.e., perpendicular to the
+shock front (``normal shock''; see Figure~\ref{fig:2.7.1}).  That such a local
+Lorentz frame exists in general one can prove quite easily [see, e.g.,
+Taub~(1948)].
+
+Denote the ``front'' side of the shock (side \emph{from} which the fluid moves)
+by a ``1'', and denote the ``back'' side (side \emph{toward} which the fluid
+moves) by a ``2''; see Figure~\ref{fig:2.7.1}.  Denote the velocity of the
+fluid, as measured in the rest frame of the shock, by
+%
+\begin{subequations}
+\begin{align}
+\tag{2.7.1a}
+v_1 &= (dx/dt)_1 = \text{ordinary velocity on front side},\\[4pt]
+\tag{2.7.1b}
+v_2 &= (dx/dt)_2 = \text{ordinary velocity on back side}.
+\end{align}
+\end{subequations}
+%
+(Note that these ``4-velocities'' are scalars, not vectors.)
+
+In the rest frame of the shock the law of baryon conservation is equivalent
+to continuity of the \emph{baryon flux}:
+%
+\begin{equation}
+\tag{2.7.2a}
+j \equiv n_1\,u_1 = n_2\,u_2,
+\end{equation}
+%
+and the relations $n = 1/V_1$, $\mu_1 = p_1$,
+%
+\begin{subequations}
+\begin{align}
+\tag{2.7.1c}
+u_1 &= v_1\,\gamma_1 = v_1/(1 - v_1^2)^{1/2}
+  = \text{``4-velocity'' on front side},\\[4pt]
+\tag{2.7.1d}
+u_2 &= v_2\,\gamma_2 = v_2/(1 - v_2^2)^{1/2}
+  = \text{``4-velocity'' on back side}.
+\end{align}
+\end{subequations}
+
+\noindent
+Similarly, energy and momentum conservation are equivalent to continuity of
+energy flux and momentum flux:
+%
+\begin{subequations}
+\begin{align}
+\tag{2.7.2b}
+\bigl[(\rho + p)\,v\,u\bigr]_1
+  &= \bigl[(\rho + p)\,v\,u\bigr]_2,\\[4pt]
+\tag{2.7.2c}
+\bigl[(\rho + p)\,u^2 + p\bigr]_1
+  &= \bigl[(\rho + p)\,u^2 + p\bigr]_2.
+\end{align}
+\end{subequations}
+
+%%% ---------------------------------------------------------------
+%%% Figure 2.7.1
+%%% ---------------------------------------------------------------
+
+\begin{figure}[htbp]
+\centering
+% \includegraphics[width=\columnwidth]{fig_2_7_1}
+\fbox{\parbox{0.9\columnwidth}{\centering [Figure 2.7.1 placeholder]\\[6pt]
+Diagram of a shock wave viewed in the local-Lorentz rest frame of the
+shock front at an event~$\mathscr{P}$.  The front (``1'' side) is on the left,
+and the back (``2'' side) is on the right.  Arrows indicate gas flow with
+velocity~$v_1$ entering from the left and velocity~$v_2$ exiting to the right.
+The $x$-axis is perpendicular to the shock surface, which lies in the
+$y$-$z$ plane.  Hatching indicates the compressed gas behind the shock.}}
+\caption{\textit{Figure~2.7.1.}  A shock wave viewed in the local-Lorentz
+rest frame of the shock front at an event~$\mathscr{P}$.}
+\label{fig:2.7.1}
+\end{figure}
+
+These junction conditions are more easily understood by writing them in a
+form analogous to the Rankine--Hugoniot equations of Newtonian theory:
+First take the law of baryon conservation~(2.7.2a) and turn it into equations
+for the fluid 4-velocities
+%
+\begin{equation}
+\tag{2.7.3a}
+u_1 = jV_1, \qquad u_2 = jV_2.
+\end{equation}
+%
+(See~\S2.5 for notation.)  Then take the law of momentum conservation~(2.7.2a)
+and rewrite it in terms of $\mu$, $V_1$, and $p$ using the law of baryon
+conservation~(2.7.2a) to obtain
+%
+\begin{subequations}
+\begin{align}
+\tag{2.7.3b}
+j^2 &= -\frac{p_2 - p_1}{\mu_2\,V_2 - \mu_1\,V_1},\\[6pt]
+\end{align}
+\end{subequations}
+%
+and the relations
+$j^2 = (p_2-p_1)/(\mu_2 V_2 - \mu_1 V_1)$.
+
+Finally, use the law of baryon conservation~(2.7.2b) to rewrite the energy
+equation~(2.7.3b) by $(\mu_1 V_1 + \mu_2 V_2)$, and combine with
+$j = u_1/V_1 = u_2/V_2$; divide equation~(2.7.3b) by the square of the energy
+equation $(\mu_2\gamma_2)^2 - (\mu_1\gamma_1)^2 = (p_1 - p_2)(\mu_1 V_1 + \mu_2 V_2)$;
+then subtract this from [eq.~(2.7.2a)] to obtain
+%
+\begin{equation}
+\tag{2.7.3c}
+\mu_2^2 - \mu_1^2 = (p_2 - p_1)(\mu_1\,V_1 + \mu_2\,V_2).
+\end{equation}
+
+\emph{Equations~(2.7.3) are Taub's~(1948) junction conditions for shock waves.}
+Their Newtonian limits are the standard Rankine--Hugoniot equations:
+%
+\begin{subequations}
+\begin{align}
+\tag{2.7.4a}
+v_1 &= j_0\,V_{01},\qquad v_2 = j_0\,V_{02}\\[4pt]
+\tag{2.7.4b}
+j_0 &\equiv \frac{p_2 - p_1}{V_{01} - V_{02}}\quad
+\text{(``mass flux'' of Newtonian theory)};\\[4pt]
+\tag{2.7.4c}
+w_2 - w_1 &= \tfrac{1}{2}(p_2 - p_1)(V_{01} + V_{02}).
+\end{align}
+\end{subequations}
+%
+The form of the Newtonian junction conditions~(2.7.4) motivates one to use $p$
+and $V_0$ as one's independent thermodynamic variables when analyzing Newtonian
+shocks; similarly, the form of the relativistic junction conditions~(2.7.3)
+motivates one to use $p$ and~$\mu V$ as one's independent variables for
+relativistic shocks.
