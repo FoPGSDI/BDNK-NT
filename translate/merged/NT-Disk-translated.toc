@@ -4,18 +4,18 @@
 \contentsline {section}{\numberline {}Contents}{1}{section*.3}%
 \tocdepth@restore 
 \contentsline {section}{\numberline {I}Introductory Remarks}{1}{section*.4}%
-\contentsline {section}{\numberline {II}Thermal Bremsstrahlung (``Free-Free Radiation'' From a Plasma)}{2}{section*.5}%
-\contentsline {subsection}{\numberline {A}Thermal Bremsstrahlung (``Free-Free Radiation'' From a Plasma)}{2}{section*.6}%
+\contentsline {section}{\numberline {II}Thermal Bremsstrahlung (``Free-Free Radiation'' From a Plasma)}{1}{section*.5}%
+\contentsline {subsection}{\numberline {A}Thermal Bremsstrahlung (``Free-Free Radiation'' From a Plasma)}{1}{section*.6}%
 \contentsline {subsection}{\numberline {B}Free-Bound Radiation}{5}{section*.48}%
 \contentsline {subsection}{\numberline {C}Thermal Cyclotron and Synchrotron Radiation}{6}{section*.60}%
-\contentsline {subsection}{\numberline {D}Electron Scattering of Radiation}{8}{section*.85}%
-\contentsline {subsection}{\numberline {E}Hydrodynamics and Thermodynamics}{9}{section*.100}%
+\contentsline {subsection}{\numberline {D}Electron Scattering of Radiation}{7}{section*.85}%
+\contentsline {subsection}{\numberline {E}Hydrodynamics and Thermodynamics}{8}{section*.100}%
 \contentsline {subsection}{\numberline {F}Radiative Transfer}{12}{section*.166}%
 \contentsline {paragraph}{\numberline {}Equation of Radiative Transfer}{13}{section*.178}%
 \contentsline {paragraph}{\numberline {}Relationship between emissivity and absorption}{14}{section*.191}%
 \contentsline {subsection}{\numberline {G}Shock Waves}{16}{section*.216}%
 \contentsline {subsubsection}{\numberline {}The Rankine-Hugoniot curve}{17}{section*.240}%
-\contentsline {subsubsection}{\numberline {}Shocks in an ideal gas}{18}{section*.246}%
+\contentsline {subsubsection}{\numberline {}Shocks in an ideal gas}{17}{section*.246}%
 \contentsline {subsection}{\numberline {H}Turbulence}{18}{section*.249}%
 \contentsline {subsection}{\numberline {I}Reconnection of Magnetic Field Lines}{18}{section*.250}%
 \contentsline {subsubsection}{\numberline {}Basic ideas}{18}{section*.251}%
@@ -23,42 +23,42 @@
 \contentsline {section}{\numberline {IV}Black Holes in the Interstellar Medium}{20}{section*.261}%
 \contentsline {subsection}{\numberline {A}Accretion of Noninteracting Particles onto a Nonmoving Black Hole}{20}{section*.262}%
 \contentsline {subsection}{\numberline {B}Adiabatic, Hydrodynamic Accretion onto a Nonmoving Black Hole}{21}{section*.268}%
-\contentsline {subsection}{\numberline {C}Thermal Bremsstrahlung from the Accreting Gas}{24}{section*.287}%
+\contentsline {subsection}{\numberline {C}Thermal Bremsstrahlung from the Accreting Gas}{23}{section*.287}%
 \contentsline {subsection}{\numberline {D}Influence of Magnetic Fields and Synchrotron Radiation}{24}{section*.293}%
 \contentsline {subsection}{\numberline {E}Interaction of Outflowing Radiation with the Gas}{25}{section*.305}%
 \contentsline {subsection}{\numberline {F}Validity of the Hydrodynamical Approximation}{26}{section*.311}%
-\contentsline {subsection}{\numberline {G}Gas Flow Near the Horizon}{27}{section*.317}%
+\contentsline {subsection}{\numberline {G}Gas Flow Near the Horizon}{26}{section*.317}%
 \contentsline {subsection}{\numberline {H}Accretion onto a Moving Hole}{27}{section*.325}%
 \contentsline {subsection}{\numberline {I}Optical Appearance of Hole: Summary}{29}{section*.337}%
 \contentsline {section}{\numberline {V}Black Holes in Binary Star Systems and in the Nuclei of Galaxies}{29}{section*.339}%
 \contentsline {subsection}{\numberline {A}Introduction}{29}{section*.340}%
 \contentsline {subsection}{\numberline {B}Accretion in Binary Systems: The General Picture}{29}{section*.341}%
 \contentsline {paragraph}{\numberline {}Sources of viscosity}{33}{section*.369}%
-\contentsline {paragraph}{\numberline {}Radiative transport}{34}{section*.378}%
-\contentsline {subsection}{\numberline {C}Accretion in Galactic Nuclei: The General Picture}{34}{section*.381}%
-\contentsline {subsection}{\numberline {D}Properties of the Kerr Metric Relevant to Accreting Disks}{34}{section*.382}%
+\contentsline {paragraph}{\numberline {}Radiative transport}{33}{section*.378}%
+\contentsline {subsection}{\numberline {C}Accretion in Galactic Nuclei: The General Picture}{33}{section*.381}%
+\contentsline {subsection}{\numberline {D}Properties of the Kerr Metric Relevant to Accreting Disks}{33}{section*.382}%
 \contentsline {subsection}{\numberline {E}Relativistic Model for Disk: Underlying Assumptions}{35}{section*.424}%
 \contentsline {subsection}{\numberline {F}Equations of Radial Structure}{36}{section*.434}%
-\contentsline {paragraph}{\numberline {}Manipulation of conservation laws}{38}{section*.454}%
+\contentsline {paragraph}{\numberline {}Manipulation of conservation laws}{37}{section*.454}%
 \contentsline {subsection}{\numberline {G}Equations of Vertical Structure}{38}{section*.459}%
-\contentsline {paragraph}{\numberline {a}Vertical pressure balance}{39}{section*.464}%
-\contentsline {paragraph}{\numberline {b}Sources of viscosity}{39}{section*.466}%
-\contentsline {paragraph}{\numberline {c}Energy generation}{39}{section*.468}%
-\contentsline {paragraph}{\numberline {d}Energy transport}{39}{section*.470}%
-\contentsline {paragraph}{\numberline {e}Equation of state for vertical pressure}{39}{section*.473}%
+\contentsline {paragraph}{\numberline {a}Vertical pressure balance}{38}{section*.464}%
+\contentsline {paragraph}{\numberline {b}Sources of viscosity}{38}{section*.466}%
+\contentsline {paragraph}{\numberline {c}Energy generation}{38}{section*.468}%
+\contentsline {paragraph}{\numberline {d}Energy transport}{38}{section*.470}%
+\contentsline {paragraph}{\numberline {e}Equation of state for vertical pressure}{38}{section*.473}%
 \contentsline {paragraph}{\numberline {f}Equation for opacity}{39}{section*.476}%
 \contentsline {subsection}{\numberline {H}Approximate Version of Vertical Structure}{39}{section*.482}%
-\contentsline {subsection}{\numberline {I}Explicit Models for Disk}{40}{section*.488}%
+\contentsline {subsection}{\numberline {I}Explicit Models for Disk}{39}{section*.488}%
 \contentsline {paragraph}{\numberline {a}Outer region}{40}{section*.495}%
-\contentsline {paragraph}{\numberline {b}Middle region}{41}{section*.499}%
-\contentsline {subsection}{\numberline {J}Spectrum of Radiation from Disk}{42}{section*.505}%
-\contentsline {subsection}{\numberline {K}Heating of the Outer Region by X-Rays from the Inner Region}{44}{section*.516}%
-\contentsline {subsection}{\numberline {L}Fluctuations on the Steady-State Model}{44}{section*.517}%
+\contentsline {paragraph}{\numberline {b}Middle region}{40}{section*.499}%
+\contentsline {subsection}{\numberline {J}Spectrum of Radiation from Disk}{41}{section*.505}%
+\contentsline {subsection}{\numberline {K}Heating of the Outer Region by X-Rays from the Inner Region}{43}{section*.516}%
+\contentsline {subsection}{\numberline {L}Fluctuations on the Steady-State Model}{43}{section*.517}%
 \contentsline {subsection}{\numberline {M}Supercritical Accretion}{44}{section*.518}%
-\contentsline {subsection}{\numberline {N}Comparison with Observations}{45}{section*.521}%
-\contentsline {section}{\numberline {VI}White Holes and Black Holes of Cosmological Origin}{45}{section*.522}%
-\contentsline {subsection}{\numberline {A}White Holes, Grey Holes, and Black Holes}{45}{section*.523}%
+\contentsline {subsection}{\numberline {N}Comparison with Observations}{44}{section*.521}%
+\contentsline {section}{\numberline {VI}White Holes and Black Holes of Cosmological Origin}{44}{section*.522}%
+\contentsline {subsection}{\numberline {A}White Holes, Grey Holes, and Black Holes}{44}{section*.523}%
 \contentsline {subsection}{\numberline {B}The Growth of Cosmological Holes by Accretion}{45}{section*.524}%
-\contentsline {subsection}{\numberline {C}Limit on the Number of Baryons in Cosmological Holes}{46}{section*.527}%
+\contentsline {subsection}{\numberline {C}Limit on the Number of Baryons in Cosmological Holes}{45}{section*.527}%
 \contentsline {subsection}{\numberline {D}Caution}{46}{section*.532}%
 \contentsline {section}{\numberline {}References}{46}{section*.533}%
