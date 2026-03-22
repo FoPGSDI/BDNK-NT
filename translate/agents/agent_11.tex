@@ -1,0 +1,343 @@
+% Agent 11: Book pages 385--387 (PDF pages 22--23)
+% Content: Section 2.9 Reconnection of Magnetic Field Lines (continued from p.\,384),
+%          Section 3 The Origin of Stellar Black Holes,
+%          Table 3.1 Summary of Numerical Computations of Supernova Explosions
+%
+% NOTE: The beginning of Section 2.9 and the turbulence paragraph at the
+%       top of p.\,384 may overlap with Agent 10.  Only the material starting
+%       from the \emph{Basic ideas} sub-heading of S2.9 onward is new here.
+
+%% ============================================================
+%%  End of Section 2.8 / transition (top of p.\,384)
+%% ============================================================
+
+uncertain state. Little is known with confidence about the astrophysical
+circumstances under which turbulence should develop, or about the strength
+of the turbulence in various situations. For overviews of the current state of
+one's knowledge see, e.g., Chapter~3 of Landau and Lifshitz~(1959); also
+Pikel'ner~(1961)\cite{Pikelner1961}.
+
+%% ============================================================
+%%  Section 2.9  Reconnection of Magnetic Field Lines
+%% ============================================================
+
+\subsection{Reconnection of Magnetic Field Lines}
+\label{sec:2.9}
+
+\textit{Basic references}\quad
+\S5.3 of Cowling~(1965)\cite{Cowling1965};
+Sonnerup~(1970)\cite{Sonnerup1970},
+Yeh~(1970)\cite{Yeh1970},
+Vainstein and Zel'dovich~(1972)\cite{VainsteinZeldovich1972}.
+
+\bigskip\noindent
+\textit{Basic ideas}
+
+\medskip\noindent
+In flat spacetime consider a plasma that is macroscopically neutral, that has a
+high electrical conductivity~$\sigma$, that is sufficiently dilute for one to ignore its
+dielectric properties: $\varepsilon = \mu = 1$.  Let the plasma be endowed with a large-scale
+magnetic field, and examine the evolution of that field in a Lorentz frame where
+the plasma has low velocity $|\mathbf{v}|\ll c$.  Maxwell's equations for the electromagnetic
+field then read
+%
+\begin{equation}
+\boldsymbol{\nabla}\times\mathbf{E} = -\boldsymbol{\nabla}\cdot\mathbf{B} = 0,
+\tag{2.9.1}
+\end{equation}
+%
+\begin{equation}
+\boldsymbol{\nabla}\times\mathbf{B} - (1/c)(\partial\mathbf{B}/\partial t) = 4\pi\mathbf{J}/c.
+\tag{2.9.2}
+\end{equation}
+
+In the local rest frame of the plasma the current is proportional to the electric
+field, $\mathbf{J} = \sigma\mathbf{E}$.  When transformed to the Lorentz frame where the plasma moves
+with velocity~$\mathbf{v}$, this equation says
+%
+\begin{equation}
+\mathbf{A} = \sigma\!\left[\mathbf{E} + (\mathbf{v}/c)\times\mathbf{B}\right].
+\tag{2.9.2}
+\end{equation}
+
+A straightforward calculation from the above equations leads to the following
+law for the rate of change of magnetic field along the world lines of the plasma:
+%
+\begin{equation}
+\frac{d\mathbf{B}}{d\tau}
+  = \bigl(\omega + \sigma - \tfrac{2}{3}\theta\,\mathbf{1}\bigr)\cdot\mathbf{B}
+  - \frac{1}{4\pi\sigma}
+    \biggl(\frac{\partial^{2}\mathbf{B}}{\partial t^{2}} - c^{2}\,\nabla^{2}\mathbf{B}\biggr).
+\tag{2.9.3}
+\end{equation}
+
+Here $\mathbf{1}$ is the unit 3-tensor; $\omega$, $\sigma$, and $\theta$ are the rotation, shear, and
+expansion of the plasma [cf.\ eqs.~(2.5.17) and (2.5.18)]; and
+%
+\begin{equation}
+d/d\tau \equiv \partial/\partial t + \mathbf{v}\cdot\boldsymbol{\nabla}.
+\tag{2.9.4}
+\end{equation}
+
+Because of the very high electrical conductivity, one can ignore the
+``wave-equation'' part of the evolution law~(2.9.3) almost everywhere in the
+plasma; and the magnetic field evolves in a ``frozen-in'' manner:
+%
+\begin{equation}
+d\mathbf{B}/d\tau
+  = \bigl(\omega + \sigma - \tfrac{2}{3}\theta\,\mathbf{1}\bigr)\cdot\mathbf{B}.
+\tag{2.9.5}
+\end{equation}
+
+%% --- page 385, right column ---
+
+[Cf.\ Eq.~(2.5.20) and associated discussion.]  However, in regions of plasma
+where the field has strong gradients, the ``wave-equation'' part must come into
+play.  Consider, as the case of greatest importance, a magnetic field that is
+chaotic with an ordered structure on some scale~$\ell_c$ (subscript~$c$ for
+``cell size'').  At the
+
+\begin{figure}[htbp]
+\centering
+% \includegraphics[width=\columnwidth]{fig_2_9_1}
+\fbox{\parbox{0.9\columnwidth}{\centering [Figure 2.9.1 placeholder]\\[6pt]
+The region in a plasma where magnetic field lines are reconnecting (schematic
+picture).  In the top view,~(a), the reconnection region is stippled; the magnetic
+field lines are drawn solidly; and the flow lines of the plasma are dotted.  The
+innermost field line is in the process of reconnecting into the dashed form.  The
+perspective view,~(b), shows the closed curve~$\mathscr{C}$ around which one integrates
+to derive eq.~(2.9.6) for the EMF in the connecting region.}}
+\caption{The region in a plasma where magnetic field lines are reconnecting.
+(a)~Top view.  (b)~Perspective view showing the curve~$\mathscr{C}$.}
+\label{fig:2.9.1}
+\end{figure}
+
+\noindent
+interface between adjacent cells, the magnetic field must reverse sign (``neutral
+point'' or ``neutral sheet''), and its gradients will be very large.  Hence, at the
+interface, ``wave-equation'' behavior can come into play destroying the frozen-in
+behavior of the field.  The result is a reconnection of magnetic field lines, as
+
+%% --- page 386, left column ---
+
+\noindent
+depicted in Figure~2.9.1.  This reconnection gradually converts the two adjacent
+cells into a single cell, reducing the overall strength of the magnetic field.
+
+In situations of interest (\S\S4.4 and 5.2), the decrease of field strength due
+to reconnection will be counterbalanced by an increase in strength due to
+compression or shear of the plasma.
+
+The reconnection process creates very strong electric fields.  In particular,
+a simple application of Faraday's law
+%
+\begin{equation}
+\oint_{\mathscr{C}} \mathbf{E}\cdot d\mathbf{l}
+  = -\frac{d}{d\tau}\!\int \mathbf{B}\cdot d\mathbf{A},
+\end{equation}
+%
+with the curve~$\mathscr{C}$ as shown in Figure~2.9.1b, shows that the EMF built up
+in the reconnecting region is
+%
+\begin{equation}
+\Delta\phi_e
+  = (\text{rate of reconnection of magnetic flux})
+  \equiv d\Psi/dt.
+\tag{2.9.6}
+\end{equation}
+
+In situations of interest to us [\S5.12; Lynden-Bell~(1969)\cite{LyndenBell1969}],
+these EMF's can be far greater than $10^{10}$~volts.  If the density of the plasma is
+sufficiently low to permit long mean-free paths for charged particles, and if the
+reconnecting region is sufficiently straight, then these EMF's can accelerate
+particles to ultra-relativistic energies; and the particles can then radiate intense
+synchrotron radiation.  In this manner regions of reconnecting field lines may be
+sources of flares.
+
+%% ============================================================
+%%  Section 3  The Origin of Stellar Black Holes
+%% ============================================================
+
+\section{The Origin of Stellar Black Holes}
+\label{sec:3}
+
+\textit{Basic references}\quad
+\S13.13 of ZN\cite{ZN1971};
+Peebles~(1972)\cite{Peebles1972}.
+
+\bigskip\noindent
+\textit{Basic ideas and issues}
+
+\medskip\noindent
+How much of the mass of the Galaxy is in the form of black holes?  What is the
+spectrum of black hole masses?  How many black holes are created per year by
+stellar collapse in our Galaxy?  To these questions one has only the vaguest of
+answers in 1972.
+
+\textit{If\/} the spectrum of stellar masses at birth is the same elsewhere as in the solar
+neighborhood, and always has been the same, then roughly half of the mass of the
+Galaxy has been cycled through stars of $M > 2M_\odot$, and such stars are being
+born at a rate of about 0.2~per year.  \textit{If\/} the maximum mass of a neutron star is
+$2M_\odot$, and \textit{if\/} stars of $M > 2M_\odot$ lose a negligible amount of mass during their
+evolutions and deaths, then all of the matter which goes into such stars eventually
+winds up in black holes.  Thus, 5~per cent of the mass of the Galaxy might be in
+black holes, and new black holes might be forming at a rate of ${\sim}\,0.2$~per
+year---\textit{might}.  But very probably not, because the if's which go into this result
+are probably not satisfied.
+
+In particular, both observation and theory suggest that mass loss is very
+significant during the late stages of stellar evolution and during the death throes
+of massive stars.  Mass loss might be so important that black holes are rare
+beasts, indeed!
+
+Let us focus attention on mass loss during the death throes, as predicted by
+the best numerical calculations to date.  But in doing so, let us keep in mind the
+very primitive state of the modern computations---for example, their typical
+neglect of the effects of rotation.
+
+Modern computations conclude that stars whose masses exceed the
+Chandrasekhar limit, $M\gtrsim 1.4\,M_\odot$, at the endpoint of their evolution should
+explode as supernovae.  A supernova explosion can leave behind two remnants: an
+expanding gas cloud (the outer part of the original star), and a remnant ``star''.
+The remnant ``star'' will be a neutron star if its mass, $M_{\text{remnant}}$, is less
+than ${\sim}\,2M_\odot$; but will be a black hole if its mass is greater than
+${\sim}\,2M_\odot$.\footnote{In these calculations the initial core and final remnant
+have the same mass: $M_\odot$ in one case, and $3M_\odot$ in another.
+But since we have assumed that $M_{\text{star}} = M_{\text{core}}$, and since the models
+give no mass loss, we must take $2.8\times M_\odot$ and $3\times 32 = M_\odot$ as the
+masses of the ``true'' remnants.}
+
+We summarize in Table~\ref{tab:3.1} the results of various calculations of the
+supernova process.
+
+%% ============================================================
+%%  Table 3.1  (page 387 -- printed upside-down in the original)
+%% ============================================================
+
+\begin{table*}[htbp]
+\centering
+\caption{Summary of Numerical Computations of Supernova Explosions}
+\label{tab:3.1}
+\renewcommand{\arraystretch}{1.4}
+\small
+\begin{tabular}{l|c c|c c|p{4.5cm}}
+\hline\hline
+ & \multicolumn{2}{c|}{Initial Conditions}
+ & \multicolumn{2}{c|}{Results}
+ & \\[2pt]
+\cline{2-5}\\[-8pt]
+Authors
+ & $\dfrac{M_{\text{core}}}{M_\odot}$
+ & $\dfrac{M_{\text{star}}{}^\dagger}{M_\odot}$
+ & $\dfrac{M_{\text{remnant}}}{M_\odot}$
+ & \parbox{2.2cm}{\centering Envelope\\Kinetic Energy\\($10^{51}$~ergs)}
+ & \centering Main Factor Regulating\\the Explosion\arraybackslash \\[4pt]
+\hline
+Fraley (1968)\cite{Fraley1968}
+ & $\gtrsim 40$
+ & $\gtrsim 100$
+ & 0
+ & 3
+ & Oxygen detonation in the core at the end of quasistatic evolution \\[4pt]
+\hline
+Colgate and White (1966)\cite{ColgateWhite1966}
+ & 10
+ & 30
+ & 1.8
+ & 1.9
+ & Absorption of neutrinos in the envelope \\[4pt]
+\hline
+Arnett (1966)\cite{Arnett1966}
+ & 1.5
+ & $\gtrsim 3.5$
+ & 0.87
+ & 0.1
+ & \multirow{2}{4.5cm}{Carbon detonation in the core at the end of quasistatic evolution; degenerate core} \\
+ & 1.4
+ & 4
+ & 0.1
+ & 0.1
+ & \\[4pt]
+\hline
+Ivanova, Imshennik, and
+Nadezhin (1969)\cite{IvanovaImshennikNadezhin1969}
+ & 2
+ & $\gtrsim 4$
+ & 2.46, 0.95
+ & 196
+ & \multirow{2}{4.5cm}{Absorption of neutrinos in the envelope} \\
+ & 4
+ & $\gtrsim 8$
+ & 0.56, 0.66
+ & $4+$
+ & \\[4pt]
+\hline
+Nadezhin (1969)\cite{Nadezhin1969}
+ & 10
+ & 30
+ & 9.75
+ & 0.025
+ & Oxygen detonation during the envelope during collapse \\[4pt]
+\hline
+Hansen and Barkat (1969)\cite{HansenBarkat1969}
+ & 1.4
+ & 4
+ & $\lesssim 0$
+ & 0.07
+ & Carbon detonation during collapse \\[4pt]
+\hline
+Arnett (1969)\cite{Arnett1969}
+ & 33
+ & $\lesssim 100$
+ & 0
+ & 0
+ & \parbox{4.5cm}{No mass loss; $\nu$-neutrinos. The core is opaque to absorption of neutrinos.} \\[4pt]
+\hline
+Arnett (1967)\cite{Arnett1967}
+ & 8
+ & 30
+ & 9.75
+ & 0
+ & \parbox{4.5cm}{No mass loss; $\nu$-neutrinos. The core is opaque to absorption of neutrinos.} \\[4pt]
+\hline\hline
+\end{tabular}
+
+\medskip
+\begin{flushleft}
+\footnotesize
+$\dagger$~In recent calculations by Bruenn~(1972)\cite{Bruenn1972} the thermal
+explosion of a star of $M_\odot$ produced a remnant.\\[2pt]
+$\ddagger$~This does not change the conclusions given in the text about the
+formation of black holes.
+\end{flushleft}
+\end{table*}
+
+%% ============================================================
+%%  Continuation (page 388) -- discussion of Table 3.1
+%% ============================================================
+
+In Table~3.1 $M_{\text{core}}$ is formally the mass of the entire star used in the
+numerical calculations.  However, all the calculations assumed a homogeneous
+initial model (typically polytropic or isothermal), whereas the theory of stellar
+evolution predicts a highly inhomogeneous structure for presupernova stars.  In
+particular, stellar evolution predicts a central core which is more or less
+homogeneous, surrounded by a huge diffuse envelope of iron, hydrogen, and other
+elements.  Thus, we must imagine the initial stars of the supernova calculations to
+be the central, homogeneous core; and we must regard those calculations as
+neglecting the envelope.  Such neglect is reasonable when one studies supernova
+dynamics, because the core is collapsing and reexploding.  The envelope will
+generally be thrown off, with little expenditure of work, by the reexploding parts
+of the core.  The mass of the envelope might be twice that of the core---or
+perhaps only the same as the core, or perhaps even less.  The theory of stellar
+evolution is not definite on this point.  Hence the question marks in column~2 of
+Table~3.1.
+
+It is clear, from the diverse results shown in Table~3.1, that the theory of
+supernova explosions is far from perfect in 1972.  Nevertheless, one can form the
+following very tentative conclusions.  (i)~For stars which approach the ends of
+their quasistatic evolution with masses less than ${\sim}\,12$ to $30\,M_\odot$, the
+supernova explosion may produce a neutron star.  (ii)~For stars with masses
+greater than ${\sim}\,12$ to $30\,M_\odot$, the explosion may produce a black hole.  If
+this tentative conclusion is correct, then no more than ${\sim}\,1$~per cent of the
+mass of the Galaxy should be in the form of black holes today; and new black
+holes should be created at a rate no greater than ${\sim}\,0.01$~per year.
