@@ -39,7 +39,7 @@ where:
 
 ### 1.2 Equations of Motion from Conservation Laws
 
-`[SOLID]` `[VERIFIED]` (ref: Paper Eqs.3-5)
+`[SOLID]` `[VERIFIED]` (ref: Paper Eqs.4-5)
 
 From $\nabla_\mu T^{\mu\nu} = 0$, projecting along and orthogonal to $u^\mu$:
 
@@ -79,7 +79,7 @@ $$-u^\mu \nabla_\mu \epsilon - u^\mu \nabla_\mu p - (\epsilon+p)(\nabla_\mu u^\m
 
 $$\boxed{u^\mu \nabla_\mu \epsilon + (\epsilon+p)(\nabla_\mu u^\mu) = 0}$$
 
-This is the **energy equation** (Paper Eq.3). `[VERIFIED]`
+This is the **energy equation** (Paper Eq.4). `[VERIFIED]`
 
 **Step 3: Momentum equation — project $(*)$ with $\Delta^\nu_{\ \alpha} = \delta^\nu_\alpha + u^\nu u_\alpha$.**
 
@@ -105,7 +105,7 @@ Dividing by $(\epsilon+p)$:
 
 $$\boxed{u^\nu \nabla_\nu u^\mu + \frac{p'(\epsilon)}{\epsilon+p}\Delta^{\mu\nu}\nabla_\nu \epsilon = 0}$$
 
-This is the **momentum equation** (Paper Eq.4). `[VERIFIED]`
+This is the **momentum equation** (Paper Eq.5). `[VERIFIED]`
 
 **Summary.** The two equations arise from the single conservation law $\nabla_\mu T^{\mu\nu}=0$ via contraction with $u_\nu$ (energy) and projection with $\Delta^{\nu\alpha}$ (momentum). The key algebraic facts used are: $u_\nu u^\nu = -1$, $u_\nu u^\mu \nabla_\mu u^\nu = 0$, and $\Delta^{\mu\nu}u_\nu = 0$.
 
@@ -145,7 +145,7 @@ $$\sigma^{\mu\nu} = \frac{1}{2}\left[\Delta^{\mu\alpha}\Delta^{\nu\beta}(\nabla_
 
 $$\mathcal{Q}^\mu = \tau_Q(\epsilon+p)\,u^\nu \nabla_\nu u^\mu + \beta_\epsilon\,\Delta^{\mu\nu}\nabla_\nu \epsilon$$
 
-The zeroth-order (ideal) momentum equation (Paper Eq.4) is:
+The zeroth-order (ideal) momentum equation (Paper Eq.5) is:
 
 $$(\epsilon+p)\,u^\nu \nabla_\nu u^\mu + p'(\epsilon)\,\Delta^{\mu\nu}\nabla_\nu \epsilon = 0 \quad \text{(ideal EoM)}$$
 
@@ -167,7 +167,7 @@ i.e., $\beta_\epsilon = \tau_Q p'(\epsilon)$.
 
 $$\mathcal{Q}^\mu = \tau_Q\left[(\epsilon+p)\,u^\nu\nabla_\nu u^\mu + p'(\epsilon)\,\Delta^{\mu\nu}\nabla_\nu\epsilon\right]$$
 
-The bracket is precisely the left-hand side of the ideal momentum equation (Eq.4). So:
+The bracket is precisely the left-hand side of the ideal momentum equation (Eq.5). So:
 
 $$\mathcal{Q}^\mu = \tau_Q \times \bigl[(\text{ideal EoM}_\text{momentum})\bigr]$$
 
@@ -655,6 +655,12 @@ $$ds^2 = -\alpha(t,r)^2 dt^2 + g_{rr}(t,r)dr^2 + r^2 g_{\theta\theta}(t,r)(d\the
 
 $$A_r = \frac{1}{\alpha}\partial_r \alpha, \quad D_{rr}^{\ r} = \frac{1}{2}g^{rr}\partial_r g_{rr}, \quad D_{r\theta}^{\ \theta} = \frac{1}{2}g^{\theta\theta}\partial_r g_{\theta\theta}$$
 
+Metric time evolution equations:
+
+$$\partial_t g_{rr} = -2\alpha \, g_{rr} K^r_{\ r}$$
+
+$$\partial_t g_{\theta\theta} = -2\alpha \, g_{\theta\theta} K^\theta_{\ \theta}$$
+
 ### 4.3 Evolution Equations in Spherical Symmetry
 
 `[SOLID]` (ref: Paper Eqs.27-30)
@@ -747,6 +753,8 @@ $$\frac{d\alpha}{dR} = \frac{-1 + a^2(1 + 8\pi R^2 p)}{2R}\alpha$$
 $$\frac{dp}{dR} = -\frac{(p + \epsilon)}{\alpha}\frac{d\alpha}{dR}$$
 
 Boundary conditions: $\alpha(0) = 1$, $a(0) = 1$, $p(0) = \kappa\rho_0(0)^\Gamma$
+
+Asymptotic flatness: $\lim_{R\to\infty} \alpha(R) = \lim_{R\to\infty} 1/a(R)$ and $\lim_{R\to\infty} p(R) = 0$
 
 ### 6.3 Coordinate Transformation to Maximal Isotropic
 

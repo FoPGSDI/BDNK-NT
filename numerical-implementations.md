@@ -329,7 +329,7 @@ def check_well_posedness(hat_a, hat_q, hat_s, hat_eta, hat_zeta, cs2):
 
     checks = {
         'strong_hyperbolicity': 0 < hat_q < hat_s,
-        'c_minus_real': cm.imag == 0 if isinstance(cm, complex) else True,
+        'c_minus_real': not np.isnan(cm),
         'c_plus_neq_c_minus': abs(cp - cm) > 1e-14,
         'causality_c0': c0 < 1.0,
         'causality_c_plus': cp < 1.0,
@@ -594,7 +594,7 @@ def con2prim_spherical(E, S_r, epsilon, vtilde_r, r, grr,
     # v^i v^j D_i v_j = (v^r)^2 * D_r v_r (same as vv_Dv / grr ... careful with index)
     # Here: v^i v^j D_i v_j in raised+lowered = vr * vr * grr * Dr_vr (approx, leading term)
     c0_tauQ = (2.0 * tau_Q * W**3
-               * (rho * (A_r * vr + vv_Dv) + dp * vr * Dr_eps))
+               * (rho * (a_r_low * vr + vv_Dv) + dp * vr * Dr_eps))
 
     # eta (shear) contribution:
     # (2/3)*eta*W * [(1-W^2)*(K + 2*a^i v_i - D_i v^i)
@@ -603,7 +603,7 @@ def con2prim_spherical(E, S_r, epsilon, vtilde_r, r, grr,
     # = (2/3)*eta*W * [(1-W^2)*(2*A_r*vr - Div_v)
     #                  + W^2*(1+2W^2)*(-2+W^2)*vv_Dv   (leading non-trivial term)]
     c0_eta = ((2.0/3.0) * eta * W
-              * ((1.0 - W2) * (2.0 * A_r * vr - Div_v)
+              * ((1.0 - W2) * (2.0 * a_r_low * vr - Div_v)
                  + W2 * (1.0 + 2.0*W2) * (-2.0 + W2) * vv_Dv / grr))
     # Note: vv_Dv already contains a factor grr; for D_i v_j we need to be careful
     # with the metric factor. Here we use the approximation for small v that the
@@ -638,7 +638,7 @@ def con2prim_spherical(E, S_r, epsilon, vtilde_r, r, grr,
     #                       - 2*dp*vr_low*vr*Dr_eps ] }
     # Leading terms:
     cr_tauQ = (tau_Q * (-dp * W * Dr_eps
-                        + W**3 * (-(rho * (a_r_low + vr_low * A_r * vr
+                        + W**3 * (-(rho * (a_r_low + vr_low * a_r_low * vr
                                            + vr * Dr_vr - vr * vv_Dv))
                                   - 2.0 * dp * vr_low * vr * Dr_eps)))
 
@@ -649,7 +649,7 @@ def con2prim_spherical(E, S_r, epsilon, vtilde_r, r, grr,
     #                        + 3*v^j*(D_r v_j + D_j v^r)] }
     # In Cowling (K=0, K_ij=0):
     cr_eta = (eta * (-a_r_low * W * (1.0 - W2)
-                     + (1.0/3.0) * W**3 * (vr_low * (A_r * vr - 2.0 * Div_v + 4.0 * W2 * vv_Dv / grr)
+                     + (1.0/3.0) * W**3 * (vr_low * (a_r_low * vr - 2.0 * Div_v + 4.0 * W2 * vv_Dv / grr)
                                             + 3.0 * vr * (grr * Dr_vr + Dr_vr))))
     # The last term 3*v^j*(D_r v_j + D_j v^r) in spherical symmetry gives
     # 3*vr*(D_r v_r + D_r v^r) = 3*vr*(grr*Dr_vr + Dr_vr)
@@ -963,7 +963,7 @@ def oc_reconstruct(u, dr):
     # u_L[i+1/2] = u[i] + 0.5 * slope[i]
     # u_R[i+1/2] = u[i+1] - 0.5 * slope[i+1]
     u_L = u[1:-1] + 0.5 * slope[:-1]
-    u_R = u[1:-1] - 0.5 * slope[1:]
+    u_R = u[2:]   - 0.5 * slope[1:]
 
     return u_L, u_R
 
@@ -1192,7 +1192,7 @@ def bdnk_rhs(U, r_grid, dr, grr_grid, alpha_grid, alpha_r_grid,
     def diss3(u, lam, dr):
         u_pad = np.pad(u, 2, mode='edge')
         d4u = u_pad[4:] - 4.0*u_pad[3:-1] + 6.0*u_pad[2:-2] - 4.0*u_pad[1:-3] + u_pad[:-4]
-        return -lam * d4u / (2.0 * dr)
+        return -lam * d4u / (2.0 * dr**3)
 
     div_flux_E  = div4(flux_E_pad,  dr) + diss3(tgE,  lambda_max_grid, dr)
     div_flux_Sr = div4(flux_Sr_pad, dr) + diss3(tgSr, lambda_max_grid, dr)
@@ -1566,7 +1566,7 @@ def compute_pointwise_Q(t_low, eps_low, t_mid, eps_mid, t_high, eps_high,
     den = em - eh
 
     # Avoid division by near-zero (numerical noise floor)
-    safe_den = np.where(np.abs(den) > 1e-15, den, np.sign(den) * 1e-15)
+    safe_den = np.where(np.abs(den) > 1e-15, den, 1e-15)
     Q_t = num / safe_den
 
     Q_theory = convergence_factor(dr_l, dr_m, dr_h, n)
@@ -1585,7 +1585,7 @@ def compute_pointwise_Q(t_low, eps_low, t_mid, eps_mid, t_high, eps_high,
 M_SUN_KG = 1.989e30        # kg
 M_SUN_M = 1.477e3          # meters (GM/c^2)
 M_SUN_S = 4.926e-6         # seconds (GM/c^3)
-M_SUN_INV2_TO_KG_M3 = 6.176e17  # density conversion
+M_SUN_INV2_TO_KG_M3 = 6.176e20  # density conversion
 
 # Frequency: f[kHz] = f[1/M_sun] * 1/(2*pi*M_SUN_S) * 1e-3
 # = f[1/M_sun] * 203.025 / (2*pi) kHz (for angular frequency)
