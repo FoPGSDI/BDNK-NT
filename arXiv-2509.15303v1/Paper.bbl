@@ -1,0 +1,439 @@
+\begin{thebibliography}{10}
+
+\bibitem{Abbott:2017gw170817}
+B.~P. Abbott et~al.
+\newblock Gw170817: Observation of gravitational waves from a binary neutron
+  star inspiral.
+\newblock {\em Phys. Rev. Lett.}, 119:161101, 2017.
+
+\bibitem{Drout:2017ijr}
+M.~R. Drout et~al.
+\newblock {Light Curves of the Neutron Star Merger GW170817/SSS17a:
+  Implications for R-Process Nucleosynthesis}.
+\newblock {\em Science}, 358:1570--1574, 2017.
+
+\bibitem{Cowperthwaite:2017dyu}
+P.~S. Cowperthwaite et~al.
+\newblock {The Electromagnetic Counterpart of the Binary Neutron Star Merger
+  LIGO/Virgo GW170817. II. UV, Optical, and Near-infrared Light Curves and
+  Comparison to Kilonova Models}.
+\newblock {\em Astrophys. J. Lett.}, 848(2):L17, 2017.
+
+\bibitem{Abac:2025saz}
+Adrian Abac et~al.
+\newblock {The Science of the Einstein Telescope}.
+\newblock 3 2025.
+
+\bibitem{evans2021horizonstudycosmicexplorer}
+Matthew Evans, Rana~X Adhikari, Chaitanya Afle, Stefan~W. Ballmer, Sylvia
+  Biscoveanu, Ssohrab Borhanian, Duncan~A. Brown, Yanbei Chen, Robert
+  Eisenstein, Alexandra Gruson, Anuradha Gupta, Evan~D. Hall, Rachael Huxford,
+  Brittany Kamai, Rahul Kashyap, Jeff~S. Kissel, Kevin Kuns, Philippe Landry,
+  Amber Lenon, Geoffrey Lovelace, Lee McCuller, Ken K.~Y. Ng, Alexander~H.
+  Nitz, Jocelyn Read, B.~S. Sathyaprakash, David~H. Shoemaker, Bram J.~J.
+  Slagmolen, Joshua~R. Smith, Varun Srivastava, Ling Sun, Salvatore Vitale, and
+  Rainer Weiss.
+\newblock A horizon study for cosmic explorer: Science, observatories, and
+  community, 2021.
+
+\bibitem{Alford:2017rxf}
+Mark~G. Alford, Luke Bovard, Matthias Hanauske, Luciano Rezzolla, and Kai
+  Schwenzer.
+\newblock {Viscous Dissipation and Heat Conduction in Binary Neutron-Star
+  Mergers}.
+\newblock {\em Phys. Rev. Lett.}, 120(4):041101, 2018.
+
+\bibitem{Alford:2020lla}
+Mark Alford, Arus Harutyunyan, and Armen Sedrakian.
+\newblock {Bulk Viscous Damping of Density Oscillations in Neutron Star
+  Mergers}.
+\newblock {\em Particles}, 3(2):500--517, 2020.
+
+\bibitem{Alford:2021ogv}
+Mark~G. Alford, Alexander Haber, Steven~P. Harris, and Ziyuan Zhang.
+\newblock {Beta Equilibrium Under Neutron Star Merger Conditions}.
+\newblock {\em Universe}, 7(11):399, 2021.
+
+\bibitem{Alford:2022ufz}
+Mark Alford, Arus Harutyunyan, and Armen Sedrakian.
+\newblock {Bulk Viscosity of Relativistic npe{\ensuremath{\mu}} Matter in
+  Neutron-Star Mergers}.
+\newblock {\em Particles}, 5(3):361--376, 2022.
+
+\bibitem{Hernandez:2024rxi}
+Jose~Luis Hernandez, Cristina Manuel, and Laura Tolos.
+\newblock {Damping of density oscillations from bulk viscosity in quark
+  matter}.
+\newblock {\em Phys. Rev. D}, 109(12):123022, 2024.
+
+\bibitem{Most:2021zvc}
+Elias~R. Most, Steven~P. Harris, Christopher Plumberg, Mark~G. Alford, Jorge
+  Noronha, Jacquelyn Noronha-Hostler, Frans Pretorius, Helvi Witek, and
+  Nicol{\'a}s Yunes.
+\newblock {Projecting the likely importance of weak-interaction-driven bulk
+  viscosity in neutron star mergers}.
+\newblock {\em Mon. Not. Roy. Astron. Soc.}, 509(1):1096--1108, 2021.
+
+\bibitem{Most:2022yhe}
+Elias~R. Most, Alexander Haber, Steven~P. Harris, Ziyuan Zhang, Mark~G. Alford,
+  and Jorge Noronha.
+\newblock {Emergence of Microphysical Bulk Viscosity in Binary Neutron Star
+  Postmerger Dynamics}.
+\newblock {\em Astrophys. J. Lett.}, 967(1):L14, 2024.
+
+\bibitem{Radice:2021jtw}
+David Radice, Sebastiano Bernuzzi, Albino Perego, and Roland Haas.
+\newblock {A new moment-based general-relativistic neutrino-radiation transport
+  code: Methods and first applications to neutron star mergers}.
+\newblock {\em Mon. Not. Roy. Astron. Soc.}, 512(1):1499--1521, 2022.
+
+\bibitem{Chabanov:2021dee}
+Michail Chabanov, Luciano Rezzolla, and Dirk~H. Rischke.
+\newblock {General-relativistic hydrodynamics of non-perfect fluids: 3+1
+  conservative formulation and application to viscous black-hole accretion}.
+\newblock 2 2021.
+
+\bibitem{Chabanov:2023abq}
+Michail Chabanov and Luciano Rezzolla.
+\newblock {Numerical modeling of bulk viscosity in neutron stars}.
+\newblock {\em Phys. Rev. D}, 111(4):044074, 2025.
+
+\bibitem{Chabanov:2023blf}
+Michail Chabanov and Luciano Rezzolla.
+\newblock {Impact of bulk viscosity on the post-merger gravitational-wave
+  signal from merging neutron stars}.
+\newblock 7 2023.
+
+\bibitem{Camelio:2022fds}
+Giovanni Camelio, Lorenzo Gavassino, Marco Antonelli, Sebastiano Bernuzzi, and
+  Brynmor Haskell.
+\newblock {Simulating bulk viscosity in neutron stars. II. Evolution in
+  spherical symmetry}.
+\newblock {\em Phys. Rev. D}, 107(10):103032, 2023.
+
+\bibitem{Radice:2017zta}
+David Radice.
+\newblock {General-Relativistic Large-Eddy Simulations of Binary Neutron Star
+  Mergers}.
+\newblock {\em Astrophys. J. Lett.}, 838(1):L2, 2017.
+
+\bibitem{Shibata:2017jyf}
+Masaru Shibata, Kenta Kiuchi, and Yu-ichiro Sekiguchi.
+\newblock {General relativistic viscous hydrodynamics of differentially
+  rotating neutron stars}.
+\newblock {\em Phys. Rev. D}, 95(8):083005, 2017.
+
+\bibitem{Shibata:2017xht}
+Masaru Shibata and Kenta Kiuchi.
+\newblock {Gravitational waves from remnant massive neutron stars of binary
+  neutron star merger: Viscous hydrodynamics effects}.
+\newblock {\em Phys. Rev. D}, 95(12):123003, 2017.
+
+\bibitem{Duez:2020lgq}
+Matthew~D. Duez, Alexander Knight, Francois Foucart, Milad Haddadi, Jerred
+  Jesse, Francois Hebert, Lawrence~E. Kidder, Harald~P. Pfeiffer, and Mark~A.
+  Scheel.
+\newblock {Comparison of momentum transport models for numerical relativity}.
+\newblock {\em Phys. Rev. D}, 102(10):104050, 2020.
+
+\bibitem{Eckart:1940te}
+Carl Eckart.
+\newblock {The Thermodynamics of irreversible processes. 3.. Relativistic
+  theory of the simple fluid}.
+\newblock {\em Phys. Rev.}, 58:919--924, 1940.
+
+\bibitem{LandauBook}
+L.~D. Landau and E.~M. Lifshitz.
+\newblock {Fluid Mechanics}.
+\newblock {\em Pergamon}, 1987.
+
+\bibitem{Hiscock:1985zz}
+William~A. Hiscock and Lee Lindblom.
+\newblock {Generic instabilities in first-order dissipative relativistic fluid
+  theories}.
+\newblock {\em Phys. Rev. D}, 31:725--733, 1985.
+
+\bibitem{Muller:1967zza}
+Ingo Muller.
+\newblock {Zum Paradoxon der Warmeleitungstheorie}.
+\newblock {\em Z. Phys.}, 198:329--344, 1967.
+
+\bibitem{Israel:1976tn}
+W.~Israel.
+\newblock {Nonstationary irreversible thermodynamics: A Causal relativistic
+  theory}.
+\newblock {\em Annals Phys.}, 100:310--331, 1976.
+
+\bibitem{Israel:1979wp}
+W.~Israel and J.~M. Stewart.
+\newblock {Transient relativistic thermodynamics and kinetic theory}.
+\newblock {\em Annals Phys.}, 118:341--372, 1979.
+
+\bibitem{Baier:2007ix}
+Rudolf Baier, Paul Romatschke, Dam~Thanh Son, Andrei~O. Starinets, and
+  Mikhail~A. Stephanov.
+\newblock {Relativistic viscous hydrodynamics, conformal invariance, and
+  holography}.
+\newblock {\em JHEP}, 04:100, 2008.
+
+\bibitem{Denicol:2012cn}
+G.~S. Denicol, H.~Niemi, E.~Molnar, and D.~H. Rischke.
+\newblock {Derivation of transient relativistic fluid dynamics from the
+  Boltzmann equation}.
+\newblock {\em Phys. Rev. D}, 85:114047, 2012.
+\newblock [Erratum: Phys.Rev.D 91, 039902 (2015)].
+
+\bibitem{Geroch:1990bw}
+Robert~P. Geroch and L.~Lindblom.
+\newblock {Dissipative relativistic fluid theories of divergence type}.
+\newblock {\em Phys. Rev. D}, 41:1855, 1990.
+
+\bibitem{Geroch:1995bx}
+Robert~P. Geroch.
+\newblock {Relativistic theories of dissipative fluids}.
+\newblock {\em J. Math. Phys.}, 36:4226, 1995.
+
+\bibitem{Lindblom:1995gp}
+Lee Lindblom.
+\newblock {The Relaxation effect in dissipative relativistic fluid theories}.
+\newblock {\em Annals Phys.}, 247:1, 1996.
+
+\bibitem{Bemfica:2020xym}
+F\'abio~S. Bemfica, Marcelo~M. Disconzi, Vu~Hoang, Jorge Noronha, and Maria
+  Radosz.
+\newblock {Nonlinear Constraints on Relativistic Fluids Far from Equilibrium}.
+\newblock {\em Phys. Rev. Lett.}, 126(22):222301, 2021.
+
+\bibitem{Plumberg:2021bme}
+Christopher Plumberg, Dekrayat Almaalol, Travis Dore, Jorge Noronha, and
+  Jacquelyn Noronha-Hostler.
+\newblock {Causality violations in realistic simulations of heavy-ion
+  collisions}.
+\newblock {\em Phys. Rev. C}, 105(6):L061901, 2022.
+
+\bibitem{Chiu:2021muk}
+Cheng Chiu and Chun Shen.
+\newblock {Exploring theoretical uncertainties in the hydrodynamic description
+  of relativistic heavy-ion collisions}.
+\newblock {\em Phys. Rev. C}, 103(6):064901, 2021.
+
+\bibitem{ExTrEMe:2023nhy}
+Renata Krupczak et~al.
+\newblock {Causality violations in simulations of large and small heavy-ion
+  collisions}.
+\newblock {\em Phys. Rev. C}, 109(3):034908, 2024.
+
+\bibitem{Domingues:2024pom}
+Thiago~S. Domingues, Renata Krupczak, Jorge Noronha, Tiago~Nunes da~Silva,
+  Jean-Fran\c{c}ois Paquet, and Matthew Luzum.
+\newblock {The effect of causality constraints on Bayesian analyses of
+  heavy-ion collisions}.
+\newblock 9 2024.
+
+\bibitem{Bemfica:2017wps}
+F\'abio~S. Bemfica, Marcelo~M. Disconzi, and Jorge Noronha.
+\newblock {Causality and existence of solutions of relativistic viscous fluid
+  dynamics with gravity}.
+\newblock {\em Phys. Rev. D}, 98(10):104064, 2018.
+
+\bibitem{Bemfica:2019knx}
+F\'abio~S. Bemfica, F\'abio~S. Bemfica, Marcelo~M. Disconzi, Marcelo~M.
+  Disconzi, Jorge Noronha, and Jorge Noronha.
+\newblock {Nonlinear Causality of General First-Order Relativistic Viscous
+  Hydrodynamics}.
+\newblock {\em Phys. Rev. D}, 100(10):104020, 2019.
+\newblock [Erratum: Phys.Rev.D 105, 069902 (2022)].
+
+\bibitem{Kovtun:2019hdm}
+Pavel Kovtun.
+\newblock {First-order relativistic hydrodynamics is stable}.
+\newblock {\em JHEP}, 10:034, 2019.
+
+\bibitem{Pandya:2021ief}
+Alex Pandya and Frans Pretorius.
+\newblock {Numerical exploration of first-order relativistic hydrodynamics}.
+\newblock {\em Phys. Rev. D}, 104(2):023015, 2021.
+
+\bibitem{Bantilan:2022ech}
+Hans Bantilan, Yago Bea, and Pau Figueras.
+\newblock {Evolutions in first-order viscous hydrodynamics}.
+\newblock {\em JHEP}, 08:298, 2022.
+
+\bibitem{Bea:2023rru}
+Yago Bea and Pau Figueras.
+\newblock {Field redefinitions and evolutions in relativistic Navier-Stokes}.
+\newblock {\em JHEP}, 11:110, 2024.
+
+\bibitem{Pandya:2022pif}
+Alex Pandya, Elias~R. Most, and Frans Pretorius.
+\newblock {Conservative finite volume scheme for first-order viscous
+  relativistic hydrodynamics}.
+\newblock {\em Phys. Rev. D}, 105(12):123001, 2022.
+
+\bibitem{Pandya:2022sff}
+Alex Pandya, Elias~R. Most, and Frans Pretorius.
+\newblock {Causal, stable first-order viscous relativistic hydrodynamics with
+  ideal gas microphysics}.
+\newblock {\em Phys. Rev. D}, 106(12):123036, 2022.
+
+\bibitem{keeble2025firstorderviscousrelativistichydrodynamics}
+Lennox~S. Keeble and Frans Pretorius.
+\newblock First-order viscous relativistic hydrodynamics on the two-sphere,
+  2025.
+
+\bibitem{Hatton:2025crr}
+Marcus~John Hatton.
+\newblock {\em {Simulating relativistic, dissipative hydrodynamics for neutron
+  star mergers}}.
+\newblock PhD thesis, Southampton U., 2025.
+
+\bibitem{fantini2025constraintinstabilitiesfirstorderviscous}
+Delfina Fantini and Marcelo~E. Rubio.
+\newblock Constraint instabilities in first-order viscous relativistic fluids,
+  2025.
+
+\bibitem{Hatton:2024jyt}
+Marcus~John Hatton and Ian Hawke.
+\newblock {A dissipative extension to ideal hydrodynamics}.
+\newblock {\em Mon. Not. Roy. Astron. Soc.}, 535(1):47--64, 2024.
+
+\bibitem{Bea:2025eov}
+Yago Bea.
+\newblock {Relativistic Navier-Stokes description of the quark-gluon plasma
+  radial flow}.
+\newblock 3 2025.
+
+\bibitem{caballero2025neutronstarradialperturbations}
+Daniel~A. Caballero and Nicolás Yunes.
+\newblock Neutron star radial perturbations for causal, viscous, relativistic
+  fluids, 2025.
+
+\bibitem{Redondo-Yuste:2025ktt}
+Jaime Redondo-Yuste and Vitor Cardoso.
+\newblock {Superradiant amplification by rotating viscous compact objects}.
+\newblock 6 2025.
+
+\bibitem{Hoult:2020eho}
+Raphael~E. Hoult and Pavel Kovtun.
+\newblock {Stable and causal relativistic Navier-Stokes equations}.
+\newblock {\em JHEP}, 06:067, 2020.
+
+\bibitem{Bemfica:2020zjp}
+Fabio~S. Bemfica, Marcelo~M. Disconzi, and Jorge Noronha.
+\newblock {First-Order General-Relativistic Viscous Fluid Dynamics}.
+\newblock {\em Phys. Rev. X}, 12(2):021044, 2022.
+
+\bibitem{refId0}
+{Levy, Doron}, {Puppo, Gabriella}, and {Russo, Giovanni}.
+\newblock Central weno schemes for hyperbolic systems of conservation laws.
+\newblock {\em ESAIM: M2AN}, 33(3):547--571, 1999.
+
+\bibitem{CCC}
+C.~{Bona}, C.~{Palenzuela-Luque}, and C.~{Bona-Casas}, editors.
+\newblock {\em {Elements of Numerical Relativity and Relativistic
+  Hydrodynamics}}, volume 783 of {\em Lecture Notes in Physics, Berlin Springer
+  Verlag}, 2009.
+
+\bibitem{2004PhDT.......230L}
+C.-W. {Lai}.
+\newblock {\em {A Numerical Study of Boson Stars}}.
+\newblock PhD thesis, The University of British Columbia, 2004.
+
+\bibitem{KreLor89}
+Heinz-Otto Kreiss and Jens Lorenz.
+\newblock {\em Initial-boundary value problems and the {N}avier-{S}tokes
+  equations}.
+\newblock Academic Press, New York, 1989.
+
+\bibitem{GusKreOli95}
+Bertil Gustafsson, Heinz-Otto Kreiss, and Joseph Oliger.
+\newblock {\em Time dependent problems and difference methods}.
+\newblock Wiley, New York, 1995.
+
+\bibitem{Sarbach:2012pr}
+Olivier Sarbach and Manuel Tiglio.
+\newblock {Continuum and Discrete Initial-Boundary-Value Problems and
+  Einstein's Field Equations}.
+\newblock {\em Living Rev. Rel.}, 15:9, 2012.
+
+\bibitem{Hil13}
+David Hilditch.
+\newblock {An Introduction to Well-posedness and Free-evolution}.
+\newblock {\em Int. J. Mod. Phys.}, A28:1340015, 2013.
+
+\bibitem{WolframResearch.Mathematica1}
+Inc. Wolfram~Research.
+\newblock {Mathematica} 14.2, 2024.
+
+\bibitem{Alic:2007ev}
+Daniela Alic, Carles Bona, Carles Bona-Casas, and Joan Masso.
+\newblock {Efficient implementation of finite volume methods in Numerical
+  Relativity}.
+\newblock {\em Phys. Rev.}, D76:104007, 2007.
+
+\bibitem{Bona:2008xs}
+C.~Bona, C.~Bona-Casas, and J.~Terradas.
+\newblock {Linear high-resolution schemes for hyperbolic conservation laws: TVB
+  numerical evidence}.
+\newblock {\em J. Comput. Phys.}, 228:2266--2281, 2009.
+
+\bibitem{Palenzuela:2018sly}
+Carlos Palenzuela, Borja Mi{\~n}ano, Daniele Vigan{\`o}, Antoni Arbona, Carles
+  Bona-Casas, Andreu Rigo, Miguel Bezares, Carles Bona, and Joan Mass{\'o}.
+\newblock {A Simflowny-based finite-difference code for high-performance
+  computing in numerical relativity}.
+\newblock {\em Class. Quant. Grav.}, 35(18):185007, 2018.
+
+\bibitem{10.1093/mnras/101.8.367}
+T.~G. Cowling.
+\newblock The non-radial oscillations of polytropic stars.
+\newblock {\em Monthly Notices of the Royal Astronomical Society},
+  101(8):367--375, 12 1941.
+
+\bibitem{Font:2001ew}
+Jose~A. Font, Tom Goodale, Sai Iyer, Mark~A. Miller, Luciano Rezzolla, Edward
+  Seidel, Nikolaos Stergioulas, Wai-Mo Suen, and Malcolm Tobias.
+\newblock {Three-dimensional general relativistic hydrodynamics. 2. Long term
+  dynamics of single relativistic stars}.
+\newblock {\em Phys. Rev. D}, 65:084024, 2002.
+
+\bibitem{Baiotti:2008nf}
+Luca Baiotti, Sebastiano Bernuzzi, Giovanni Corvino, Roberto De~Pietri, and
+  Alessandro Nagar.
+\newblock {Gravitational-Wave Extraction from Neutron Stars Oscillations:
+  Comparing linear and nonlinear techniques}.
+\newblock {\em Phys. Rev. D}, 79:024002, 2009.
+
+\bibitem{Valdez-Alvarado:2012rct}
+Susana Valdez-Alvarado, Carlos Palenzuela, Daniela Alic, and L.~Arturo Ure\~na
+  L\'opez.
+\newblock {Dynamical evolution of fermion-boson stars}.
+\newblock {\em Phys. Rev. D}, 87(8):084040, 2013.
+
+\bibitem{Luis_comment}
+We thank Luis Lehner for private communications.
+
+\bibitem{Thierfelder:2011yi}
+Marcus Thierfelder, Sebastiano Bernuzzi, and Bernd Bruegmann.
+\newblock {Numerical relativity simulations of binary neutron stars}.
+\newblock {\em Phys. Rev. D}, 84:044012, 2011.
+
+\bibitem{Radice:2011qr}
+David Radice and Luciano Rezzolla.
+\newblock {Discontinuous Galerkin methods for general-relativistic
+  hydrodynamics: formulation and application to spherically symmetric
+  spacetimes}.
+\newblock {\em Phys. Rev. D}, 84:024010, 2011.
+
+\bibitem{Cerda-Duran:2009xon}
+Pablo Cerda-Duran.
+\newblock {Numerical viscosity in hydrodynamics simulations in general
+  relativity}.
+\newblock {\em Class. Quant. Grav.}, 27:205012, 2010.
+
+\bibitem{Alcubierre}
+Miguel Alcubierre.
+\newblock {\em {Introduction to 3+1 Numerical Relativity}}.
+\newblock Oxford University Press, 04 2008.
+
+\end{thebibliography}
