@@ -3,62 +3,62 @@
 \tocdepth@munge 
 \contentsline {section}{\numberline {}Contents}{1}{section*.3}%
 \tocdepth@restore 
-\contentsline {section}{\numberline {I}Introductory Remarks}{1}{section*.4}%
+\contentsline {section}{\numberline {I}Introductory Remarks}{2}{section*.4}%
 \contentsline {section}{\numberline {II}Thermal Bremsstrahlung (``Free-Free Radiation'' From a Plasma)}{2}{section*.5}%
 \contentsline {subsection}{\numberline {A}Thermal Bremsstrahlung (``Free-Free Radiation'' From a Plasma)}{2}{section*.6}%
-\contentsline {subsection}{\numberline {B}Free-Bound Radiation}{6}{section*.47}%
-\contentsline {subsection}{\numberline {C}Thermal Cyclotron and Synchrotron Radiation}{6}{section*.59}%
-\contentsline {subsection}{\numberline {D}Electron Scattering of Radiation}{8}{section*.84}%
-\contentsline {subsection}{\numberline {E}Hydrodynamics and Thermodynamics}{9}{section*.99}%
-\contentsline {subsection}{\numberline {F}Radiative Transfer}{12}{section*.165}%
-\contentsline {paragraph}{\numberline {}Equation of Radiative Transfer}{13}{section*.177}%
-\contentsline {paragraph}{\numberline {}Relationship between emissivity and absorption}{14}{section*.190}%
-\contentsline {subsection}{\numberline {G}Shock Waves}{16}{section*.215}%
-\contentsline {subsubsection}{\numberline {}The Rankine-Hugoniot curve}{17}{section*.239}%
-\contentsline {subsubsection}{\numberline {}Shocks in an ideal gas}{18}{section*.245}%
-\contentsline {subsection}{\numberline {H}Turbulence}{18}{section*.248}%
-\contentsline {subsection}{\numberline {I}Reconnection of Magnetic Field Lines}{18}{section*.249}%
-\contentsline {subsubsection}{\numberline {}Basic ideas}{18}{section*.250}%
-\contentsline {section}{\numberline {III}The Origin of Stellar Black Holes}{19}{section*.259}%
-\contentsline {section}{\numberline {IV}Black Holes in the Interstellar Medium}{20}{section*.260}%
-\contentsline {subsection}{\numberline {A}Accretion of Noninteracting Particles onto a Nonmoving Black Hole}{20}{section*.261}%
-\contentsline {subsection}{\numberline {B}Adiabatic, Hydrodynamic Accretion onto a Nonmoving Black Hole}{21}{section*.267}%
-\contentsline {subsection}{\numberline {C}Thermal Bremsstrahlung from the Accreting Gas}{24}{section*.286}%
-\contentsline {subsection}{\numberline {D}Influence of Magnetic Fields and Synchrotron Radiation}{24}{section*.292}%
-\contentsline {subsection}{\numberline {E}Interaction of Outflowing Radiation with the Gas}{25}{section*.304}%
-\contentsline {subsection}{\numberline {F}Validity of the Hydrodynamical Approximation}{26}{section*.310}%
-\contentsline {subsection}{\numberline {G}Gas Flow Near the Horizon}{27}{section*.316}%
-\contentsline {subsection}{\numberline {H}Accretion onto a Moving Hole}{27}{section*.324}%
-\contentsline {subsection}{\numberline {I}Optical Appearance of Hole: Summary}{29}{section*.336}%
-\contentsline {section}{\numberline {V}Black Holes in Binary Star Systems and in the Nuclei of Galaxies}{29}{section*.338}%
-\contentsline {subsection}{\numberline {A}Introduction}{29}{section*.339}%
-\contentsline {subsection}{\numberline {B}Accretion in Binary Systems: The General Picture}{30}{section*.340}%
-\contentsline {paragraph}{\numberline {}Sources of viscosity}{34}{section*.368}%
-\contentsline {paragraph}{\numberline {}Radiative transport}{34}{section*.377}%
-\contentsline {subsection}{\numberline {C}Accretion in Galactic Nuclei: The General Picture}{34}{section*.380}%
-\contentsline {subsection}{\numberline {D}Properties of the Kerr Metric Relevant to Accreting Disks}{35}{section*.382}%
-\contentsline {subsection}{\numberline {E}Relativistic Model for Disk: Underlying Assumptions}{36}{section*.424}%
-\contentsline {subsection}{\numberline {F}Equations of Radial Structure}{38}{section*.434}%
-\contentsline {paragraph}{\numberline {}Manipulation of conservation laws}{39}{section*.454}%
-\contentsline {subsection}{\numberline {G}Equations of Vertical Structure}{39}{section*.459}%
-\contentsline {paragraph}{\numberline {a}Vertical pressure balance}{40}{section*.464}%
-\contentsline {paragraph}{\numberline {b}Sources of viscosity}{40}{section*.466}%
-\contentsline {paragraph}{\numberline {c}Energy generation}{40}{section*.468}%
-\contentsline {paragraph}{\numberline {d}Energy transport}{40}{section*.470}%
-\contentsline {paragraph}{\numberline {e}Equation of state for vertical pressure}{40}{section*.473}%
-\contentsline {paragraph}{\numberline {f}Equation for opacity}{40}{section*.476}%
-\contentsline {subsection}{\numberline {H}Approximate Version of Vertical Structure}{41}{section*.482}%
-\contentsline {subsection}{\numberline {I}Explicit Models for Disk}{41}{section*.488}%
-\contentsline {paragraph}{\numberline {a}Outer region}{42}{section*.495}%
-\contentsline {paragraph}{\numberline {b}Middle region}{42}{section*.499}%
-\contentsline {subsection}{\numberline {J}Spectrum of Radiation from Disk}{43}{section*.505}%
-\contentsline {subsection}{\numberline {K}Heating of the Outer Region by X-Rays from the Inner Region}{44}{section*.516}%
-\contentsline {subsection}{\numberline {L}Fluctuations on the Steady-State Model}{45}{section*.517}%
-\contentsline {subsection}{\numberline {M}Supercritical Accretion}{46}{section*.518}%
-\contentsline {subsection}{\numberline {N}Comparison with Observations}{46}{section*.521}%
-\contentsline {section}{\numberline {VI}White Holes and Black Holes of Cosmological Origin}{46}{section*.522}%
-\contentsline {subsection}{\numberline {A}White Holes, Grey Holes, and Black Holes}{46}{section*.523}%
-\contentsline {subsection}{\numberline {B}The Growth of Cosmological Holes by Accretion}{47}{section*.524}%
-\contentsline {subsection}{\numberline {C}Limit on the Number of Baryons in Cosmological Holes}{47}{section*.527}%
-\contentsline {subsection}{\numberline {D}Caution}{47}{section*.532}%
-\contentsline {section}{\numberline {}References}{48}{section*.533}%
+\contentsline {subsection}{\numberline {B}Free-Bound Radiation}{8}{section*.47}%
+\contentsline {subsection}{\numberline {C}Thermal Cyclotron and Synchrotron Radiation}{9}{section*.59}%
+\contentsline {subsection}{\numberline {D}Electron Scattering of Radiation}{11}{section*.84}%
+\contentsline {subsection}{\numberline {E}Hydrodynamics and Thermodynamics}{13}{section*.99}%
+\contentsline {subsection}{\numberline {F}Radiative Transfer}{18}{section*.165}%
+\contentsline {paragraph}{\numberline {}Equation of Radiative Transfer}{19}{section*.177}%
+\contentsline {paragraph}{\numberline {}Relationship between emissivity and absorption}{21}{section*.190}%
+\contentsline {subsection}{\numberline {G}Shock Waves}{24}{section*.215}%
+\contentsline {subsubsection}{\numberline {}The Rankine-Hugoniot curve}{25}{section*.239}%
+\contentsline {subsubsection}{\numberline {}Shocks in an ideal gas}{26}{section*.245}%
+\contentsline {subsection}{\numberline {H}Turbulence}{26}{section*.248}%
+\contentsline {subsection}{\numberline {I}Reconnection of Magnetic Field Lines}{27}{section*.249}%
+\contentsline {subsubsection}{\numberline {}Basic ideas}{27}{section*.250}%
+\contentsline {section}{\numberline {III}The Origin of Stellar Black Holes}{28}{section*.259}%
+\contentsline {section}{\numberline {IV}Black Holes in the Interstellar Medium}{29}{section*.260}%
+\contentsline {subsection}{\numberline {A}Accretion of Noninteracting Particles onto a Nonmoving Black Hole}{29}{section*.261}%
+\contentsline {subsection}{\numberline {B}Adiabatic, Hydrodynamic Accretion onto a Nonmoving Black Hole}{30}{section*.267}%
+\contentsline {subsection}{\numberline {C}Thermal Bremsstrahlung from the Accreting Gas}{33}{section*.286}%
+\contentsline {subsection}{\numberline {D}Influence of Magnetic Fields and Synchrotron Radiation}{34}{section*.292}%
+\contentsline {subsection}{\numberline {E}Interaction of Outflowing Radiation with the Gas}{35}{section*.304}%
+\contentsline {subsection}{\numberline {F}Validity of the Hydrodynamical Approximation}{37}{section*.310}%
+\contentsline {subsection}{\numberline {G}Gas Flow Near the Horizon}{37}{section*.316}%
+\contentsline {subsection}{\numberline {H}Accretion onto a Moving Hole}{38}{section*.324}%
+\contentsline {subsection}{\numberline {I}Optical Appearance of Hole: Summary}{40}{section*.336}%
+\contentsline {section}{\numberline {V}Black Holes in Binary Star Systems and in the Nuclei of Galaxies}{41}{section*.338}%
+\contentsline {subsection}{\numberline {A}Introduction}{41}{section*.339}%
+\contentsline {subsection}{\numberline {B}Accretion in Binary Systems: The General Picture}{41}{section*.340}%
+\contentsline {paragraph}{\numberline {}Sources of viscosity}{47}{section*.368}%
+\contentsline {paragraph}{\numberline {}Radiative transport}{47}{section*.377}%
+\contentsline {subsection}{\numberline {C}Accretion in Galactic Nuclei: The General Picture}{48}{section*.380}%
+\contentsline {subsection}{\numberline {D}Properties of the Kerr Metric Relevant to Accreting Disks}{48}{section*.382}%
+\contentsline {subsection}{\numberline {E}Relativistic Model for Disk: Underlying Assumptions}{51}{section*.424}%
+\contentsline {subsection}{\numberline {F}Equations of Radial Structure}{52}{section*.434}%
+\contentsline {paragraph}{\numberline {}Manipulation of conservation laws}{54}{section*.454}%
+\contentsline {subsection}{\numberline {G}Equations of Vertical Structure}{55}{section*.459}%
+\contentsline {paragraph}{\numberline {a}Vertical pressure balance}{56}{section*.464}%
+\contentsline {paragraph}{\numberline {b}Sources of viscosity}{56}{section*.466}%
+\contentsline {paragraph}{\numberline {c}Energy generation}{56}{section*.468}%
+\contentsline {paragraph}{\numberline {d}Energy transport}{56}{section*.470}%
+\contentsline {paragraph}{\numberline {e}Equation of state for vertical pressure}{56}{section*.473}%
+\contentsline {paragraph}{\numberline {f}Equation for opacity}{56}{section*.476}%
+\contentsline {subsection}{\numberline {H}Approximate Version of Vertical Structure}{57}{section*.482}%
+\contentsline {subsection}{\numberline {I}Explicit Models for Disk}{57}{section*.488}%
+\contentsline {paragraph}{\numberline {a}Outer region}{58}{section*.495}%
+\contentsline {paragraph}{\numberline {b}Middle region}{59}{section*.499}%
+\contentsline {subsection}{\numberline {J}Spectrum of Radiation from Disk}{60}{section*.505}%
+\contentsline {subsection}{\numberline {K}Heating of the Outer Region by X-Rays from the Inner Region}{62}{section*.516}%
+\contentsline {subsection}{\numberline {L}Fluctuations on the Steady-State Model}{63}{section*.517}%
+\contentsline {subsection}{\numberline {M}Supercritical Accretion}{63}{section*.518}%
+\contentsline {subsection}{\numberline {N}Comparison with Observations}{64}{section*.521}%
+\contentsline {section}{\numberline {VI}White Holes and Black Holes of Cosmological Origin}{64}{section*.522}%
+\contentsline {subsection}{\numberline {A}White Holes, Grey Holes, and Black Holes}{64}{section*.523}%
+\contentsline {subsection}{\numberline {B}The Growth of Cosmological Holes by Accretion}{65}{section*.524}%
+\contentsline {subsection}{\numberline {C}Limit on the Number of Baryons in Cosmological Holes}{65}{section*.527}%
+\contentsline {subsection}{\numberline {D}Caution}{66}{section*.532}%
+\contentsline {section}{\numberline {}References}{66}{section*.533}%

@@ -1,15 +1,15 @@
 # Fdb version 4
-["bibtex NT-Disk-translated"] 1774141574 "NT-Disk-translated.aux" "NT-Disk-translated.bbl" "NT-Disk-translated" 1774141575 2
+["bibtex NT-Disk-translated"] 1774141729 "NT-Disk-translated.aux" "NT-Disk-translated.bbl" "NT-Disk-translated" 1774141729 2
   "./NT-Disk-translated.bib" 1774141371 30802 201c30b6d09db56480beaca368754582 ""
-  "./NT-Disk-translatedNotes.bib" 1774141574 104 4d8bb863c86f3d7b03a471e9d4707f34 ""
+  "./NT-Disk-translatedNotes.bib" 1774141728 104 4d8bb863c86f3d7b03a471e9d4707f34 ""
   "/usr/local/texlive/2023/texmf-dist/bibtex/bst/revtex/apsrev4-2.bst" 1601932770 69609 e9dea59f0e753ccda3ddc8f5806d846d ""
-  "NT-Disk-translated.aux" 1774141574 26438 7b2d94f8b9e035aa6792b91883522c26 "pdflatex"
+  "NT-Disk-translated.aux" 1774141728 23101 76c43a6b4357609e898f4d958b4ba23d "pdflatex"
   (generated)
   "NT-Disk-translated.bbl"
   "NT-Disk-translated.blg"
   (rewritten before read)
-["pdflatex"] 1774141573 "/Users/hyw/Desktop/Agent/NT disk/translate/merged/NT-Disk-translated.tex" "NT-Disk-translated.pdf" "NT-Disk-translated" 1774141575 0
-  "/Users/hyw/Desktop/Agent/NT disk/translate/merged/NT-Disk-translated.tex" 1774140744 3932 21e65e67d09dbba49dd5a556e271278b ""
+["pdflatex"] 1774141727 "/Users/hyw/Desktop/Agent/NT disk/translate/merged/NT-Disk-translated.tex" "NT-Disk-translated.pdf" "NT-Disk-translated" 1774141729 0
+  "/Users/hyw/Desktop/Agent/NT disk/translate/merged/NT-Disk-translated.tex" 1774141727 3932 0ecba3dd79e9a464d9e529255c161790 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1136849721 2900 1537cc8184ad1792082cd229ecc269f4 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/jknappen/ec/tcrm0800.tfm" 1136768653 1536 05df9db6aeccc4eea94fec15c9024f79 ""
@@ -161,11 +161,11 @@
   "/usr/local/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1704206929 4623355 b8cad38412faebe1ce5b780a45db67bd ""
   "/usr/local/texlive/2023/texmf-var/web2c/pdftex/pdflatex.fmt" 1704206923 7883456 c089e638dc78cd2d895dca953ed67480 ""
   "/usr/local/texlive/2023/texmf.cnf" 1678822455 577 1b2b1af17af2508fb20dd85783af4050 ""
-  "NT-Disk-translated.aux" 1774141574 26438 7b2d94f8b9e035aa6792b91883522c26 "pdflatex"
-  "NT-Disk-translated.bbl" 1774141575 27434 472ee383a16d423a6b896618c886a50f "bibtex NT-Disk-translated"
-  "NT-Disk-translated.out" 1774141574 11977 abef9473faae88dc58a18975d0427308 "pdflatex"
-  "NT-Disk-translated.tex" 1774140744 3932 21e65e67d09dbba49dd5a556e271278b ""
-  "NT-Disk-translated.toc" 1774141574 5869 819427c7a65784a035b663d1f4312f41 "pdflatex"
+  "NT-Disk-translated.aux" 1774141728 23101 76c43a6b4357609e898f4d958b4ba23d "pdflatex"
+  "NT-Disk-translated.bbl" 1774141729 27434 472ee383a16d423a6b896618c886a50f "bibtex NT-Disk-translated"
+  "NT-Disk-translated.out" 1774141728 11870 d982280470953c814db49d9157cb80a8 "pdflatex"
+  "NT-Disk-translated.tex" 1774141727 3932 0ecba3dd79e9a464d9e529255c161790 ""
+  "NT-Disk-translated.toc" 1774141728 5802 ba6574e19bf64addc85573c8d2505075 "pdflatex"
   "sections/sec1_intro.tex" 1774139887 1247 e8bed2ed3786399a1a3d46061d18dcb2 ""
   "sections/sec2_radiation.tex" 1774141243 105227 669f97562694d12c828836862f5e8699 ""
   "sections/sec3_origin.tex" 1774140286 7558 341fc9fa3cb60460b48a9d685a534174 ""
