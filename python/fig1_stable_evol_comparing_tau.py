@@ -50,46 +50,15 @@ def dpde(eps, kappa=KAPPA):
 
 def eps_from_p(p, kappa=KAPPA):
     """
-    Invert EoS analytically for Gamma=2 polytrope.
+    Invert EoS for Gamma=2 polytrope.
 
-    For Gamma=2 polytrope:
-        p = kappa * rho0^2     =>  rho0 = sqrt(p / kappa)
-        epsilon_internal = p / ((Gamma-1)*rho0) = p / rho0
-        But p / rho0 = kappa*rho0^2 / rho0 = kappa*rho0 = p/rho0  (same)
-        epsilon = rho0 + p / rho0 = rho0 + kappa*rho0 = rho0*(1 + kappa*rho0)
-                = rho0 + p  (since p = kappa*rho0^2, p/rho0 = kappa*rho0 != p unless kappa*rho0=1)
+    From p = kappa * rho0^2  =>  rho0 = sqrt(p / kappa).
+    Total energy density:
+        epsilon = rho0 * (1 + e_int),   e_int = p / ((Gamma-1)*rho0) = p/rho0  (Gamma=2)
+               => epsilon = rho0 + rho0*(p/rho0) = rho0 + p
 
-        Correct derivation:
-            epsilon_int = p / ((Gamma-1) * rho0) = p / (1 * rho0)   [Gamma=2]
-            rho0 = sqrt(p/kappa)
-            p / rho0 = p / sqrt(p/kappa) = sqrt(p*kappa) = kappa * rho0
-        So:
-            epsilon = rho0 + kappa*rho0^2/rho0 = rho0 + kappa*rho0 * rho0 / rho0
-                    = rho0 + p / rho0
-
-        Check: for rho0=0.00128, kappa=100:
-            p   = 100 * 0.00128^2 = 1.6384e-4
-            rho0 = 0.00128
-            eps = rho0 + p/rho0 = 0.00128 + 1.6384e-4 / 0.00128
-                = 0.00128 + 0.128 = 0.12928   (wrong! expected 0.00144)
-
-        The confusion is that p/rho0 != p.  Let us re-derive carefully.
-        For Gamma=2:
-            e_int (specific internal energy per unit rest-mass density):
-                e_int = p / ((Gamma-1)*rho0) = p / rho0    [units: M_sun^{-2} / M_sun^{-2} = dimensionless? No.]
-
-        Actually in geometric units:
-            Total energy density:
-                epsilon = rho0 * (1 + e_int)
-                e_int   = p / ((Gamma-1)*rho0) = p / rho0   (Gamma=2)
-            So:
-                epsilon = rho0 + rho0 * e_int = rho0 + p
-            Since p = kappa*rho0^2:
-                rho0 + p = rho0 + kappa*rho0^2 = rho0*(1 + kappa*rho0)
-            For rho0=0.00128, kappa=100:
-                0.00128*(1 + 100*0.00128) = 0.00128*1.128 = 0.001444   CORRECT
-
-        So epsilon = rho0 + p.   rho0 = sqrt(p/kappa).
+    Check: rho0_c=0.00128, kappa=100 => p_c = 1.6384e-4
+           epsilon_c = 0.00128 + 1.6384e-4 = 0.001444  (matches md file value 0.00144)
     """
     rho0 = np.sqrt(np.maximum(p, 0.0) / kappa)
     return rho0 + p
@@ -480,8 +449,9 @@ def main():
     ax.yaxis.get_major_formatter().set_scientific(False)
     ax.yaxis.get_major_formatter().set_useOffset(False)
 
-    # ---- Legend – upper left corner, matching paper position ---------
-    leg = ax.legend(loc='center left', bbox_to_anchor=(0.02, 0.45),
+    # ---- Legend – lower left area, matching paper position ---------
+    # In the paper the legend sits in the middle-left region of the main axes
+    leg = ax.legend(loc='center left', bbox_to_anchor=(0.02, 0.38),
                     framealpha=0.9, handlelength=1.6, handletextpad=0.5,
                     borderpad=0.4)
 
@@ -533,9 +503,11 @@ def main():
 
     # Centre the inset window on the isotropic surface radius
     # In the paper: x-axis shows [8.1, 8.2], y-axis shows [0, ~6e-6]
-    ins2_half = 0.12
-    r_s_lo = R_surf_iso - ins2_half
-    r_s_hi = R_surf_iso + ins2_half
+    # The steep descent region spans about [R_surf_iso - 0.07, R_surf_iso + 0.12]
+    ins2_half_lo = 0.07
+    ins2_half_hi = 0.12
+    r_s_lo = R_surf_iso - ins2_half_lo
+    r_s_hi = R_surf_iso + ins2_half_hi
     mask_s = (r_uni >= r_s_lo) & (r_uni <= r_s_hi)
     r_s = r_uni[mask_s]
 
@@ -554,9 +526,7 @@ def main():
     ax_ins2.set_xlim(r_s_lo, r_s_hi)
     # The surface tail has eps values in the ~0–6e-6 range
     # (smooth smearing of the sharp vacuum boundary by numerical diffusion)
-    eps_surf_max = max(eps_init[mask_s].max(),
-                       max(v[mask_s].max() for v in late_profiles.values()))
-    ax_ins2.set_ylim(-0.3e-6, max(eps_surf_max * 1.1, 6.0e-6))
+    ax_ins2.set_ylim(-0.3e-6, 6.5e-6)
 
     # y-axis in units of 1e-6 with a multiplier label, like the paper
     ax_ins2.yaxis.set_major_formatter(
