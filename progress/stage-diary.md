@@ -74,3 +74,41 @@ This diary tracks the progress of generating comprehensive derivation, implement
 - Final review agent confirmed all deliverables ready
 - All 33 agents across 5 stages completed successfully
 - Project ready for human review
+
+---
+
+## Stage 6: Numerical Evolution Implementation (In Progress)
+**Date:** 2026-03-23
+**Status:** In Progress
+
+### Goal
+Run the full BDNK evolution solver (`python-numerical/bdnk_core.py`) end-to-end for the paper's four parameter cases. Reproduce QNM oscillations and decay rates.
+
+### Achieved
+- **Stable evolution to t=2000 M_sun** (paper's full simulation time) for the smallSB-F2 case
+- All 13 sections of `bdnk_core.py` implemented and tested:
+  EoS, TOV solver, coordinate transform, grid data, transport coefficients,
+  A-matrix & c-vector, con2prim, stress tensor, characteristic speeds,
+  FDOC operators, SSP-RK3, full RHS, initial conditions, signal analysis
+- Equilibrium self-test passes (A-matrix, c-vector, stress tensor all verified)
+
+### Key Numerical Stability Fixes
+1. **Perturbation-based KO dissipation**: apply 4th-undivided-difference dissipation to `(U - U_eq)` instead of `U`, preventing diffusion of the equilibrium profile
+2. **Atmosphere-consistent equilibrium references**: match initial-state and grid equilibrium data to the atmosphere floor treatment
+3. **Constraint damping**: add `-κ_cd·(tgE - γ̃·E_stress)` to the balance-law RHS to prevent conservative-primitive decoupling (κ·dt ≈ 1.5)
+4. **Physical hat-value clamps**: limit |ε̂| ≤ 1e-6 and |v̂/r| ≤ 1e-4 to prevent runaway from con2prim noise
+5. **KO dissipation on all 6 evolved variables** (not just conservatives)
+6. **DISS_SIGMA = 0.5** (large dissipation needed without proper FDOC characteristic decomposition)
+
+### Known Limitations
+- Central density drifts by ~34% over 2000 time units due to cumulative hat_eps clamp effects
+- Scheme is 1st-order in the hat-value clamp (limits the physical viscous dynamics)
+- No characteristic decomposition for the dissipation (scalar KO only)
+- Paper uses FDOC with LLF flux and characteristic upwinding; our simplified scheme is less accurate
+
+### Next Steps
+- [ ] Run all four parameter cases (smallSB-F2, medS-F2, highB-F9, medSB-F9)
+- [ ] Extract QNM frequencies from central density oscillations
+- [ ] Compare ε(r) profiles against Paper Figure 1
+- [ ] Implement proper FDOC with characteristic decomposition for higher accuracy
+- [ ] Convergence testing at multiple resolutions

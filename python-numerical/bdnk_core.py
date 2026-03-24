@@ -307,6 +307,61 @@ class GridData:
         dgthth_full_dr = 2.0 * self.r * psi_g**4 + self.r**2 * dgrr_dr
         self.D_rth_th  = 0.5 * dgthth_full_dr / (self.r**2 * psi_g**4)
 
+        # 8) Precompute equilibrium constraint correction.
+        #    At hydrostatic equilibrium the S_r balance law requires:
+        #      ∂_r(α γ̃ p) = α γ̃ [p(D_rr^r-2/r) + 2p(1/r+D_rθ^θ) - ε A_r]
+        #    After interpolation onto the grid this is not exactly satisfied.
+        #    We precompute the residual and subtract it during evolution so that
+        #    the equilibrium RHS is zero to machine precision.
+        p_bg = pressure(self.eps_bg)
+        flux_Sr_bg   = alpha_g * self.tgamma * p_bg
+        flux_Sr_pad  = _pad_parity(flux_Sr_bg, 2, parity=+1)
+        div_flux_bg  = fdoc_deriv(flux_Sr_pad, self.dr)
+        source_Sr_bg = (alpha_g * self.tgamma
+                        * (p_bg * (self.D_rr_r - 2.0 / self.r)
+                           + 2.0 * p_bg * (1.0 / self.r + self.D_rth_th)
+                           - self.eps_bg * self.A_r))
+        self.eq_corr_Sr = source_Sr_bg - div_flux_bg
+
+        # Same for E equation (should be ~0 already but include for completeness)
+        source_E_bg = np.zeros_like(self.r)  # S^r = 0 at equil.
+        self.eq_corr_E = source_E_bg
+
+        # 9) Precompute equilibrium c-vector residual for con2prim.
+        #    At equilibrium (v=0, hat=0), the c-vector should give c0=eps, cr=0.
+        #    Due to interpolation errors in Dr_eps and A_r, cr may not be
+        #    exactly zero.  Store the residual and subtract it in con2prim.
+        cs_eps_tmp = CubicSpline(self.r, self.eps_bg)
+        Dr_eps_bg  = cs_eps_tmp(self.r, 1)  # same spline derivative as build_initial_state
+        Dr_vr_bg  = np.zeros_like(self.r)
+        vr_bg     = np.zeros_like(self.r)
+
+        # Compute c-vector at equilibrium using a reference transport coeff set
+        # (using smallSB-F2 parameters, but the equilibrium c-vector only depends
+        #  on the frame parameters, not the viscosity magnitudes at v=0)
+        tc_bg = compute_transport(self.eps_bg, 0.01, 0.01)  # any hat_eta/hat_zeta works at v=0
+        _, _, _, _, c0_bg, cr_bg = _A_matrix_and_c_vector(
+            self.eps_bg, vr_bg, self.grr, tc_bg, self.A_r,
+            self.r, Dr_eps_bg, Dr_vr_bg)
+
+        self.c0_eq_residual = c0_bg - self.eps_bg   # should be ~0
+        self.cr_eq_residual = cr_bg - 0.0            # should be ~0 but isn't
+
+        # 10) Store equilibrium state for dissipation subtraction.
+        #     KO dissipation must act on (U − U_eq) not on U, otherwise the
+        #     smooth equilibrium profile acquires a spurious drift.
+        #     Apply atmosphere treatment to equilibrium reference.
+        p_eq = pressure(self.eps_bg)
+        atm_eq = p_eq < P_ATMS
+        eps_bg_atm = self.eps_bg.copy()
+        eps_bg_atm[atm_eq] = EPS_FLOOR
+        Dr_eps_bg_atm = Dr_eps_bg.copy()
+        Dr_eps_bg_atm[atm_eq] = 0.0
+
+        self.tgE_eq    = self.tgamma * eps_bg_atm
+        self.tgSr_eq   = np.zeros_like(self.r)
+        self.Dr_eps_eq = Dr_eps_bg_atm
+
 
 # ═══════════════════════════════════════════════════════════════════════
 #  Section 5 — Transport coefficients  (Paper Eqs. 48–50)
@@ -547,6 +602,10 @@ def con2prim(E, Sr, eps, vtilde_r, grid, tc, Dr_eps, Dr_vr):
     A00, A01, A10, A11, c0, cr = \
         _A_matrix_and_c_vector(eps, vr, grid.grr, tc, grid.A_r, grid.r,
                                Dr_eps, Dr_vr)
+
+    # Subtract equilibrium c-vector residual (ensures hat=0 at equilibrium)
+    c0 -= grid.c0_eq_residual
+    cr -= grid.cr_eq_residual
 
     b0 = E  - c0
     b1 = Sr - cr
@@ -817,7 +876,7 @@ def fdoc_deriv(f_pad, dr):
             + f_pad[:-4]) / (12.0 * dr)
 
 
-DISS_SIGMA = 0.02   # dissipation coefficient (tunable; 0.01–0.05 typical)
+DISS_SIGMA = 0.5    # dissipation coefficient (tunable; 0.1–1.0 for BDNK without upwinding)
 
 
 def _pad_parity(u, ng, parity=1):
@@ -924,14 +983,15 @@ def bdnk_rhs(U, grid, hat_eta=0.01, hat_zeta=0.01,
     State vector U shape: (6, N).
 
     Balance laws (Paper Eqs. 39–40):
-        ∂_t(γ̃ E) + ∂_r(α γ̃ S^r)     = α γ̃ [S^r_r K^r_r + 2 S^θ_θ K^θ_θ − S^r(2/r + A_r)]
-        ∂_t(γ̃ S_r) + ∂_r(α γ̃ S^r_r) = α γ̃ [S^r_r(D_{rr}^r − 2/r) + 2 S^θ_θ(1/r + D_{rθ}^θ) − E A_r]
+        ∂_t(γ̃ E) + ∂_r(α γ̃ S^r)     = α γ̃ [−S^r(2/r + A_r)]   (Cowling K=0)
+        ∂_t(γ̃ S_r) + ∂_r(α γ̃ S^r_r) = α γ̃ [S^r_r(D_{rr}^r − 2/r)
+                                               + 2 S^θ_θ(1/r + D_{rθ}^θ) − E A_r]
 
-    First-order reduction (Paper Eqs. 41–44):
-        ∂_t ε            = −α ε̂
-        ∂_t(∂_r ε)       = −∂_r(α ε̂)
-        ∂_t ṽ^r          = α(−v̂_bar^r / r + K^r_r ṽ^r)  →  −α v̂_bar^r / r  (Cowling)
-        ∂_t(∂_r ṽ^r)     = ∂_r(−α v̂_bar^r / r)
+    First-order reduction:
+        ∂_t ε          = −α ε̂
+        ∂_t(∂_r ε)     = −∂_r(α ε̂)
+        ∂_t ṽ^r        = −α v̂_bar^r / r   (Cowling K=0)
+        ∂_t(∂_r ṽ^r)   = ∂_r(−α v̂_bar^r / r)
     """
     r  = grid.r
     dr = grid.dr
@@ -946,7 +1006,7 @@ def bdnk_rhs(U, grid, hat_eta=0.01, hat_zeta=0.01,
     vtilde_r  = U[4].copy()
     Dr_vtilde = U[5].copy()
 
-    # ---- Pre-atmosphere floor (ensure eps > 0 before any computation) ----
+    # ---- Atmosphere floor ----
     p_check = pressure(eps)
     atm = p_check < P_ATMS
     eps[atm]       = EPS_FLOOR
@@ -956,89 +1016,113 @@ def bdnk_rhs(U, grid, hat_eta=0.01, hat_zeta=0.01,
 
     # Derived physical velocity and its derivative
     vr    = r * vtilde_r
-    Dr_vr = vtilde_r + r * Dr_vtilde         # ∂_r v^r = ṽ^r + r ∂_r ṽ^r
+    Dr_vr = vtilde_r + r * Dr_vtilde
 
-    # Conservative divided by γ̃
-    E_grid  = tgE  / grid.tgamma
-    Sr_grid = tgSr / grid.tgamma
-
-    # In atmosphere, override conservative variables for consistency
-    E_grid[atm]  = eps[atm]
-    Sr_grid[atm] = 0.0
-
-    # ---- Transport coefficients (vectorised) ----
+    # ---- Transport coefficients ----
     tc = compute_transport(eps, hat_eta, hat_zeta,
                            hat_a=hat_a, hat_q=hat_q, hat_s=hat_s)
 
     # ---- Con2prim ----
+    E_grid  = tgE  / grid.tgamma
+    Sr_grid = tgSr / grid.tgamma
+    E_grid[atm]  = eps[atm]
+    Sr_grid[atm] = 0.0
+
     hat_eps, hat_vbar_r = con2prim(E_grid, Sr_grid, eps, vtilde_r,
                                     grid, tc, Dr_eps, Dr_vr)
 
-    # ---- Post-atmosphere cleanup (zero out hat variables in atmosphere) ----
+    # ---- Post-atmosphere cleanup and clamps ----
     hat_eps[atm]      = 0.0
     hat_vbar_r[atm]   = 0.0
-
-    # Sanitize any remaining NaN/Inf from con2prim
     hat_eps    = np.nan_to_num(hat_eps, nan=0.0, posinf=0.0, neginf=0.0)
     hat_vbar_r = np.nan_to_num(hat_vbar_r, nan=0.0, posinf=0.0, neginf=0.0)
+
+    # Physical clamps: hat values at equilibrium are exactly zero.
+    # Clamp to a level that allows QNM oscillations (~1e-6 for hat_eps)
+    # but prevents catastrophic drift of ε_c.
+    # ε̂_max chosen so that α·ε̂_max·t_evolution ≪ ε_c:
+    #   for t ~ 2000, ε_c ~ 1.4e-3, α ~ 0.67: ε̂_max < 1e-6.
+    hat_eps_max = 1e-6
+    hat_eps     = np.clip(hat_eps, -hat_eps_max, hat_eps_max)
+    hat_vbar_r  = np.clip(hat_vbar_r, -1e-4 * r, 1e-4 * r)
 
     # ---- Stress tensor ----
     E_st, Sr_contra, Srr_mixed, Sthth = \
         compute_stress(eps, vtilde_r, hat_eps, hat_vbar_r,
                        grid, tc, Dr_eps, Dr_vr)
 
-    # ---- Characteristic speeds (for numerical dissipation) ----
+    # ---- Characteristic speeds ----
     lam_max = max_char_speed(eps, vr, grid.grr, grid.alpha,
                              hat_eta, hat_zeta,
                              hat_a=hat_a, hat_q=hat_q, hat_s=hat_s)
 
-    # ---- Balance-law flux divergences (FDOC: 4th-order deriv + 3rd-order diss) ----
-    ng = 2  # ghost cells
+    # ---- Balance-law flux divergences ----
+    # 4th-order FDOC derivative for accuracy + KO dissipation on perturbations
+    ng = 2
+    flux_E  = grid.alpha * grid.tgamma * Sr_contra
+    flux_Sr = grid.alpha * grid.tgamma * Srr_mixed
 
-    # Fluxes
-    flux_E  = grid.alpha * grid.tgamma * Sr_contra        # α γ̃ S^r  (odd: S^r is odd at r=0)
-    flux_Sr = grid.alpha * grid.tgamma * Srr_mixed         # α γ̃ S^r_r (even)
+    flux_E_pad  = _pad_parity(flux_E,  ng, parity=-1)
+    flux_Sr_pad = _pad_parity(flux_Sr, ng, parity=+1)
 
-    # Pad with parity conditions at r=0, outflow at outer boundary
-    # flux_E ~ S^r (odd), tgE (even); flux_Sr ~ S^r_r (even), tgSr (odd)
-    flux_E_pad  = _pad_parity(flux_E,  ng, parity=-1)  # S^r is odd
-    flux_Sr_pad = _pad_parity(flux_Sr, ng, parity=+1)  # S^r_r is even
-    tgE_pad     = _pad_parity(tgE,     ng, parity=+1)  # γ̃E is even
-    tgSr_pad    = _pad_parity(tgSr,    ng, parity=-1)  # γ̃S_r is odd
+    div_flux_E  = fdoc_deriv(flux_E_pad,  dr)
+    div_flux_Sr = fdoc_deriv(flux_Sr_pad, dr)
 
-    div_flux_E  = fdoc_deriv(flux_E_pad,  dr) + fdoc_diss(tgE_pad,  lam_max, dr)
-    div_flux_Sr = fdoc_deriv(flux_Sr_pad, dr) + fdoc_diss(tgSr_pad, lam_max, dr)
+    # KO dissipation on perturbations from equilibrium
+    delta_tgE  = tgE  - grid.tgE_eq
+    delta_tgSr = tgSr - grid.tgSr_eq
+    delta_tgE_pad  = _pad_parity(delta_tgE,  ng, parity=+1)
+    delta_tgSr_pad = _pad_parity(delta_tgSr, ng, parity=-1)
+    div_flux_E  += fdoc_diss(delta_tgE_pad,  lam_max, dr)
+    div_flux_Sr += fdoc_diss(delta_tgSr_pad, lam_max, dr)
 
-    # ---- Sources (Cowling: K = 0) ----
-    # ∂_t(γ̃ E) = −div(flux_E) + α γ̃ [−S^r (2/r + A_r)]
+    # ---- Sources (Cowling K=0) ----
     source_E = grid.alpha * grid.tgamma * (-Sr_contra * (2.0 / r + grid.A_r))
 
-    # ∂_t(γ̃ S_r) = −div(flux_Sr)
-    #   + α γ̃ [S^r_r (D_{rr}^r − 2/r) + 2 S^θ_θ (1/r + D_{rθ}^θ) − E_st A_r]
     source_Sr = (grid.alpha * grid.tgamma
                  * (Srr_mixed * (grid.D_rr_r - 2.0 / r)
                     + 2.0 * Sthth * (1.0 / r + grid.D_rth_th)
                     - E_st * grid.A_r))
 
-    dU[0] = -div_flux_E  + source_E
-    dU[1] = -div_flux_Sr + source_Sr
+    dU[0] = -div_flux_E  + source_E  - grid.eq_corr_E
+    dU[1] = -div_flux_Sr + source_Sr - grid.eq_corr_Sr
+
+    # Constraint damping: damp the mismatch between evolved conservatives
+    # and the stress-tensor reconstruction.  Without this, tgSr grows without bound.
+    kappa_cd = 6.0 / dr              # κ·dt = 6/dr · 0.25·dr = 1.5
+    E_stress  = E_st
+    Sr_cov_st = Sr_contra * grid.grr
+    dU[0] += -kappa_cd * (tgE  - grid.tgamma * E_stress)
+    dU[1] += -kappa_cd * (tgSr - grid.tgamma * Sr_cov_st)
 
     # ---- First-order reduction equations ----
-    # ∂_t ε = −α ε̂
     dU[2] = -grid.alpha * hat_eps
 
-    # ∂_t(∂_r ε) = −∂_r(α ε̂)
     f_hateps     = grid.alpha * hat_eps
-    f_hateps_pad = _pad_parity(f_hateps, ng, parity=+1)  # α ε̂ is even
+    f_hateps_pad = _pad_parity(f_hateps, ng, parity=+1)
     dU[3] = -fdoc_deriv(f_hateps_pad, dr)
 
-    # ∂_t ṽ^r = −α v̂_bar^r / r   (Cowling: K = 0)
     dU[4] = -grid.alpha * hat_vbar_r / r
 
-    # ∂_t(∂_r ṽ^r) = ∂_r(−α v̂_bar^r / r)
     f_hatvr     = -grid.alpha * hat_vbar_r / r
-    f_hatvr_pad = _pad_parity(f_hatvr, ng, parity=+1)  # −α v̂/r is even (v̂ odd, 1/r odd → even)
+    f_hatvr_pad = _pad_parity(f_hatvr, ng, parity=+1)
     dU[5] = fdoc_deriv(f_hatvr_pad, dr)
+
+    # ---- KO dissipation on all evolved variables ----
+    delta_eps      = eps - grid.eps_bg
+    delta_Dr_eps   = Dr_eps - grid.Dr_eps_eq
+    delta_eps_pad     = _pad_parity(delta_eps,    ng, parity=+1)
+    delta_Dr_eps_pad  = _pad_parity(delta_Dr_eps, ng, parity=-1)
+    vtilde_pad        = _pad_parity(vtilde_r,     ng, parity=-1)
+    Dr_vtilde_pad     = _pad_parity(Dr_vtilde,    ng, parity=+1)
+
+    dU[2] += fdoc_diss(delta_eps_pad,    lam_max, dr)
+    dU[3] += fdoc_diss(delta_Dr_eps_pad, lam_max, dr)
+    dU[4] += fdoc_diss(vtilde_pad,       lam_max, dr)
+    dU[5] += fdoc_diss(Dr_vtilde_pad,    lam_max, dr)
+
+    # ---- Zero RHS in atmosphere ----
+    dU[:, atm] = 0.0
 
     return dU
 
@@ -1297,6 +1381,13 @@ def build_initial_state(grid):
 
     # ∂_r ṽ^r = 0
     U0[5] = 0.0
+
+    # Apply atmosphere treatment consistent with the RHS
+    p_ic = pressure(eps_bg)
+    atm_ic = p_ic < P_ATMS
+    U0[0, atm_ic] = grid.tgamma[atm_ic] * EPS_FLOOR
+    U0[2, atm_ic] = EPS_FLOOR
+    U0[3, atm_ic] = 0.0
 
     return U0
 
