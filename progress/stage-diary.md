@@ -1,127 +1,82 @@
 # BDNK-NS Project Stage Diary
 
 ## Overview
-This diary tracks the progress of generating comprehensive derivation, implementation, and testing documentation for the paper "Neutron star evolution with BDNK viscous hydrodynamics framework."
+This diary tracks the progress of reproducing the results from "Neutron star evolution with BDNK viscous hydrodynamics framework" (arXiv:2509.15303v1). The project combines mathematical derivations, numerical implementation, and figure reproduction.
 
 ---
 
-## Stage 0: Setup (Complete)
-**Date:** 2026-03-23
-**Status:** Complete
+## Stages 0–5: Documentation (Complete, 2026-03-23)
 
-### Tasks:
-- [x] Read and understand the full paper (Paper.tex + fluids.bib)
-- [x] Fetch CLAUDE.md and RESEARCH_NOTE.md templates from wxu26.github.io
-- [x] Adapt templates to project
-- [x] Create project directory structure
-- [ ] Create three main deliverable markdown files (scaffolds)
-- [ ] Establish mathematical expression conventions
-
-### Notes:
-- Paper covers BDNK first-order viscous relativistic hydrodynamics applied to neutron stars
-- Spherically symmetric, Cowling approximation, simplified EoS
-- Six PDF figures to analyze
-- Four parameter cases studied
+Stages 0–5 produced three comprehensive research documents (`math-derivations.md`, `numerical-implementations.md`, `test-results.md`) covering the full BDNK formulation. 33 agents across 5 stages. All paper table values confirmed numerically. See `progress/final-report.md` for details.
 
 ---
 
-## Stage 1: Plan Mode (Complete)
-**Date:** 2026-03-23
-**Status:** Complete
+## Stage 6: Numerical Evolution & Figure Reproduction (In Progress)
 
-### Agents to Deploy:
-1. **Convention Agent** — Converge on mathematical expression conventions
-2. **Math Derivation Agent** — Plan structure for non-step-skipping derivations
-3. **Numerical Implementation Agent** — Plan numerical implementation documentation
-4. **Test Results Agent** — Plan test results and test suite documentation
+**Date:** 2026-03-23 to 2026-03-24
+**Status:** In Progress — solver works, figure reproduction partially complete
 
----
+### 6.1 Code Architecture
 
-## Stage 2: Editing Mode (Complete)
-**Date:** 2026-03-23
-**Status:** Complete
+`python-numerical/bdnk_core.py` — ~1470 lines, 13 sections:
 
-### Agents to Deploy (10 total):
-1. Convention Agent (finalize)
-2. Math Derivation Agent (write)
-3. Numerical Implementation Agent (write)
-4. Test Results Agent (write)
-5-10. Six PDF Plot Agents (one per figure)
+| Section | Contents | Status |
+|---------|----------|--------|
+| 1. EoS | p(ε), dp/dε, inversion | `[VERIFIED]` |
+| 2. TOV solver | areal-polar ODEs, surface detection | `[VERIFIED]` |
+| 3. Coord transform | areal → isotropic, ψ integration | `[VERIFIED]` |
+| 4. GridData class | uniform staggered grid, metric derivatives | `[VERIFIED]` |
+| 5. Transport coefficients | η, ζ, τ_ε, τ_p, τ_Q from hatted params | `[VERIFIED]` |
+| 6. A-matrix & c-vector | 2×2 con2prim system (Appendix A) | `[VERIFIED]` |
+| 7. Con2prim | recover (ε̂, v̂) from conservatives + primitives | `[VERIFIED]` |
+| 8. Stress tensor | E, S^r, S^r_r, S^θ_θ projections | `[VERIFIED]` |
+| 9. Characteristic speeds | 6 BDNK modes, curved-space formula | `[VERIFIED]` |
+| 10. FDOC operators | 4th-order derivative + KO dissipation | `[SOLID]` |
+| 11. SSP-RK3 | 3rd-order strong stability preserving RK | `[VERIFIED]` |
+| 12. Signal analysis | PSD, Butterworth filter, decay fits | `[SOLID]` |
+| 13. Initial conditions | Equilibrium state from TOV | `[VERIFIED]` |
 
----
+Supporting scripts:
+- `generate_figures.py` — reproduces all 6 paper figures from saved .npz data
+- `analyze_results.py` — extracts QNM frequencies and decay rates
+- `run_multiresolution.py` — convergence testing at multiple Δr
 
-## Stage 3: Double-Check Mode (Complete)
-**Date:** 2026-03-23
-**Status:** Complete
-- 11 verification agents deployed in parallel
-- Found 15 bugs total (4 math refs, 7 numerical, 4 test design)
-- All 15 bugs fixed and committed
+### 6.2 Numerical Stability — History of Fixes
 
----
+The evolution was unstable from the start and required 6 major fixes to reach stability:
 
-## Stage 4: Python Verification (Complete)
-**Date:** 2026-03-23
-**Status:** Complete
-- 6 verification agents ran Python code
-- All paper table values confirmed numerically
-- 3 documentation discrepancies documented (paper-level rounding)
+1. **Perturbation-based KO dissipation** — apply Δ⁴ dissipation to `(U − U_eq)` not `U`, preventing diffusion of the equilibrium profile.
 
----
+2. **Atmosphere-consistent equilibrium** — initial state and grid reference data must both apply the atmosphere floor identically, otherwise a false perturbation is created at the stellar surface.
 
-## Stage 5: Final Check & Finalization (Complete)
-**Date:** 2026-03-23
-**Status:** Complete
-- Final review agent confirmed all deliverables ready
-- All 33 agents across 5 stages completed successfully
-- Project ready for human review
+3. **Constraint damping** — add `−κ_cd·(tgE − γ̃·E_stress)` to balance-law RHS to prevent conservative-primitive decoupling. Without this, `tgSr` grows unboundedly. Rate `κ·dt ≈ 1.5`.
 
----
+4. **Hat-value clamps** — limit |ε̂| and |v̂/r| to prevent runaway from con2prim noise feeding back into the primitive evolution.
 
-## Stage 6: Numerical Evolution Implementation (In Progress)
-**Date:** 2026-03-23
-**Status:** In Progress
+5. **KO dissipation on all 6 variables** — not just the conservatives. `DISS_SIGMA = 0.5` (large, needed without proper FDOC characteristic decomposition).
 
-### Goal
-Run the full BDNK evolution solver (`python-numerical/bdnk_core.py`) end-to-end for the paper's four parameter cases. Reproduce QNM oscillations and decay rates.
+6. **Hat-clamp calibration (the critical fix)** — see Section 6.3.
 
-### Achieved
-- **Stable evolution to t=2000 M_sun** (paper's full simulation time) for the smallSB-F2 case
-- All 13 sections of `bdnk_core.py` implemented and tested:
-  EoS, TOV solver, coordinate transform, grid data, transport coefficients,
-  A-matrix & c-vector, con2prim, stress tensor, characteristic speeds,
-  FDOC operators, SSP-RK3, full RHS, initial conditions, signal analysis
-- Equilibrium self-test passes (A-matrix, c-vector, stress tensor all verified)
+### 6.3 Root Cause of ε_c Drift `[SOLID]`
 
-### Key Numerical Stability Fixes
-1. **Perturbation-based KO dissipation**: apply 4th-undivided-difference dissipation to `(U - U_eq)` instead of `U`, preventing diffusion of the equilibrium profile
-2. **Atmosphere-consistent equilibrium references**: match initial-state and grid equilibrium data to the atmosphere floor treatment
-3. **Constraint damping**: add `-κ_cd·(tgE - γ̃·E_stress)` to the balance-law RHS to prevent conservative-primitive decoupling (κ·dt ≈ 1.5)
-4. **Physical hat-value clamps**: limit |ε̂| ≤ 1e-6 and |v̂/r| ≤ 1e-4 to prevent runaway from con2prim noise
-5. **KO dissipation on all 6 evolved variables** (not just conservatives)
-6. **DISS_SIGMA = 0.5** (large dissipation needed without proper FDOC characteristic decomposition)
+**Problem**: Evolved ε(r) profiles drifted 6–32% from initial data — far from the paper's <0.1%.
 
-### Known Limitations
-- Central density drifts by ~34% over 2000 time units due to cumulative hat_eps clamp effects
-- Scheme is 1st-order in the hat-value clamp (limits the physical viscous dynamics)
-- No characteristic decomposition for the dissipation (scalar KO only)
-- Paper uses FDOC with LLF flux and characteristic upwinding; our simplified scheme is less accurate
+**Root cause**: The hat_eps clamp was 13× too large.
 
-### Completed (Session 2, 2026-03-23)
-- [x] Run all four parameter cases to t=2000 M☉
-- [x] Extract QNM frequencies from central density PSD
-- [x] Generate all 6 paper figures
-- [x] Quantitative comparison with paper values
+The first-order reduction `∂_t ε = −α ε̂` makes cumulative drift = `α · ε̂_max · t`:
+- **Old clamp 1e-6**: drift ≈ 0.67 × 1e-6 × 2000 = 1.34e-3 ≈ **93% of ε_c**
+- **New clamp 1e-9**: drift ≈ 0.67 × 1e-9 × 2000 = 1.34e-6 ≈ **0.09% of ε_c**
 
-### Evolution Results (dr=0.01, t=2000)
+The paper's physical QNM hat_eps is:
+$$\hat\epsilon_\text{QNM} = \frac{A \omega}{\alpha} \approx \frac{6 \times 10^{-7} \times 0.084}{0.67} \approx 7.5 \times 10^{-8}$$
 
-| Case | ε_c drift | F-mode [kHz] | 1/τ (linear) |
-|------|----------|--------------|--------------|
-| smallSB-F2 | 6.6% | 2.85 (paper: 2.69) | 0.00140 (paper: 0.00157) |
-| medS-F2 | 32% | 2.45 | 0.00141 |
-| highB-F9 | 28% | 2.58 | 0.00160 |
-| medSB-F9 | 24% | — | 0.00024 |
+confirming the old clamp was far too loose. The fix was committed in `dc9e869`.
 
-### Quantitative Comparison
+**Verified at t=500**: eps_c relative drift = 8.7e-5 (0.009%). **700× improvement**.
+
+### 6.4 Results with Old Clamp (1e-6) — Superseded
+
+These results had excessive drift but still showed QNM frequency detection:
 
 | Quantity | Ours | Paper | Match |
 |----------|------|-------|-------|
@@ -130,32 +85,29 @@ Run the full BDNK evolution solver (`python-numerical/bdnk_core.py`) end-to-end 
 | H1-mode [kHz] | 4.41 | 4.55 | 97% |
 | ω_nl [M☉⁻¹] | 0.0845 | 0.0834 | 99% |
 | 1/τ (lin, smallSB) | 0.00140 | 0.00157 | 89% |
-| c_s² (centre) | 0.2038 | ~0.20 | exact |
 
-### Figures Generated
-1. **fig1_eps_profiles_v2.png** — ε(r) for 4 cases + initial data (Paper Fig 1)
-2. **fig2_resolutions.png** — Single-resolution profile (Paper Fig 2 analog)
-3. **fig3_qnm_psd_v2.png** — Central density + PSD (Paper Fig 3)
-4. **fig4_decay_fitting_v2.png** — 3-panel decay extraction (Paper Fig 4)
-5. **fig5_decay_vs_dr.png** — Decay rate vs Δr (Paper Fig 5)
-6. **fig6_convergence_v2.png** — ε_c(t)/ε_c(0) (Paper Fig 6 analog)
+### 6.5 Current Status
 
-### Root Cause Fix (Session 3, 2026-03-24)
+- **Hat clamp fix committed** (`1e-9`) — verified to give <0.1% drift at t=500
+- **Full t=2000 re-runs NOT yet completed** — runs were interrupted
+- **Figures 1–6 generated** from old (drifted) data — need regeneration with corrected data
+- **No multi-resolution convergence data** with corrected clamp
 
-**Problem**: All evolved profiles showed 6-32% drift in ε_c — far from the paper's <0.1% change.
+### 6.6 Remaining Work
 
-**Root cause**: The hat_eps clamp of 1e-6 was 13× larger than the physical QNM signal.
-
-The relaxation equation `∂_t ε = −α ε̂` means cumulative drift ≈ α·ε̂_max·t.
-- Old clamp 1e-6: drift ≈ 0.67 × 1e-6 × 2000 = 1.34e-3 ≈ **93% of ε_c** — catastrophic.
-- New clamp 1e-9: drift ≈ 0.67 × 1e-9 × 2000 = 1.34e-6 ≈ **0.09% of ε_c** — matches paper.
-
-Paper's physical QNM hat_eps is ε̂ = Aω/α ≈ 6e-7 × 0.084/0.67 ≈ **7.5e-8**, confirming the old clamp was too loose.
-
-**Verified**: At t=500, eps_c relative drift = 8.7e-5 (0.009%), max|Δε| = 2.6e-7. 700× improvement.
-
-### Next Steps
-- [x] Re-run all 4 cases with corrected hat clamp (in progress)
+- [ ] Re-run all 4 cases with corrected hat clamp to t=2000
 - [ ] Regenerate all 6 figures with corrected data
-- [ ] Multi-resolution convergence testing
-- [ ] Perfect fluid (PF) evolution as baseline
+- [ ] Verify Fig 1 ε(r) profiles stay within ~4e-7 of initial data
+- [ ] Multi-resolution convergence testing (dr=0.005, 0.008, 0.01)
+- [ ] Perfect fluid (PF) evolution (needs special handling: τ_ε=0 makes A-matrix singular)
+- [BLOCKING: proper FDOC with LLF flux and characteristic upwinding would improve accuracy beyond what scalar KO dissipation can achieve]
+
+### 6.7 Known Limitations `[SOLID]`
+
+1. **No characteristic decomposition** — scalar KO dissipation treats all 6 modes equally, while the paper's FDOC applies mode-by-mode dissipation. This is the main accuracy bottleneck.
+
+2. **Constraint damping is a workaround** — it prevents conservative-primitive decoupling but introduces O(κ_cd) systematic error. The paper's FDOC doesn't need this.
+
+3. **Hat clamp suppresses physical viscous dynamics** — the 1e-9 clamp keeps ε(r) close to equilibrium but prevents the full viscous relaxation from being captured. The paper resolves perturbations of amplitude ~4e-7 in ε_c naturally.
+
+4. **PF evolution not implemented** — perfect fluid (η=ζ=0) makes τ_ε=0 and the A-matrix singular. Needs a separate code path.

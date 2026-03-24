@@ -74,17 +74,39 @@ Then:
 - Appendix B: Convergence tests
 
 **Key figures (6 PDFs):**
-1. `stable_evol_comparing_tau.pdf` — Fig 1: ε(r) profiles for different viscous cases
-2. `stable_evol_resolutions.pdf` — Fig 2: ε(r) across resolutions (convergence)
-3. `QNM_plot.pdf` — Fig 3: Central density oscillations + PSD spectrum
-4. `casA_fitting.pdf` — Fig 4: Decay rate extraction procedure (3 panels)
-5. `error_fit.pdf` — Fig 5: Decay rate vs resolution
-6. `convergence.pdf` — Fig 6: Convergence factor assessment
+1. `stable_evol_comparing_tau.pdf` — Fig 1: ε(r) profiles for different viscous cases at t=2000
+2. `stable_evol_resolutions.pdf` — Fig 2: ε(r) across resolutions (convergence) at t=4500
+3. `QNM_plot.pdf` — Fig 3: Central density oscillations + PSD spectrum (t=0–8000)
+4. `casA_fitting.pdf` — Fig 4: Decay rate extraction procedure (3 panels, t=4000–5000)
+5. `error_fit.pdf` — Fig 5: Decay rate vs resolution (Δr=0.002–0.0032)
+6. `convergence.pdf` — Fig 6: Convergence factor Q(t) (Δr=0.001,0.002,0.0028)
 
 **Four parameter cases:**
 - `smallSB-F2`: (τ_ε, η̂, ζ̂) = (0.023, 0.01, 0.01)
 - `medS-F2`: (τ_ε, η̂, ζ̂) = (0.023, 0.01725, 0)
 - `highB-F9`: (τ_ε, η̂, ζ̂) = (0.092, 0.0015, 0.09)
 - `medSB-F9`: (τ_ε, η̂, ζ̂) = (0.092, 0.03525, 0.045)
+
+**Paper reference values (Tables I–III):**
+- ε_c = 0.00144 M☉⁻², ρ₀c = 0.00128 M☉⁻², M_T = 1.4 M☉
+- QNM frequencies: F = 2.69 kHz, H1 = 4.55 kHz, H2 = 6.36 kHz
+- QNM decay rates at Δr=0.002: smallSB=0.00157, medS=0.00150, highB=0.00215, medSB=0.00182 (M☉⁻¹)
+- Fitted ω_nl = 0.0834 M☉⁻¹ (all cases)
+- Conversion: f_kHz = ω_code × 203.025 / (2π)
+
+**Code files:**
+- `python-numerical/bdnk_core.py` — Complete BDNK solver (~1470 lines, 13 sections)
+- `python-numerical/generate_figures.py` — Figure reproduction pipeline
+- `python-numerical/analyze_results.py` — QNM extraction and comparison
+- `python-numerical/run_*.npz` — Saved evolution data (may be from old clamp; check timestamps)
+- `figures/` — Generated figures (versions v2/v3 are latest)
+
+**Critical numerical lesson (hat-clamp calibration):**
+The first-order reduction `∂_t ε = −α ε̂` means that any CONSTANT bias in ε̂ causes LINEAR drift: Δε = α · ε̂_bias · t. The hat clamp directly controls maximum allowed bias. It must satisfy:
+```
+hat_eps_max × α × t_evolution ≪ ε_c
+```
+For t=2000, α=0.67, ε_c=0.00144: hat_eps_max ≤ 1e-9 gives drift < 0.1%.
+The physical QNM ε̂ amplitude is ~7.5e-8 (from A·ω/α with A~6e-7, ω=0.084).
 
 **Git repo:** https://github.com/FoPGSDI/BDNK-NT branch BDNK-NS
