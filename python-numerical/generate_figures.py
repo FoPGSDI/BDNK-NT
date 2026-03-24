@@ -423,14 +423,121 @@ def figure_6(resolution_results):
 #  Main
 # ═══════════════════════════════════════════════════════════════════════
 
+def load_npz(path):
+    """Load evolution data from a .npz file into a result dict."""
+    d = np.load(path)
+    class SimpleGrid:
+        pass
+    g = SimpleGrid()
+    g.r = d['r']
+    g.eps_bg = d['eps_bg']
+    g.dr = float(d['dr'])
+    g.N = len(g.r)
+    return {
+        'times': d['times'],
+        'eps_central': d['eps_c'],
+        'grid': g,
+        'Uf': np.zeros((6, g.N)),  # placeholder
+        'U0': np.zeros((6, g.N)),
+        'eps_final': d['eps_final'] if 'eps_final' in d else None,
+    }
+
+
+def load_all_runs(data_dir):
+    """Load all available .npz run files from data_dir."""
+    results = {}
+    name_map = {
+        'run_smallSB_F2.npz': 'smallSB-F2',
+        'run_medS_F2.npz': 'medS-F2',
+        'run_highB_F9.npz': 'highB-F9',
+        'run_medSB_F9.npz': 'medSB-F9',
+    }
+    for fname, case_name in name_map.items():
+        fpath = os.path.join(data_dir, fname)
+        if os.path.exists(fpath):
+            r = load_npz(fpath)
+            r['label'] = case_name
+            # Fix: set eps_final in the Uf placeholder
+            if r['eps_final'] is not None:
+                r['Uf'] = np.zeros((6, r['grid'].N))
+                r['Uf'][2] = r['eps_final']
+            results[case_name] = r
+            print(f"  Loaded {case_name} from {fname}")
+    return results
+
+
+def generate_all_figures(data_dir):
+    """Generate all available figures from saved .npz data."""
+    print("\n" + "=" * 60)
+    print("  Generating figures from saved evolution data")
+    print("=" * 60)
+
+    # Load main case runs
+    results = load_all_runs(data_dir)
+    if not results:
+        print("  No evolution data found! Run the evolutions first.")
+        return
+
+    # Reference grid for initial data
+    grid_ref = get_tov_profile(dr=0.005)
+
+    # --- Figure 1 ---
+    available = [k for k in results if results[k]['eps_final'] is not None]
+    if available:
+        print(f"\n--- Figure 1: ε(r) profiles ({len(available)} cases) ---")
+        figure_1(results, grid_ref)
+
+    # --- Figure 3 ---
+    fig3_cases = [k for k in ['smallSB-F2', 'highB-F9'] if k in results]
+    if fig3_cases:
+        print(f"\n--- Figure 3: Central density + PSD ({fig3_cases}) ---")
+        figure_3(results)
+
+    # --- Figure 4 ---
+    if 'smallSB-F2' in results:
+        r = results['smallSB-F2']
+        t_max = r['times'][-1]
+        if t_max >= 1000:
+            # Use last quarter of data for fitting
+            t_start = t_max * 0.5
+            t_end = t_max * 0.9
+            print(f"\n--- Figure 4: Decay fitting (t={t_start:.0f}-{t_end:.0f}) ---")
+            figure_4(r, t_start=t_start, t_end=t_end, case_name='smallSB-F2')
+
+    # --- Figures 2, 6: multi-resolution ---
+    res_runs = []
+    for tag in ['dr0p0050', 'dr0p0080', 'dr0p0100']:
+        fpath = os.path.join(data_dir, f'run_smallSB_F2_{tag}.npz')
+        if os.path.exists(fpath):
+            res_runs.append(load_npz(fpath))
+            print(f"  Loaded multi-res: {tag}")
+
+    if len(res_runs) >= 2:
+        print(f"\n--- Figure 2: Resolution comparison ({len(res_runs)} resolutions) ---")
+        figure_2(res_runs)
+
+    if len(res_runs) >= 3:
+        print(f"\n--- Figure 6: Convergence factor ---")
+        figure_6(res_runs)
+
+    # Also load the standard dr=0.01 run as a resolution data point
+    if 'smallSB-F2' in results and not res_runs:
+        print(f"\n--- Figure 2: Using single resolution (dr=0.01) ---")
+        figure_2([results['smallSB-F2']])
+
+    print("\n" + "=" * 60)
+    print("  Figure generation complete!")
+    print(f"  Output directory: {OUT_DIR}")
+    print("=" * 60)
+
+
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument('--fig', type=int, default=0, help='Generate specific figure')
     parser.add_argument('--all', action='store_true', help='Generate all figures')
     parser.add_argument('--tov-only', action='store_true', help='Only verify TOV')
-    parser.add_argument('--dr', type=float, default=0.01)
-    parser.add_argument('--t-end', type=float, default=2000.0)
-    parser.add_argument('--dt-save', type=float, default=1.0)
+    parser.add_argument('--from-npz', action='store_true',
+                        help='Generate figures from saved .npz data')
     args = parser.parse_args()
 
     if args.tov_only:
@@ -440,3 +547,8 @@ if __name__ == '__main__':
     print("BDNK Figure Generation")
     print("=" * 60)
     verify_tov()
+
+    data_dir = os.path.dirname(__file__)
+
+    if args.from_npz or args.all:
+        generate_all_figures(data_dir)
