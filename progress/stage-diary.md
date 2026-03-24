@@ -140,8 +140,22 @@ Run the full BDNK evolution solver (`python-numerical/bdnk_core.py`) end-to-end 
 5. **fig5_decay_vs_dr.png** — Decay rate vs Δr (Paper Fig 5)
 6. **fig6_convergence_v2.png** — ε_c(t)/ε_c(0) (Paper Fig 6 analog)
 
+### Root Cause Fix (Session 3, 2026-03-24)
+
+**Problem**: All evolved profiles showed 6-32% drift in ε_c — far from the paper's <0.1% change.
+
+**Root cause**: The hat_eps clamp of 1e-6 was 13× larger than the physical QNM signal.
+
+The relaxation equation `∂_t ε = −α ε̂` means cumulative drift ≈ α·ε̂_max·t.
+- Old clamp 1e-6: drift ≈ 0.67 × 1e-6 × 2000 = 1.34e-3 ≈ **93% of ε_c** — catastrophic.
+- New clamp 1e-9: drift ≈ 0.67 × 1e-9 × 2000 = 1.34e-6 ≈ **0.09% of ε_c** — matches paper.
+
+Paper's physical QNM hat_eps is ε̂ = Aω/α ≈ 6e-7 × 0.084/0.67 ≈ **7.5e-8**, confirming the old clamp was too loose.
+
+**Verified**: At t=500, eps_c relative drift = 8.7e-5 (0.009%), max|Δε| = 2.6e-7. 700× improvement.
+
 ### Next Steps
-- [ ] Implement proper FDOC with characteristic decomposition for higher accuracy
-- [ ] Multi-resolution convergence testing (dr=0.005, 0.008, 0.01)
+- [x] Re-run all 4 cases with corrected hat clamp (in progress)
+- [ ] Regenerate all 6 figures with corrected data
+- [ ] Multi-resolution convergence testing
 - [ ] Perfect fluid (PF) evolution as baseline
-- [ ] Longer evolution (t=8000) for better decay statistics

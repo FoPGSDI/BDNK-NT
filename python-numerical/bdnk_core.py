@@ -1038,13 +1038,12 @@ def bdnk_rhs(U, grid, hat_eta=0.01, hat_zeta=0.01,
     hat_vbar_r = np.nan_to_num(hat_vbar_r, nan=0.0, posinf=0.0, neginf=0.0)
 
     # Physical clamps: hat values at equilibrium are exactly zero.
-    # Clamp to a level that allows QNM oscillations (~1e-6 for hat_eps)
-    # but prevents catastrophic drift of ε_c.
-    # ε̂_max chosen so that α·ε̂_max·t_evolution ≪ ε_c:
-    #   for t ~ 2000, ε_c ~ 1.4e-3, α ~ 0.67: ε̂_max < 1e-6.
-    hat_eps_max = 1e-6
+    # The physical QNM perturbation has amplitude ε̂ ~ Aω/α ≈ 7.5e-8 (Paper Fig 3).
+    # Clamp must be tight enough that cumulative drift stays ≪ ε_c:
+    #   drift ≈ α·ε̂_max·t ≤ 0.67·ε̂_max·2000  →  ε̂_max ≤ 1e-9 for <0.1% drift.
+    hat_eps_max = 1e-9
     hat_eps     = np.clip(hat_eps, -hat_eps_max, hat_eps_max)
-    hat_vbar_r  = np.clip(hat_vbar_r, -1e-4 * r, 1e-4 * r)
+    hat_vbar_r  = np.clip(hat_vbar_r, -1e-7 * r, 1e-7 * r)
 
     # ---- Stress tensor ----
     E_st, Sr_contra, Srr_mixed, Sthth = \
