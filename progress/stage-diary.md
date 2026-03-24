@@ -114,18 +114,18 @@ Created `bdnk_jax.py` — a drop-in JAX replacement for the evolution hot path.
 - Inner time loop uses `jax.lax.fori_loop` to avoid Python overhead
 - `jax_enable_x64 = True` for float64 precision (matches NumPy)
 
-**Performance (CPU):**
+**Benchmark (Apple M3 Max, CPU, N=2000, float64):**
 
-| Metric | NumPy | JAX |
-|--------|-------|-----|
-| Single RHS call | 0.7 ms | **0.1 ms** (7×) |
-| t=500 evolution | ~450s | **95s** (4.7×) |
-| t=2000 estimate | ~30 min | **6.3 min** |
-| JIT compile (once) | — | 0.32s |
+| Metric | NumPy | JAX (CPU) | Speedup |
+|--------|-------|-----------|---------|
+| Single RHS | 0.70 ms | 0.17 ms | **4.1×** |
+| 1000 steps | 2.16 s | 0.50 s | **4.3×** |
+| 10000 steps (fori_loop) | 21.6 s (est) | 5.32 s | **4.1×** |
+| Estimated t=2000 | 28.9 min | 7.1 min | **4.1×** |
 
-**On GPU**: expected 50-100× speedup over NumPy (not tested yet — no GPU on this machine).
+**Verification**: eps_c drift after 1000 steps matches between NumPy (1.7696e-7) and JAX (1.7697e-7) — identical to float64 precision.
 
-**Verification**: Equilibrium residuals match NumPy to float64 precision. Drift at t=500: 1.07e-4 (comparable to NumPy's 8.7e-5).
+**GPU status**: Apple Metal GPU (M3 Max) detected but `jax-metal 0.1.1` is incompatible with JAX 0.9.2 (MLIR dialect version mismatch). Metal float64 is also unsupported — would require float32 mode. On NVIDIA GPU with CUDA, expect 50-100× speedup over NumPy.
 
 ### 6.9 Known Limitations `[SOLID]`
 
