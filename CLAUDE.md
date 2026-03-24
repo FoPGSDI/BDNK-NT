@@ -95,7 +95,8 @@ Then:
 - Conversion: f_kHz = ω_code × 203.025 / (2π)
 
 **Code files:**
-- `python-numerical/bdnk_core.py` — Complete BDNK solver (~1470 lines, 13 sections)
+- `python-numerical/bdnk_core.py` — Complete BDNK solver, NumPy (~1470 lines, 13 sections)
+- `python-numerical/bdnk_jax.py` — JAX/GPU-compatible evolution solver (drop-in replacement)
 - `python-numerical/generate_figures.py` — Figure reproduction pipeline
 - `python-numerical/analyze_results.py` — QNM extraction and comparison
 - `python-numerical/run_*.npz` — Saved evolution data (may be from old clamp; check timestamps)

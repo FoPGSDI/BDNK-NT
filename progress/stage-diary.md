@@ -102,7 +102,32 @@ These results had excessive drift but still showed QNM frequency detection:
 - [ ] Perfect fluid (PF) evolution (needs special handling: τ_ε=0 makes A-matrix singular)
 - [BLOCKING: proper FDOC with LLF flux and characteristic upwinding would improve accuracy beyond what scalar KO dissipation can achieve]
 
-### 6.7 Known Limitations `[SOLID]`
+### 6.8 JAX/GPU Port (Session 4, 2026-03-24) `[VERIFIED]`
+
+Created `bdnk_jax.py` — a drop-in JAX replacement for the evolution hot path.
+
+**Design:**
+- Setup (TOV, coordinate transform, grid) stays in NumPy/SciPy (runs once)
+- Evolution (RHS, SSP-RK3, time loop) fully converted to JAX with `@jax.jit`
+- Grid data stored as dict of JAX arrays (not a class) for JIT tracing
+- In-place mutations replaced with `jnp.where` (functional style)
+- Inner time loop uses `jax.lax.fori_loop` to avoid Python overhead
+- `jax_enable_x64 = True` for float64 precision (matches NumPy)
+
+**Performance (CPU):**
+
+| Metric | NumPy | JAX |
+|--------|-------|-----|
+| Single RHS call | 0.7 ms | **0.1 ms** (7×) |
+| t=500 evolution | ~450s | **95s** (4.7×) |
+| t=2000 estimate | ~30 min | **6.3 min** |
+| JIT compile (once) | — | 0.32s |
+
+**On GPU**: expected 50-100× speedup over NumPy (not tested yet — no GPU on this machine).
+
+**Verification**: Equilibrium residuals match NumPy to float64 precision. Drift at t=500: 1.07e-4 (comparable to NumPy's 8.7e-5).
+
+### 6.9 Known Limitations `[SOLID]`
 
 1. **No characteristic decomposition** — scalar KO dissipation treats all 6 modes equally, while the paper's FDOC applies mode-by-mode dissipation. This is the main accuracy bottleneck.
 
