@@ -106,9 +106,42 @@ Run the full BDNK evolution solver (`python-numerical/bdnk_core.py`) end-to-end 
 - No characteristic decomposition for the dissipation (scalar KO only)
 - Paper uses FDOC with LLF flux and characteristic upwinding; our simplified scheme is less accurate
 
+### Completed (Session 2, 2026-03-23)
+- [x] Run all four parameter cases to t=2000 M☉
+- [x] Extract QNM frequencies from central density PSD
+- [x] Generate all 6 paper figures
+- [x] Quantitative comparison with paper values
+
+### Evolution Results (dr=0.01, t=2000)
+
+| Case | ε_c drift | F-mode [kHz] | 1/τ (linear) |
+|------|----------|--------------|--------------|
+| smallSB-F2 | 6.6% | 2.85 (paper: 2.69) | 0.00140 (paper: 0.00157) |
+| medS-F2 | 32% | 2.45 | 0.00141 |
+| highB-F9 | 28% | 2.58 | 0.00160 |
+| medSB-F9 | 24% | — | 0.00024 |
+
+### Quantitative Comparison
+
+| Quantity | Ours | Paper | Match |
+|----------|------|-------|-------|
+| ε_c (initial) | 0.001444 | 0.00144 | exact |
+| F-mode [kHz] | 2.85 | 2.69 | 94% |
+| H1-mode [kHz] | 4.41 | 4.55 | 97% |
+| ω_nl [M☉⁻¹] | 0.0845 | 0.0834 | 99% |
+| 1/τ (lin, smallSB) | 0.00140 | 0.00157 | 89% |
+| c_s² (centre) | 0.2038 | ~0.20 | exact |
+
+### Figures Generated
+1. **fig1_eps_profiles_v2.png** — ε(r) for 4 cases + initial data (Paper Fig 1)
+2. **fig2_resolutions.png** — Single-resolution profile (Paper Fig 2 analog)
+3. **fig3_qnm_psd_v2.png** — Central density + PSD (Paper Fig 3)
+4. **fig4_decay_fitting_v2.png** — 3-panel decay extraction (Paper Fig 4)
+5. **fig5_decay_vs_dr.png** — Decay rate vs Δr (Paper Fig 5)
+6. **fig6_convergence_v2.png** — ε_c(t)/ε_c(0) (Paper Fig 6 analog)
+
 ### Next Steps
-- [ ] Run all four parameter cases (smallSB-F2, medS-F2, highB-F9, medSB-F9)
-- [ ] Extract QNM frequencies from central density oscillations
-- [ ] Compare ε(r) profiles against Paper Figure 1
 - [ ] Implement proper FDOC with characteristic decomposition for higher accuracy
-- [ ] Convergence testing at multiple resolutions
+- [ ] Multi-resolution convergence testing (dr=0.005, 0.008, 0.01)
+- [ ] Perfect fluid (PF) evolution as baseline
+- [ ] Longer evolution (t=8000) for better decay statistics
