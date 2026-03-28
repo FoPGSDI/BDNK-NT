@@ -1,0 +1,82 @@
+[
+  {
+    "id": 1,
+    "query": "What is the stability constraint on sigma-hat?",
+    "expected_sources": ["mathematical-derivations.md"],
+    "expected_section": "Constraint simplification",
+    "expected_answer_contains": ["1/3", "stability"],
+    "type": "derivation"
+  },
+  {
+    "id": 2,
+    "query": "Show the Bjorken flow ODE derivation",
+    "expected_sources": ["mathematical-derivations.md"],
+    "expected_section": "Bjorken flow",
+    "expected_answer_contains": ["Milne", "tau_epsilon", "baryon"],
+    "type": "derivation"
+  },
+  {
+    "id": 3,
+    "query": "What numerical method is used for the shockwave PDE?",
+    "expected_sources": ["numerical-implementations.md"],
+    "expected_section": "PDE solver",
+    "expected_answer_contains": ["finite volume", "WENO", "Heun"],
+    "type": "algorithm"
+  },
+  {
+    "id": 4,
+    "query": "What does Figure 4 demonstrate about acausality?",
+    "expected_sources": ["test-results.md"],
+    "expected_section": "Acausality",
+    "expected_answer_contains": ["superluminal", "weakly"],
+    "type": "interpretation"
+  },
+  {
+    "id": 5,
+    "query": "What parameters does the heat flow test use?",
+    "expected_sources": ["numerical-implementations.md", "test-results.md"],
+    "expected_section": "Table II",
+    "expected_answer_contains": ["4/3", "0.1"],
+    "type": "lookup"
+  },
+  {
+    "id": 6,
+    "query": "How does transportCoeffs compute beta_epsilon?",
+    "expected_sources": ["bdnk_common.wl"],
+    "expected_section": "Transport Coefficients",
+    "expected_answer_contains": ["transport", "sigma"],
+    "type": "code"
+  },
+  {
+    "id": 7,
+    "query": "Why is sigma-hat greater than 1/3 unstable?",
+    "expected_sources": ["mathematical-derivations.md", "test-results.md"],
+    "expected_section": "Constraint simplification",
+    "expected_answer_contains": ["stability", "instability", "constraint"],
+    "type": "cross-doc"
+  },
+  {
+    "id": 8,
+    "query": "What is the convergence order of the PDE solver?",
+    "expected_sources": ["test-results.md", "convergence.wl"],
+    "expected_section": "Convergence",
+    "expected_answer_contains": ["second", "Q_N", "4"],
+    "type": "cross-doc"
+  },
+  {
+    "id": 9,
+    "query": "Derive the characteristic speed c_+ squared",
+    "expected_sources": ["mathematical-derivations.md"],
+    "expected_section": "Characteristic speeds",
+    "expected_answer_contains": ["c_+", "quadratic", "A26"],
+    "type": "derivation"
+  },
+  {
+    "id": 10,
+    "query": "What is the difference between Eckart and BDNK frames?",
+    "expected_sources": ["mathematical-derivations.md", "test-results.md"],
+    "expected_section": "BDNK conserved currents",
+    "expected_answer_contains": ["frame", "temperature", "relaxation"],
+    "type": "conceptual"
+  }
+]

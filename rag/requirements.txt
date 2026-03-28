@@ -1,0 +1,24 @@
+# RAG System for BDNK Research Corpus
+# Core
+chromadb>=0.4.22
+anthropic>=0.40.0
+voyageai>=0.3.0
+
+# Parsing
+pylatexenc>=2.10
+mistune>=3.0.0
+bibtexparser>=1.4.0
+
+# Retrieval
+rank-bm25>=0.2.2
+sentence-transformers>=2.2.2
+
+# Interface
+typer>=0.9.0
+rich>=13.0.0
+fastapi>=0.109.0
+uvicorn>=0.27.0
+
+# Utilities
+pydantic>=2.5.0
+tqdm>=4.66.0
